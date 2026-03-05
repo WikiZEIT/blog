@@ -1249,10 +1249,13 @@ footer {
           <div class="footer-section">
             <h4 class="footer-section-title">Nawigacja</h4>
             <ul class="footer-links-list">
+              <!--
               <li><a href="#">Start</a></li>
               <li><a href="#">O projekcie</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Zasoby</a></li>
+               -->
+              <li><a href="/">Głównie JavaScript</a></li>
             </ul>
           </div>
           <div class="footer-section">
