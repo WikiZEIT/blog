@@ -1,5 +1,5 @@
-
 RewriteEngine on
 
 RewriteRule ^subscribers.db - [L,R=404]
 RewriteRule ^templates/ - [L,R=404]
+RewriteRule ^.git* - [L,R=404]
