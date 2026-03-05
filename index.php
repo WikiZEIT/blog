@@ -1,4 +1,7 @@
 <?php
+
+define('WIKIZEIT_URL', 'https://jcubic.pl/wikizeit/');
+
 session_start();
 
 // Load Composer autoloader
@@ -20,6 +23,44 @@ $db->exec('CREATE TABLE IF NOT EXISTS subscribers (
     verified INTEGER DEFAULT 0,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )');
+
+$person = json_decode(file_get_contents('./szkolenia/person.json'), true);
+
+$person_id = 'https://jakub.jankiewicz.org';
+
+$graph = [
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        $person,
+        [
+            '@type' => 'EducationalOrganization',
+            '@id' => WIKIZEIT_URL,
+            'name' => 'WikiZeit',
+            'alternateName' => 'Projekt WikiZeit',
+            'url' => WIKIZEIT_URL,
+            'logo' => WIKIZEIT_URL . 'img/logo.svg',
+            'description' => 'Projekt edukacyjny poświęcony etycznemu SEO, danym strukturalnym i profesjonalnej edycji Wikipedii.',
+            'founder' => ['@id' => $person_id],
+            'foundingDate' => '2026',
+            'knowsAbout' => [
+                'Search Engine Optimization',
+                'SEO',
+                'GEO',
+                'AIO',
+                'Wikipedia',
+                'Wikidata',
+                'Open Source'
+            ],
+            'sameAs' => [
+                //'https://www.wikidata.org[TWOJE_Q_WIKIDATA]', // Link do elementu, który stworzysz
+                //'https://commons.wikimedia.org',
+                'https://www.youtube.com/@WikiZEIT'
+            ]
+        ]
+    ]
+];
+
+
 
 // Generate random token
 function generateToken() {
@@ -126,7 +167,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
 
                 if ($stmt->execute()) {
                     // Send confirmation email
-                    $verifyUrl = "https://jcubic.pl/wikizeit/?verify={$token}#subscribe";
+                    $verifyUrl = WIKIZEIT_URL . "?verify={$token}#subscribe";
 
                     $emailMessage = $mustache->render('email-confirmation', [
                         'verifyUrl' => $verifyUrl,
@@ -162,19 +203,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
     <meta name="apple-mobile-web-app-title" content="WikiZEIT" />
     <link rel="manifest" href="/wikizeit/favicon/site.webmanifest" />
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://jcubic.pl/wikizeit/" />
+    <meta property="og:url" content="<?= WIKIZEIT_URL ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="WikiZEIT - Edukacyjny projekt o Wikipedii i SEO" />
     <meta property="og:description" content="Odkryj wpływ Wikipedii na Twoją markę. Profesjonalna wiedza o edycji i SEO od eksperta z 15-letnim doświadczeniem w Open Source. Sprawdź projekt WikiZeit!" />
-    <meta property="og:image" content="https://jcubic.pl/wikizeit/img/social-card.png" />
+    <meta property="og:image" content="<?= WIKIZEIT_URL ?>img/social-card.png" />
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://jcubic.pl/wikizeit/" />
+    <meta property="twitter:url" content="<?= WIKIZEIT_URL ?>" />
     <meta name="twitter:title" content="WikiZEIT - Edukacyjny projekt o Wikipedii i SEO" />
     <meta name="twitter:description" content="Odkryj wpływ Wikipedii na Twoją markę. Profesjonalna wiedza o edycji i SEO od eksperta z 15-letnim doświadczeniem w Open Source. Sprawdź projekt WikiZeit!" />
-    <meta name="twitter:image" content="https://jcubic.pl/wikizeit/img/social-card.png" />
+    <meta name="twitter:image" content="<?= WIKIZEIT_URL ?>img/social-card.png" />
     <!-- Meta Tags Generated via https://www.opengraph.io -->
-    <link rel="canonical" href="https://jcubic.pl/wikizeit/">
+    <link rel="canonical" href="<?= WIKIZEIT_URL ?>" />
+    <script type="application/ld+json">
+    <?php
+    echo json_encode($graph, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    ?>
+    </script>
     <script>
      (function() {
          document.documentElement.classList.add('icons-hidden');
