@@ -1103,9 +1103,12 @@ footer {
           <a href="/wikizeit"><img src="/wikizeit/img/logo.svg" alt="WikiZEIT logo" class="logo-image" /></a>
         </div>
         <div class="nav-links">
+          <!--
           <a class="nav-link" href="#">O projekcie</a>
           <a class="nav-link" href="#">Edukacja</a>
           <a class="nav-link" href="#">SEO</a>
+          -->
+          <a class="nav-link" href="/wikizeit/szkolenia/">Szkolenia i Konsultacje</a>
           <a class="nav-cta" href="#">
             Kontakt
           </a>
