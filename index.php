@@ -1,4 +1,154 @@
-<html class="dark">
+<?php
+session_start();
+
+// Load Composer autoloader
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Initialize Mustache
+$mustache = new Mustache_Engine([
+    'loader' => new Mustache_Loader_FilesystemLoader(__DIR__ . '/templates', [
+        'extension' => '.mustache'
+    ]),
+]);
+
+// Database initialization
+$db = new SQLite3('subscribers.db');
+$db->exec('CREATE TABLE IF NOT EXISTS subscribers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    token TEXT NOT NULL,
+    verified INTEGER DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+)');
+
+// Generate random token
+function generateToken() {
+    return bin2hex(random_bytes(32));
+}
+
+// Send email function
+function sendEmail($to, $subject, $message) {
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=utf-8\r\n";
+    $headers .= "From: WikiZEIT <wikizeit@jcubic.pl>\r\n";
+    return mail($to, $subject, $message, $headers);
+}
+
+// Initialize spam protection token
+if (!isset($_SESSION['spam_token'])) {
+    $_SESSION['spam_token'] = generateToken();
+}
+
+$message = '';
+$message_type = '';
+
+// Handle email verification
+if (isset($_GET['verify'])) {
+    $token = $_GET['verify'];
+    $stmt = $db->prepare('SELECT email, verified, created_at FROM subscribers WHERE token = :token');
+    $stmt->bindValue(':token', $token, SQLITE3_TEXT);
+    $result = $stmt->execute();
+    $row = $result->fetchArray(SQLITE3_ASSOC);
+
+    if ($row && $row['verified'] == 0) {
+        // Check if token has expired (30 days)
+        $createdAt = strtotime($row['created_at']);
+        $expirationTime = $createdAt + (30 * 24 * 60 * 60); // 30 days in seconds
+        $currentTime = time();
+
+        if ($currentTime > $expirationTime) {
+            // Token expired - delete the entry
+            $stmt = $db->prepare('DELETE FROM subscribers WHERE token = :token');
+            $stmt->bindValue(':token', $token, SQLITE3_TEXT);
+            $stmt->execute();
+
+            $message = 'Link weryfikacyjny wygasł (ważny przez 30 dni). Proszę zapisać się ponownie.';
+            $message_type = 'error';
+        } else {
+            // Token valid - verify email
+            $email = $row['email'];
+            $stmt = $db->prepare('UPDATE subscribers SET verified = 1 WHERE token = :token');
+            $stmt->bindValue(':token', $token, SQLITE3_TEXT);
+            $stmt->execute();
+
+            // Send notification to owner
+            $notifyMessage = $mustache->render('email-notification', [
+                'email' => htmlspecialchars($email),
+                'verificationDate' => date('d.m.Y H:i:s')
+            ]);
+            sendEmail('jcubic@jcubic.pl', 'Nowy subskrybent WikiZEIT', $notifyMessage);
+
+            $message = 'Dziękujemy! Twój adres email został zweryfikowany. Będziesz otrzymywać aktualizacje o projekcie WikiZEIT.';
+            $message_type = 'success';
+        }
+    } elseif ($row && $row['verified'] == 1) {
+        $message = 'Ten adres email został już wcześniej zweryfikowany.';
+        $message_type = 'info';
+    } else {
+        $message = 'Nieprawidłowy lub wygasły link weryfikacyjny.';
+        $message_type = 'error';
+    }
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
+    // Check honeypot field
+    if (!empty($_POST['email_confirmation'])) {
+        $message = 'Wygląda na to że nie jesteś człowiekiem!';
+        $message_type = 'error';
+    } else {
+        $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+
+        if (!$email) {
+            $message = 'Proszę podać prawidłowy adres email.';
+            $message_type = 'error';
+        } else {
+            // Check if email already exists
+            $stmt = $db->prepare('SELECT verified FROM subscribers WHERE email = :email');
+            $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+            $result = $stmt->execute();
+            $existing = $result->fetchArray(SQLITE3_ASSOC);
+
+            if ($existing) {
+                if ($existing['verified'] == 1) {
+                    $message = 'Ten adres email jest już zapisany na liście subskrybentów.';
+                    $message_type = 'info';
+                } else {
+                    $message = 'Na ten adres email wysłano już wcześniej link weryfikacyjny. Sprawdź swoją skrzynkę.';
+                    $message_type = 'info';
+                }
+            } else {
+                // Generate token and save to database
+                $token = generateToken();
+                $stmt = $db->prepare('INSERT INTO subscribers (email, token) VALUES (:email, :token)');
+                $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+                $stmt->bindValue(':token', $token, SQLITE3_TEXT);
+
+                if ($stmt->execute()) {
+                    // Send confirmation email
+                    $verifyUrl = "https://jcubic.pl/wikizeit/?verify={$token}#subscribe";
+
+                    $emailMessage = $mustache->render('email-confirmation', [
+                        'verifyUrl' => $verifyUrl,
+                        'year' => date('Y')
+                    ]);
+
+                    if (sendEmail($email, 'Potwierdź subskrypcję WikiZEIT', $emailMessage)) {
+                        $message = 'Dziękujemy! Sprawdź swoją skrzynkę email i kliknij link weryfikacyjny.';
+                        $message_type = 'success';
+                    } else {
+                        $message = 'Wystąpił błąd podczas wysyłania emaila. Spróbuj ponownie później.';
+                        $message_type = 'error';
+                    }
+                } else {
+                    $message = 'Wystąpił błąd. Spróbuj ponownie później.';
+                    $message_type = 'error';
+                }
+            }
+        }
+    }
+}
+?><html class="dark">
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -689,6 +839,43 @@ header {
     opacity: 0.8;
 }
 
+/* Honeypot field - hidden from users but visible to bots */
+.email-confirmation-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Form message styles */
+.form-message {
+    padding: 1rem;
+    border-radius: var(--border-radius-lg);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.form-message-success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+}
+
+.form-message-error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+}
+
+.form-message-info {
+    background-color: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+}
+
 .status-bg-decoration {
     position: absolute;
     right: -5rem;
@@ -1002,7 +1189,21 @@ footer {
               <p class="status-description">Dołącz do naszej społeczności i bądź na bieżąco z każdą aktualizacją.</p>
             </div>
             <div class="email-form-container">
-              <form class="email-form" action="#" method="POST">
+              <?php if ($message): ?>
+              <div class="form-message form-message-<?php echo htmlspecialchars($message_type); ?>">
+                <?php echo htmlspecialchars($message); ?>
+              </div>
+              <?php endif; ?>
+              <form class="email-form" action="#subscribe" method="POST">
+                <input
+                  type="email"
+                  name="email_confirmation"
+                  class="email-confirmation-field"
+                  placeholder="Email confirmation"
+                  tabindex="-1"
+                  autocomplete="off"
+                  aria-hidden="true"
+                />
                 <input
                   type="email"
                   name="email"

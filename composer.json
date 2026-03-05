@@ -1,0 +1,14 @@
+{
+    "name": "jcubic/wikizeit",
+    "description": "WikiZEIT Landing Page",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jakub Jankiewicz",
+            "email": "jcubic@jcubic.pl"
+        }
+    ],
+    "require": {
+        "mustache/mustache": "^3.0"
+    }
+}
