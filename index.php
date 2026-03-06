@@ -49,7 +49,7 @@ $graph = [
             'logo' => WIKIZEIT_URL . 'img/logo.svg',
             'description' => 'Projekt edukacyjny poświęcony etycznemu SEO, danym strukturalnym i profesjonalnej edycji Wikipedii.',
             'founder' => ['@id' => $person_id],
-            'foundingDate' => '2026',
+            'foundingDate' => '2026-03-05',
             'knowsAbout' => [
                 'Search Engine Optimization',
                 'SEO',
