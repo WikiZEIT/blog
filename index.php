@@ -75,10 +75,10 @@ $graph = [
             ]
         ],
         [
-            '@type': 'WebSite',
-            '@id': 'https://jcubic.pl',
-            'url': 'https://jcubic.pl',
-            'name': 'jcubic.pl'
+            '@type' => 'WebSite',
+            '@id' => 'https://jcubic.pl',
+            'url' => 'https://jcubic.pl',
+            'name' => 'jcubic.pl'
         ],
 
         [
