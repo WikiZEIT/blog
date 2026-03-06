@@ -33,6 +33,14 @@ $graph = [
     '@graph' => [
         $person,
         [
+            '@type' => 'WebPage',
+            '@id' => WIKIZEIT_URL . '#webpage',
+            'url' => WIKIZEIT_URL,
+            'isPartOf' => [ '@id' => WIKIZEIT_URL ],
+            'breadcrumb' => [ '@id' => WIKIZEIT_URL . '#breadcrumbs' ],
+            'mainEntity' => [ '@id' => WIKIZEIT_URL ]
+        ],
+        [
             '@type' => 'EducationalOrganization',
             '@id' => WIKIZEIT_URL,
             'name' => 'WikiZeit',
@@ -56,26 +64,33 @@ $graph = [
                 'https://commons.wikimedia.org/wiki/Category:WikiZEIT',
                 'https://www.youtube.com/@WikiZEIT',
                 'https://github.com/WikiZEIT'
-            ]
+            ],
+            'isPartOf' => [ '@id' => WIKIZEIT_URL . '#webiste' ],
         ],
         [
-            "@type" => "BreadcrumbList",
-            "@id" => "https://jcubic.pl/wikizeit/#breadcrumb",
-            "itemListElement" => [
+            '@type' => 'WebSite',
+            '@id' => '{{ site.url }}#website',
+            'url' => '{{ site.url }}',
+            'name' => 'jcubic.pl'
+        ],
+        [
+            '@type' => 'BreadcrumbList',
+            '@id' => WIKIZEIT_URL . '#breadcrumb',
+            'itemListElement' => [
                 [
-                    "@type" => "ListItem",
-                    "position" => 1,
-                    "item" => [
-                        "@id" => "https://jcubic.pl",
-                        "name" => "Głównie JavaScript"
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'item' => [
+                        '@id' => 'https://jcubic.pl',
+                        'name' => 'Głównie JavaScript'
                     ]
                 ],
                 [
-                    "@type" => "ListItem",
-                    "position" => 2,
-                    "item" => [
-                        "@id" => "https://jcubic.pl/wikizeit/",
-                        "name" => "WikiZeit"
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'item' => [
+                        '@id' => WIKIZEIT_URL . '#webpage',
+                        'name' => 'WikiZeit'
                     ]
                 ]
             ]
