@@ -67,6 +67,7 @@ $graph = [
             ],
             'sameAs' => [
                 //'https://www.wikidata.org[TWOJE_Q_WIKIDATA]', // Link do elementu, który stworzysz
+                'https://www.linkedin.com/company/wikizeit/',
                 'https://commons.wikimedia.org/wiki/Category:WikiZEIT',
                 'https://www.youtube.com/@WikiZEIT',
                 'https://github.com/WikiZEIT'
