@@ -7,6 +7,8 @@ tags:
   - Entity SEO
 description: "Wprowadzenie do Wikidanych — otwartej bazy wiedzy, która zasila Google Knowledge Graph i wpływa na widoczność Twojej marki w wynikach wyszukiwania."
 author: jcubic
+sitemap:
+  lastmod: 2026-03-08
 ---
 
 Wikidata to wolna, otwarta baza wiedzy, która może być odczytywana i edytowana zarówno przez ludzi, jak i przez maszyny. Uruchomiona w 2012 roku przez Wikimedia Deutschland, Wikidata stanowi centralne repozytorium danych strukturalnych dla wszystkich projektów Wikimedia.
