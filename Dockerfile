@@ -14,13 +14,15 @@ RUN mkdir -p /var/www/html/wikizeit
 # Configure Apache to allow .htaccess overrides
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
+# Let Apache run on port 80 as non-root
+RUN sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf \
+    && sed -i 's/:80/:8080/' /etc/apache2/sites-enabled/000-default.conf
+
+# Make Apache log dirs writable by anyone (needed for non-root)
+RUN chmod -R 777 /var/log/apache2 /var/run/apache2 /var/lock/apache2 2>/dev/null || true
+
 # Copy the built site
 COPY _site/ /var/www/html/wikizeit/
 
-# Ensure writable for SQLite database
-RUN chown -R www-data:www-data /var/www/html/wikizeit/api/
-
-EXPOSE 80
-
-# When using volume mounts, fix permissions at startup
-CMD ["sh", "-c", "chown -R www-data:www-data /var/www/html/wikizeit/api/ && apache2-foreground"]
+EXPOSE 8080
+CMD ["apache2-foreground"]

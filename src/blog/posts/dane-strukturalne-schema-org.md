@@ -5,7 +5,7 @@ tags:
   - SEO
   - Dane strukturalne
 description: "Praktyczny przewodnik po danych strukturalnych Schema.org. Dowiedz się, jak dodać JSON-LD do swojej strony i poprawić widoczność w wyszukiwarkach."
-author: "Jakub T. Janiewicz"
+author: jcubic
 ---
 
 Dane strukturalne (structured data) to sposób na opisanie treści strony internetowej w formacie zrozumiałym dla wyszukiwarek. Schema.org to najczęściej używany słownik do tworzenia danych strukturalnych, wspierany przez Google, Microsoft, Yahoo i Yandex.

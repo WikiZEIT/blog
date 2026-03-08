@@ -29,7 +29,7 @@
       "url": "{{ site.url }}/",
       "logo": "{{ site.url }}/img/logo.svg",
       "description": "Projekt edukacyjny poświęcony etycznemu SEO, danym strukturalnym i profesjonalnej edycji Wikipedii.",
-      "founder": { "@id": "{{ site.authorId }}" },
+      "founder": { "@id": "{{ person['@id'] }}" },
       "foundingDate": "{{ site.foundingDate }}",
       "knowsAbout": [
         "Search Engine Optimization",
@@ -82,7 +82,7 @@
       "name": "WikiZEIT Blog Source Code",
       "codeRepository": "https://github.com/WikiZEIT/blog",
       "programmingLanguage": "PHP",
-      "author": { "@id": "{{ site.authorId }}" }
+      "author": { "@id": "{{ person['@id'] }}" }
     }
   ]
 }

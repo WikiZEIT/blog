@@ -19,14 +19,24 @@ schemaType: article
 
     <h1 class="article-title">{{ title }}</h1>
 
+    {% assign authorKey = author | default: "jcubic" %}
+    {% assign authorData = users[authorKey] %}
     <div class="article-meta">
       <div class="article-author">
         <div class="article-author-avatar">
-          <span class="material-symbols-outlined">person</span>
+          {% if authorData.avatar %}
+            <img src="{{ authorData.avatar | url }}" alt="{{ authorData.name }}" />
+          {% else %}
+            <img src="{{ '/img/default-avatar.svg' | url }}" alt="{{ authorData.name | default: authorKey }}" />
+          {% endif %}
         </div>
         <div>
-          <p class="article-author-name">{{ author | default: site.author }}</p>
-          <p class="article-author-role">{{ authorRole | default: "Autor" }}</p>
+          {% if authorData.url %}
+            <p class="article-author-name"><a href="{{ authorData.url }}">{{ authorData.name }}</a></p>
+          {% else %}
+            <p class="article-author-name">{{ authorData.name | default: authorKey }}</p>
+          {% endif %}
+          <p class="article-author-role">{{ authorData.role | default: "Autor" }}</p>
         </div>
       </div>
       <div class="article-meta-item">
@@ -65,11 +75,19 @@ schemaType: article
         </h3>
         <div class="sidebar-author">
           <div class="sidebar-author-avatar">
-            <span class="material-symbols-outlined" style="font-size: 3rem; color: var(--color-primary);">person</span>
+            {% if authorData.avatar %}
+              <img src="{{ authorData.avatar | url }}" alt="{{ authorData.name }}" />
+            {% else %}
+              <img src="{{ '/img/default-avatar.svg' | url }}" alt="{{ authorData.name | default: authorKey }}" />
+            {% endif %}
           </div>
-          <h4>{{ author | default: site.author }}</h4>
-          <p class="role">{{ authorRole | default: "Autor" }}</p>
-          <p class="bio">{{ authorBio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
+          {% if authorData.url %}
+            <h4><a href="{{ authorData.url }}">{{ authorData.name }}</a></h4>
+          {% else %}
+            <h4>{{ authorData.name | default: authorKey }}</h4>
+          {% endif %}
+          <p class="role">{{ authorData.role | default: "Autor" }}</p>
+          <p class="bio">{{ authorData.bio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
         </div>
       </div>
 

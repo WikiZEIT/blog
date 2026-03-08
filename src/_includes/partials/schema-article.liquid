@@ -27,7 +27,7 @@
           "url": "{{ site.url }}/img/logo.svg"
         }
       },
-      "author": { "@id": "{{ site.authorId }}" },
+      "author": { "@id": "{{ person['@id'] }}" },
       "headline": "{{ title }}",
       {% if featuredImage %}"image": {
         "@type": "ImageObject",

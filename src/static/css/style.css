@@ -1135,6 +1135,15 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+.article-author-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.article-author-name a:hover {
+    color: var(--color-primary);
+}
+
 .article-author-role {
     font-size: 0.75rem;
     margin: 0;
@@ -1239,6 +1248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .article-content ul {
     list-style: none;
+    padding-left: 0;
 }
 
 .article-content ul li {
@@ -1248,9 +1258,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
-.article-content ul li .material-symbols-outlined {
+.article-content ul li::before {
+    content: 'check_circle';
+    font-family: 'Material Symbols Outlined';
     color: var(--color-primary);
-    margin-top: 0.25rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
     flex-shrink: 0;
 }
 
@@ -1390,6 +1403,15 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-author h4 {
     font-weight: 700;
     margin: 0 0 0.25rem 0;
+}
+
+.sidebar-author h4 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sidebar-author h4 a:hover {
+    color: var(--color-primary);
 }
 
 .sidebar-author .role {

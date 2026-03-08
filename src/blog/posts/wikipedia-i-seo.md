@@ -5,7 +5,7 @@ tags:
   - Wikipedia
   - SEO
 description: "Artykuł wprowadzający do relacji między Wikipedią a pozycjonowaniem. Dowiedz się, jak obecność w największej encyklopedii świata wpływa na widoczność marki w wyszukiwarkach."
-author: "Jakub T. Janiewicz"
+author: jcubic
 ---
 
 Wikipedia jest jednym z najczęściej odwiedzanych serwisów na świecie. Artykuły z Wikipedii regularnie pojawiają się na pierwszych pozycjach w wynikach wyszukiwania Google, Bing i innych wyszukiwarek. Dla specjalistów SEO oznacza to jedno: obecność w Wikipedii może znacząco wpłynąć na widoczność marki.
