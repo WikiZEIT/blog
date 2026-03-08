@@ -36,7 +36,6 @@ schemaType: article
           {% else %}
             <p class="article-author-name">{{ authorData.name | default: authorKey }}</p>
           {% endif %}
-          <p class="article-author-role">{{ authorData.role | default: "Autor" }}</p>
         </div>
       </div>
       <div class="article-meta-item">
@@ -86,7 +85,6 @@ schemaType: article
           {% else %}
             <h4>{{ authorData.name | default: authorKey }}</h4>
           {% endif %}
-          <p class="role">{{ authorData.role | default: "Autor" }}</p>
           <p class="bio">{{ authorData.bio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
         </div>
       </div>

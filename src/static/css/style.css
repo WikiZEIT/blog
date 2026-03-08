@@ -1144,11 +1144,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
 }
 
-.article-author-role {
-    font-size: 0.75rem;
-    margin: 0;
-}
-
 .article-meta-item {
     display: flex;
     align-items: center;
@@ -1471,18 +1466,10 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
 }
 
-.sidebar-author .role {
-    font-size: 0.75rem;
-    color: var(--color-slate-500);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
 .sidebar-author .bio {
     font-size: 0.875rem;
     color: var(--color-slate-400);
-    margin: 0;
+    margin: 0.5rem 0 0 0;
 }
 
 /* Related articles in sidebar */
