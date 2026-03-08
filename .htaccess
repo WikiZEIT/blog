@@ -15,6 +15,9 @@ RewriteRule ^szkolenia/ - [L]
 # Home page — serve via PHP wrapper (for form message handling)
 RewriteRule ^$ index.php [L]
 
+# Contact page — serve via PHP wrapper (for form message handling)
+RewriteRule ^contact/?$ contact/index.php [L]
+
 # Clean URLs — directory-style URLs to path/index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

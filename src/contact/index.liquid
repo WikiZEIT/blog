@@ -5,11 +5,12 @@ description: "Masz pytania dotyczące projektu WikiZEIT? Chętnie odpowiemy na k
 permalink: contact/
 ---
 
+<!-- form-message-placeholder -->
 <h2 class="contact-form-title">Napisz do nas</h2>
 <p class="contact-form-subtitle">Wypełnij formularz, a odpowiemy najszybciej jak to możliwe.</p>
 
-<form class="contact-form" action="{{ site.apiUrl }}/contact/" method="POST">
-  <input type="hidden" name="redirect_url" value="{{ page.url }}" />
+<form id="contact" class="contact-form" action="{{ site.apiUrl }}/contact/" method="POST">
+  <input type="hidden" name="redirect_url" value="{{ page.url | url }}" />
   <input
     type="text"
     name="name_confirmation"

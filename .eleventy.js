@@ -5,7 +5,7 @@ export default function(eleventyConfig) {
 
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
-    eleventyConfig.addPassthroughCopy({ "index.php": "/index.php" });
+
     eleventyConfig.addPassthroughCopy({ ".htaccess": "/.htaccess" });
 
     // Blog post collection sorted by date descending

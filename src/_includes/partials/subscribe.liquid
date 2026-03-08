@@ -12,7 +12,7 @@
         <div class="email-form-container">
           <!-- form-message-placeholder -->
           <form class="email-form" action="{{ site.apiUrl }}/subscribe/" method="POST">
-            <input type="hidden" name="redirect_url" value="{{ page.url }}" />
+            <input type="hidden" name="redirect_url" value="{{ page.url | url }}" />
             <input
               type="email"
               name="email_confirmation"

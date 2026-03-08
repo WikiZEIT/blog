@@ -2,6 +2,7 @@ _site
 node_modules
 api/vendor
 api/subscribers.db
+api/mail
 subscribers.db
 tmp
 wikizeit
