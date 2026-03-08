@@ -20,9 +20,9 @@ if (!empty($_POST['name_confirmation'])) {
     exit;
 }
 
-$name = trim($_POST['name'] ?? '');
+$name = sanitizeHeader($_POST['name'] ?? '');
 $email = filter_var($_POST['email'] ?? '', FILTER_VALIDATE_EMAIL);
-$subject = trim($_POST['subject'] ?? '');
+$subject = sanitizeHeader($_POST['subject'] ?? '');
 $message = trim($_POST['message'] ?? '');
 
 // Validate required fields

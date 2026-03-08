@@ -1,7 +1,7 @@
 {
   "name": "wikizeit",
   "version": "0.1.0",
-  "description": "Edukacyjny projekt o Wikipedii i etycznym SEO autorstwa [Jakuba T. Janiewicza](https://jakub.jankiewicz.org/pl/). Odkryj mechanizmy największej encyklopedii świata i jej wpływu na twoją markę.",
+  "description": "Edukacyjny projekt o Wikipedii i etycznym SEO autorstwa [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/). Odkryj mechanizmy największej encyklopedii świata i jej wpływu na twoją markę.",
   "main": "index.js",
   "scripts": {
     "build": "eleventy",

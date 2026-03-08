@@ -72,7 +72,7 @@ Najczęściej używane typy w kontekście SEO to:
 | `BreadcrumbList` | Nawigacja breadcrumb |
 | `FAQPage` | Strony z często zadawanymi pytaniami |
 
-Warto przejrzeć [oficjalną dokumentacje na stronie schema.org](https://schema.org/docs/documents.html).
+Warto przejrzeć [oficjalną dokumentację na stronie schema.org](https://schema.org/docs/documents.html).
 Pomocna jest także wyszukiwarka.
 
 Pamiętaj jednak, że nie każdy znacznik JSON-LD przekłada się na natychmiastowy efekt w wynikach wyszukiwania ([SERP](https://pl.wikipedia.org/wiki/SERP)) w postaci gwiazdek czy dodatkowych linków. Mimo to, zdecydowanie warto je dodawać. Dlaczego?
@@ -83,9 +83,9 @@ Ponieważ dane strukturalne budują tzw. graf wiedzy o Twojej stronie – pomaga
 
 Warto sprawdzić swoje dane przed wdrożeniem na produkcję.
 
-Pierwszą rzeczą jest sprawdzenie, czy mamy poprawny format JSON. Można do tego użyć narzędzia [JSON Lint](https://duckduckgo.com/?q=json+lint) (kopujemy całego JSONa i sprawdzamy czy nie ma błedów składni). Gdy mamy poprawny JSON, powinniśmy sprawdzić poprawność Schema.org, poprzez narzędzie [Walidatora Schema](https://validator.schema.org/).
+Pierwszą rzeczą jest sprawdzenie, czy mamy poprawny format JSON. Można do tego użyć narzędzia [JSON Lint](https://duckduckgo.com/?q=json+lint) (kopujemy całego JSONa i sprawdzamy czy nie ma błędów składni). Gdy mamy poprawny JSON, powinniśmy sprawdzić poprawność Schema.org, poprzez narzędzie [Walidatora Schema](https://validator.schema.org/).
 
-Gdy mamy powność, że wstępnie wszystko wygląda ok (poprawność na poziomie składni), możemy sprawdzić poprawność semantyczną (poprawnosć danych strukturalnych). Google udostępnia narzędzie do testowania tych danych: [Rich Results Test](https://search.google.com/test/rich-results).
+Gdy mamy pewność, że wstępnie wszystko wygląda ok (poprawność na poziomie składni), możemy sprawdzić poprawność semantyczną (poprawność danych strukturalnych). Google udostępnia narzędzie do testowania tych danych: [Rich Results Test](https://search.google.com/test/rich-results).
 
 ## Podsumowanie
 

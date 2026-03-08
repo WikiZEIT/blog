@@ -112,12 +112,35 @@ function sanitizeHeader($value) {
     return str_replace(["\r", "\n"], '', trim($value));
 }
 
+// Validate redirect URL — must be a relative path under WIKIZEIT_PATH to prevent open redirect
+function sanitizeRedirectUrl($url) {
+    if (empty($url)) {
+        return WIKIZEIT_PATH;
+    }
+    // Decode URL-encoded characters to catch %2e%2e etc.
+    $decoded = rawurldecode($url);
+    // Strip any protocol/host — only allow paths starting with our prefix
+    $parsed = parse_url($decoded);
+    if (isset($parsed['scheme']) || isset($parsed['host'])) {
+        return WIKIZEIT_PATH;
+    }
+    if (preg_match('#(^|/)\.\.?(/|$)#', $decoded)) {
+        return WIKIZEIT_PATH;
+    }
+    $path = $parsed['path'] ?? '';
+    // Ensure trailing slash
+    if (substr($path, -1) !== '/') {
+        $path .= '/';
+    }
+    if (strpos($path, WIKIZEIT_PATH) !== 0) {
+        return WIKIZEIT_PATH;
+    }
+    return $path;
+}
+
 // Build redirect URL with message parameter
 function buildRedirectUrl($redirectUrl, $msg, $anchor = 'subscribe') {
-    // Default to home page
-    if (empty($redirectUrl)) {
-        $redirectUrl = WIKIZEIT_PATH;
-    }
+    $redirectUrl = sanitizeRedirectUrl($redirectUrl);
 
     // Add query parameter
     $separator = (strpos($redirectUrl, '?') !== false) ? '&' : '?';

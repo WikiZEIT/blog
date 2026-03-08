@@ -20,7 +20,7 @@ faq:
 
 Wikidata to wolna, otwarta baza wiedzy, która może być odczytywana i edytowana zarówno przez ludzi, jak i przez maszyny. Uruchomiona w 2012 roku przez Wikimedia Deutschland, Wikidata stanowi centralne repozytorium danych strukturalnych dla wszystkich projektów Wikimedia.
 
-## Jak działaja Wikidane?
+## Jak działają Wikidane?
 
 Wikidane (*Wikidata*) organizują informacje w postaci **elementów** (items) i **właściwości** (properties):
 
@@ -56,7 +56,7 @@ Odpowiedzi wygenerowane przez AI mogą zawierać błędy. Więcej informacji
 
 ## Jak stworzyć element w Wikidanych?
 
-Tworzenie elementu w Wikidanych wymaga spełnienia **kryteriów encyklopedycznośći**, chociaż kryteria te, są mniej restrykcyjne niż w Wikipedii.
+Tworzenie elementu w Wikidanych wymaga spełnienia **kryteriów encyklopedyczności**, chociaż kryteria te, są mniej restrykcyjne niż w Wikipedii.
 
 Element musi odpowiadać:
 
@@ -64,9 +64,9 @@ Element musi odpowiadać:
 - Koncepcji używanej jako kategoria w Wikimedia Commons
 - Obiektowi identyfikowalnemu za pomocą zewnętrznych identyfikatorów
 
-W przypadku marek i organizacji kluczowe jest posiadanie niezależnych źródeł, które potwierdzają encyklopedycznosć i zauważalność danego podbmiotu.
+W przypadku marek i organizacji kluczowe jest posiadanie niezależnych źródeł, które potwierdzają encyklopedyczność i zauważalność danego podmiotu.
 
-Wiecej o zasadach można przeczytać na stronie: [Wikidane:Encyklopedyczność](https://www.wikidata.org/wiki/Wikidata:Notability/pl).
+Więcej o zasadach można przeczytać na stronie: [Wikidane:Encyklopedyczność](https://www.wikidata.org/wiki/Wikidata:Notability/pl).
 
 Jeśli jesteś zainteresowany dodaniem swojej firmy czy osoby do Wikidanych. Możesz zobaczyć [moją ofertę](/wikizeit/szkolenia). Prowadzę także szkolenia w tym zakresie.
 
