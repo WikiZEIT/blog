@@ -1,0 +1,5 @@
+{
+    "eleventyComputed": {
+        "ogImage": "/wikizeit/img/social-cards/{{ page.fileSlug }}.png"
+    }
+}

@@ -1,3 +1,28 @@
+import path from 'path';
+import fs from 'fs/promises';
+import { Liquid } from 'liquidjs';
+import { chromium } from 'playwright';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+const liquid = new Liquid();
+
+const delay = time => new Promise(resolve => setTimeout(resolve, time));
+
+function formatDate(date) {
+    const d = new Date(date);
+    const months = [
+        "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca",
+        "lipca", "sierpnia", "września", "października", "listopada", "grudnia"
+    ];
+    const day = d.getDate();
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
+    return `${day} ${month} ${year}`;
+}
+
 export default function(eleventyConfig) {
 
     // Passthrough copy for static assets — contents of src/static/ are copied to output root
@@ -7,6 +32,57 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
 
     eleventyConfig.addPassthroughCopy({ ".htaccess": "/.htaccess" });
+
+    // --- Social card generation via Playwright ---
+    let browser;
+
+    const svgTemplate = fs.readFile(path.join(__dirname, 'card/social-card.svg'), 'utf8').then(svg => {
+        return liquid.parse(svg);
+    });
+
+    eleventyConfig.on('eleventy.before', async () => {
+        browser = await chromium.launch({ args: ['--no-sandbox'] });
+    });
+
+    eleventyConfig.on('eleventy.after', async () => {
+        if (browser) {
+            await browser.close();
+        }
+        const tmpSvg = path.join(__dirname, '_tmp-social-card.svg');
+        await fs.unlink(tmpSvg).catch(() => {});
+    });
+
+    eleventyConfig.addAsyncShortcode('socialCard', async function() {
+        const { title, author: authorKey, date, users } = this.ctx.environments;
+        const authorData = users[authorKey] || users['jcubic'];
+        const svgDir = path.join(__dirname, 'src/static/img');
+        const outputSvg = await liquid.render(await svgTemplate, {
+            username: authorData.name,
+            fullname: authorData.fullname,
+            title,
+            path: svgDir,
+            date: formatDate(date)
+        });
+        const tmpSvg = path.join(__dirname, '_tmp-social-card.svg');
+        await fs.writeFile(tmpSvg, outputSvg);
+
+        const outputDir = path.join(__dirname, '_site/img/social-cards');
+        await fs.mkdir(outputDir, { recursive: true });
+
+        const { fileSlug } = this.page;
+        const filename = path.join(outputDir, `${fileSlug}.png`);
+
+        const page = await browser.newPage();
+        await page.setViewportSize({ width: 1200, height: 630 });
+        await page.goto('file://' + tmpSvg);
+        await delay(200);
+
+        await page.screenshot({ path: filename });
+        await page.close();
+
+        console.log(`[11ty] Social card: img/social-cards/${fileSlug}.png`);
+        return '';
+    });
 
     // Blog post collection sorted by date descending
     eleventyConfig.addCollection("post", function(collectionApi) {

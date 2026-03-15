@@ -1,8 +1,8 @@
 {
     "jcubic": {
-        "name": "Jakub T. Jankiewicz",
+        "fullname": "Jakub T. Jankiewicz",
+        "name": "jcubic",
         "url": "https://jakub.jankiewicz.org/pl/",
-        "avatar": "/img/avatars/jcubic.jpg",
         "bio": "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy."
     }
 }

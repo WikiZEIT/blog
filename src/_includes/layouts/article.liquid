@@ -2,7 +2,7 @@
 layout: layouts/base.liquid
 schemaType: article
 ---
-
+{% socialCard %}
 <main class="article-main">
   <!-- Article Hero -->
   <div class="article-hero">
@@ -24,17 +24,13 @@ schemaType: article
     <div class="article-meta">
       <div class="article-author">
         <div class="article-author-avatar">
-          {% if authorData.avatar %}
-            <img src="{{ authorData.avatar | url }}" alt="{{ authorData.name }}" />
-          {% else %}
-            <img src="{{ '/img/default-avatar.svg' | url }}" alt="{{ authorData.name | default: authorKey }}" />
-          {% endif %}
+          <img src="{{ '/img/avatars/' | append: authorData.name | append: '.jpg' | url }}" alt="{{ authorData.fullname }}" />
         </div>
         <div>
           {% if authorData.url %}
-            <p class="article-author-name"><a href="{{ authorData.url }}">{{ authorData.name }}</a></p>
+            <p class="article-author-name"><a href="{{ authorData.url }}">{{ authorData.fullname }}</a></p>
           {% else %}
-            <p class="article-author-name">{{ authorData.name | default: authorKey }}</p>
+            <p class="article-author-name">{{ authorData.fullname | default: authorKey }}</p>
           {% endif %}
         </div>
       </div>
@@ -74,16 +70,12 @@ schemaType: article
         </h3>
         <div class="sidebar-author">
           <div class="sidebar-author-avatar">
-            {% if authorData.avatar %}
-              <img src="{{ authorData.avatar | url }}" alt="{{ authorData.name }}" />
-            {% else %}
-              <img src="{{ '/img/default-avatar.svg' | url }}" alt="{{ authorData.name | default: authorKey }}" />
-            {% endif %}
+            <img src="{{ '/img/avatars/' | append: authorData.name | append: '.jpg' | url }}" alt="{{ authorData.fullname }}" />
           </div>
           {% if authorData.url %}
-            <h4><a href="{{ authorData.url }}">{{ authorData.name }}</a></h4>
+            <h4><a href="{{ authorData.url }}">{{ authorData.fullname }}</a></h4>
           {% else %}
-            <h4>{{ authorData.name | default: authorKey }}</h4>
+            <h4>{{ authorData.fullname | default: authorKey }}</h4>
           {% endif %}
           <p class="bio">{{ authorData.bio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
         </div>
