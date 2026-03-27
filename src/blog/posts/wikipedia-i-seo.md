@@ -34,7 +34,7 @@ Istnieje kilka kluczowych powodów, dla których Wikipedia ma znaczenie w kontek
 Projekt WikiZEIT kładzie szczególny nacisk na **etyczne podejście** do edycji Wikipedii. Oznacza to:
 
 - Nigdy nie tworzyć artykułów w celach czysto promocyjnych
-- Zawsze deklarować konflikt interesów
+- Płatne edycje muszą być odpowiednio oznaczone
 - Opierać się wyłącznie na wiarygodnych źródłach
 - Respektować zasady neutralnego punktu widzenia
 
