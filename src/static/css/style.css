@@ -1243,6 +1243,8 @@ h1, h2, h3, h4, h5, h6 {
 .article-content p {
     margin-bottom: 1.5rem;
     line-height: 1.75;
+}
+.article-content {
     color: var(--color-slate-400);
 }
 
@@ -1282,25 +1284,32 @@ h1, h2, h3, h4, h5, h6 {
     margin: 2rem 0;
 }
 
+.article-content li ul,
+.article-content li ol {
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
 .article-content ul {
     list-style: none;
     padding-left: 0;
 }
 
 .article-content ul li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
+    position: relative;
+    padding-left: 2rem;
     margin-bottom: 1rem;
 }
 
-.article-content ul li::before {
+.article-content ul > li::before {
     content: 'check_circle';
     font-family: 'Material Symbols Outlined';
     color: var(--color-primary);
     font-size: 1.25rem;
     line-height: 1.5;
-    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 1em;
     overflow: hidden;
 }
@@ -1311,17 +1320,15 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 0;
 }
 
-.article-content ol li {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+.article-content ol > li {
+    position: relative;
+    padding-left: 3rem;
     margin-bottom: 1rem;
     counter-increment: list-counter;
 }
 
-.article-content ol li::before {
+.article-content ol > li::before {
     content: counter(list-counter);
-    flex-shrink: 0;
     width: 2rem;
     height: 2rem;
     background-color: var(--color-primary);
@@ -1331,6 +1338,9 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0;
     font-size: 0.875rem;
     line-height: 1;
 }

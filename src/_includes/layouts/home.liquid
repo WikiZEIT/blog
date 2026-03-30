@@ -21,7 +21,7 @@ schemaType: home
 </section>
 
 <!-- Latest Articles Section -->
-{% assign latestPosts = collections.post | reverse | limit: 5 %}
+{% assign latestPosts = collections.post | limit: 3 %}
 {% if latestPosts.size > 0 %}
 <section class="section-latest">
   <div class="section-container">
