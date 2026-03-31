@@ -59,7 +59,7 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
 3. **WikiZEIT** — aktualnie jedyna na rynku opcja [komercyjnego szkolenia z edytowania Wikipedii
    i projektów siostrzanych](https://jcubic.pl/wikizeit/szkolenia/). Szkolenie prowadzone jest przez
    [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika
-   oraz WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla Stowarzyszenia WMPL.
+   oraz WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla Stowarzyszenia Wikimedia Polska.
 
 ## Inne inicjatywy i kursy edukacyjne w Polsce
 Wikimedia Polska organizuje także pojedycze wydarzenia, jak np. [Kurs webinarowy: Wikipedia od A do
