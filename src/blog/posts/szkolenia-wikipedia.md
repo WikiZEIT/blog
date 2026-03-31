@@ -21,6 +21,8 @@ faq:
       - NoblePro prowadzi szkolenia z MediaWiki, nie dotyczą one zasad edytowania Wikipedii,
         tylko oprogramowania na który stoii Wikipedia i projekty siotrzane. Dedykowane jest
         osobom i formom, które chcą tworzyć własne Wiki.
+sitemap:
+  lastmod: 2023-03-31
 ---
 
 Każdy może edytować Wikipedię. Nie trzeba być nawet zalogowanym. Ale dodawanie treści, które spełnia
