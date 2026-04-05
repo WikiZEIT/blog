@@ -9,24 +9,4 @@ RewriteRule ^api/vendor/ - [R=404,L]
 RewriteRule ^api/logs/ - [R=404,L]
 RewriteRule ^api/mail/ - [R=404,L]
 
-# Route API requests to PHP
-RewriteRule ^api/(.*)$ api/$1 [L]
-
-# Szkolenia — symlink, let Apache serve it directly
-RewriteRule ^szkolenia/ - [L]
-
-# Home page — serve via PHP wrapper (for form message handling)
-RewriteRule ^$ index.php [L]
-
-# Contact page — serve via PHP wrapper (for form message handling)
-RewriteRule ^contact/?$ contact/index.php [L]
-
-# Clean URLs — directory-style URLs to path/index.html
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.+)/$ $1/index.html [L]
-
-# Clean URLs — without trailing slash, try as directory
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^.]+)$ $1/index.html [L]
+RewriteRule ^szkolenia/(.*)$ /wikizeit/oferta/$1 [R=301,L]
