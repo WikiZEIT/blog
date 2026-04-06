@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Submit a URL to IndexNow for search engine indexing
-# Usage: ./bin/indexnow.sh <url>
+# Usage: ./scripts/indexnow.sh <url>
 # Environment: INDEXNOW_KEY must be set
 
 set -euo pipefail
