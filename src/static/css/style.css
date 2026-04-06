@@ -2542,15 +2542,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .author-body {
+    margin-bottom: 3rem;
+}
+
+.author-body--with-photo {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    margin-bottom: 3rem;
     align-items: start;
 }
 
 @media (min-width: 900px) {
-    .author-body {
+    .author-body--with-photo {
         grid-template-columns: 65ch 1fr;
         gap: 3rem;
     }

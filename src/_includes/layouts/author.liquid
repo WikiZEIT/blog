@@ -65,7 +65,7 @@ layout: layouts/base.liquid
   </div>
 
   <!-- Author Bio + Photo -->
-  <div class="author-body">
+  <div class="author-body{% if authorData.photo %} author-body--with-photo{% endif %}">
     <div class="author-content prose">
       {{ content }}
     </div>
