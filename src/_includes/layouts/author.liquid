@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.liquid
 ---
+{% include "partials/social-icons-sprite-author.liquid" %}
 {% assign authorKey = author | default: page.fileSlug %}
 {% assign authorData = users[authorKey] %}
 <script type="application/ld+json">
@@ -44,18 +45,22 @@ layout: layouts/base.liquid
     <div class="author-hero-info">
       <h1 class="author-name">{{ authorData.fullname }}</h1>
       <p class="author-bio-short">{{ authorData.bio }}</p>
-      {% if authorData.social %}
       <ul class="author-social">
         {% for link in authorData.social %}
-        <li><a href="{{ link.url }}" class="author-social-link" rel="noopener noreferrer" target="_blank">{{ link.label }}</a></li>
+        <li>
+          <a href="{{ link.url }}" class="author-social-link" title="{{ link.label }}" rel="noopener noreferrer" target="_blank">
+            {% include "partials/social-icon.liquid", icon: link.icon %}
+          </a>
+        </li>
         {% endfor %}
+        {% if authorData.url %}
+        <li>
+          <a href="{{ authorData.url }}" class="author-social-link" title="Strona osobista" rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined">language</span>
+          </a>
+        </li>
+        {% endif %}
       </ul>
-      {% endif %}
-      {% if authorData.url %}
-      <a href="{{ authorData.url }}" class="author-website" rel="noopener noreferrer" target="_blank">
-        <span class="material-symbols-outlined">language</span> Strona osobista
-      </a>
-      {% endif %}
     </div>
   </div>
 

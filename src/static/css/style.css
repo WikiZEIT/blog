@@ -1013,11 +1013,6 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 
-.footer-social-x {
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1;
-}
 
 /* ==========================================================================
    8. Mobile Navigation
@@ -2515,13 +2510,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .author-social-link {
-    display: inline-block;
-    padding: 0.25rem 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: var(--border-radius-full);
     border: 1px solid rgba(180, 33, 4, 0.3);
     color: var(--color-primary);
-    font-size: 0.8125rem;
-    font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
 }
@@ -2531,22 +2527,18 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-white);
 }
 
-.author-website {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.875rem;
-    color: var(--color-slate-400);
-    text-decoration: none;
-    transition: color 0.2s;
+.social-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
 }
 
-.author-website:hover {
-    color: var(--color-primary);
-}
-
-.author-website .material-symbols-outlined {
-    font-size: 1rem;
+.author-social-link .material-symbols-outlined {
+    font-size: 1.125rem;
+    line-height: 1;
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
 }
 
 .author-content {
