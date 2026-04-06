@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SOUND="$SCRIPT_DIR/beep-6.mp3"
 PID_FILE="$SCRIPT_DIR/.watcher.pid"
 LOG_FILE="$SCRIPT_DIR/.watcher.log"
-POLL_INTERVAL=20  # seconds between polls
+POLL_INTERVAL=5   # seconds between polls
 
 # Detect GitHub repo from git remote
 REMOTE_URL=$(git -C "$(dirname "$SCRIPT_DIR")" remote get-url origin 2>/dev/null)
