@@ -6,8 +6,7 @@ tags:
   - SEO
 description: "Artykuł wprowadzający do relacji między Wikipedią a pozycjonowaniem. Dowiedz się, jak obecność w największej encyklopedii świata wpływa na widoczność marki w wyszukiwarkach."
 author: jcubic
-sitemap:
-  lastmod: 2026-03-08
+modified: 2026-03-08
 ---
 
 Wikipedia jest jednym z najczęściej odwiedzanych serwisów na świecie. Artykuły z Wikipedii

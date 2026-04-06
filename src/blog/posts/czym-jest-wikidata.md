@@ -7,8 +7,7 @@ tags:
   - Entity SEO
 description: "Wprowadzenie do Wikidanych — otwartej bazy wiedzy, która zasila Google Knowledge Graph i wpływa na widoczność Twojej marki w wynikach wyszukiwania."
 author: jcubic
-sitemap:
-  lastmod: 2026-03-08
+modified: 2026-03-08
 faq:
   - question: "Jak działają Wikidane?"
     answer: |

@@ -6,8 +6,7 @@ tags:
   - Zasady
 description: "W tym artykule przedstawię, jak wyglądaja rzeczywistość zasad encyklopedyczności w polskiej Wikipedii. Czyli czy twój temat nadaje się do Wikipedii."
 author: jcubic
-sitemap:
-  lastmod: 2026-04-06
+modified: 2026-04-06
 ---
 
 Polska Wikipedia ma wiele zasad wypracowanych przez lata przez społeczność Wikipedystów.  Są one

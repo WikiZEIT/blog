@@ -6,8 +6,7 @@ tags:
   - Dane strukturalne
 description: "Praktyczny przewodnik po danych strukturalnych Schema.org. Dowiedz się, jak dodać JSON-LD do swojej strony i poprawić widoczność w wyszukiwarkach."
 author: jcubic
-sitemap:
-  lastmod: 2026-03-08
+modified: 2026-03-08
 faq:
   - question: "Czym są dane strukturalne?"
     answer: |

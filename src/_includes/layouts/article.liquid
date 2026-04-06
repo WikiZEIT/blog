@@ -42,6 +42,12 @@ schemaType: article
         <span class="material-symbols-outlined">schedule</span>
         <span>{{ content | readingTime }}</span>
       </div>
+      {% if modified %}
+      <div class="article-meta-item">
+        <span class="material-symbols-outlined">update</span>
+        <span>Zaktualizowano: {{ modified | dateFormat }}</span>
+      </div>
+      {% endif %}
     </div>
   </div>
 
