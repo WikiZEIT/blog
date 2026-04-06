@@ -32,7 +32,8 @@
           </li>
           <li class="footer-contact-item">
             <span class="material-symbols-outlined">person</span>
-            {% assign defaultUser = users[site.author] %}<a href="{{ defaultUser.url }}">{{ defaultUser.name }}</a>
+            {%- assign defaultUser = users[site.author] -%}
+            <a href="{{ '/autor/' | append: site.author | append: '/' | url }}">{{ defaultUser.fullname }}</a>
           </li>
         </ul>
       </div>
