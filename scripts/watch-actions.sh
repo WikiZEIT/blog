@@ -3,7 +3,8 @@
 # Runs in the background, started automatically by the pre-push git hook.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SOUND="$SCRIPT_DIR/beep-6.mp3"
+SOUND_SUCCESS="$SCRIPT_DIR/beep-6.mp3"
+SOUND_FAILURE="$SCRIPT_DIR/beep-2.mp3"
 PID_FILE="$SCRIPT_DIR/.watcher.pid"
 LOG_FILE="$SCRIPT_DIR/.watcher.log"
 POLL_INTERVAL=5   # seconds between polls
@@ -22,7 +23,9 @@ log() {
 }
 
 play_sound() {
-    mpg123 -q "$SOUND" 2>/dev/null
+    local sound="$1"
+    mpg123 -q "$SCRIPT_DIR/blank.mp3" 2>/dev/null
+    mpg123 -q "$sound" 2>/dev/null
 }
 
 # Kill any existing watcher
@@ -72,7 +75,11 @@ while [ $ATTEMPTS -lt $MAX_ATTEMPTS ]; do
 
     if [ "$STATUS" = "completed" ]; then
         log "Gotowe! Conclusion: $CONCLUSION"
-        play_sound
+        if [ "$CONCLUSION" = "success" ]; then
+            play_sound "$SOUND_SUCCESS"
+        else
+            play_sound "$SOUND_FAILURE"
+        fi
         rm -f "$PID_FILE"
         exit 0
     fi
@@ -81,6 +88,6 @@ while [ $ATTEMPTS -lt $MAX_ATTEMPTS ]; do
 done
 
 log "Timeout — workflow nie zakończył się w ciągu 20 minut."
-play_sound  # Zagraj też przy timeoucie żeby nie czekać w nieskończoność
+play_sound "$SOUND_FAILURE"  # Zagraj też przy timeoucie żeby nie czekać w nieskończoność
 rm -f "$PID_FILE"
 exit 1
