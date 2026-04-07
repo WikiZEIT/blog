@@ -1227,6 +1227,11 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.article-comments {
+    margin-top: 4rem;
+    max-width: 66.666%;
+}
+
 /* Article prose content */
 .article-content {
     max-width: none;
