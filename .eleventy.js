@@ -47,7 +47,7 @@ export default function(eleventyConfig) {
     // --- Social card generation via Playwright ---
     let browser;
 
-    const svgTemplate = fs.readFile(path.join(__dirname, 'card/social-card.svg'), 'utf8').then(svg => {
+    const svgTemplate = fs.readFile(path.join(__dirname, 'src/card/social-card.svg'), 'utf8').then(svg => {
         return liquid.parse(svg);
     });
 

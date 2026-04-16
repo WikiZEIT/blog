@@ -48,7 +48,7 @@ jobs:
       - name: Install Lovelo font
         run: |
           mkdir -p ~/.local/share/fonts
-          cp card/Lovelo\ Black.otf ~/.local/share/fonts/
+          cp src/card/Lovelo\ Black.otf ~/.local/share/fonts/
           fc-cache -f -v
 
       - name: Install Playwright Chromium
@@ -67,7 +67,7 @@ jobs:
           import { execSync } from 'child_process';
 
           const liquid = new Liquid();
-          const src = await readFile('card/social-card.svg', 'utf8');
+          const src = await readFile('src/card/social-card.svg', 'utf8');
           const tmpl = liquid.parse(src);
           const rendered = await liquid.render(tmpl, {
             username: 'jcubic',
@@ -82,7 +82,7 @@ jobs:
             execSync(`xmllint --noout ${tmp}`, { stdio: 'inherit' });
             console.log('SVG validation passed');
           } catch {
-            console.error('::error::card/social-card.svg renders invalid XML');
+            console.error('::error::src/card/social-card.svg renders invalid XML');
             process.exit(1);
           } finally {
             await unlink(tmp).catch(() => {});
