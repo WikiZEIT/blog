@@ -6,7 +6,8 @@
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve",
-    "watch": "eleventy --watch"
+    "watch": "eleventy --watch",
+    "lint": "eslint 'src/**/*.md'"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,8 @@
   "homepage": "https://github.com/WikiZEIT/wikizeit#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@eslint/markdown": "^8.0.1",
+    "eslint": "^10.2.0",
     "liquidjs": "^10.25.0",
     "playwright": "^1.58.2"
   }

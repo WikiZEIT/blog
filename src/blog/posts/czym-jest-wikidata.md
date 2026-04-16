@@ -27,7 +27,7 @@ Wikidane (*Wikidata*) organizują informacje w postaci **elementów** (items) i 
 - Właściwości opisują relacje między elementami (np. P31 = "jest instancją")
 - Wartości mogą być tekstem, liczbami, datami, współrzędnymi geograficznymi lub odniesieniami do innych elementów
 
-```
+```text
 Q42 (Douglas Adams)
   ├── P31 (jest instancją) → Q5 (człowiek)
   ├── P27 (obywatelstwo) → Q145 (Wielka Brytania)
