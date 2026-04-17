@@ -47,7 +47,7 @@ ogromną skalę. Firmy takie jak Google czy Microsoft nie muszą już
 * **Gwarancję SLA (Service Level Agreement):** Pewność dostępności systemów.
 * **Format JSON:** Dane gotowe do użycia przez maszyny.
 
-### Czy Fundacja Wikimedia zarabia na Wikipedii?
+## Czy Fundacja Wikimedia zarabia na Wikipedii?
 
 Tak, usługa **Wikimedia Enterprise** jest płatna. W roku fiskalnym 2023–2024 wygenerowała **3,4 mln
 dolarów przychodu**.
@@ -75,7 +75,7 @@ To prosta metoda wsparcia, która nie kosztuje Cię ani grosza, a realnie buduje
 
 [**Przekaż 1.5% podatku na Wikipedię już dziś**](https://opp.wikimedia.pl/).
 
-### Perspektywa SEO: Wikipedia jako fundament
+## Perspektywa SEO: Wikipedia jako fundament
 
 Dla specjalistów SEO Enterprise to jasny sygnał:
 
@@ -85,7 +85,7 @@ Dla specjalistów SEO Enterprise to jasny sygnał:
 3. **Szybkość:** Zmiany w artykułach trafiają do wyszukiwarek niemal natychmiast (real-time).
 4. **Autorytet (E-E-A-T):** Wikipedia to główny punkt weryfikacji powiązań między bytami w sieci.
 
-### Szybkość, która zaskakuje: Google vs EK
+## Szybkość, która zaskakuje: Google vs EK
 
 Ciekawostką jest niesamowita szybkość, z jaką Google reaguje na zmiany. Obserwacje pokazują, że nowe
 strony są indeksowane w ciągu zaledwie kilku minut.
@@ -113,7 +113,7 @@ ma kluczowe znaczenie dla nowoczesnego internetu:
 Dla SEO oznacza to, że optymalizacja pod graf wiedzy wymaga dziś dbania nie tylko o treść artykułu,
 ale też o dane strukturalne w Wikidanych.
 
-### Wikidane: Real-time dla Grafu Wiedzy
+## Wikidane: Real-time dla Grafu Wiedzy
 
 Powszechnie uważa się, że na zmiany w Grafie Wiedzy (ten boks po prawej w Google) czeka się
 miesiącami. To prawda w przypadku tradycyjnych metod, ale Wikimedia Enterprise zmienia zasady gry.
@@ -133,7 +133,7 @@ Dlaczego warto dbać o Wikidane już teraz?
 Nawet jeśli Google potrzebuje czasu na weryfikację i wyświetlenie danych w Grafie Wiedzy, dzięki
 Enterprise dostaje je natychmiast. To fundament Twojego E-E-A-T.
 
-### Identyfikatory: Klucz do Twojego autorytetu
+## Identyfikatory: Klucz do Twojego autorytetu
 
 W Wikidanych istnieje sekcja „Identyfikatory”. To tam znajdują się linki do profili na LinkedIn,
 Twitterze, bazach naukowych czy branżowych.
