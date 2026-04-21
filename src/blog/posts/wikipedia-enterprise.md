@@ -5,7 +5,24 @@ tags:
   - Wikipedia
   - SEO
 description: "Wikimedia Enterprise to przełom: Wikipedia pozostaje darmowa, ale giganci IT płacą za jej dane. Sprawdź, co to oznacza dla przyszłości SEO i Wikipedii!"
+keywords:
+  - Wikimedia Enterprise
+  - Wikipedia API
+  - płatna Wikipedia
+  - Wikimedia Foundation
+  - Wikidata
+  - Knowledge Graph
+  - Graf Wiedzy
+  - E-E-A-T
+  - 1,5% podatku
+  - Wikimedia Polska
+  - Perplexity
+  - Google
+  - Meta
+  - SEO
+  - real-time API
 author: jcubic
+modified: 2026-04-21
 faq:
   - question: "Czy Wikipedia jest płatna?"
     answer: |

@@ -5,8 +5,21 @@ tags:
   - Wikipedia
   - Zasady
 description: "W tym artykule przedstawię, jak wyglądaja rzeczywistość zasad encyklopedyczności w polskiej Wikipedii. Czyli czy twój temat nadaje się do Wikipedii."
+keywords:
+  - encyklopedyczność
+  - zasady Wikipedii
+  - kryteria encyklopedyczności
+  - polska Wikipedia
+  - DNU
+  - poczekalnia
+  - Dyskusja nad usunięciem
+  - WP:WER
+  - firmy w Wikipedii
+  - Wikiprojekt Encyklopedyczność
+  - autoencyklopedyczność
+  - precedensy Wikipedii
 author: jcubic
-modified: 2026-04-06
+modified: 2026-04-21
 ---
 
 Polska Wikipedia ma wiele zasad wypracowanych przez lata przez społeczność Wikipedystów.  Są one

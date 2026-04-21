@@ -5,7 +5,20 @@ tags:
   - Wikipedia
   - marketing
 description: "Z okazji 25-lecia Wikipedii powstała nowa maskotka o nazwie „Baby Globe”."
+keywords:
+  - Baby Globe
+  - maskotka Wikipedii
+  - 25-lecie Wikipedii
+  - Wikimedia Foundation
+  - Jonathan Ferreira
+  - BaduFerreira
+  - Puzzly
+  - Wikimedia Commons
+  - pluszak Wikipedia
+  - licencje Creative Commons
+  - Makeship
 author: jcubic
+modified: 2026-04-21
 faq:
   - question: "Jak powstała nowa maskotka Wikipedii?"
     answer: |

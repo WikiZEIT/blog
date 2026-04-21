@@ -4,7 +4,27 @@ author: jcubic
 layout: layouts/author.liquid
 permalink: /autor/jcubic/
 description: "Jakub T. Jankiewicz — programista, aktywny wikipedysta i ekspert etycznego SEO. Założyciel projektu WikiZEIT."
-modified: 2026-04-07
+keywords:
+  - Jakub T. Jankiewicz
+  - jcubic
+  - WikiTrener
+  - Wikimedia Polska
+  - WikiZEIT
+  - etyczne SEO
+  - White Hat SEO
+  - audyt encyklopedyczności
+  - płatne edycje Wikipedii
+  - szkolenia Wikipedia
+  - Entity SEO
+  - Wikidata
+  - dane strukturalne
+  - Schema.org
+  - JSON-LD
+  - Open Source
+  - jQuery Terminal
+  - LIPS Scheme
+  - isomorphic-git
+modified: 2026-04-21
 ---
 
 **Jakub T. Jankiewicz** to programista z ponad 15-letnim doświadczeniem w tworzeniu oprogramowania

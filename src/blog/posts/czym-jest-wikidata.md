@@ -6,8 +6,21 @@ tags:
   - SEO
   - Entity SEO
 description: "Wprowadzenie do Wikidanych — otwartej bazy wiedzy, która zasila Google Knowledge Graph i wpływa na widoczność Twojej marki w wynikach wyszukiwania."
+keywords:
+  - Wikidata
+  - Wikidane
+  - Entity SEO
+  - Google Knowledge Graph
+  - Graf Wiedzy Google
+  - baza wiedzy
+  - GEO
+  - generatywne AI
+  - E-E-A-T
+  - encyklopedyczność
+  - Wikimedia
+  - dane strukturalne
 author: jcubic
-modified: 2026-03-08
+modified: 2026-04-21
 faq:
   - question: "Jak działają Wikidane?"
     answer: |

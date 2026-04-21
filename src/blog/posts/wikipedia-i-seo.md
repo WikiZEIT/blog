@@ -5,8 +5,21 @@ tags:
   - Wikipedia
   - SEO
 description: "Artykuł wprowadzający do relacji między Wikipedią a pozycjonowaniem. Dowiedz się, jak obecność w największej encyklopedii świata wpływa na widoczność marki w wyszukiwarkach."
+keywords:
+  - Wikipedia
+  - SEO
+  - Entity SEO
+  - Knowledge Graph
+  - Wikidata
+  - pozycjonowanie
+  - autorytet domeny
+  - etyczne SEO
+  - widoczność marki
+  - WikiZEIT
+  - Knowledge Panel
+  - linki nofollow
 author: jcubic
-modified: 2026-03-08
+modified: 2026-04-21
 ---
 
 Wikipedia jest jednym z najczęściej odwiedzanych serwisów na świecie. Artykuły z Wikipedii

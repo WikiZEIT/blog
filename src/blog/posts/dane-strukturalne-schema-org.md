@@ -5,8 +5,23 @@ tags:
   - SEO
   - Dane strukturalne
 description: "Praktyczny przewodnik po danych strukturalnych Schema.org. Dowiedz się, jak dodać JSON-LD do swojej strony i poprawić widoczność w wyszukiwarkach."
+keywords:
+  - Schema.org
+  - dane strukturalne
+  - JSON-LD
+  - Semantic Web
+  - sieć semantyczna
+  - rich results
+  - rozszerzone wyniki
+  - sameAs
+  - Knowledge Graph
+  - Wikidata
+  - BlogPosting
+  - FAQPage
+  - Rich Results Test
+  - Entity SEO
 author: jcubic
-modified: 2026-04-16
+modified: 2026-04-21
 faq:
   - question: "Czym są dane strukturalne?"
     answer: |

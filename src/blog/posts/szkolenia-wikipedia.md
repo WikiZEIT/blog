@@ -5,6 +5,21 @@ tags:
   - Wikipedia
   - szkolenia
 description: "Artykuł z listą osób i firm, które prowadzą szkolenia z edycji Wikipedii."
+keywords:
+  - szkolenia Wikipedia
+  - edycja Wikipedii
+  - Wikimedia Polska
+  - WMPL
+  - WikiZEIT
+  - WikiTrenerzy
+  - Wiki Szkoła
+  - Wikiteka
+  - Akademia Wikimediów
+  - NobleProg
+  - MediaWiki
+  - paid editing
+  - GLAM
+  - Jakub T. Jankiewicz
 author: jcubic
 faq:
   - question: "Kto prowadzi szkolenia z edytowania Wikipedii w Polsce?"
@@ -21,7 +36,7 @@ faq:
       - NoblePro prowadzi szkolenia z MediaWiki, nie dotyczą one zasad edytowania Wikipedii,
         tylko oprogramowania na który stoii Wikipedia i projekty siotrzane. Dedykowane jest
         osobom i formom, które chcą tworzyć własne Wiki.
-modified: 2023-04-01
+modified: 2026-04-21
 ---
 
 Każdy może edytować Wikipedię. Nie trzeba być nawet zalogowanym. Ale dodawanie treści, które spełnia
