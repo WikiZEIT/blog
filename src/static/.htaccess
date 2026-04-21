@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# Custom 404 page
+ErrorDocument 404 /wikizeit/404.html
+
 # Protect sensitive files
 RewriteRule ^api/subscribers\.db$ - [R=404,L]
 RewriteRule ^api/templates/ - [R=404,L]
