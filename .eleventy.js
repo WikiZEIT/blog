@@ -27,8 +27,6 @@ export default function(eleventyConfig) {
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
 
-    eleventyConfig.addPassthroughCopy({ ".htaccess": "/.htaccess" });
-
     eleventyConfig.addPlugin(socialCard, {
         template: path.join(__dirname, 'src/card/social-card.svg'),
         outputDir: path.join(__dirname, '_site/img/social-cards'),
