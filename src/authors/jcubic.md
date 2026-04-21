@@ -8,12 +8,10 @@ modified: 2026-04-07
 ---
 
 **Jakub T. Jankiewicz** to programista z ponad 15-letnim doświadczeniem w tworzeniu oprogramowania
-open source, a zarazem aktywny redaktor Polskiej Wikipedii i doświadczony mentor. Jest głównym
-autorem projektu WikiZEIT. Zajmuje się także fotografią. Jako [oficjalny
-trener](https://pl.wikipedia.org/wiki/Wikipedia:WikiTrenerzy/Uczestnicy_i_uczestniczki)
-[Stowarzyszenia Wikimedia Polska](https://wikimedia.pl/) oraz absolwent specjalistycznych kursów
-trenerskich, od lat pełni rolę przewodnika dla nowicjuszy, pomagając im zrozumieć zawiłości wolnej
-encyklopedii i jej projektów siostrzanych.
+open source, a zarazem aktywny redaktor Polskiej Wikipedii, przewodnik dla nowicjuszy oraz
+[oficjalny trener](https://pl.wikipedia.org/wiki/Wikipedia:WikiTrenerzy/Uczestnicy_i_uczestniczki)
+[Stowarzyszenia Wikimedia Polska](https://wikimedia.pl/). Jest głównym autorem projektu
+WikiZEIT. Zajmuje się także fotografią.
 
 # Wikipedia i etyczne SEO
 
