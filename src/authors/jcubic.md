@@ -89,4 +89,4 @@ językowe.  Posiadanie wpisu w Wikidanych zwiększa wiarygodność marki w oczac
 jednym z najsilniejszych sygnałów Entity SEO.
 
 Jeśli chcesz, aby Twoja firma, marka lub osoba pojawiła się w Wikidanych pod okiem **oficjalnego
-trenera, programisty i mentora** — [sprawdź ofertę](/wikizeit/oferta/).
+trenera, programisty i mentora** — [sprawdź ofertę](/oferta/).

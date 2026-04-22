@@ -1,7 +1,7 @@
 <?php
 
-define('WIKIZEIT_URL', 'https://jcubic.pl/wikizeit/');
-define('WIKIZEIT_PATH', '/wikizeit/');
+define('WIKIZEIT_URL', 'https://wikizeit.jcubic.pl/');
+define('WIKIZEIT_PATH', '/');
 
 // Load Composer autoloader
 require_once __DIR__ . '/../vendor/autoload.php';

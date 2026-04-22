@@ -159,6 +159,6 @@ export default function(eleventyConfig) {
         templateFormats: ["liquid", "md", "html"],
         htmlTemplateEngine: "liquid",
         markdownTemplateEngine: "liquid",
-        pathPrefix: "/wikizeit/"
+        pathPrefix: "/"
     };
 };

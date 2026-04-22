@@ -117,4 +117,4 @@ Miejmy nadzieję, że dzięki tej inicjatywie zasady encyklopedyczności będą 
 ## Czy twoja firma może mieć stronę w Wikipedii?
 
 Jeśli nadal zastanawiasz się, czy twoja firma nadaje się do Wikipedii. Wykonam dla ciebie darmowy
-audyt, sprawdź szczegóły na stronie z [moją ofertą](https://jcubic.pl/wikizeit/oferta/).
+audyt, sprawdź szczegóły na stronie z [moją ofertą](https://wikizeit.jcubic.pl/oferta/).

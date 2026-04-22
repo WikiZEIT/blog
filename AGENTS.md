@@ -2,9 +2,9 @@
 
 ## Overview
 
-Eleventy (11ty) v3 static site generator project with a blog, served at `/wikizeit/`
-subdirectory. PHP backend handles email subscription/verification and contact form. The `_site/`
-output directory is fully self-contained and deployable.
+Eleventy (11ty) v3 static site generator project with a blog, served at the
+`wikizeit.jcubic.pl` subdomain. PHP backend handles email subscription/verification and contact
+form. The `_site/` output directory is fully self-contained and deployable.
 
 ## Key Rules
 
@@ -21,7 +21,7 @@ output directory is fully self-contained and deployable.
 - **No JavaScript required** — site works without JS; JS is only for progressive enhancement
 - **Single CSS file** — `src/static/css/style.css`
 - **Clean URLs** — directory-style with `index.html` inside directories
-- **Path prefix** — `pathPrefix: "/wikizeit/"` in `.eleventy.js`
+- **Path prefix** — `pathPrefix: "/"` in `.eleventy.js` (site is served at the subdomain root)
 - **DO NOT `rm -rf _site`** — it breaks the running Docker container. Use `npx @11ty/eleventy` which
   overwrites files in place
 - **DO NOT use `sudo`** — Docker runs as host user, no permission issues
@@ -44,7 +44,7 @@ docker compose up -d --build  # rebuild image
 docker compose down           # stop
 
 # Site URL
-http://localhost:8080/wikizeit/
+http://localhost:8080/
 ```
 
 ## Directory Structure

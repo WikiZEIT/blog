@@ -53,7 +53,7 @@ Projekt WikiZEIT kładzie szczególny nacisk na **etyczne podejście** do edycji
 ## Wikipedia to nie wszystko
 
 Dodając artykuł do Wikipedii ważne jest także dodanie wpisu do
-[Wikidanych](/wikizeit/blog/czym-jest-wikidata/). Tak zwanego projektu siostrzanego Wikipedii.
+[Wikidanych](/blog/czym-jest-wikidata/). Tak zwanego projektu siostrzanego Wikipedii.
 Wikidane to baza danych wszystkiego co jest w Wikipedii, ale nie tylko. W Wikidanych mogą się
 znaleźć także byty, które nie nadają się do Wikipedii, ponieważ są nieencyklopedyczne.
 Wkidane mają inne zasady o krórych można przeczytać na stronie:

@@ -80,7 +80,7 @@ W przypadku marek i organizacji kluczowe jest posiadanie niezależnych źródeł
 
 Więcej o zasadach można przeczytać na stronie: [Wikidane:Encyklopedyczność](https://www.wikidata.org/wiki/Wikidata:Notability/pl).
 
-Jeśli jesteś zainteresowany dodaniem swojej firmy czy osoby do Wikidanych. Możesz zobaczyć [moją ofertę](/wikizeit/oferta/). Prowadzę także szkolenia w tym zakresie.
+Jeśli jesteś zainteresowany dodaniem swojej firmy czy osoby do Wikidanych. Możesz zobaczyć [moją ofertę](/oferta/). Prowadzę także szkolenia w tym zakresie.
 
 ## Podsumowanie
 

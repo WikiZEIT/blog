@@ -1,4 +1,4 @@
-# [Blog: WikiZEIT](https://jcubic.pl/wikizeit/)
+# [Blog: WikiZEIT](https://wikizeit.jcubic.pl/)
 
 [![CI/CD](https://github.com/WikiZEIT/blog/actions/workflows/deploy.yaml/badge.svg)](https://github.com/WikiZEIT/blog/actions/workflows/deploy.yaml)
 

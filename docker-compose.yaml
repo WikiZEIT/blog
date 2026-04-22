@@ -5,4 +5,4 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./_site:/var/www/html/wikizeit
+      - ./_site:/var/www/html
