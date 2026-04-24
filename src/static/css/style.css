@@ -1232,6 +1232,40 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 66.666%;
 }
 
+/* Source / markdown links below the article — styled like a sidebar-card */
+.article-source {
+    margin-top: 4rem;
+    max-width: 66.666%;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-2xl);
+    background-color: rgba(180, 33, 4, 0.05);
+    border: 1px solid rgba(180, 33, 4, 0.1);
+    color: var(--color-slate-400);
+    font-size: 0.875rem;
+    display: flex;
+    gap: 0.5em;
+}
+
+.article-source p {
+    margin: 0;
+}
+
+.article-source p + p::before {
+    content: "/";
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.article-source a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.article-source a:hover {
+    opacity: 0.8;
+}
+
 /* Article prose content */
 .article-content {
     max-width: none;
