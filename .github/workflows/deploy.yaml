@@ -51,23 +51,23 @@ jobs:
           cp src/card/Lovelo\ Black.otf ~/.local/share/fonts/
           fc-cache -f -v
 
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
       - name: Install PHP dependencies
         run: composer install --no-dev --optimize-autoloader
         working-directory: api
+
+      - name: Validate social card SVG
+        run: |
+          sudo apt-get install -y libxml2-utils
+          node scripts/validate-social-card.mjs
 
       - name: Build
         run: npm run build
 
       - name: Validate JSON-LD
-        run: |
-          fail=0
-          for f in $(grep -rl 'application/ld+json' _site/ --include='*.html'); do
-            sed -n '/<script type="application\/ld+json">/,/<\/script>/p' "$f" \
-              | sed '1d;$d' \
-              | node -e 'let d=""; process.stdin.on("data",c=>d+=c); process.stdin.on("end",()=>{try{JSON.parse(d)}catch(e){console.error(e.message);process.exit(1)}})' \
-              || { echo "::error::Invalid JSON-LD in $f"; fail=1; }
-          done
-          [ "$fail" -eq 0 ] || exit 1
+        run: node scripts/validate-jsonld.mjs
 
       - name: Configure SSH key
         run: |
