@@ -45,6 +45,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # TEMP: overlay an unpublished fix for eleventy-plugin-svg-social-card
+      # that serializes screenshots so parallel renders don't stall on
+      # GitHub Actions. Remove this step once the fix is published to npm
+      # and wikizeit's package-lock.json picks up the new version.
+      - name: Overlay unpublished plugin fix
+        run: |
+          set -eu
+          EXPECTED_SHA=0adc9414999d38f5c1fb07326d21d522a97cb12c
+          git clone --depth 1 --branch master \
+            https://github.com/jcubic/eleventy-plugin-svg-social-card.git \
+            /tmp/eleventy-plugin-svg-social-card
+          ACTUAL_SHA=$(git -C /tmp/eleventy-plugin-svg-social-card rev-parse HEAD)
+          echo "plugin HEAD: $ACTUAL_SHA"
+          if [ "$ACTUAL_SHA" != "$EXPECTED_SHA" ]; then
+            echo "::warning::expected plugin HEAD $EXPECTED_SHA, got $ACTUAL_SHA (master moved?)"
+          fi
+          cp /tmp/eleventy-plugin-svg-social-card/src/index.js \
+             node_modules/eleventy-plugin-svg-social-card/src/index.js
+          echo "overlaid node_modules/eleventy-plugin-svg-social-card/src/index.js"
+
       - name: Install Lovelo font
         run: |
           mkdir -p ~/.local/share/fonts
@@ -92,16 +112,55 @@ jobs:
       - name: Build
         run: npm run build
 
+      # TEMP: upload the generated _site so we can inspect why JSON-LD
+      # validation fails on CI. `if: always()` ensures upload even when
+      # subsequent steps fail. Remove once the JSON-LD issue is fixed.
+      - name: Upload _site artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dev
+          path: _site
+          if-no-files-found: warn
+          retention-days: 7
+
       - name: Validate JSON-LD
         run: |
-          fail=0
-          for f in $(grep -rl 'application/ld+json' _site/ --include='*.html'); do
-            sed -n '/<script type="application\/ld+json">/,/<\/script>/p' "$f" \
-              | sed '1d;$d' \
-              | node -e 'let d=""; process.stdin.on("data",c=>d+=c); process.stdin.on("end",()=>{try{JSON.parse(d)}catch(e){console.error(e.message);process.exit(1)}})' \
-              || { echo "::error::Invalid JSON-LD in $f"; fail=1; }
-          done
-          [ "$fail" -eq 0 ] || exit 1
+          node --input-type=module <<'EOF'
+          import { readFileSync } from 'node:fs';
+          import { execSync } from 'node:child_process';
+
+          // Non-greedy match of every <script type="application/ld+json"> ... </script>
+          // block. `sed`-based extraction was unsafe against minified HTML
+          // because `/A/,/B/` ranges happily spanned from the real JSON-LD
+          // script in <head> past code-block examples down to an unrelated
+          // </script> elsewhere in the page.
+          const re = /<script\s+type="application\/ld\+json"\s*>([\s\S]*?)<\/script>/g;
+
+          const out = execSync(
+            "grep -rl 'application/ld+json' _site/ --include='*.html' || true",
+            { encoding: 'utf8' }
+          );
+          const files = out.split('\n').filter(Boolean);
+
+          let fail = 0;
+          for (const file of files) {
+            const html = readFileSync(file, 'utf8');
+            let match;
+            let block = 0;
+            re.lastIndex = 0;
+            while ((match = re.exec(html)) !== null) {
+              block++;
+              try {
+                JSON.parse(match[1]);
+              } catch (e) {
+                console.error(`::error file=${file}::Invalid JSON-LD (block ${block}): ${e.message}`);
+                fail = 1;
+              }
+            }
+          }
+          process.exit(fail);
+          EOF
 
       - name: Configure SSH key
         run: |
