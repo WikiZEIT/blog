@@ -2874,3 +2874,13 @@ pre[class*="language-wiki"] > code {
     white-space: pre-wrap;
     word-break: break-word;
 }
+
+p code {
+    font-size: 1.2em;
+    color: white;
+}
+
+strong {
+    color: white;
+}
+
