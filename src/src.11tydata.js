@@ -21,16 +21,37 @@ function newerDate(a, b) {
     return da > db ? da : db;
 }
 
+// Compare to day precision (not millisecond). Otherwise an article
+// published today with a global lastmod also from today (different time
+// of day) would falsely register as "modified".
+function dayKey(d) {
+    return d.toISOString().slice(0, 10);
+}
+
 export default {
     eleventyComputed: {
         modified(data) {
-            const pageMod = data.modified
-                ? new Date(data.modified)
-                : gitDate(data.page.inputPath);
-            const globalMod = data.site?.lastmod
-                ? new Date(data.site.lastmod)
-                : null;
-            return newerDate(pageMod, globalMod);
+            // Explicit frontmatter `modified` always wins.
+            if (data.modified) {
+                return new Date(data.modified);
+            }
+
+            // Otherwise infer from git history or the site-wide lastmod,
+            // and only surface it when it's actually newer than the
+            // article's publish date — otherwise a fresh post would show
+            // a stale "Zaktualizowano" badge sourced from `site.lastmod`.
+            const inferred = newerDate(
+                gitDate(data.page.inputPath),
+                data.site?.lastmod ? new Date(data.site.lastmod) : null,
+            );
+            if (!inferred) return null;
+
+            const articleDate = data.date ? new Date(data.date) : null;
+            if (articleDate && dayKey(inferred) <= dayKey(articleDate)) {
+                return null;
+            }
+
+            return inferred;
         }
     }
 };
