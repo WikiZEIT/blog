@@ -38,6 +38,9 @@
 <link rel="alternate" type="text/markdown" title="Markdown version" href="{{ mdHref }}" />{% endif %}
 <!-- Stylesheet -->
 {% assign cssHash = "/css/style.css" | contentHash %}<link rel="stylesheet" href="{{ '/css/style.css' | url }}?v={{ cssHash }}" />
+{%- if schemaType == "article" and content contains 'class="language-' -%}
+{% assign prismHash = "/css/prism-tomorrow.css" | contentHash %}<link rel="stylesheet" href="{{ '/css/prism-tomorrow.css' | url }}?v={{ prismHash }}" />
+{%- endif -%}
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>

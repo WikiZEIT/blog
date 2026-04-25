@@ -4,6 +4,7 @@ import { createHash } from 'crypto';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import socialCard from 'eleventy-plugin-svg-social-card';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import { minify } from 'html-minifier-next';
 import { minify as minifyJS } from 'terser';
 
@@ -67,6 +68,8 @@ export default function(eleventyConfig) {
 
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
+
+    eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.addPlugin(socialCard, {
         template: path.join(__dirname, 'src/card/social-card.svg'),

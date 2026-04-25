@@ -23,6 +23,7 @@
   "homepage": "https://github.com/WikiZEIT/wikizeit#readme",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@eslint/markdown": "^8.0.1",
     "eleventy-plugin-svg-social-card": "^0.2.4",
     "eslint": "^10.2.1",

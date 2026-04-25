@@ -2867,3 +2867,10 @@ main .body ol > li::before {
     font-style: italic;
     color: var(--color-slate-400);
 }
+
+/* WikiCode lines are usually long prose, not code — let them wrap. */
+pre[class*="language-wiki"],
+pre[class*="language-wiki"] > code {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
