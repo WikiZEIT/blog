@@ -118,4 +118,4 @@ za edukacje w stowarzyszeniu jest [Wioletta
 Matusiak](https://pl.wikimedia.org/wiki/U%C5%BCytkowniczka:Wioletta_Matusiak_(WMPL)).
 
 Jeśli interesuje cię kompleksowe szkolenie z edycji Wikipedii, Wikidanych, oraz Wikimedia Commons, dla firm i instytucji
-możesz skorzystać z [oferty WikiZEIT](https://wikizeit.jcubic.pl/szkolenia/).
+możesz skorzystać z [oferty WikiZEIT](https://wikizeit.jcubic.pl/oferta/).
