@@ -92,6 +92,7 @@ a {
     --color-slate-800: #1e293b;
     --color-slate-900: #0f172a;
     --color-white: #ffffff;
+    --color-link: #47a8e2;
     --font-display: 'Inter', sans-serif;
     --border-radius: 0.25rem;
     --border-radius-lg: 0.5rem;
@@ -385,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subtitle a {
-    color: var(--color-primary);
+    color: var(--color-link);
     text-decoration: underline;
     text-underline-offset: 2px;
     transition: opacity 0.2s;
@@ -1315,8 +1316,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-slate-100);
 }
 
-.article-content a {
-    color: var(--color-primary);
+.body a {
+    color: var(--color-link);
     text-decoration: underline;
     text-underline-offset: 2px;
 }
