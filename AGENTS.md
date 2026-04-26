@@ -1,4 +1,4 @@
-# WikiZEIT — Eleventy Blog Project
+# WikiZEIT – Eleventy Blog Project
 
 ## Overview
 
@@ -8,23 +8,23 @@ form. The `_site/` output directory is fully self-contained and deployable.
 
 ## Key Rules
 
-- **Do not fix HTML output indentation** — Liquid partials make it impossible to have properly
+- **Do not fix HTML output indentation** – Liquid partials make it impossible to have properly
   indented HTML output. Focus on keeping **source templates** readable. HTML will be minified in
   production anyway, so output indentation has zero value. Never change Liquid source just to
   improve spacing in the rendered HTML.
 
-- **Markdown line wrapping** — all generated or edited Markdown files must use hard line wraps
+- **Markdown line wrapping** – all generated or edited Markdown files must use hard line wraps
   at 100 characters, broken at word boundaries. This matches the Emacs `fill-column` setup used
   in this project, keeps `git diff` readable, and avoids long lines that are hard to review.
 
-- **Liquid templates** — all layouts and partials use Liquid
-- **No JavaScript required** — site works without JS; JS is only for progressive enhancement
-- **Single CSS file** — `src/static/css/style.css`
-- **Clean URLs** — directory-style with `index.html` inside directories
-- **Path prefix** — `pathPrefix: "/"` in `.eleventy.js` (site is served at the subdomain root)
-- **DO NOT `rm -rf _site`** — it breaks the running Docker container. Use `npx @11ty/eleventy` which
+- **Liquid templates** – all layouts and partials use Liquid
+- **No JavaScript required** – site works without JS; JS is only for progressive enhancement
+- **Single CSS file** – `src/static/css/style.css`
+- **Clean URLs** – directory-style with `index.html` inside directories
+- **Path prefix** – `pathPrefix: "/"` in `.eleventy.js` (site is served at the subdomain root)
+- **DO NOT `rm -rf _site`** – it breaks the running Docker container. Use `npx @11ty/eleventy` which
   overwrites files in place
-- **DO NOT use `sudo`** — Docker runs as host user, no permission issues
+- **DO NOT use `sudo`** – Docker runs as host user, no permission issues
 - **Static files** in `src/static/` are copied to output root (not the directory itself)
 - **PHP files** (`src/static/index.php`, `src/static/contact/index.php`) are thin wrappers that read
   static HTML and inject form messages via `<!-- form-message-placeholder -->`
@@ -37,7 +37,7 @@ form. The `_site/` output directory is fully self-contained and deployable.
 ```bash
 # Build
 npm run build
-# DO NOT run `npx @11ty/eleventy` directly — it enters watch mode and never terminates.
+# DO NOT run `npx @11ty/eleventy` directly – it enters watch mode and never terminates.
 # Always use `npm run build` which runs a one-shot build.
 
 # Docker (local testing)
@@ -51,21 +51,21 @@ http://localhost:8080/
 
 ## Directory Structure
 
-- `src/` — Eleventy source (layouts, partials, pages, data, blog posts)
-- `src/static/` — copied to output root (CSS, images, favicons, PHP wrappers)
-- `src/_data/` — `site.json`, `users.json`, `person.json`
-- `src/blog/posts/` — markdown blog articles
-- `api/` — PHP backend (subscribe, verify, contact, shared lib, Mustache templates)
-- `_site/` — build output (DO NOT delete while Docker is running)
-- `tmp/` — Tailwind design reference files (read-only)
-- `szkolenia/` — symlink to separate project (ignore its AGENTS.md)
+- `src/` – Eleventy source (layouts, partials, pages, data, blog posts)
+- `src/static/` – copied to output root (CSS, images, favicons, PHP wrappers)
+- `src/_data/` – `site.json`, `users.json`, `person.json`
+- `src/blog/posts/` – markdown blog articles
+- `api/` – PHP backend (subscribe, verify, contact, shared lib, Mustache templates)
+- `_site/` – build output (DO NOT delete while Docker is running)
+- `tmp/` – Tailwind design reference files (read-only)
+- `szkolenia/` – symlink to separate project (ignore its AGENTS.md)
 
 ## llms.txt
 
 The project generates `llms.txt` and per-post markdown files for LLM consumption:
 
-- `src/llms.txt.liquid` → `_site/llms.txt` — index with project summary and links to all pages
-- `src/llms-posts.liquid` → `_site/blog/{slug}.md` — raw markdown for each blog post (via
+- `src/llms.txt.liquid` → `_site/llms.txt` – index with project summary and links to all pages
+- `src/llms-posts.liquid` → `_site/blog/{slug}.md` – raw markdown for each blog post (via
   pagination over the `post` collection)
 - The `rawMarkdown` filter in `.eleventy.js` reads a source file and strips its front matter
 

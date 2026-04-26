@@ -38,7 +38,7 @@ export default {
 
             // Otherwise infer from git history or the site-wide lastmod,
             // and only surface it when it's actually newer than the
-            // article's publish date — otherwise a fresh post would show
+            // article's publish date – otherwise a fresh post would show
             // a stale "Zaktualizowano" badge sourced from `site.lastmod`.
             const inferred = newerDate(
                 gitDate(data.page.inputPath),

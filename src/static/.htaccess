@@ -39,7 +39,7 @@ RewriteRule ^szkolenia/(.*)$ /oferta/$1 [R=301,L]
 
 RewriteRule blog/nowa-masktka-wikipedii/ /blog/nowa-maskotka-wikipedii/ [R=301,L]
 
-# Custom 404 — serve via PHP wrapper so the response status is 404, not 200
+# Custom 404 – serve via PHP wrapper so the response status is 404, not 200
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /404.php [L]

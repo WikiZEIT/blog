@@ -63,7 +63,7 @@ export default function(eleventyConfig) {
         );
     });
 
-    // Passthrough copy for static assets — contents of src/static/ are copied to output root
+    // Passthrough copy for static assets – contents of src/static/ are copied to output root
     eleventyConfig.addPassthroughCopy({ "src/static": "/" });
 
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
@@ -146,7 +146,7 @@ export default function(eleventyConfig) {
         return `${minutes} min`;
     });
 
-    // Excerpt filter — first paragraph or first N characters
+    // Excerpt filter – first paragraph or first N characters
     eleventyConfig.addFilter("excerpt", function(content, length) {
         if (!content) return "";
         const len = length || 200;

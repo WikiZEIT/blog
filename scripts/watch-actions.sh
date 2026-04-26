@@ -87,7 +87,7 @@ while [ $ATTEMPTS -lt $MAX_ATTEMPTS ]; do
     sleep $POLL_INTERVAL
 done
 
-log "Timeout — workflow nie zakończył się w ciągu 20 minut."
+log "Timeout – workflow nie zakończył się w ciągu 20 minut."
 play_sound "$SOUND_FAILURE"  # Zagraj też przy timeoucie żeby nie czekać w nieskończoność
 rm -f "$PID_FILE"
 exit 1

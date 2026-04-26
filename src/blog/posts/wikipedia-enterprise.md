@@ -170,7 +170,7 @@ technicznego.
 Pamiętaj, że dane z Wiki najlepiej działają w parze z Twoją stroną. Używając właściwości `sameAs` w
 kodzie Schema.org, możesz wprost wskazać Google swój profil w Wikidanych. Więcej o tym przeczytasz
 wkrótce w artykule:
-[„Dane strukturalne Schema.org — przewodnik dla początkujących”](/blog/dane-strukturalne-schema-org/).
+[„Dane strukturalne Schema.org – przewodnik dla początkujących”](/blog/dane-strukturalne-schema-org/).
 
 ## Strategiczny link w stopce
 

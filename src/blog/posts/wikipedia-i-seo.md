@@ -1,5 +1,5 @@
 ---
-title: "Wikipedia a SEO — jak encyklopedia wpływa na widoczność Twojej marki"
+title: "Wikipedia a SEO – jak encyklopedia wpływa na widoczność Twojej marki"
 date: 2026-03-05
 tags:
   - Wikipedia
@@ -31,14 +31,14 @@ widoczność marki.
 
 Istnieje kilka kluczowych powodów, dla których Wikipedia ma znaczenie w kontekście pozycjonowania:
 
-1. **Wysoki autorytet domeny** — Wikipedia jest jedną z najbardziej zaufanych witryn w
+1. **Wysoki autorytet domeny** – Wikipedia jest jedną z najbardziej zaufanych witryn w
    internecie. Linki z Wikipedii, choć oznaczone jako `nofollow`, wciąż niosą ze sobą wartość w
    postaci ruchu referralowego.
 
-2. **Knowledge Graph Google** — Google wykorzystuje dane z Wikipedii i Wikidanych do budowy paneli
+2. **Knowledge Graph Google** – Google wykorzystuje dane z Wikipedii i Wikidanych do budowy paneli
    wiedzy (Knowledge Panels), które pojawiają się w wynikach wyszukiwania.
 
-3. **Entity SEO** — wyszukiwarki coraz częściej operują na encjach (bytach), a nie na słowach
+3. **Entity SEO** – wyszukiwarki coraz częściej operują na encjach (bytach), a nie na słowach
    kluczowych. Wikipedia i Wikidata są podstawowym źródłem encji.
 
 ## Etyczne podejście do Wikipedii

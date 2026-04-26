@@ -1,10 +1,10 @@
 /* ==========================================================================
-   WikiZEIT — Single Stylesheet
+   WikiZEIT – Single Stylesheet
    1. Reset & Base
    2. CSS Variables (Design Tokens)
    3. Typography
    4. Navigation (shared)
-   5. Home Page — Hero, About, Subscribe
+   5. Home Page – Hero, About, Subscribe
    6. Buttons
    7. Footer (shared)
    8. Mobile Navigation
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   5. Home Page — Hero, About, Subscribe
+   5. Home Page – Hero, About, Subscribe
    ========================================================================== */
 
 /* Hero Section */
@@ -1233,7 +1233,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 66.666%;
 }
 
-/* Source / markdown links below the article — styled like a sidebar-card */
+/* Source / markdown links below the article – styled like a sidebar-card */
 .article-source {
     margin-top: 4rem;
     max-width: 66.666%;
@@ -2698,7 +2698,7 @@ main .body ol > li::before {
 }
 
 /* ==========================================================================
-   404 — Not Found
+   404 – Not Found
    ========================================================================== */
 
 .not-found-main {
@@ -2869,7 +2869,7 @@ main .body ol > li::before {
     color: var(--color-slate-400);
 }
 
-/* WikiCode lines are usually long prose, not code — let them wrap. */
+/* WikiCode lines are usually long prose, not code – let them wrap. */
 pre[class*="language-wiki"],
 pre[class*="language-wiki"] > code {
     white-space: pre-wrap;

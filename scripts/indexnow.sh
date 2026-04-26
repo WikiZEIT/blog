@@ -33,7 +33,7 @@ for url in "${urls[@]}"; do
     case "$url" in
         http://*|https://*) ;;
         *)
-            echo "Error: URL must start with http:// or https:// — got: $url" >&2
+            echo "Error: URL must start with http:// or https:// – got: $url" >&2
             exit 1
             ;;
     esac

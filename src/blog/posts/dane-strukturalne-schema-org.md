@@ -1,5 +1,5 @@
 ---
-title: "Dane strukturalne Schema.org — przewodnik dla początkujących"
+title: "Dane strukturalne Schema.org – przewodnik dla początkujących"
 date: 2026-03-08
 tags:
   - SEO

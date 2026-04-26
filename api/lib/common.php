@@ -66,7 +66,7 @@ function mockMail($to, $subject, $message, $extraHeaders = '') {
     return true;
 }
 
-// Send HTML email — falls back to file mock when mail is unavailable
+// Send HTML email – falls back to file mock when mail is unavailable
 function sendEmail($to, $subject, $message) {
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=utf-8\r\n";
@@ -77,7 +77,7 @@ function sendEmail($to, $subject, $message) {
     return mail($to, $subject, $message, $headers);
 }
 
-// Send plain text email with Reply-To — for contact form
+// Send plain text email with Reply-To – for contact form
 function sendPlainEmail($to, $subject, $message, $replyTo = '') {
     $headers = "From: jcubic@jcubic.pl\r\n";
     if (!empty($replyTo)) {
@@ -112,14 +112,14 @@ function sanitizeHeader($value) {
     return str_replace(["\r", "\n"], '', trim($value));
 }
 
-// Validate redirect URL — must be a relative path under WIKIZEIT_PATH to prevent open redirect
+// Validate redirect URL – must be a relative path under WIKIZEIT_PATH to prevent open redirect
 function sanitizeRedirectUrl($url) {
     if (empty($url)) {
         return WIKIZEIT_PATH;
     }
     // Decode URL-encoded characters to catch %2e%2e etc.
     $decoded = rawurldecode($url);
-    // Strip any protocol/host — only allow paths starting with our prefix
+    // Strip any protocol/host – only allow paths starting with our prefix
     $parsed = parse_url($decoded);
     if (isset($parsed['scheme']) || isset($parsed['host'])) {
         return WIKIZEIT_PATH;

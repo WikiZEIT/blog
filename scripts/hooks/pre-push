@@ -1,12 +1,12 @@
 #!/bin/bash
-# Git pre-push hook — uruchamia watch-actions.sh w tle po każdym push.
+# Git pre-push hook – uruchamia watch-actions.sh w tle po każdym push.
 # Zainstaluj: scripts/install-hooks.sh
 
 ROOT_DIR="$(git rev-parse --show-toplevel)"
 WATCHER="$ROOT_DIR/scripts/watch-actions.sh"
 
 if [ ! -x "$WATCHER" ]; then
-    echo "[pre-push] Brak wykonywalnego $WATCHER — pomijam watcher." >&2
+    echo "[pre-push] Brak wykonywalnego $WATCHER – pomijam watcher." >&2
     exit 0
 fi
 

@@ -51,7 +51,7 @@ warsztatów społecznościowych, po profesjonalne szkolenia komercyjne dla firm.
 
 W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się edycji Wikipedii.
 
-1. **Stowarzyszenie Wikimedia Polska** — jest organizacją pożytku publicznego, która jest partnerem
+1. **Stowarzyszenie Wikimedia Polska** – jest organizacją pożytku publicznego, która jest partnerem
    Wikimedia Foundation na Polskę. Stowarzyszenie WMPL organizuje szkolenia, które prowadzą
    wolontariusze tworzący grupę
    [WikiTrenerów](https://pl.wikipedia.org/wiki/Wikipedia:WikiTrenerzy).
@@ -63,14 +63,14 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
     * [Akademia Wikimediów](https://wikimedia.pl/akademia-wikimediow/) jest to jeszcze jeden projekt
       Edukacyjny WMPL. Do projektu mogą się także zapisać pojedyncze osoby niezwiązane z edukacją.
 
-2. **NobleProg** — oferuje szkolenia techniczne z oprogramowania
+2. **NobleProg** – oferuje szkolenia techniczne z oprogramowania
    [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki). MediaWiki to projekt Open Source, który
    jest silnikiem, na którym stoją wszystkie projekty Wikimediów (tj. Wikipedia, Wikimedia Commons,
    czy Wikidane). Warto podkreślić, że szkolenia NobleProg **nie dotyczą zasad edytowania
    Wikipedii**, lecz administracji systemem informatycznym, na którym ona działa. Dedykowane jest
    osobom i formom, które chcą tworzyć własne Wiki.
 
-3. **WikiZEIT** — aktualnie jedyna na rynku opcja [komercyjnego szkolenia z edytowania Wikipedii
+3. **WikiZEIT** – aktualnie jedyna na rynku opcja [komercyjnego szkolenia z edytowania Wikipedii
    i projektów siostrzanych](https://wikizeit.jcubic.pl/oferta/). Szkolenie prowadzone jest przez
    [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika
    oraz WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla Stowarzyszenia Wikimedia Polska.

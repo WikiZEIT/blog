@@ -26,7 +26,7 @@ done
 
 # Nadaj też uprawnienia do głównego skryptu
 chmod +x "$ROOT_DIR/scripts/watch-actions.sh"
-echo "  ✓ scripts/watch-actions.sh — uprawnienia wykonywania"
+echo "  ✓ scripts/watch-actions.sh – uprawnienia wykonywania"
 
 echo ""
 echo "Gotowe. Hook pre-push będzie uruchamiał watcher przy każdym git push."
