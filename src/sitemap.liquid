@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
   {%- for page in collections.all %}
   {%- unless page.data.eleventyExcludeFromCollections %}
   <url>
-    <loc>{{ site.url }}{{ page.url }}</loc>
+    <loc>{{ site.url }}{% if page.data.canonicalPath %}{{ page.data.canonicalPath }}{% else %}{{ page.url }}{% endif %}</loc>
     <lastmod>{% if page.data.modified %}{{ page.data.modified | dateFormat: "iso" }}{% else %}{{ page.date | dateFormat: "iso" }}{% endif %}</lastmod>
   </url>
   {%- endunless %}
