@@ -27,14 +27,14 @@ RewriteRule ^autor/([^/]+)/?$ /autor/$1.md [L,T=text/markdown]
 RewriteRule ^oferta\.md$ /oferta/index.php?format=md [L]
 
 # Protect sensitive files
-RewriteRule ^api/subscribers\.db$ - [R=404,L]
-RewriteRule ^api/templates/ - [R=404,L]
-RewriteRule ^api/lib/ - [R=404,L]
-RewriteRule ^api/composer\.(json|lock)$ - [R=404,L]
-RewriteRule ^api/vendor/ - [R=404,L]
-RewriteRule ^api/logs/ - [R=404,L]
-RewriteRule ^api/mail/ - [R=404,L]
-RewriteRule ^tools/.*/config.json - [R=404,L]
+RewriteRule ^api/subscribers\.db$ /404.php [L]
+RewriteRule ^api/templates/ /404.php [L]
+RewriteRule ^api/lib/ /404.php [L]
+RewriteRule ^api/composer\.(json|lock)$ /404.php [L]
+RewriteRule ^api/vendor/ /404.php [L]
+RewriteRule ^api/logs/ /404.php [L]
+RewriteRule ^api/mail/ /404.php [L]
+RewriteRule ^tools/.*/config.json /404.php [L]
 
 RewriteRule ^szkolenia/(.*)$ /oferta/$1 [R=301,L]
 
