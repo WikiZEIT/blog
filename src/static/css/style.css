@@ -745,18 +745,20 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(180, 33, 4, 0.1);
 }
 
-.section-latest .section-header {
+.section-latest .section-header,
+.section-tools .section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3rem;
 }
 
-.section-latest .section-header h2 {
+.section-latest .section-header h2,
+.section-tools .section-header h2 {
     margin: 0;
 }
 
-.section-latest .view-all-link {
+.view-all-link {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-primary);
@@ -767,7 +769,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.2s;
 }
 
-.section-latest .view-all-link:hover {
+.view-all-link:hover {
     opacity: 0.8;
 }
 
