@@ -1,7 +1,7 @@
 ---
 title: "Wyszukiwarka książek do Wikipedii"
 description: "Znajdź książkę i wygeneruj gotowy szablon cytowania Cytuj lub Cytuj książkę do polskiej Wikipedii. Narzędzie od WikiZEIT."
-permalink: tools/books/index.html
+permalink: tools/books/index.php
 canonicalPath: /tools/books/
 tags:
   - tool
@@ -12,7 +12,47 @@ icon: menu_book
 toolUrl: https://www.googleapis.com/books/v1/volumes
 applicationCategory: Wikipedia Tool
 ---
-{% raw %}<main class="book-tool">
+{% raw %}<?php
+if (isset($_GET['api'])) {
+    while (ob_get_level()) ob_end_clean();
+    header('Content-Type: application/json; charset=utf-8');
+    $configPath = __DIR__ . '/config.json';
+    $apiKey = file_exists($configPath) ? json_decode(file_get_contents($configPath)) : null;
+    if (!$apiKey) {
+        http_response_code(500);
+        echo json_encode(['error' => 'API key not configured']);
+        exit;
+    }
+    $query = isset($_GET['q']) ? trim($_GET['q']) : '';
+    if (!$query) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Missing query parameter']);
+        exit;
+    }
+    $params = [
+        'q' => $query,
+        'key' => $apiKey,
+    ];
+    if (!empty($_GET['quotaUser'])) {
+        $params['quotaUser'] = $_GET['quotaUser'];
+    }
+    $url = 'https://www.googleapis.com/books/v1/volumes?' . http_build_query($params);
+    $ctx = stream_context_create(['http' => ['ignore_errors' => true]]);
+    $response = @file_get_contents($url, false, $ctx);
+    $status = 0;
+    if (isset($http_response_header[0]) && preg_match('/\s(\d{3})\s/', $http_response_header[0], $m)) {
+        $status = (int)$m[1];
+    }
+    if ($status >= 200 && $status < 300 && $response) {
+        echo $response;
+    } else {
+        http_response_code($status ?: 502);
+        echo $response ?: json_encode(['error' => 'API request failed']);
+    }
+    exit;
+}
+?>
+<main class="book-tool">
     <h1>Wyszukiwarka książek do Wikipedii</h1>
     <p class="book-tool-desc">
         Znajdź książkę za pomocą Google Books i wygeneruj gotowy szablon cytowania
@@ -55,6 +95,16 @@ applicationCategory: Wikipedia Tool
     }
     if (params.get('q')) {
         input.value = params.get('q');
+    }
+
+    function getQuotaUser() {
+        var key = 'books_quota_user';
+        var id = localStorage.getItem(key);
+        if (!id) {
+            id = crypto.randomUUID();
+            localStorage.setItem(key, id);
+        }
+        return id;
     }
 
     function setFormat(fmt) {
@@ -327,7 +377,12 @@ applicationCategory: Wikipedia Tool
         var cached = cacheGet('books', query);
         if (cached) return Promise.resolve(cached);
         if (DEBUG) return mockSearch(query);
-        return fetch('https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(query))
+        var apiParams = new URLSearchParams({
+            api: '1',
+            q: query,
+            quotaUser: getQuotaUser()
+        });
+        return fetch(location.pathname + '?' + apiParams)
             .then(function(r) {
                 if (r.status === 429) {
                     return Promise.reject(new Error('rate-limit'));
@@ -339,12 +394,7 @@ applicationCategory: Wikipedia Tool
             })
             .then(function(data) {
                 if (!data.items) return [];
-                return Promise.all(data.items.map(function(item) {
-                    if (!item.volumeInfo.publisher && item.selfLink) {
-                        return fetch(item.selfLink).then(function(r) { return r.json(); });
-                    }
-                    return item;
-                }));
+                return data.items;
             })
             .then(function(items) {
                 var books = items.map(getBook);

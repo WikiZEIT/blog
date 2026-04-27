@@ -69,6 +69,9 @@ export default function(eleventyConfig) {
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
 
+    // Copy tool config files (API keys) to output
+    eleventyConfig.addPassthroughCopy("src/tools/**/config.json");
+
     eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.addPlugin(socialCard, {
@@ -113,7 +116,7 @@ export default function(eleventyConfig) {
 
     // Tool collection sorted by date descending
     eleventyConfig.addCollection("tool", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/tools/*.liquid").sort((a, b) => {
+        return collectionApi.getFilteredByGlob("src/tools/**/*.liquid").sort((a, b) => {
             return b.date - a.date;
         });
     });
