@@ -12,4 +12,4 @@ readme
 prezentacja
 scripts/.watcher.log
 /.agent-shell/
-src/static/graf-wiedzy/config.json
+src/static/tools/graf-wiedzy/config.json
