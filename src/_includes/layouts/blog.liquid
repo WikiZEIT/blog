@@ -22,7 +22,9 @@ layout: layouts/base.liquid
   {% if postsList.size > 0 %}
   <div class="posts-grid">
     {% for post in postsList %}
-      {% include "partials/post-card.liquid", post: post %}
+      {% unless post.data.tags contains "tool" %}
+        {% include "partials/post-card.liquid", post: post %}
+      {% endunless %}
     {% endfor %}
   </div>
 

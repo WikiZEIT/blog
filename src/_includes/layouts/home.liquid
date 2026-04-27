@@ -42,27 +42,25 @@ schemaType: home
 {% endif %}
 
 <!-- Tools Section -->
+{% assign toolsList = collections.tool %}
+{% if toolsList.size > 0 %}
 <section class="section-tools">
   <div class="section-container">
     <div class="section-header">
       <h2 class="section-title">Narzędzia SEO</h2>
+      <a href="{{ '/tools/' | url }}" class="view-all-link">
+        Zobacz wszystkie
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
     </div>
     <div class="tools-grid">
-      <a href="/tools/graf-wiedzy/" class="tool-card">
-        <span class="tool-icon material-symbols-outlined">hub</span>
-        <h3 class="tool-card-title">Wyszukiwarka Grafu Wiedzy Google</h3>
-        <p class="tool-card-desc">
-          Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis
-          w Google Knowledge Graph.
-        </p>
-        <span class="tool-card-link">
-          Wypróbuj narzędzie
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </span>
-      </a>
+      {% for tool in toolsList %}
+        {% include "partials/tool-card.liquid", tool: tool %}
+      {% endfor %}
     </div>
   </div>
 </section>
+{% endif %}
 
 {% include "partials/subscribe.liquid" %}
 

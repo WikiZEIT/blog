@@ -6,6 +6,8 @@
       {% include "partials/schema-home.liquid" %}
     {% elsif schemaType == "article" %}
       {% include "partials/schema-article.liquid" %}
+    {% elsif schemaType == "tool" %}
+      {% include "partials/schema-tool.liquid" %}
     {% endif %}
   </head>
   <body>

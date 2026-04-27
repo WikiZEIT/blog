@@ -72,25 +72,48 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.addPlugin(socialCard, {
-        template: path.join(__dirname, 'src/card/social-card.svg'),
-        outputDir: path.join(__dirname, '_site/img/social-cards'),
-        urlPath: '/img/social-cards',
-        data(ctx) {
-            const { title, author: authorKey, date, users } = ctx;
-            const authorData = users[authorKey] || users['jcubic'];
-            return {
-                username: authorData.name,
-                fullname: authorData.fullname,
-                title,
-                path: path.join(__dirname, 'src/static/img'),
-                date: formatDate(date),
-            };
+        cards: {
+            article: {
+                template: path.join(__dirname, 'src/card/social-card.svg'),
+                outputDir: path.join(__dirname, '_site/img/social-cards'),
+                urlPath: '/img/social-cards',
+                data(ctx) {
+                    const { title, author: authorKey, date, users } = ctx;
+                    const authorData = users[authorKey] || users['jcubic'];
+                    return {
+                        username: authorData.name,
+                        fullname: authorData.fullname,
+                        title,
+                        path: path.join(__dirname, 'src/static/img'),
+                        date: formatDate(date),
+                    };
+                },
+            },
+            tool: {
+                template: path.join(__dirname, 'src/card/tool-card.svg'),
+                outputDir: path.join(__dirname, '_site/img/social-cards'),
+                urlPath: '/img/social-cards',
+                filename: (page) => `tool-${page.fileSlug}.png`,
+                data(ctx) {
+                    return {
+                        title: ctx.title,
+                        date: formatDate(ctx.date),
+                    };
+                },
+            },
         },
     });
 
     // Blog post collection sorted by date descending
     eleventyConfig.addCollection("post", function(collectionApi) {
         return collectionApi.getFilteredByGlob("src/blog/posts/*.md").sort((a, b) => {
+            return b.date - a.date;
+        });
+    });
+
+    // Tool collection sorted by date descending
+    eleventyConfig.addCollection("tool", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/tools/*.liquid").sort((a, b) => {
             return b.date - a.date;
         });
     });
@@ -106,7 +129,7 @@ export default function(eleventyConfig) {
         collectionApi.getAll().forEach(item => {
             if (item.data.tags) {
                 item.data.tags.forEach(tag => {
-                    if (tag !== "post" && tag !== "all") {
+                    if (tag !== "post" && tag !== "all" && tag !== "tool") {
                         tagsSet.add(tag);
                     }
                 });

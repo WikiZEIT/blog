@@ -1,0 +1,20 @@
+<a class="tool-card" href="{{ tool.data.canonicalPath | default: tool.url | url }}">
+  <span class="tool-icon material-symbols-outlined">{{ tool.data.icon | default: "build" }}</span>
+  <div class="tool-card-body">
+    {% if tool.data.tags %}
+    <div class="post-card-tags">
+      {% for tag in tool.data.tags %}
+        {% unless tag == "tool" %}
+        <span class="tag-badge">{{ tag }}</span>
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h3 class="tool-card-title">{{ tool.data.title }}</h3>
+    <p class="tool-card-desc">{{ tool.data.description }}</p>
+    <span class="tool-card-link">
+      Wypróbuj narzędzie
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </span>
+  </div>
+</a>

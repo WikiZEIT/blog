@@ -1,0 +1,23 @@
+---
+title: "Narzędzia SEO"
+description: "Darmowe narzędzia SEO od WikiZEIT – sprawdź widoczność w Google Knowledge Graph i&nbsp;więcej."
+layout: layouts/base.liquid
+permalink: /tools/
+---
+<main class="tools-main">
+  <div class="blog-header">
+    <h1 class="blog-title">{{ title }}</h1>
+    <p class="blog-description">Darmowe narzędzia SEO od WikiZEIT.</p>
+  </div>
+
+  {% assign toolsList = collections.tool %}
+  {% if toolsList.size > 0 %}
+  <div class="tools-grid">
+    {% for tool in toolsList %}
+      {% include "partials/tool-card.liquid", tool: tool %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-slate-400">Brak narzędzi do wyświetlenia.</p>
+  {% endif %}
+</main>

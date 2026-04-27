@@ -1,0 +1,68 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "inLanguage": "{{ site.language }}",
+      "publisher": { "@id": "{{ site.url }}/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ canonicalPath | default: page.url }}#webpage",
+      "url": "{{ site.url }}{{ canonicalPath | default: page.url }}",
+      "name": "{{ title }}",
+      "description": "{{ description }}",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "mainEntity": { "@id": "{{ site.url }}{{ canonicalPath | default: page.url }}#webapp" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}{{ canonicalPath | default: page.url }}#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": "{{ site.url }}/",
+          "name": "{{ site.title }}"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": "{{ site.url }}/tools/",
+          "name": "Narzędzia SEO"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": "{{ site.url }}{{ canonicalPath | default: page.url }}",
+          "name": "{{ title }}"
+        }
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "{{ site.url }}{{ canonicalPath | default: page.url }}#webapp",
+      "name": "{{ title }}",
+      "url": "{{ site.url }}{{ canonicalPath | default: page.url }}",
+      "description": "{{ description }}",
+      "applicationCategory": "{{ applicationCategory | default: 'SEO Tool' }}",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "{{ site.language }}",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PLN"
+      },
+      "author": { "@id": "{{ person['@id'] }}" },
+      "publisher": { "@id": "{{ site.url }}/#organization" }
+    }
+  ]
+}
+</script>

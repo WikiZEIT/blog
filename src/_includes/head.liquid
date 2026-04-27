@@ -10,8 +10,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/favicon/apple-touch-icon.png' | url }}" />
 <meta name="apple-mobile-web-app-title" content="WikiZEIT" />
 <link rel="manifest" href="{{ '/favicon/site.webmanifest' | url }}" />
+{% assign pageUrl = canonicalPath | default: page.url %}
 <!-- Open Graph -->
-<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:url" content="{{ site.url }}{{ pageUrl }}" />
 <meta property="og:type" content="{% if layout == 'layouts/article.liquid' %}article{% else %}website{% endif %}" />
 <meta property="og:locale" content="pl_PL" />
 <meta property="og:site_name" content="{{ site.title }}" />
@@ -25,13 +26,13 @@
 {% endif %}
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="twitter:url" content="{{ site.url }}{{ pageUrl }}" />
 <meta name="twitter:title" content="{{ title | default: site.title }}" />
 <meta name="twitter:description" content="{{ description | default: site.longDescription }}" />
 <meta name="twitter:image" content="{{ site.baseUrl }}{{ ogImage | default: site.socialImage }}" />
 <meta name="twitter:creator" content="@{{ author | default: site.author }}" />
 <!-- Canonical -->
-<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+<link rel="canonical" href="{{ site.url }}{{ pageUrl }}" />
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Blog" href="{{ site.url }}/feed.xml" />
 {% assign mdHref = page.url | mdAlternate %}{% if mdHref %}<!-- Markdown alternate -->

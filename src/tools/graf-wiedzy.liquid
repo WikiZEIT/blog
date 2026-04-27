@@ -1,0 +1,106 @@
+---
+title: "Wyszukiwarka wpisów w Grafie Wiedzy Google"
+description: "Sprawdź, czy dana osoba, firma lub pojęcie ma wpis w Google Knowledge Graph. Narzędzie SEO od WikiZEIT."
+permalink: tools/graf-wiedzy/index.php
+canonicalPath: /tools/graf-wiedzy/
+tags:
+  - tool
+  - SEO
+  - Knowledge Graph
+date: 2026-04-20
+icon: hub
+toolUrl: https://developers.google.com/knowledge-graph
+applicationCategory: SEO Tool
+---
+<?php
+$configPath = __DIR__ . '/config.json';
+$apiKey = file_exists($configPath) ? json_decode(file_get_contents($configPath)) : null;
+$query = isset($_GET['q']) ? $_GET['q'] : '';
+$results = null;
+$error = null;
+
+if ($query && $apiKey) {
+    $params = [
+        'query' => $query,
+        'key'   => $apiKey,
+        'limit' => 20,
+        'indent' => 'True',
+        'languages' => 'pl'
+    ];
+
+    $url = "https://kgsearch.googleapis.com/v1/entities:search?" . http_build_query($params);
+
+    $response = @file_get_contents($url);
+    if ($response) {
+        $results = json_decode($response, true);
+    }
+} elseif ($query && !$apiKey) {
+    $error = 'Brak klucza API. Skontaktuj się z administratorem.';
+}
+?>
+<main class="kg-tool">
+    <h1>Wyszukiwarka wpisów w Grafie Wiedzy Google</h1>
+    <p class="kg-tool-desc">
+        Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis w
+        <a href="https://en.wikipedia.org/wiki/Google_Knowledge_Graph" target="_blank" rel="noopener">Google Knowledge Graph</a>.
+        Dowiedz się więcej o roli Grafu Wiedzy w SEO na naszym blogu:
+        <a href="/blog/wikipedia-enterprise/">Wikimedia Enterprise i SEO</a>,
+        <a href="/blog/dane-strukturalne-schema-org/">Dane strukturalne Schema.org</a>.
+    </p>
+
+    <div class="kg-search-card">
+        <form class="kg-search-box" method="GET">
+            <input type="text" name="q" placeholder="Wpisz nazwę osoby, firmy lub pojęcia..." value="<?php echo htmlspecialchars($query); ?>">
+            <button type="submit">Szukaj</button>
+        </form>
+    </div>
+
+    <?php if ($error): ?>
+        <div class="kg-error"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
+
+    <?php if ($results && isset($results['itemListElement'])): ?>
+        <div class="kg-stats">
+            Znaleziono: <?php echo count($results['itemListElement']); ?> wyników.
+            <strong>Score</strong> &ndash; współczynnik trafności. Im wyższy, tym lepsze dopasowanie
+            do zapytania. Wartość jest relatywna &ndash; porównuj wyniki w obrębie jednego wyszukiwania.
+        </div>
+
+        <?php foreach ($results['itemListElement'] as $item):
+            $entity = $item['result'];
+            $score = $item['resultScore'] ?? 0;
+            $name = $entity['name'] ?? 'Brak nazwy';
+            $types = isset($entity['@type']) ? implode(', ', $entity['@type']) : 'Encja';
+            $shortDesc = $entity['description'] ?? '';
+            $detailedDesc = $entity['detailedDescription']['articleBody'] ?? '';
+            $imageUrl = $entity['image']['contentUrl'] ?? null;
+            $kgId = str_replace('kg:', '', $entity['@id']);
+            $googleSearchUrl = "https://www.google.com/search?kgmid=" . urlencode($kgId);
+        ?>
+            <div class="kg-result">
+                <?php if ($imageUrl): ?>
+                    <img src="<?php echo htmlspecialchars($imageUrl); ?>" class="kg-result-image" alt="<?php echo htmlspecialchars($name); ?>">
+                <?php else: ?>
+                    <div class="kg-result-image-placeholder">
+                        <span class="material-symbols-outlined">image</span>
+                    </div>
+                <?php endif; ?>
+
+                <div class="kg-result-content">
+                    <div class="kg-result-header">
+                        <div class="kg-result-type"><?php echo htmlspecialchars($types); ?></div>
+                        <div class="kg-score" title="Współczynnik trafności – im wyższa wartość, tym lepsze dopasowanie do zapytania">Score: <?php echo number_format($score, 1); ?></div>
+                    </div>
+                    <h2 class="kg-result-name"><?php echo htmlspecialchars($name); ?></h2>
+                    <p class="kg-result-desc">
+                        <?php if ($shortDesc): ?><strong><?php echo htmlspecialchars($shortDesc); ?></strong>. <?php endif; ?>
+                        <?php echo htmlspecialchars($detailedDesc); ?>
+                    </p>
+                    <a href="<?php echo htmlspecialchars($googleSearchUrl); ?>" target="_blank" rel="noopener" class="kg-result-link">
+                        Otwórz w Google (ID: <?php echo htmlspecialchars($kgId); ?>)
+                    </a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</main>
