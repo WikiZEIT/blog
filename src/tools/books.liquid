@@ -1,0 +1,382 @@
+---
+title: "Wyszukiwarka książek do Wikipedii"
+description: "Znajdź książkę i wygeneruj gotowy szablon cytowania Cytuj lub Cytuj książkę do polskiej Wikipedii. Narzędzie od WikiZEIT."
+permalink: tools/books/index.html
+canonicalPath: /tools/books/
+tags:
+  - tool
+  - Wikipedia
+  - cytowanie
+date: 2026-04-27
+icon: menu_book
+toolUrl: https://www.googleapis.com/books/v1/volumes
+applicationCategory: Wikipedia Tool
+---
+{% raw %}<main class="book-tool">
+    <h1>Wyszukiwarka książek do Wikipedii</h1>
+    <p class="book-tool-desc">
+        Znajdź książkę za pomocą Google Books i wygeneruj gotowy szablon cytowania
+        <a href="https://pl.wikipedia.org/wiki/Szablon:Cytuj_ksi%C4%85%C5%BCk%C4%99" target="_blank" rel="noopener">{{Cytuj książkę}}</a> lub
+        <a href="https://pl.wikipedia.org/wiki/Szablon:Cytuj" target="_blank" rel="noopener">{{Cytuj}}</a>
+        do polskiej Wikipedii. Narzędzie automatycznie sprawdza, czy autorzy mają artykuły
+        na Wikipedii i tworzy odpowiednie linki.
+    </p>
+
+    <div class="book-search-card">
+        <form class="book-search-box">
+            <input type="text" name="q" placeholder="Wpisz tytuł książki, autora lub ISBN...">
+            <button type="submit">Szukaj</button>
+        </form>
+        <div class="book-format-toggle">
+            <a href="#" class="book-format-link active" data-format="cytuj_ksiazke">Cytuj książkę</a>
+            <a href="#" class="book-format-link" data-format="cytuj">Cytuj</a>
+        </div>
+    </div>
+
+    <div id="book-results"></div>
+</main>
+<script>
+(function() {
+    var BOOK_CACHE_TTL = 24 * 60 * 60 * 1000;
+    var WIKI_CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
+
+    var form = document.querySelector('.book-search-box');
+    var input = form.querySelector('input[name="q"]');
+    var links = document.querySelectorAll('.book-format-link');
+    var resultsEl = document.getElementById('book-results');
+    var currentFormat = 'cytuj_ksiazke';
+
+    var params = new URLSearchParams(location.search);
+    if (params.get('format') === 'cytuj') {
+        currentFormat = 'cytuj';
+        links.forEach(function(l) {
+            l.classList.toggle('active', l.getAttribute('data-format') === 'cytuj');
+        });
+    }
+    if (params.get('q')) {
+        input.value = params.get('q');
+    }
+
+    function setFormat(fmt) {
+        currentFormat = fmt;
+        links.forEach(function(l) {
+            l.classList.toggle('active', l.getAttribute('data-format') === fmt);
+        });
+        var showClass = fmt === 'cytuj' ? 'book-cite-cytuj' : 'book-cite-ksiazke';
+        var hideClass = fmt === 'cytuj' ? 'book-cite-ksiazke' : 'book-cite-cytuj';
+        resultsEl.querySelectorAll('.' + showClass).forEach(function(el) {
+            el.style.display = '';
+        });
+        resultsEl.querySelectorAll('.' + hideClass).forEach(function(el) {
+            el.style.display = 'none';
+        });
+    }
+
+    links.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            setFormat(link.getAttribute('data-format'));
+        });
+    });
+
+    function cacheGet(prefix, key) {
+        try {
+            var raw = localStorage.getItem(prefix + ':' + key);
+            if (!raw) return null;
+            var entry = JSON.parse(raw);
+            var ttl = prefix === 'wiki' ? WIKI_CACHE_TTL : BOOK_CACHE_TTL;
+            if (Date.now() - entry.ts > ttl) {
+                localStorage.removeItem(prefix + ':' + key);
+                return null;
+            }
+            return entry.data;
+        } catch(e) {
+            return null;
+        }
+    }
+
+    function cacheSet(prefix, key, data) {
+        try {
+            localStorage.setItem(prefix + ':' + key, JSON.stringify({
+                ts: Date.now(),
+                data: data
+            }));
+        } catch(e) {}
+    }
+
+    function normalize(str) {
+        return str.trim().replace(/\s+/g, ' ');
+    }
+
+    function getYear(volumeInfo) {
+        if (volumeInfo.publishedDate) {
+            var m = volumeInfo.publishedDate.match(/^([0-9]+)/);
+            if (m) return m[1];
+        }
+        return '';
+    }
+
+    function getIsbn(volumeInfo) {
+        if (!volumeInfo.industryIdentifiers) return null;
+        var found = volumeInfo.industryIdentifiers.find(function(id) {
+            return id.type === 'ISBN_10';
+        });
+        return found ? found.identifier : null;
+    }
+
+    function getBook(data) {
+        var v = data.volumeInfo;
+        return {
+            isbn: getIsbn(v),
+            language: v.language || '',
+            authors: v.authors || [],
+            title: v.title || '',
+            publisher: v.publisher || '',
+            year: getYear(v)
+        };
+    }
+
+    function wikiCheck(article) {
+        article = normalize(article);
+        var cached = cacheGet('wiki', article);
+        if (cached !== null) return Promise.resolve(cached);
+        var params = new URLSearchParams({
+            action: 'query',
+            prop: 'revisions',
+            rvprop: 'content',
+            format: 'json',
+            origin: '*',
+            titles: article
+        });
+        return fetch('https://pl.wikipedia.org/w/api.php?' + params)
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var pages = data.query.pages;
+                var exists = false;
+                Object.keys(pages).forEach(function(key) {
+                    if (pages[key].revisions) exists = true;
+                });
+                cacheSet('wiki', article, exists);
+                return exists;
+            })
+            .catch(function() {
+                return false;
+            });
+    }
+
+    function wikiCiteBook(book) {
+        return Promise.all(book.authors.map(function(author, i) {
+            return wikiCheck(author).then(function(exists) {
+                return { author: normalize(author), exists: exists, index: i };
+            });
+        })).then(function(authors) {
+            var parts = ['{{Cytuj książkę', 'tytuł = ' + book.title];
+            authors.forEach(function(a) {
+                var nameParts = a.author.split(' ');
+                var idx = a.index > 0 ? a.index + 1 : '';
+                parts.push('imię' + idx + ' = ' + nameParts[0]);
+                parts.push('nazwisko' + idx + ' = ' + nameParts.slice(1).join(' '));
+                if (a.exists) {
+                    parts.push('autor link' + idx + ' = ' + a.author);
+                }
+            });
+            parts.push('rok = ' + book.year);
+            parts.push('wydawca = ' + book.publisher);
+            if (book.isbn) parts.push('isbn = ' + book.isbn);
+            parts.push('język = ' + book.language);
+            parts.push('odn = tak');
+            return parts.join(' |') + '}}';
+        });
+    }
+
+    function wikiCite(book) {
+        return Promise.all(book.authors.map(function(author, i) {
+            return wikiCheck(author).then(function(exists) {
+                return { author: normalize(author), exists: exists, index: i };
+            });
+        })).then(function(authors) {
+            var parts = ['{{Cytuj', 'tytuł = ' + book.title];
+            authors.forEach(function(a) {
+                var key = a.index === 0 ? 'autor' : 'autor' + (a.index + 1);
+                if (a.exists) {
+                    parts.push(key + ' = [[' + a.author + ']]');
+                } else {
+                    parts.push(key + ' = ' + a.author);
+                }
+            });
+            parts.push('data = ' + book.year);
+            parts.push('wydawca = ' + book.publisher);
+            if (book.isbn) parts.push('isbn = ' + book.isbn);
+            parts.push('język = ' + book.language);
+            parts.push('odn = tak');
+            return parts.join(' |') + '}}';
+        });
+    }
+
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+
+    function formatBookInfo(book) {
+        return Promise.all(book.authors.map(function(author) {
+            author = normalize(author);
+            return wikiCheck(author).then(function(exists) {
+                if (exists) {
+                    var url = 'https://pl.wikipedia.org/wiki/' + author.replace(/ /g, '_');
+                    return '<a href="' + escapeHtml(url) + '">' + escapeHtml(author) + '</a>';
+                }
+                return escapeHtml(author);
+            });
+        })).then(function(authorLinks) {
+            var html = '';
+            if (authorLinks.length) html += authorLinks.join(', ') + ': ';
+            html += '<i>' + escapeHtml(book.title) + '</i>. ';
+            html += escapeHtml(book.publisher) + ' ';
+            html += escapeHtml(book.year);
+            if (book.isbn) {
+                var isbnUrl = 'https://pl.wikipedia.org/wiki/Specjalna:Ksi%C4%85%C5%BCki/' + book.isbn;
+                html += ' <a href="' + escapeHtml(isbnUrl) + '">ISBN ' + escapeHtml(book.isbn) + '</a>';
+            }
+            return html;
+        });
+    }
+
+    function renderResults(books) {
+        var fmt = currentFormat;
+        resultsEl.innerHTML = '';
+        if (!books.length) {
+            resultsEl.innerHTML = '<div class="book-no-results">Brak wyników</div>';
+            return Promise.resolve();
+        }
+        return Promise.all(books.map(function(book) {
+            return Promise.all([
+                formatBookInfo(book),
+                wikiCiteBook(book),
+                wikiCite(book)
+            ]).then(function(parts) {
+                var div = document.createElement('div');
+                div.className = 'book-result';
+                var info = document.createElement('div');
+                info.className = 'book-result-info';
+                info.innerHTML = parts[0];
+                var preKsiazke = document.createElement('pre');
+                preKsiazke.className = 'book-result-code book-cite-ksiazke';
+                preKsiazke.textContent = parts[1];
+                if (fmt === 'cytuj') preKsiazke.style.display = 'none';
+                var preCytuj = document.createElement('pre');
+                preCytuj.className = 'book-result-code book-cite-cytuj';
+                preCytuj.textContent = parts[2];
+                if (fmt !== 'cytuj') preCytuj.style.display = 'none';
+                div.appendChild(info);
+                div.appendChild(preKsiazke);
+                div.appendChild(preCytuj);
+                resultsEl.appendChild(div);
+            });
+        }));
+    }
+
+    var DEBUG = params.has('_debug');
+    var MOCK_DATA = [
+        {
+            volumeInfo: {
+                title: 'Sapiens. Od zwierząt do bogów',
+                authors: ['Yuval Noah Harari'],
+                publisher: 'Dom Wydawniczy PWN',
+                publishedDate: '2018',
+                language: 'pl',
+                industryIdentifiers: [{ type: 'ISBN_10', identifier: '8380790316' }]
+            }
+        },
+        {
+            volumeInfo: {
+                title: 'Homo Deus. Krótka historia jutra',
+                authors: ['Yuval Noah Harari'],
+                publisher: 'Wydawnictwo Literackie',
+                publishedDate: '2018',
+                language: 'pl',
+                industryIdentifiers: [{ type: 'ISBN_10', identifier: '8308064965' }]
+            }
+        },
+        {
+            volumeInfo: {
+                title: 'Krótka historia prawie wszystkiego',
+                authors: ['Bill Bryson'],
+                publisher: 'Zysk i S-ka',
+                publishedDate: '2005',
+                language: 'pl',
+                industryIdentifiers: [{ type: 'ISBN_10', identifier: '8375060291' }]
+            }
+        }
+    ];
+
+    function mockSearch(query) {
+        var q = query.toLowerCase();
+        var filtered = MOCK_DATA.filter(function(item) {
+            var v = item.volumeInfo;
+            var text = (v.title + ' ' + (v.authors || []).join(' ')).toLowerCase();
+            return text.indexOf(q) !== -1;
+        });
+        return new Promise(function(resolve) {
+            setTimeout(function() { resolve(filtered.map(getBook)); }, 300);
+        });
+    }
+
+    function searchBooks(query) {
+        var cached = cacheGet('books', query);
+        if (cached) return Promise.resolve(cached);
+        if (DEBUG) return mockSearch(query);
+        return fetch('https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(query))
+            .then(function(r) {
+                if (r.status === 429) {
+                    return Promise.reject(new Error('rate-limit'));
+                }
+                if (!r.ok) {
+                    return Promise.reject(new Error('api-error'));
+                }
+                return r.json();
+            })
+            .then(function(data) {
+                if (!data.items) return [];
+                return Promise.all(data.items.map(function(item) {
+                    if (!item.volumeInfo.publisher && item.selfLink) {
+                        return fetch(item.selfLink).then(function(r) { return r.json(); });
+                    }
+                    return item;
+                }));
+            })
+            .then(function(items) {
+                var books = items.map(getBook);
+                if (books.length) {
+                    cacheSet('books', query, books);
+                }
+                return books;
+            });
+    }
+
+    function doSearch(query) {
+        if (!query) return;
+        var url = new URL(location.href);
+        url.searchParams.set('q', query);
+        url.searchParams.set('format', currentFormat);
+        history.replaceState(null, '', url);
+        resultsEl.innerHTML = '<div class="book-loading"><div class="book-spinner"></div>Wyszukiwanie...</div>';
+        searchBooks(query).then(renderResults).catch(function(err) {
+            var msg = err && err.message === 'rate-limit'
+                ? 'Zbyt wiele zapytań do Google Books API. Spróbuj ponownie za chwilę.'
+                : 'Nie udało się połączyć z Google Books API.';
+            resultsEl.innerHTML = '<div class="book-no-results">' + msg + '</div>';
+        });
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        doSearch(input.value.trim());
+    });
+
+    if (params.get('q')) {
+        doSearch(params.get('q'));
+    }
+})();
+</script>{% endraw %}
