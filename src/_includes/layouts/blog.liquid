@@ -32,6 +32,26 @@ layout: layouts/base.liquid
     {% include "partials/pagination.liquid" %}
   {% endunless %}
 
+  {% if tag %}
+    {% assign hasTools = false %}
+    {% for item in postsList %}
+      {% if item.data.tags contains "tool" %}
+        {% assign hasTools = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if hasTools %}
+    <h2 class="blog-title tag-tools-heading">Narzędzia</h2>
+    <div class="tools-grid">
+      {% for tool in postsList %}
+        {% if tool.data.tags contains "tool" %}
+          {% include "partials/tool-card.liquid", tool: tool %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endif %}
+
   {% else %}
   <p class="text-slate-400">Brak artykułów do wyświetlenia.</p>
   {% endif %}
