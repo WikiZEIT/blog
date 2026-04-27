@@ -180,12 +180,29 @@ if ($query) {
     min-width: 0;
 }
 
+.kg-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
 .kg-result-type {
     font-size: 0.75rem;
     color: var(--color-slate-500);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.25rem;
+}
+
+.kg-score {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    background-color: rgba(180, 33, 4, 0.1);
+    padding: 0.125rem 0.5rem;
+    border-radius: var(--border-radius-full);
+    white-space: nowrap;
+    cursor: help;
 }
 
 .kg-result-name {
@@ -299,10 +316,15 @@ if ($query) {
     </div>
 
     <?php if ($results && isset($results['itemListElement'])): ?>
-        <div class="kg-stats">Znaleziono: <?php echo count($results['itemListElement']); ?> wyników</div>
+        <div class="kg-stats">
+            Znaleziono: <?php echo count($results['itemListElement']); ?> wyników.
+            <strong>Score</strong> &ndash; współczynnik trafności. Im wyższy, tym lepsze dopasowanie
+            do zapytania. Wartość jest relatywna &ndash; porównuj wyniki w obrębie jednego wyszukiwania.
+        </div>
 
         <?php foreach ($results['itemListElement'] as $item):
             $entity = $item['result'];
+            $score = $item['resultScore'] ?? 0;
             $name = $entity['name'] ?? 'Brak nazwy';
             $types = isset($entity['@type']) ? implode(', ', $entity['@type']) : 'Encja';
             $shortDesc = $entity['description'] ?? '';
@@ -321,7 +343,10 @@ if ($query) {
                 <?php endif; ?>
 
                 <div class="kg-result-content">
-                    <div class="kg-result-type"><?php echo htmlspecialchars($types); ?></div>
+                    <div class="kg-result-header">
+                        <div class="kg-result-type"><?php echo htmlspecialchars($types); ?></div>
+                        <div class="kg-score" title="Współczynnik trafności – im wyższa wartość, tym lepsze dopasowanie do zapytania">Score: <?php echo number_format($score, 1); ?></div>
+                    </div>
                     <h2 class="kg-result-name"><?php echo htmlspecialchars($name); ?></h2>
                     <p class="kg-result-desc">
                         <?php if ($shortDesc): ?><strong><?php echo htmlspecialchars($shortDesc); ?></strong>. <?php endif; ?>
