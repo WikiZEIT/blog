@@ -103,6 +103,7 @@ a {
     --max-width: 80rem;
     --max-width-narrow: 56rem;
     --max-width-content: 64rem;
+    --checkbox-size: 1.4;
 }
 
 /* ==========================================================================
@@ -3315,6 +3316,53 @@ strong {
     gap: 0.5rem;
     margin-top: 1rem;
     justify-content: center;
+    align-items: center;
+}
+
+.book-odn-toggle {
+    border-left: 1px solid rgba(180, 33, 4, 0.2);
+}
+
+.checkbox {
+    --__checkbox-size: var(--checkbox-size, 1);
+    display: grid;
+    font-size: 0.85rem;
+    grid-template-columns: 1em auto;
+    align-items: center;
+    gap: calc(var(--__checkbox-size) * 0.5em);
+    margin-left: calc(var(--__checkbox-size) * 0.75rem);
+    padding-left: calc(var(--__checkbox-size) * 0.75rem);
+    color: var(--color-slate-400);
+    cursor: pointer;
+}
+
+.book-odn-toggle input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: var(--color-slate-400);
+    width: calc(var(--__checkbox-size) * 1em);
+    height: calc(var(--__checkbox-size) * 1em);
+    border: 1px solid currentColor;
+    border-radius: 0.15em;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    --__checkbox-size: var(--checkbox-size, 1);
+}
+
+.book-odn-toggle input[type="checkbox"]::before {
+    content: "";
+    width: calc(var(--__checkbox-size) * 0.55em);
+    height: calc(var(--__checkbox-size) * 0.55em);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--color-primary);
+}
+
+.book-odn-toggle input[type="checkbox"]:checked::before {
+    transform: scale(1);
 }
 
 .book-format-link {

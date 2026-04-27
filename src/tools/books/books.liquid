@@ -70,6 +70,7 @@ if (isset($_GET['api'])) {
         <div class="book-format-toggle">
             <a href="#" class="book-format-link active" data-format="cytuj_ksiazke">Cytuj książkę</a>
             <a href="#" class="book-format-link" data-format="cytuj">Cytuj</a>
+            <label class="book-odn-toggle checkbox"><input type="checkbox" id="book-odn" checked> odn</label>
         </div>
     </div>
 
@@ -84,7 +85,9 @@ if (isset($_GET['api'])) {
     var input = form.querySelector('input[name="q"]');
     var links = document.querySelectorAll('.book-format-link');
     var resultsEl = document.getElementById('book-results');
+    var odnCheckbox = document.getElementById('book-odn');
     var currentFormat = 'cytuj_ksiazke';
+    var lastBooks = null;
 
     var params = new URLSearchParams(location.search);
     if (params.get('format') === 'cytuj') {
@@ -234,7 +237,7 @@ if (isset($_GET['api'])) {
             parts.push('wydawca = ' + book.publisher);
             if (book.isbn) parts.push('isbn = ' + book.isbn);
             parts.push('język = ' + book.language);
-            parts.push('odn = tak');
+            if (odnCheckbox.checked) parts.push('odn = tak');
             return parts.join(' |') + '}}';
         });
     }
@@ -258,7 +261,7 @@ if (isset($_GET['api'])) {
             parts.push('wydawca = ' + book.publisher);
             if (book.isbn) parts.push('isbn = ' + book.isbn);
             parts.push('język = ' + book.language);
-            parts.push('odn = tak');
+            if (odnCheckbox.checked) parts.push('odn = tak');
             return parts.join(' |') + '}}';
         });
     }
@@ -294,6 +297,7 @@ if (isset($_GET['api'])) {
     }
 
     function renderResults(books) {
+        lastBooks = books;
         var fmt = currentFormat;
         resultsEl.innerHTML = '';
         if (!books.length) {
@@ -419,6 +423,10 @@ if (isset($_GET['api'])) {
             resultsEl.innerHTML = '<div class="book-no-results">' + msg + '</div>';
         });
     }
+
+    odnCheckbox.addEventListener('change', function() {
+        if (lastBooks) renderResults(lastBooks);
+    });
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
