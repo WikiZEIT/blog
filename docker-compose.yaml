@@ -1,6 +1,8 @@
 services:
   web:
     build: .
+    security_opt:
+      - label:disable
     user: "${UID:-1000}:${GID:-1000}"
     ports:
       - "8080:8080"
