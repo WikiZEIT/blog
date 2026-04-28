@@ -24,9 +24,14 @@ RewriteCond %{HTTP:Accept} text/markdown
 RewriteCond %{DOCUMENT_ROOT}/autor/$1.md -f
 RewriteRule ^autor/([^/]+)/?$ /autor/$1.md [L,T=text/markdown]
 
+RewriteCond %{HTTP:Accept} text/markdown
+RewriteRule ^oferta/?$ /oferta/index.php?format=md [L,T=text/markdown]
+
 RewriteRule ^oferta\.md$ /oferta/index.php?format=md [L]
 
 # Protect sensitive files
+RewriteRule ^oferta/allegro_tokens\.json$ /404.php [L]
+RewriteRule ^oferta/\.git /404.php [L]
 RewriteRule ^api/subscribers\.db$ /404.php [L]
 RewriteRule ^api/templates/ /404.php [L]
 RewriteRule ^api/lib/ /404.php [L]
