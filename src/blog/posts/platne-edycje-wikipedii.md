@@ -3,8 +3,62 @@ title: "Płatna Edycja Wikipedii w Polsce"
 date: 2026-04-29
 tags:
   - Wikipedia
+  - Marketing
+  - SEO
+  - Zasady
+keywords:
+  - płatna edycja Wikipedii
+  - dodanie firmy do Wikipedii
+  - konflikt interesów Wikipedia
+  - WP:KI
+  - encyklopedyczność
+  - Knowledge Graph
+  - Graf Wiedzy
+  - koszt wpisu w Wikipedii
+  - WikiZEIT
 description: "Dowiedz się, jak dodać firmę lub osobę do Wikipedii. Poznaj zasady płatnej edycji, koszty oraz wpływ wpisu na widoczność marki w wynikach Google i modelach AI."
 author: jcubic
+faq:
+  - question: "Czy płatna edycja Wikipedii jest zgodna z zasadami?"
+    answer: |
+      Wiele osób zastanawia się, czy płacenie za edycję nie łamie zasad Wikipedii. Krótka odpowiedź brzmi:
+      jest to legalne, pod warunkiem pełnej transparentności. Fundacja Wikimedia wymaga, aby każda
+      płatna edycja była oznaczona deklaracją Konfliktu Interesów (WP:KI). Społeczność Polskiej Wikipedii
+      nie ma wypracowanych własnych zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne.
+      Warto jednak wiedzieć, że większość najbardziej aktywnych i zaangażowanych redaktorów polskiej
+      Wikipedii podchodzi do płatnych zleceń z dużą niechęcią i rzadko podejmuje się takiej współpracy,
+      preferując wolontariat i dbanie o czystość merytoryczną haseł.
+  - question: "Jak dodać firmę do Wikipedii?"
+    answer: |
+      1. Analiza źródeł: Sprawdź, czy o firmie pisały niezależne media (nie lokalne, nie branżowe).
+      2. Przygotowanie szkicu: Stwórz tekst w brudnopisie, dbając o encyklopedyczny styl.
+      3. Deklaracja WP:KI: Poinformuj na swojej stronie
+         użytkownika o powiązaniach z firmą.
+      4. Publikacja i weryfikacja: swojego przewodnika o sprawdzenie i publikację, jeśli masz
+         konto od niedawna. Jeśli jesteś w Wikipedii już od jakiegoś czasu, możesz przenieść
+         artykuł do przesterzni głównej sam(a). Prośbę o sprawdzenie można także zgłosić
+         na stronie Wikipedia:Pytania_nowicjuszy.
+  - question: "Kto zajmuje się płatną edycją Wikipedii w Polsce?"
+    answer: |
+      Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
+      * WikiZEIT (Jakub T. Jankiewicz): Specjalistyczne podejście, gdzie nacisk kładzie się na
+        kompletność wpisu i transparentność.
+      * Soluma Interactive: Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie
+        haseł.
+      * Green-fields: Firma zajmująca się wizerunkiem, która w ofercie ma również Wikipedię.
+      * Freelancerzy (UseMe/LinkedIn): Można tam znaleźć osoby deklarujące pomoc, jednak ich
+        doświadczenie i znajomość aktualnych zasad bywają bardzo zróżnicowane.
+  - question: "Ile kosztuje wpis w Wikipedii?"
+    answer: |
+      Koszty zależą od skomplikowania tematu i renomy wykonawcy:
+      * Modele godzinowe: Przykładowo w WikiZEIT wstępna analiza jest darmowa, a koszt edycji to
+        obecnie do 300 zł za godzinę. Średni czas przygotowania solidnego artykułu to około dwie
+        godziny pracy redaktora.
+      * Modele pakietowe: W Soluma Interactive sam audyt to koszt rzędu 440 zł. Napisanie
+        artykułu kosztuje około 1000 zł, przy czym dodatkowe elementy, jak zdjęcia czy infoboxy,
+        często są wyceniane jako osobne pozycje.
+      * Ważne: Żaden rzetelny redaktor nie zagwarantuje 100% pewności, że wpis pozostanie w
+        serwisie na zawsze, ponieważ ostateczna decyzja należy do społeczności administratorów.
 ---
 
 ## Wstęp: Wikipedia jako cyfrowe świadectwo wiarygodności
@@ -13,11 +67,11 @@ firmy lub osoby publicznej obecność w tym serwisie jest ostatecznym potwierdze
 autorytetu. Należy jednak pamiętać, że granica między rzetelną informacją a zakazaną promocją jest
 niezwykle cienka, a jej przekroczenie kończy się natychmiastowym usunięciem treści.
 
-## Płatna edycja – czy to w ogóle legalne i zgodne z zasadami?
+## Czy płatna edycja Wikipedii jest zgodna z zasadami?
 Wiele osób zastanawia się, czy płacenie za edycję nie łamie zasad Wikipedii. Krótka odpowiedź brzmi:
 **jest to legalne, pod warunkiem pełnej transparentności.** Fundacja Wikimedia wymaga, aby każda
 płatna edycja była oznaczona deklaracją **Konfliktu Interesów
-([WP:KI](https://pl.wikipedia.org/wiki/WP:KI))**. Społecznosć Polskiej Wikipedii nie ma wypracowanych własnych
+([WP:KI](https://pl.wikipedia.org/wiki/WP:KI))**. Społeczność Polskiej Wikipedii nie ma wypracowanych własnych
 zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne.
 
 Warto jednak wiedzieć, że większość najbardziej aktywnych i zaangażowanych redaktorów polskiej
@@ -50,7 +104,7 @@ a nie go kreuje.
 
 ## Źródła, czyli fundament każdego wpisu
 W Wikipedii nie liczy się to, co wiesz, ale to, co możesz udowodnić. Jedna z głównych zasad to
-weryfikowalności czyli [WP:WER](https://pl.wikipedia.org/wiki/WP:WER)
+weryfikowalność czyli [WP:WER](https://pl.wikipedia.org/wiki/WP:WER)
 * **Akceptowalne źródła:** Ogólnopolskie media informacyjne, książki, recenzowane czasopisma,
     artykuły naukowe.
 * **Źródła odrzucane:** Artykuły sponsorowane, komunikaty prasowe, własna strona WWW, media
@@ -65,8 +119,8 @@ stronie firmowej, **nie możesz go wkleić do Wikipedii**. Wszystkie treści tam
 dostępne na wolnej licencji [Creative
 Commons](https://pl.wikipedia.org/wiki/Creative_Commons). Proces legalizacji treści przez system
 OTRS/VRTS jest skomplikowany, dlatego najlepiej pisać artykuły od zera, własnymi słowami. Ale
-pamietać trzeba o źródłach. Bazujemy na informacjach, ale ich nie kopiujemy. Chyba że jest to mały fragment,
-udostępniony na zasadch [cytatu](https://pl.wikipedia.org/wiki/Cytat).
+pamiętać trzeba o źródłach. Bazujemy na informacjach, ale ich nie kopiujemy. Chyba że jest to mały
+fragment, udostępniony na zasadach [cytatu](https://pl.wikipedia.org/wiki/Cytat).
 
 ## Treść generowana przez AI a Wikipedia – zasady i ryzyka
 W dobie popularności ChatGPT i innych modeli LLM, pokusa generowania haseł przez AI (Artificial
@@ -85,16 +139,18 @@ zaleceniami społeczności):
 
 **Wniosek:** AI może być pomocnikiem w tłumaczeniu tekstów lub poprawianiu gramatyki, ale nigdy nie
 powinno być jedynym autorem artykułu. Płatna edycja oparta wyłącznie na "copy-paste" z ChataGPT to
-najkrótsza droga do usunięcia wpis.u
+najkrótsza droga do usunięcia wpisu.
 
-## Jak dodać firmę do Wikipedii – proces krok po kroku
+## Jak dodać firmę do Wikipedii? – proces krok po kroku
 1.  **Analiza źródeł:** Sprawdź, czy o firmie pisały niezależne media (nie lokalne, nie branżowe).
-2.  **Przygotowanie szkicu:** Stwórz tekst w brudnopisie, dbając o encyklopedyczny styl (zero
-    epitetów).
-3.  **Deklaracja [WP:KI](https://pl.wikipedia.org/wiki/WP:KI):** Poinformuj na swojej stronie użytkownika o powiązaniach z firmą.
-4.  **Publikacja i weryfikacja:** Poproś swojego przewodnika o sprawdzenie i publikacje, jeśli masz
-    konto od niedawana. Jeśli jesteś w Wikipedii już od jakiegoś czasu, możesz przenieść artykuł do
-    przestrzni głównej sam(a). Prośbę o sprawdzenie można takż zgłosić na stronie
+2.  **Przygotowanie szkicu:** Stwórz tekst w brudnopisie, dbając o encyklopedyczny styl.
+3.  **Deklaracja [WP:KI](https://pl.wikipedia.org/wiki/WP:KI):** Poinformuj na swojej stronie
+    użytkownika o powiązaniach z firmą.
+4.  **Publikacja i weryfikacja:** Poproś swojego przewodnika o sprawdzenie i publikację, jeśli masz
+    konto od niedawna. Jeśli jesteś w Wikipedii już od [jakiegoś
+    czasu](https://pl.wikipedia.org/wiki/WP:AC), możesz przenieść artykuł do przestrzeni głównej
+    sam(a). Prośbę o sprawdzenie można także zgłosić na stronie
+    [Wikipedia:Pytania_nowicjuszy](https://pl.wikipedia.org/wiki/Wikipedia:Pytania_nowicjuszy).
 
 ## Jak stworzyć biografię osoby (np. CEO lub eksperta)?
 Wymagania dla biografii osób żyjących (BIO) są jeszcze surowsze. Należy wykazać, że osoba ta wywarła
@@ -146,14 +202,6 @@ Doświadczony redaktor (lub przeszkolony pracownik):
   [WP:KI](https://pl.wikipedia.org/wiki/WP:KI)), co minimalizuje ryzyko szybkiego usunięcia
   artykułu.
 * Potrafi odpowiednio dobrać źródła, które zostaną zaakceptowane przez innych redaktorów.
-
-
-## Dlaczego warto (lub nie warto) wynająć doświadczonego redaktora?
-Samodzielna edycja często kończy się tzw. "spaloną ziemią" – zrażeniem administratorów i
-zablokowaniem tematu na długi czas. Doświadczony redaktor:
-* Potrafi obiektywnie ocenić szanse na przetrwanie wpisu.
-* Zna techniczny język formatowania i mechanizmy działania społeczności.
-* Wprowadza treści zgodnie z procedurami, co minimalizuje ryzyko szybkiego usunięcia.
 
 ## Kto zajmuje się płatną edycją Wikipedii w Polsce?
 Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
