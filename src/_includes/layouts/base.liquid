@@ -1,4 +1,7 @@
-{% if page.outputPath contains ".php" %}<?php ob_start(); ?>{% endif %}
+{% if page.outputPath contains ".php" %}<?php
+ob_start();
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+?>{% endif %}
 <!DOCTYPE html>
 <html class="dark" lang="{{ site.language }}">
   <head>
@@ -27,3 +30,4 @@
     <script defer src="https://umami.jcubic.pl/script.js" data-website-id="c716ef1c-b60b-455c-8279-58996a09a8a6"></script>
   </body>
 </html>
+{% if page.outputPath contains ".php" %}<?php echo @\PHPMin\Minify::html(ob_get_clean()); ?>{% endif %}

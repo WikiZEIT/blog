@@ -9,6 +9,7 @@
         }
     ],
     "require": {
-        "mustache/mustache": "^3.0"
+        "mustache/mustache": "^3.0",
+        "dbx123/php-minifier": "^1.0"
     }
 }

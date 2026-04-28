@@ -70,7 +70,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
 
     // Copy Composer vendor directory into output (source of truth is root composer.json)
-    eleventyConfig.addPassthroughCopy({ "vendor": "/api/vendor" });
+    eleventyConfig.addPassthroughCopy({ "vendor": "/vendor" });
 
     // Copy tool config files (API keys) to output
     eleventyConfig.addPassthroughCopy("src/tools/**/config.json");
@@ -231,7 +231,7 @@ export default function(eleventyConfig) {
 
     if (isProduction) {
         eleventyConfig.addTransform('html-minifier-next', async function(content) {
-            if (this.page.outputPath && this.page.outputPath.endsWith('.html')) {
+            if (this.page.outputPath && (this.page.outputPath.endsWith('.html') || this.page.outputPath.endsWith('.php'))) {
                 return await minify(content, {
                     collapseWhitespace: true,
                     conservativeCollapse: true,

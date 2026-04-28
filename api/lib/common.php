@@ -3,8 +3,8 @@
 define('WIKIZEIT_URL', 'https://wikizeit.jcubic.pl/');
 define('WIKIZEIT_PATH', '/');
 
-// Load Composer autoloader
-require_once __DIR__ . '/../vendor/autoload.php';
+// Load Composer autoloader (vendor is at site root, copied from project root by Eleventy)
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 // Initialize Mustache
 $mustache = new Mustache_Engine([

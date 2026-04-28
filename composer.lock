@@ -4,8 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91a83c34ebad6b2581d17b1874f44824",
+    "content-hash": "bc92320e1ee7548885e844816bf25cc3",
     "packages": [
+        {
+            "name": "dbx123/php-minifier",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbx123/php-minifier.git",
+                "reference": "167ae9e2b1fd16322fd5833b05e800b64dc6c9b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbx123/php-minifier/zipball/167ae9e2b1fd16322fd5833b05e800b64dc6c9b0",
+                "reference": "167ae9e2b1fd16322fd5833b05e800b64dc6c9b0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "johnkary/phpunit-speedtrap": "^3.0",
+                "phpunit/phpunit": "7.1.*",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "phpmin.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "David Boyle - Open Source PHP Contributor",
+                    "homepage": "https://github.com/dbx123",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP minifier for HTML, CSS and JS files.",
+            "homepage": "https://github.com/dbx123/php-minifier",
+            "keywords": [
+                "CSS3",
+                "HTML5",
+                "JS",
+                "compress",
+                "css",
+                "free",
+                "html",
+                "javascript",
+                "min",
+                "minify",
+                "open source",
+                "php",
+                "php5",
+                "phpmin"
+            ],
+            "support": {
+                "issues": "https://github.com/dbx123/php-minifier/issues",
+                "source": "https://github.com/dbx123/php-minifier/tree/master"
+            },
+            "time": "2018-05-22T11:16:18+00:00"
+        },
         {
             "name": "mustache/mustache",
             "version": "v3.0.0",
