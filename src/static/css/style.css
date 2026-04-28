@@ -3175,6 +3175,12 @@ strong {
     background-color: rgba(180, 33, 4, 0.05);
 }
 
+.kg-result-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
 @media (max-width: 600px) {
     .kg-search-box {
         flex-direction: column;
