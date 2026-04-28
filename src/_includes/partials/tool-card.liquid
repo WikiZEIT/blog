@@ -4,7 +4,7 @@
     {% if tool.data.tags %}
     <div class="post-card-tags">
       {% for tag in tool.data.tags %}
-        {% unless tag == "tool" %}
+        {% unless tag == "Tool" %}
         <span class="tag-badge">{{ tag }}</span>
         {% endunless %}
       {% endfor %}

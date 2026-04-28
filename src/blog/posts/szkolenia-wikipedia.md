@@ -3,7 +3,7 @@ title: "Kto w Polsce prowadzi szkolenia z edytowania Wikipedii?"
 date: 2026-03-30
 tags:
   - Wikipedia
-  - szkolenia
+  - Szkolenia
 description: "Artykuł z listą osób i firm, które prowadzą szkolenia z edycji Wikipedii."
 keywords:
   - szkolenia Wikipedia

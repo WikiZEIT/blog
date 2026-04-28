@@ -135,7 +135,7 @@ export default function(eleventyConfig) {
         collectionApi.getAll().forEach(item => {
             if (item.data.tags) {
                 item.data.tags.forEach(tag => {
-                    if (tag !== "post" && tag !== "all" && tag !== "tool") {
+                    if (tag !== "post" && tag !== "all" && tag !== "Tool") {
                         tagsSet.add(tag);
                     }
                 });

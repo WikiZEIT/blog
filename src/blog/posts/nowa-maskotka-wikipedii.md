@@ -3,7 +3,7 @@ title: "Baby Globe: czyli nowa maskotka Wikipedii"
 date: 2026-04-11
 tags:
   - Wikipedia
-  - marketing
+  - Marketing
 description: "Z okazji 25-lecia Wikipedii powstała nowa maskotka o nazwie „Baby Globe”."
 keywords:
   - Baby Globe

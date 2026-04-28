@@ -22,7 +22,7 @@ layout: layouts/base.liquid
   {% if postsList.size > 0 %}
   <div class="posts-grid">
     {% for post in postsList %}
-      {% unless post.data.tags contains "tool" %}
+      {% unless post.data.tags contains "Tool" %}
         {% include "partials/post-card.liquid", post: post %}
       {% endunless %}
     {% endfor %}
@@ -35,7 +35,7 @@ layout: layouts/base.liquid
   {% if tag %}
     {% assign hasTools = false %}
     {% for item in postsList %}
-      {% if item.data.tags contains "tool" %}
+      {% if item.data.tags contains "Tool" %}
         {% assign hasTools = true %}
         {% break %}
       {% endif %}
@@ -44,7 +44,7 @@ layout: layouts/base.liquid
     <h2 class="blog-title tag-tools-heading">Narzędzia</h2>
     <div class="tools-grid">
       {% for tool in postsList %}
-        {% if tool.data.tags contains "tool" %}
+        {% if tool.data.tags contains "Tool" %}
           {% include "partials/tool-card.liquid", tool: tool %}
         {% endif %}
       {% endfor %}

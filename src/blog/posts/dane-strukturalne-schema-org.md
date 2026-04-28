@@ -3,7 +3,7 @@ title: "Dane strukturalne Schema.org – przewodnik dla początkujących"
 date: 2026-03-08
 tags:
   - SEO
-  - Dane strukturalne
+  - Dane Strukturalne
 description: "Praktyczny przewodnik po danych strukturalnych Schema.org. Dowiedz się, jak dodać JSON-LD do swojej strony i poprawić widoczność w wyszukiwarkach."
 keywords:
   - Schema.org
