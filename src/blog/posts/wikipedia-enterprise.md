@@ -77,7 +77,7 @@ dolarów przychodu**.
 ## Kto płaci za Polską Wikipedię?
 
 Polska Wikipedia utrzymuje się głównie z dobrowolnych wpłat. Kluczową rolę odgrywa tu
-[**Stowarzyszenie Wikimedia Polska**](https://wikimedia.pl/), które posiada status Organizacji
+[Stowarzyszenie Wikimedia Polska](https://wikimedia.pl/), które posiada status Organizacji
 Pożytku Publicznego (OPP).
 
 Dzięki temu każdy podatnik w Polsce może przekazać **1,5% swojego podatku dochodowego** na wsparcie
@@ -90,7 +90,7 @@ wolnej wiedzy.
 
 To prosta metoda wsparcia, która nie kosztuje Cię ani grosza, a realnie buduje polskie zasoby Wiki.
 
-[**Przekaż 1.5% podatku na Wikipedię już dziś**](https://opp.wikimedia.pl/).
+[Przekaż 1.5% podatku na Wikipedię już dziś](https://opp.wikimedia.pl/).
 
 ## Perspektywa SEO: Wikipedia jako fundament
 

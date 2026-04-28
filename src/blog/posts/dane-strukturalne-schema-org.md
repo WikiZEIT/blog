@@ -49,12 +49,12 @@ wyniki** (rich results), takie jak:
 
 ### Dane strukturalne a Semantic Web (Sieć Semantyczna)
 
-Wdrożenie danych strukturalnych to praktyczny krok w stronę realizacji wizji [**Semantic
-Web**](https://pl.wikipedia.org/wiki/Sie%C4%87_semantyczna). Jest to koncepcja „inteligentnego
+Wdrożenie danych strukturalnych to praktyczny krok w stronę realizacji wizji [Semantic
+Web](https://pl.wikipedia.org/wiki/Sie%C4%87_semantyczna). Jest to koncepcja „inteligentnego
 internetu” stworzona przez Tima Bernersa-Lee, w której maszyny nie tylko wyświetlają tekst, ale
 realnie rozumieją jego znaczenie i powiązania.
 
-Stosując ustandaryzowany słownik [**Schema.org**](https://schema.org/), zmieniasz swoją stronę z
+Stosując ustandaryzowany słownik [Schema.org](https://schema.org/), zmieniasz swoją stronę z
 prostego dokumentu w element globalnej sieci danych:
 
 * **Od słów do encji:** Wyszukiwarka przestaje widzieć tylko ciąg liter (np. „Jaguar”), a zaczyna

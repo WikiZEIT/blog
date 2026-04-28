@@ -49,7 +49,7 @@ Q42 (Douglas Adams)
 
 ## Wikidata a Google Knowledge Graph
 
-Google wykorzystuje dane z Wikidanych do zasilania swojego [**Knowledge Graph**](https://pl.wikipedia.org/wiki/Graf_Wiedzy_Google) – bazy wiedzy, która wyświetla się w panelach po prawej stronie wyników wyszukiwania. Jeśli Twoja marka, organizacja lub osoba ma element w Wikidanych, istnieje duża szansa, że Google wyświetli panel wiedzy.
+Google wykorzystuje dane z Wikidanych do zasilania swojego [Knowledge Graph](https://pl.wikipedia.org/wiki/Graf_Wiedzy_Google) – bazy wiedzy, która wyświetla się w panelach po prawej stronie wyników wyszukiwania. Jeśli Twoja marka, organizacja lub osoba ma element w Wikidanych, istnieje duża szansa, że Google wyświetli panel wiedzy.
 
 ## Wikidane a Generatywna AI (GEO)
 
