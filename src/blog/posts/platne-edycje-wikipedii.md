@@ -22,12 +22,12 @@ faq:
   - question: "Czy płatna edycja Wikipedii jest zgodna z zasadami?"
     answer: |
       Wiele osób zastanawia się, czy płacenie za edycję nie łamie zasad Wikipedii. Krótka odpowiedź brzmi:
-      jest to legalne, pod warunkiem pełnej transparentności. Fundacja Wikimedia wymaga, aby każda
-      płatna edycja była oznaczona deklaracją Konfliktu Interesów (WP:KI). Społeczność Polskiej Wikipedii
-      nie ma wypracowanych własnych zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne.
-      Warto jednak wiedzieć, że większość najbardziej aktywnych i zaangażowanych redaktorów polskiej
-      Wikipedii podchodzi do płatnych zleceń z dużą niechęcią i rzadko podejmuje się takiej współpracy,
-      preferując wolontariat i dbanie o czystość merytoryczną haseł.
+      jest to ok, pod warunkiem pełnej transparentności. Fundacja Wikimedia wymaga, aby każda płatna edycja
+      była oznaczona deklaracją Konfliktu Interesów (WP:KI). Społeczność Polskiej Wikipedii nie ma
+      wypracowanych własnych zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne. Warto jednak wiedzieć,
+      że większość najbardziej aktywnych i zaangażowanych redaktorów polskiej Wikipedii podchodzi do płatnych zleceń
+      z dużą niechęcią i rzadko podejmuje się takiej współpracy, preferując wolontariat i dbanie o czystość
+      merytoryczną haseł.
   - question: "Jak dodać firmę do Wikipedii?"
     answer: |
       1. Analiza źródeł: Sprawdź, czy o firmie pisały niezależne media (nie lokalne, nie branżowe).
@@ -69,10 +69,10 @@ niezwykle cienka, a jej przekroczenie kończy się natychmiastowym usunięciem t
 
 ## Czy płatna edycja Wikipedii jest zgodna z zasadami?
 Wiele osób zastanawia się, czy płacenie za edycję nie łamie zasad Wikipedii. Krótka odpowiedź brzmi:
-**jest to legalne, pod warunkiem pełnej transparentności.** Fundacja Wikimedia wymaga, aby każda
-płatna edycja była oznaczona deklaracją **Konfliktu Interesów
-([WP:KI](https://pl.wikipedia.org/wiki/WP:KI))**. Społeczność Polskiej Wikipedii nie ma wypracowanych własnych
-zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne.
+**jest to ok, pod warunkiem pełnej transparentności.** Fundacja Wikimedia wymaga, aby każda płatna
+edycja była oznaczona deklaracją **Konfliktu Interesów
+([WP:KI](https://pl.wikipedia.org/wiki/WP:KI))**. Społeczność Polskiej Wikipedii nie ma
+wypracowanych własnych zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne.
 
 Warto jednak wiedzieć, że większość najbardziej aktywnych i zaangażowanych redaktorów polskiej
 Wikipedii podchodzi do płatnych zleceń z dużą niechęcią i rzadko podejmuje się takiej współpracy,
