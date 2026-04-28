@@ -104,13 +104,19 @@ if ($query && $apiKey) {
                     </p>
                     <div class="kg-result-links">
                         <a href="<?php echo htmlspecialchars($googleSearchUrl); ?>" target="_blank" rel="noopener" class="kg-result-link">
-                            Otwórz w Google (ID: <?php echo htmlspecialchars($kgId); ?>)
+                            Otwórz w Google
                         </a>
                         <?php if ($descriptionUrl): ?>
                             <a href="<?php echo htmlspecialchars($descriptionUrl); ?>" target="_blank" rel="noopener" class="kg-result-link kg-result-link--wiki">
                                 Wikipedia
                             </a>
                         <?php endif; ?>
+                        <span class="kg-result-id">
+                            Graph ID: <code><?php echo htmlspecialchars($kgId); ?></code>
+                            <button type="button" class="kg-copy-btn" data-kg-id="<?php echo htmlspecialchars($kgId); ?>" title="Kopiuj ID do schowka">
+                                <span class="material-symbols-outlined">content_copy</span>
+                            </button>
+                        </span>
                         <?php if ($entityHome): ?>
                             <a href="<?php echo htmlspecialchars($entityHome); ?>" target="_blank" rel="noopener" class="kg-result-link kg-result-link--home">
                                 Strona oficjalna
@@ -122,3 +128,15 @@ if ($query && $apiKey) {
         <?php endforeach; ?>
     <?php endif; ?>
 </main>
+<script>
+document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.kg-copy-btn');
+    if (!btn) return;
+    var id = btn.getAttribute('data-kg-id');
+    navigator.clipboard.writeText(id).then(function() {
+        var icon = btn.querySelector('.material-symbols-outlined');
+        icon.textContent = 'check';
+        setTimeout(function() { icon.textContent = 'content_copy'; }, 1500);
+    });
+});
+</script>

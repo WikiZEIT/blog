@@ -3200,6 +3200,46 @@ strong {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    align-items: center;
+}
+
+.kg-result-id {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--text-secondary, #666);
+}
+
+.kg-result-id code {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+.kg-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    padding: 0.2em 0.35em;
+    cursor: pointer;
+    color: var(--text-secondary, #666);
+    transition: all 0.2s;
+}
+
+.kg-copy-btn:hover {
+    background-color: rgba(180, 33, 4, 0.05);
+    border-color: var(--accent, #b42104);
+    color: var(--accent, #b42104);
+}
+
+.kg-copy-btn .material-symbols-outlined {
+    font-size: 16px;
 }
 
 @media (max-width: 600px) {
