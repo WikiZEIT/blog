@@ -69,6 +69,9 @@ export default function(eleventyConfig) {
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
 
+    // Copy Composer vendor directory into output (source of truth is root composer.json)
+    eleventyConfig.addPassthroughCopy({ "vendor": "/api/vendor" });
+
     // Copy tool config files (API keys) to output
     eleventyConfig.addPassthroughCopy("src/tools/**/config.json");
 

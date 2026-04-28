@@ -56,7 +56,6 @@ jobs:
 
       - name: Install PHP dependencies
         run: composer install --no-dev --optimize-autoloader
-        working-directory: api
 
       - name: Validate social card SVG
         run: |

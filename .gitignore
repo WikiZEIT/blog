@@ -1,6 +1,6 @@
 _site
 node_modules
-api/vendor
+vendor
 api/subscribers.db
 api/mail
 api/logs
