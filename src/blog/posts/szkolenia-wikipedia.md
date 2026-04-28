@@ -36,7 +36,6 @@ faq:
       - NoblePro prowadzi szkolenia z MediaWiki, nie dotyczą one zasad edytowania Wikipedii,
         tylko oprogramowania na który stoii Wikipedia i projekty siotrzane. Dedykowane jest
         osobom i formom, które chcą tworzyć własne Wiki.
-modified: 2026-04-21
 ---
 
 Każdy może edytować Wikipedię. Nie trzeba być nawet zalogowanym. Ale dodawanie treści, które spełnia
@@ -63,17 +62,17 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
     * [Akademia Wikimediów](https://wikimedia.pl/akademia-wikimediow/) jest to jeszcze jeden projekt
       Edukacyjny WMPL. Do projektu mogą się także zapisać pojedyncze osoby niezwiązane z edukacją.
 
-2. **NobleProg** – oferuje szkolenia techniczne z oprogramowania
+3. **WikiZEIT** – aktualnie jedyna na rynku opcja [komercyjnego szkolenia z edytowania Wikipedii
+   i projektów siostrzanych](https://wikizeit.jcubic.pl/oferta/). Szkolenie prowadzone jest przez
+   [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika
+   oraz WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla Stowarzyszenia Wikimedia Polska.
+
+3. **NobleProg** – oferuje szkolenia techniczne z oprogramowania
    [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki). MediaWiki to projekt Open Source, który
    jest silnikiem, na którym stoją wszystkie projekty Wikimediów (tj. Wikipedia, Wikimedia Commons,
    czy Wikidane). Warto podkreślić, że szkolenia NobleProg **nie dotyczą zasad edytowania
    Wikipedii**, lecz administracji systemem informatycznym, na którym ona działa. Dedykowane jest
    osobom i formom, które chcą tworzyć własne Wiki.
-
-3. **WikiZEIT** – aktualnie jedyna na rynku opcja [komercyjnego szkolenia z edytowania Wikipedii
-   i projektów siostrzanych](https://wikizeit.jcubic.pl/oferta/). Szkolenie prowadzone jest przez
-   [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika
-   oraz WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla Stowarzyszenia Wikimedia Polska.
 
 ## Inne inicjatywy i kursy edukacyjne w Polsce
 Wikimedia Polska organizuje także pojedycze wydarzenia, jak np. [Kurs webinarowy: Wikipedia od A do
