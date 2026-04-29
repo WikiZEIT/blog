@@ -159,12 +159,35 @@ to za mało – liczą się nagrody, publikacje i szerokie uznanie środowiska.
 
 ## Najczęstsze błędy i "pocałunek śmierci" dla artykułu
 Unikaj tych błędów, jeśli nie chcesz, by Twój wpis zniknął w kilka minut:
-* **Język marketingowy:** Zwroty typu "lider branży", "najlepszy produkt", "eksperci uważają".
+* **Język marketingowy:** [Zwroty zwodnicze](https://pl.wikipedia.org/wiki/WP:WZ), typu "lider
+    branży", "najlepszy produkt", "eksperci uważają".
 * **Błędy techniczne:** Błędne formatowanie, np. pogrubienia zamiast nagłówków.
 * **Powtórzenia:** Każda informacja powinna być napisana tylko raz. Wikipedia to nie jest blog, czy
     artykuł w czasopiśmie, gdzie trzeba przypominać co było wcześniej w artykule.
-* **Brak deklaracji [WP:KI](https://pl.wikipedia.org/wiki/WP:KI):** Ukrywanie faktu otrzymania wynagrodzenia za edycję.
-* **Linki w treści** Linki mogą się znajdować tylko w sekcji linki zewnętrzne, jako przypisu oraz w infoboksie.
+* **Brak deklaracji [WP:KI](https://pl.wikipedia.org/wiki/WP:KI):** Ukrywanie faktu otrzymania
+    wynagrodzenia za edycję.
+* **Linki w treści** Linki mogą się znajdować tylko w sekcji linki zewnętrzne, jako przypisu oraz w
+    infoboksie.
+
+## Reklama w Wikipedii – dlaczego to podejście jest ryzykowne?
+Wielu przedsiębiorców błędnie zakłada, że skoro Wikipedia jest popularna, to stanowi idealne miejsce
+na darmową promocję.  Encyklopedia ta to nie jest platforma marketingowa, czy panorama firm. Dlatego
+pod żadnym pozorem nie może służyć jako tablica ogłoszeniowa czy nośnik reklamowy.  Próba uprawiania
+działań typu **marketing w Wikipedii** spotyka się z natychmiastową i bardzo ostrą reakcją
+społeczności.
+
+* **Alergia na marketing:** Doświadczeni Wikipedyści są niezwykle wyczuleni na język korzyści.
+    Wszelkie przymiotniki wartościujące („nowoczesny”, „innowacyjny”, „unikalny”) działają na nich
+    jak płachta na byka i często skutkują nie tylko usunięciem treści, ale i zablokowaniem domeny.
+* **Problem z obiektywizmem:** Marketing z natury dąży do podkreślania zalet, podczas gdy
+    Wikipedia wymaga suchego, encyklopedycznego zapisu faktów. Jeśli Twoim celem jest budowanie
+    pozytywnego wizerunku poprzez ukrywanie wad produktu, Wikipedia nie jest dla Ciebie.
+* **Link building:** Próby dodawania linków do strony firmowej jako „źródeł” w niepowiązanych
+    tematycznie artykułach są traktowane jako spam i szybko trafiają na czarną listę.
+
+Właśnie dlatego, aby uniknąć oskarżeń o spam i agresywny marketing, warto zlecić pisanie artykułu
+profesjonalistom. Osoba z doświadczeniem wie, jak przekazać istotne fakty o firmie w sposób, który
+spełnia standardy encyklopedyczne i nie budzi niechęci społeczności redaktorów.
 
 ## Dlaczego warto (lub nie warto) wynająć doświadczonego redaktora?
 Samodzielna edycja często kończy się tzw. „spaloną ziemią” – zrażeniem administratorów i
