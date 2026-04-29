@@ -7,9 +7,9 @@ api/logs
 subscribers.db
 tmp
 wikizeit
-szkolenia
+oferta
 readme
 prezentacja
 scripts/.watcher.log
-/.agent-shell/
 src/tools/*/config.json
+scripts/.watcher.pid
