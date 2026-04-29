@@ -231,7 +231,7 @@ export default function(eleventyConfig) {
 
     if (isProduction) {
         eleventyConfig.addTransform('html-minifier-next', async function(content) {
-            if (this.page.outputPath && (this.page.outputPath.endsWith('.html') || this.page.outputPath.endsWith('.php'))) {
+            if (this.page.outputPath && (this.page.outputPath.endsWith('.html'))) {
                 return await minify(content, {
                     collapseWhitespace: true,
                     conservativeCollapse: true,
