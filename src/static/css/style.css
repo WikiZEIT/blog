@@ -3452,6 +3452,18 @@ strong {
     border-color: rgba(180, 33, 4, 0.3);
 }
 
+.noscript-warning {
+    background: rgba(180, 33, 4, 0.15);
+    border: 2px solid rgba(180, 33, 4, 0.6);
+    border-radius: 0.5rem;
+    color: var(--color-slate-200);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 .book-no-results,
 .book-loading {
     color: var(--color-slate-400);
