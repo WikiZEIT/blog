@@ -1,5 +1,5 @@
 ---
-title: "Czym jest Wikidata i dlaczego ma znaczenie dla SEO?"
+title: "Czym są Wikidane i dlaczego ma znaczenie dla SEO?"
 date: 2026-03-07
 tags:
   - Wikidata
@@ -20,7 +20,6 @@ keywords:
   - Wikimedia
   - dane strukturalne
 author: jcubic
-modified: 2026-04-21
 faq:
   - question: "Jak działają Wikidane?"
     answer: |
@@ -34,7 +33,8 @@ Wikidata to wolna, otwarta baza wiedzy, która może być odczytywana i edytowan
 
 ## Jak działają Wikidane?
 
-Wikidane (*Wikidata*) organizują informacje w postaci **elementów** (items) i **właściwości** (properties):
+Wikidane (*Wikidata*) organizują informacje w postaci **elementów** (items) i **właściwości** (properties),
+ułożonych w deklaracje typu klucz-wartość.
 
 - Każdy element ma unikalny identyfikator (np. Q42 dla Douglasa Adamsa)
 - Właściwości opisują relacje między elementami (np. P31 = "jest instancją")
