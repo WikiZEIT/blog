@@ -42,7 +42,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
         });
       })();
     </script>
-    <script defer src="https://umami.jcubic.pl/script.js" data-website-id="c716ef1c-b60b-455c-8279-58996a09a8a6"></script>
+    {% unless analytics == false %}<script defer src="https://umami.jcubic.pl/script.js" data-website-id="c716ef1c-b60b-455c-8279-58996a09a8a6"></script>{% endunless %}
   </body>
 </html>
 {% if page.outputPath contains ".php" %}<?= ob_get_clean() ?>{% endif %}
