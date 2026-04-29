@@ -11,10 +11,16 @@
         Kontakt
       </a>
     </div>
-    <button class="theme-toggle" title="Przełącz motyw" aria-label="Przełącz motyw jasny/ciemny">
-      <span class="material-symbols-outlined theme-icon-light">light_mode</span>
-      <span class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-    </button>
+    <div class="theme-toggle">
+      <input name="mode" type="radio" id="mode_light" value="light" autocomplete="on"/>
+      <label for="mode_light" title="Jasny motyw">
+        <span class="material-symbols-outlined">light_mode</span>
+      </label>
+      <input name="mode" type="radio" id="mode_dark" value="dark" autocomplete="on"/>
+      <label for="mode_dark" title="Ciemny motyw">
+        <span class="material-symbols-outlined">dark_mode</span>
+      </label>
+    </div>
     <button class="menu-button">
       <span class="material-symbols-outlined">menu</span>
     </button>

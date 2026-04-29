@@ -36,10 +36,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-html.dark body {
-    background-color: var(--color-background-dark);
-    color: var(--color-slate-100);
-}
 
 ::selection {
     background-color: var(--color-primary);
@@ -82,6 +78,7 @@ a {
     --color-background-light: #f8f6f5;
     --color-background-dark: #1a0e0c;
     --bg-rgb: 26, 14, 12;
+    --overlay-rgb: 255, 255, 255;
     --color-slate-50: #f8fafc;
     --color-slate-100: #f1f5f9;
     --color-slate-200: #e2e8f0;
@@ -2865,7 +2862,7 @@ main .body ol > li::before {
     font-weight: 700;
     letter-spacing: -0.025em;
     text-transform: uppercase;
-    color: var(--color-white);
+    color: var(--color-slate-100);
 }
 
 .not-found-lead {
@@ -2960,11 +2957,11 @@ pre[class*="language-wiki"] > code {
 
 p code {
     font-size: 1.2em;
-    color: white;
+    color: var(--color-slate-100);
 }
 
 strong {
-    color: white;
+    color: var(--color-slate-100);
 }
 
 /* ==========================================================================
@@ -3099,7 +3096,7 @@ strong {
 }
 
 .kg-result {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(var(--overlay-rgb), 0.03);
     border: 1px solid rgba(180, 33, 4, 0.1);
     border-radius: var(--border-radius-xl);
     padding: 1.5rem;
@@ -3119,7 +3116,7 @@ strong {
     height: 80px;
     object-fit: cover;
     border-radius: var(--border-radius-lg);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(var(--overlay-rgb), 0.05);
     flex-shrink: 0;
 }
 
@@ -3127,7 +3124,7 @@ strong {
     width: 80px;
     height: 80px;
     border-radius: var(--border-radius-lg);
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(var(--overlay-rgb), 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3210,11 +3207,11 @@ strong {
     gap: 0.35rem;
     margin-left: auto;
     font-size: 0.85rem;
-    color: var(--text-secondary, #666);
+    color: var(--color-slate-400);
 }
 
 .kg-result-id code {
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(var(--overlay-rgb), 0.05);
     padding: 0.1em 0.4em;
     border-radius: 4px;
     font-size: 0.85em;
@@ -3225,11 +3222,11 @@ strong {
     align-items: center;
     justify-content: center;
     background: none;
-    border: 1px solid var(--border-color, #ddd);
+    border: 1px solid var(--color-slate-700);
     border-radius: 4px;
     padding: 0.2em 0.35em;
     cursor: pointer;
-    color: var(--text-secondary, #666);
+    color: var(--color-slate-400);
     transition: all 0.2s;
 }
 
@@ -3450,7 +3447,7 @@ strong {
 }
 
 .book-format-link.active {
-    color: var(--color-white);
+    color: var(--color-slate-100);
     background-color: rgba(180, 33, 4, 0.2);
     border-color: rgba(180, 33, 4, 0.3);
 }
@@ -3484,7 +3481,7 @@ strong {
 }
 
 .book-result {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(var(--overlay-rgb), 0.03);
     border: 1px solid rgba(180, 33, 4, 0.1);
     border-radius: var(--border-radius-xl);
     padding: 1.5rem;
@@ -3559,9 +3556,46 @@ strong {
    Light Theme
    ========================================================================== */
 
-html:not(.dark) {
+/* --- Priority 1: system preference (lowest) --- */
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-background-dark: #f8f6f5;
+        --bg-rgb: 248, 246, 245;
+        --overlay-rgb: 0, 0, 0;
+        --color-slate-100: #0f172a;
+        --color-slate-200: #1e293b;
+        --color-slate-300: #334155;
+        --color-slate-400: #475569;
+        --color-slate-500: #64748b;
+        --color-slate-600: #94a3b8;
+        --color-slate-700: #cbd5e1;
+        --color-slate-800: #e2e8f0;
+        --color-slate-900: #f1f5f9;
+        --color-link: #1d6fb5;
+    }
+}
+
+/* --- Priority 2: JS data-theme attribute (overrides system pref) --- */
+:root[data-theme="dark"] {
+    --color-background-dark: #1a0e0c;
+    --bg-rgb: 26, 14, 12;
+    --overlay-rgb: 255, 255, 255;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+    --color-link: #47a8e2;
+}
+
+:root[data-theme="light"] {
     --color-background-dark: #f8f6f5;
     --bg-rgb: 248, 246, 245;
+    --overlay-rgb: 0, 0, 0;
     --color-slate-100: #0f172a;
     --color-slate-200: #1e293b;
     --color-slate-300: #334155;
@@ -3574,78 +3608,96 @@ html:not(.dark) {
     --color-link: #1d6fb5;
 }
 
-html:not(.dark) strong,
-html:not(.dark) p code {
-    color: var(--color-slate-100);
+/* --- Priority 3: CSS :has() radio (highest, overrides everything) --- */
+:root:has(#mode_dark:checked) {
+    --color-background-dark: #1a0e0c;
+    --bg-rgb: 26, 14, 12;
+    --overlay-rgb: 255, 255, 255;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+    --color-link: #47a8e2;
 }
 
-html:not(.dark) .kg-result,
-html:not(.dark) .book-result {
-    background-color: rgba(0, 0, 0, 0.02);
+:root:has(#mode_light:checked) {
+    --color-background-dark: #f8f6f5;
+    --bg-rgb: 248, 246, 245;
+    --overlay-rgb: 0, 0, 0;
+    --color-slate-100: #0f172a;
+    --color-slate-200: #1e293b;
+    --color-slate-300: #334155;
+    --color-slate-400: #475569;
+    --color-slate-500: #64748b;
+    --color-slate-600: #94a3b8;
+    --color-slate-700: #cbd5e1;
+    --color-slate-800: #e2e8f0;
+    --color-slate-900: #f1f5f9;
+    --color-link: #1d6fb5;
 }
 
-html:not(.dark) .kg-result-image,
-html:not(.dark) .kg-result-image-placeholder {
-    background-color: rgba(0, 0, 0, 0.04);
-}
-
-html:not(.dark) .not-found-heading {
-    color: var(--color-slate-100);
-}
-
-html:not(.dark) .article-featured-image-overlay {
-    background: linear-gradient(to top, rgba(var(--bg-rgb), 0.6), transparent);
-}
-
-html:not(.dark) .book-format-link.active {
-    color: var(--color-primary);
-}
-
-html:not(.dark) .kg-result-id {
-    color: var(--color-slate-400);
-}
-
-html:not(.dark) .kg-copy-btn {
-    color: var(--color-slate-400);
-    border-color: var(--color-slate-700);
-}
-
-html:not(.dark) .kg-result-id code {
-    background: rgba(0, 0, 0, 0.06);
-}
-
-/* Theme toggle */
+/* Theme toggle – radio inputs styled as icon buttons */
 .theme-toggle {
     display: flex;
     align-items: center;
+}
+
+.theme-toggle input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theme-toggle label {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    background: none;
-    border: 1px solid rgba(180, 33, 4, 0.2);
-    border-radius: var(--border-radius-full);
     width: 2.25rem;
     height: 2.25rem;
+    border: 1px solid rgba(180, 33, 4, 0.2);
+    border-radius: var(--border-radius-full);
     cursor: pointer;
     color: var(--color-slate-400);
     transition: all 0.2s;
 }
 
-.theme-toggle:hover {
+.theme-toggle label:hover {
     color: var(--color-primary);
     border-color: rgba(180, 33, 4, 0.4);
     background-color: rgba(180, 33, 4, 0.05);
 }
 
-html.dark .theme-icon-dark,
-html:not(.dark) .theme-icon-light {
-    display: none;
-}
-
-html.dark .theme-icon-light,
-html:not(.dark) .theme-icon-dark {
-    display: block;
-}
-
-.theme-toggle .material-symbols-outlined {
+.theme-toggle label .material-symbols-outlined {
     font-size: 1.125rem;
 }
+
+/* Icon visibility: show the icon to switch TO the other mode */
+/* Default: system light → show moon; system dark → show sun */
+label[for="mode_light"] { display: none; }
+label[for="mode_dark"] { display: flex; }
+
+@media (prefers-color-scheme: dark) {
+    label[for="mode_light"] { display: flex; }
+    label[for="mode_dark"] { display: none; }
+}
+
+/* JS data-theme overrides system preference */
+[data-theme="dark"] label[for="mode_light"] { display: flex; }
+[data-theme="dark"] label[for="mode_dark"] { display: none; }
+[data-theme="light"] label[for="mode_light"] { display: none; }
+[data-theme="light"] label[for="mode_dark"] { display: flex; }
+
+/* Radio checked overrides everything */
+:root:has(#mode_dark:checked) label[for="mode_light"] { display: flex; }
+:root:has(#mode_dark:checked) label[for="mode_dark"] { display: none; }
+:root:has(#mode_light:checked) label[for="mode_light"] { display: none; }
+:root:has(#mode_light:checked) label[for="mode_dark"] { display: flex; }
 

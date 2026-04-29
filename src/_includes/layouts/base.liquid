@@ -3,17 +3,10 @@ ob_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 ?>{% endif %}
 <!DOCTYPE html>
-<html class="dark" lang="{{ site.language }}">
+<html lang="{{ site.language }}">
   <head>
-    <script>
-      (function() {
-        var t = localStorage.getItem('theme');
-        if (t === 'light' || (!t && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-          document.documentElement.classList.remove('dark');
-        }
-      })();
-    </script>
     {% include "head.liquid" %}
+    <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;})()</script>
     {% if schemaType == "home" %}
       {% include "partials/schema-home.liquid" %}
     {% elsif schemaType == "article" %}
@@ -34,16 +27,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
       document.querySelector('.menu-button').addEventListener('click', function() {
         document.querySelector('.nav-links').classList.toggle('open');
       });
-      document.querySelector('.theme-toggle').addEventListener('click', function() {
-        var isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        var giscus = document.querySelector('iframe.giscus-frame');
-        if (giscus) {
-          giscus.contentWindow.postMessage({
-            giscus: { setConfig: { theme: isDark ? 'dark_dimmed' : 'light' } }
-          }, 'https://giscus.app');
+      (function() {
+        var stored = localStorage.getItem('theme');
+        if (stored) {
+          var radio = document.getElementById('mode_' + stored);
+          if (radio) radio.checked = true;
         }
-      });
+        var radios = document.querySelectorAll('input[name="mode"]');
+        radios.forEach(function(radio) {
+          radio.addEventListener('change', function() {
+            localStorage.setItem('theme', this.value);
+            document.documentElement.dataset.theme = this.value;
+          });
+        });
+      })();
     </script>
     <script defer src="https://umami.jcubic.pl/script.js" data-website-id="c716ef1c-b60b-455c-8279-58996a09a8a6"></script>
   </body>
