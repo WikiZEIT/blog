@@ -7,7 +7,13 @@
       "url": "{{ person.url }}",
       "@id": "{{ person['@id'] }}",
       "name": "{{ person.name }}",
-      "image": "{{ person.image }}",
+      "alternateName": "{{ person.alternateName }}",
+      "image": {
+        "@type": "{{ person.image['@type'] }}",
+        "@id": "{{ person.image['@id'] }}",
+        "url": "{{ person.image.url }}",
+        "caption": "{{ person.image.caption }}"
+      },
       "jobTitle": "{{ person.jobTitle }}",
       "description": "{{ person.description }}",
       "sameAs": [
