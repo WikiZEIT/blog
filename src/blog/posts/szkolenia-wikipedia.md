@@ -29,12 +29,12 @@ faq:
         - WikiTeka
         - Akademia Wikimediów
         - Współpraca z GLAM
-        WMPL na swoim kanale na YouTube umiesza także materiały wideo.
-      - WikiZEIT organizuje komercyjne szkolenia z edycki Wikipedii i projektów siotrzanych,
+        Są to szkolenia darmowe. WMPL na swoim kanale na YouTube umieszcza także materiały wideo.
+      - WikiZEIT organizuje komercyjne szkolenia z edycji Wikipedii i projektów siotrzanych,
         które prowadzi Jakub T. Jankiewicz doświadczony redaktor, przewodnik oraz WikiTrener
-        w Polskiej Wikipedii.
+        w Polskiej Wikipedii. Są to jedyne płatne szkolenia z Wikipedii organizowane w Polsce.
       - NoblePro prowadzi szkolenia z MediaWiki, nie dotyczą one zasad edytowania Wikipedii,
-        tylko oprogramowania na który stoii Wikipedia i projekty siotrzane. Dedykowane jest
+        tylko oprogramowania, na który stoii Wikipedia i projekty siotrzane. Dedykowane jest
         osobom i formom, które chcą tworzyć własne Wiki.
 ---
 
@@ -62,10 +62,12 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
     * [Akademia Wikimediów](https://wikimedia.pl/akademia-wikimediow/) jest to jeszcze jeden projekt
       Edukacyjny WMPL. Do projektu mogą się także zapisać pojedyncze osoby niezwiązane z edukacją.
 
-3. **WikiZEIT** – aktualnie jedyna na rynku opcja [komercyjnego szkolenia z edytowania Wikipedii
-   i projektów siostrzanych](https://wikizeit.jcubic.pl/oferta/). Szkolenie prowadzone jest przez
-   [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika
-   oraz WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla Stowarzyszenia Wikimedia Polska.
+3. **WikiZEIT** – prowadzi [komercyjne szkolenia z edytowania Wikipedii i projektów
+   siostrzanych](https://wikizeit.jcubic.pl/oferta/). Aktualnie jest to jedyna na rynku opcja
+   płatnych szkoleń z Wikipedii w Polsce. Szkolenia prowadzone są przez [Jakuba
+   T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika oraz
+   WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla
+   Stowarzyszenia Wikimedia Polska.
 
 3. **NobleProg** – oferuje szkolenia techniczne z oprogramowania
    [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki). MediaWiki to projekt Open Source, który
