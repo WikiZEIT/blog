@@ -29,16 +29,22 @@ faq:
       - Wartości mogą być tekstem, liczbami, datami, współrzędnymi geograficznymi lub odniesieniami do innych elementów
 ---
 
-Wikidata to wolna, otwarta baza wiedzy, która może być odczytywana i edytowana zarówno przez ludzi, jak i przez maszyny. Uruchomiona w 2012 roku przez Wikimedia Deutschland, Wikidata stanowi centralne repozytorium danych strukturalnych dla wszystkich projektów Wikimedia.
+## Co to są Wikidane?
+
+Wikidane to wolna, otwarta baza wiedzy, która może być odczytywana i edytowana zarówno przez ludzi,
+jak i przez maszyny. Uruchomiona w 2012 roku przez Wikimedia Deutschland, Wikidata stanowi centralne
+repozytorium danych strukturalnych dla wszystkich projektów Wikimedia. Wikidane są szczególnie istotne
+dla widoczności w Google oraz narzędzi AI takich jak ChatGPT czy Gemini.
 
 ## Jak działają Wikidane?
 
 Wikidane (*Wikidata*) organizują informacje w postaci **elementów** (items) i **właściwości** (properties),
 ułożonych w deklaracje typu klucz-wartość.
 
-- Każdy element ma unikalny identyfikator (np. Q42 dla Douglasa Adamsa)
-- Właściwości opisują relacje między elementami (np. P31 = "jest instancją")
-- Wartości mogą być tekstem, liczbami, datami, współrzędnymi geograficznymi lub odniesieniami do innych elementów
+- Każdy element ma unikalny identyfikator (np. Q42 dla Douglasa Adamsa).
+- Właściwości opisują relacje między elementami (np. P31 = "jest instancją").
+- Wartości mogą być tekstem, liczbami, datami, współrzędnymi geograficznymi lub odniesieniami do
+  innych elementów.
 
 ```text
 Q42 (Douglas Adams)
