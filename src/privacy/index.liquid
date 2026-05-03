@@ -1,0 +1,121 @@
+---
+layout: layouts/page.liquid
+title: "Polityka prywatności"
+description: "Polityka prywatności projektu WikiZEIT – informacje o przetwarzaniu danych osobowych, plikach cookies i analityce."
+permalink: privacy/
+badge: "Prywatność"
+---
+
+<div class="content-section">
+  <h2>Wprowadzenie</h2>
+  <p>
+    Niniejsza polityka prywatności opisuje, w jaki sposób projekt WikiZEIT
+    (<a href="{{ site.url }}">{{ site.url }}</a>) przetwarza dane osobowe
+    odwiedzających stronę. Administratorem danych jest Jakub T. Jankiewicz.
+  </p>
+</div>
+
+<div class="content-section">
+  <h2>Jakie dane zbieramy</h2>
+  <h3>Formularz kontaktowy</h3>
+  <p>
+    Formularz na stronie <a href="/contact/">kontaktowej</a> zbiera imię,
+    adres e-mail oraz treść wiadomości. Dane te są wykorzystywane wyłącznie
+    w celu odpowiedzi na zapytanie i nie są udostępniane osobom trzecim.
+  </p>
+
+  <h3>Newsletter</h3>
+  <p>
+    Zapisując się na newsletter, podajesz swój adres e-mail. Adres jest
+    przechowywany na naszym serwerze i używany wyłącznie do wysyłki
+    powiadomień o nowych artykułach. Możesz zrezygnować z subskrypcji
+    w dowolnym momencie, klikając link rezygnacji w każdym e-mailu.
+  </p>
+
+  <h3>Analityka</h3>
+  <p>
+    Strona korzysta z <a href="https://umami.is/" rel="noopener">Umami</a> –
+    narzędzia analitycznego hostowanego na naszym własnym serwerze
+    (self-hosted). Dane analityczne nie są przekazywane do zewnętrznych
+    usług chmurowych. Umami nie używa plików cookies, nie zbiera
+    danych osobowych i jest zgodne z RODO. Umami zbiera anonimowe statystyki
+    odwiedzin bez identyfikacji poszczególnych użytkowników. Gromadzone dane to:
+  </p>
+  <ul>
+    <li>adres URL odwiedzanej strony i tytuł strony</li>
+    <li>adres strony odsyłającej (referrer)</li>
+    <li>typ przeglądarki i system operacyjny (na podstawie User-Agent)</li>
+    <li>język przeglądarki i rozdzielczość ekranu</li>
+    <li>kraj, region i miasto (na podstawie adresu IP, który nie jest zapisywany)</li>
+    <li>czas trwania wizyty (obliczany po stronie serwera na podstawie
+      różnicy między pierwszym a ostatnim zdarzeniem w sesji)</li>
+  </ul>
+</div>
+
+<div class="content-section">
+  <h2>Pliki cookies</h2>
+  <p>
+    Strona WikiZEIT nie wykorzystuje plików cookies do śledzenia
+    użytkowników. W localStorage przeglądarki przechowujemy:
+  </p>
+  <ul>
+    <li>
+      <strong>Preferencja motywu</strong> – wybrany motyw (jasny/ciemny)
+      pod kluczem <code>theme</code>.
+    </li>
+    <li>
+      <strong>Umami (analityka)</strong> – skrypt analityczny zapisuje flagę
+      wyłączenia śledzenia (<code>umami.disabled</code>) oraz identyfikator
+      cache sesji. Nie są to dane osobowe.
+    </li>
+    <li>
+      <strong>Cache narzędzia książek</strong> – narzędzie
+      <a href="/tools/books/">Generator cytowań książek</a> zapisuje wyniki
+      sprawdzania istnienia artykułów w polskiej Wikipedii (klucze z prefiksem
+      <code>wiki:</code>) oraz wyniki wyszukiwania książek w Google Books
+      (klucze z prefiksem <code>book:</code>). Dane te służą wyłącznie
+      do ograniczenia liczby zapytań do zewnętrznych API i wygasają
+      automatycznie po 7 dniach. Nie zawierają danych osobowych użytkownika.
+    </li>
+  </ul>
+  <p>
+    Żadne z powyższych danych nie są przesyłane na nasz serwer.
+  </p>
+</div>
+
+<div class="content-section">
+  <h2>Prawa użytkownika</h2>
+  <p>
+    Zgodnie z RODO masz prawo do:
+  </p>
+  <ul>
+    <li>dostępu do swoich danych osobowych</li>
+    <li>sprostowania nieprawidłowych danych</li>
+    <li>usunięcia danych („prawo do bycia zapomnianym")</li>
+    <li>ograniczenia przetwarzania</li>
+    <li>przenoszenia danych</li>
+    <li>sprzeciwu wobec przetwarzania</li>
+  </ul>
+  <p>
+    W celu realizacji tych praw skontaktuj się z nami pod adresem
+    <strong>{{ site.email }}</strong> lub przez
+    <a href="/contact/">formularz kontaktowy</a>.
+  </p>
+</div>
+
+<div class="content-section">
+  <h2>Hosting</h2>
+  <p>
+    Strona jest hostowana na serwerze MyDevil.net. Serwer może rejestrować
+    standardowe logi dostępowe (adres IP, czas żądania, żądany zasób),
+    które są wykorzystywane wyłącznie do celów technicznych i bezpieczeństwa.
+  </p>
+</div>
+
+<div class="content-section">
+  <h2>Zmiany w polityce prywatności</h2>
+  <p>
+    Niniejsza polityka może być aktualizowana. Data ostatniej zmiany:
+    <strong>3 maja 2026</strong>.
+  </p>
+</div>

@@ -1,0 +1,66 @@
+---
+permalink: privacy.md
+eleventyExcludeFromCollections: true
+---
+# Polityka prywatności WikiZEIT
+
+## Wprowadzenie
+
+Niniejsza polityka prywatności opisuje, w jaki sposób projekt WikiZEIT
+({{ site.url }}) przetwarza dane osobowe odwiedzających stronę.
+Administratorem danych jest Jakub T. Jankiewicz.
+
+## Jakie dane zbieramy
+
+### Formularz kontaktowy
+
+Formularz na stronie [kontaktowej]({{ site.url }}/contact/) zbiera imię,
+adres e-mail oraz treść wiadomości. Dane te są wykorzystywane wyłącznie
+w celu odpowiedzi na zapytanie i nie są udostępniane osobom trzecim.
+
+### Newsletter
+
+Zapisując się na newsletter, podajesz swój adres e-mail. Adres jest
+przechowywany na naszym serwerze i używany wyłącznie do wysyłki
+powiadomień o nowych artykułach. Możesz zrezygnować z subskrypcji
+w dowolnym momencie.
+
+### Analityka
+
+Strona korzysta z [Umami](https://umami.is/) – narzędzia analitycznego
+hostowanego na własnym serwerze (self-hosted). Dane analityczne nie są
+przekazywane do zewnętrznych usług chmurowych. Umami nie używa plików
+cookies, nie zbiera danych osobowych i jest zgodne z RODO. Zbiera anonimowe statystyki odwiedzin bez identyfikacji
+użytkowników. Gromadzone dane to: adres URL i tytuł strony, referrer,
+typ przeglądarki i system operacyjny, język i rozdzielczość ekranu,
+kraj/region/miasto (na podstawie IP, który nie jest zapisywany) oraz czas
+trwania wizyty (obliczany po stronie serwera).
+
+## Pliki cookies
+
+Strona WikiZEIT nie wykorzystuje plików cookies do śledzenia użytkowników.
+W localStorage przeglądarki przechowujemy:
+
+- **Preferencja motywu** – wybrany motyw (jasny/ciemny) pod kluczem `theme`.
+- **Umami (analityka)** – skrypt analityczny zapisuje flagę wyłączenia
+  śledzenia (`umami.disabled`) oraz identyfikator cache sesji.
+- **Cache narzędzia książek** – narzędzie Generator cytowań książek zapisuje
+  wyniki sprawdzania istnienia artykułów w polskiej Wikipedii (klucze
+  z prefiksem `wiki:`) oraz wyniki wyszukiwania książek w Google Books
+  (klucze z prefiksem `book:`). Dane te służą wyłącznie do ograniczenia
+  liczby zapytań do zewnętrznych API i wygasają automatycznie po 7 dniach.
+  Nie zawierają danych osobowych użytkownika.
+
+Żadne z powyższych danych nie są przesyłane na nasz serwer.
+
+## Prawa użytkownika
+
+Zgodnie z RODO masz prawo do: dostępu do danych, sprostowania, usunięcia,
+ograniczenia przetwarzania, przenoszenia danych i sprzeciwu wobec
+przetwarzania. Kontakt: {{ site.email }}
+
+## Hosting
+
+Strona jest hostowana na serwerze MyDevil.net. Serwer może rejestrować
+standardowe logi dostępowe (adres IP, czas żądania) do celów technicznych
+i bezpieczeństwa.

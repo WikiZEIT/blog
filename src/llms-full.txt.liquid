@@ -1,0 +1,26 @@
+---
+permalink: llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# WikiZEIT
+
+> {{ site.longDescription }}
+
+WikiZEIT to edukacyjny projekt poswiecony Wikipedii i etycznemu SEO,
+prowadzony przez Jakuba T. Jankiewicza. Strona zawiera blog z artykułami
+o Wikipedii, Wikidanych, danych strukturalnych Schema.org i pozycjonowaniu.
+Projekt promuje najlepsze praktyki edycji Wikipedii oraz etyczne podejscie
+do SEO i budowania widocznosci marek w wyszukiwarkach.
+
+- Strona: {{ site.url }}
+- Email: {{ site.email }}
+- Jezyk: polski
+
+## Blog
+{% for post in collections.post %}
+### {{ post.data.title }}
+
+{{ post.inputPath | rawMarkdown | markdownLinks }}
+
+---
+{% endfor %}

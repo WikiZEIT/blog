@@ -30,7 +30,7 @@ export default function(eleventyConfig) {
         if (blogPost) return `/blog/${blogPost[1]}.md`;
         const author = pageUrl.match(/^\/autor\/([^/]+)\/$/);
         if (author) return `/autor/${author[1]}.md`;
-        if (['/about/', '/contact/', '/blog/', '/oferta/'].includes(pageUrl)) {
+        if (['/about/', '/contact/', '/blog/', '/oferta/', '/privacy/'].includes(pageUrl)) {
             return pageUrl.slice(0, -1) + '.md';
         }
         return null;
@@ -55,7 +55,7 @@ export default function(eleventyConfig) {
                 if (author) {
                     return `](${d}/autor/${author[1]}.md)`;
                 }
-                if (['/about/', '/contact/', '/blog/', '/oferta/'].includes(urlPath)) {
+                if (['/about/', '/contact/', '/blog/', '/oferta/', '/privacy/'].includes(urlPath)) {
                     return `](${d}${urlPath.slice(0, -1)}.md)`;
                 }
                 return match;

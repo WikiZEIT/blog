@@ -1,6 +1,9 @@
 AddCharset UTF-8 .txt .md
 AddType text/markdown .md
 
+# HTTP Link headers (RFC 8288) for agent discovery
+Header always set Link "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
+
 RewriteEngine On
 
 # Content negotiation: serve markdown when Accept: text/markdown
@@ -23,6 +26,9 @@ RewriteRule ^blog/([^/]+)/?$ /blog/$1.md [L,T=text/markdown]
 RewriteCond %{HTTP:Accept} text/markdown
 RewriteCond %{DOCUMENT_ROOT}/autor/$1.md -f
 RewriteRule ^autor/([^/]+)/?$ /autor/$1.md [L,T=text/markdown]
+
+RewriteCond %{HTTP:Accept} text/markdown
+RewriteRule ^privacy/?$ /privacy.md [L,T=text/markdown]
 
 RewriteCond %{HTTP:Accept} text/markdown
 RewriteRule ^oferta/?$ /oferta/index.php?format=md [L,T=text/markdown]
