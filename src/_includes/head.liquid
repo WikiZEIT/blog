@@ -33,6 +33,9 @@
 <meta name="twitter:creator" content="@{{ author | default: site.author }}" />
 <!-- Canonical -->
 <link rel="canonical" href="{{ site.url }}{{ pageUrl }}" />
+{% if pagination.href.previous %}<link rel="prev" href="{{ pagination.href.previous | url }}" />
+{% endif %}{% if pagination.href.next %}<link rel="next" href="{{ pagination.href.next | url }}" />
+{% endif %}
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Blog" href="{{ site.url }}/feed.xml" />
 {% assign mdHref = page.url | mdAlternate %}{% if mdHref %}<!-- Markdown alternate -->

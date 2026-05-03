@@ -1,6 +1,20 @@
 Sitemap: https://wikizeit.jcubic.pl/sitemap.xml
 
 User-agent: *
-
 Allow: /
 Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /

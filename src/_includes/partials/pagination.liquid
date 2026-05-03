@@ -1,7 +1,7 @@
 {% if pagination.pages.size > 1 %}
 <nav class="pagination" aria-label="Paginacja">
   {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous | url }}" aria-label="Poprzednia strona">
+    <a href="{{ pagination.href.previous | url }}" rel="prev" aria-label="Poprzednia strona">
       <span class="material-symbols-outlined">chevron_left</span>
     </a>
   {% else %}
@@ -20,7 +20,7 @@
   {% endfor %}
 
   {% if pagination.href.next %}
-    <a href="{{ pagination.href.next | url }}" aria-label="Następna strona">
+    <a href="{{ pagination.href.next | url }}" rel="next" aria-label="Następna strona">
       <span class="material-symbols-outlined">chevron_right</span>
     </a>
   {% else %}
