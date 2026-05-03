@@ -23,8 +23,15 @@ Narzędzie wymaga klucza API Google Knowledge Graph. Aby skonfigurować:
 Na środowisku CI/CD narzędzie działa bez klucza API — wyświetla komunikat
 o braku konfiguracji zamiast wyników.
 
-## Licenese
-Copyright (C) 2026 Jakub T. Jankiewicz<br />
-Treść udostępniona na licencji [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+## Licencja
+
+Copyright (C) 2026 Jakub T. Jankiewicz
+
+Treść (artykuły, teksty) udostępniona na licencji
+[CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Kod źródłowy narzędzi (`src/tools/`) udostępniony na licencji
+[AGPL-3.0](https://www.gnu.org/licenses/agpl-3.0.html) — patrz plik
+[LICENSE](./LICENSE).
 
 
