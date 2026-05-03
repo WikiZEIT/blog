@@ -3,6 +3,7 @@ import { readFileSync } from 'fs';
 import { createHash } from 'crypto';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import markdownIt from 'markdown-it';
 import socialCard from 'eleventy-plugin-svg-social-card';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import { minify } from 'html-minifier-next';
@@ -39,6 +40,12 @@ export default function(eleventyConfig) {
     eleventyConfig.addFilter("rawMarkdown", function(inputPath) {
         const content = readFileSync(path.resolve(inputPath), 'utf-8');
         return content.replace(/^---[\s\S]*?---\n*/, '');
+    });
+
+    const md = markdownIt({ html: true, linkify: true });
+    eleventyConfig.addFilter("markdownify", function(content) {
+        if (!content) return "";
+        return md.renderInline(content);
     });
 
     eleventyConfig.addFilter("markdownLinks", function(content) {

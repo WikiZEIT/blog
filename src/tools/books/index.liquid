@@ -1,3 +1,24 @@
+---
+title: "Wyszukiwarka książek do Wikipedii"
+description: "Znajdź książkę i wygeneruj gotowy szablon cytowania Cytuj lub Cytuj książkę do polskiej Wikipedii. Narzędzie od WikiZEIT."
+longDescription: >
+  Znajdź książkę za pomocą Google Books i wygeneruj gotowy szablon cytowania
+  [{{Cytuj książkę}}](https://pl.wikipedia.org/wiki/Szablon:Cytuj_ksi%C4%85%C5%BCk%C4%99)
+  lub [{{Cytuj}}](https://pl.wikipedia.org/wiki/Szablon:Cytuj) do polskiej
+  Wikipedii. Narzędzie automatycznie sprawdza, czy autorzy mają artykuły
+  na Wikipedii i tworzy odpowiednie linki.
+permalink: tools/books/index.php
+canonicalPath: /tools/books/
+tags:
+  - Tool
+  - Wikipedia
+  - Cytowanie
+date: 2026-04-27
+icon: menu_book
+toolUrl: https://www.googleapis.com/books/v1/volumes
+applicationCategory: Wikipedia Tool
+analytics: false
+---
 {% comment %}
   Copyright (C) 2026 Jakub T. Jankiewicz
 
@@ -17,21 +38,6 @@
   License along with WikiZEIT. If not, see
   https://www.gnu.org/licenses/.
 {% endcomment %}
----
-title: "Wyszukiwarka książek do Wikipedii"
-description: "Znajdź książkę i wygeneruj gotowy szablon cytowania Cytuj lub Cytuj książkę do polskiej Wikipedii. Narzędzie od WikiZEIT."
-permalink: tools/books/index.php
-canonicalPath: /tools/books/
-tags:
-  - Tool
-  - Wikipedia
-  - Cytowanie
-date: 2026-04-27
-icon: menu_book
-toolUrl: https://www.googleapis.com/books/v1/volumes
-applicationCategory: Wikipedia Tool
-analytics: false
----
 {% raw %}<?php
 if (isset($_GET['api'])) {
     while (ob_get_level()) ob_end_clean();
@@ -77,17 +83,7 @@ if (isset($_GET['api'])) {
         <div class="noscript-warning">To narzędzie wymaga włączonego JavaScriptu.</div>
     </noscript>
     <h1>Wyszukiwarka książek do Wikipedii</h1>
-    <p class="book-tool-desc">
-        Znajdź książkę za pomocą Google Books i wygeneruj gotowy szablon cytowania
-        <a href="https://pl.wikipedia.org/wiki/Szablon:Cytuj_ksi%C4%85%C5%BCk%C4%99" target="_blank" rel="noopener">{{Cytuj książkę}}</a> lub
-        <a href="https://pl.wikipedia.org/wiki/Szablon:Cytuj" target="_blank" rel="noopener">{{Cytuj}}</a>
-        do polskiej Wikipedii. Narzędzie automatycznie sprawdza, czy autorzy mają artykuły
-        na Wikipedii i tworzy odpowiednie linki.
-    </p>
-    <a href="https://github.com/WikiZEIT/blog/tree/master/src/tools/books" target="_blank" rel="noopener" class="kg-tool-source">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><use href="#social-icon-github"></use></svg>
-        Kod źródłowy
-    </a>
+    {% endraw %}{% include "partials/tool-meta.liquid" %}{% raw %}
 
     <div class="book-search-card">
         <form class="book-search-box">

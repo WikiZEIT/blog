@@ -1,3 +1,24 @@
+---
+title: "Wyszukiwarka wpisów w Grafie Wiedzy Google"
+description: "Sprawdź, czy dana osoba, firma lub pojęcie ma wpis w Google Knowledge Graph. Narzędzie SEO od WikiZEIT."
+longDescription: >
+  Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis
+  w [Google Knowledge Graph](https://en.wikipedia.org/wiki/Google_Knowledge_Graph).
+  Dowiedz się więcej o roli Grafu Wiedzy w SEO na naszym blogu:
+  [Wikimedia Enterprise i SEO](/blog/wikipedia-enterprise/),
+  [Dane strukturalne Schema.org](/blog/dane-strukturalne-schema-org/).
+permalink: tools/graf-wiedzy/index.php
+canonicalPath: /tools/graf-wiedzy/
+tags:
+  - Tool
+  - SEO
+  - Knowledge Graph
+date: 2026-04-27
+icon: hub
+toolUrl: https://developers.google.com/knowledge-graph
+applicationCategory: SEO Tool
+analytics: false
+---
 {% comment %}
   Copyright (C) 2026 Jakub T. Jankiewicz
 
@@ -17,21 +38,6 @@
   License along with WikiZEIT. If not, see
   https://www.gnu.org/licenses/.
 {% endcomment %}
----
-title: "Wyszukiwarka wpisów w Grafie Wiedzy Google"
-description: "Sprawdź, czy dana osoba, firma lub pojęcie ma wpis w Google Knowledge Graph. Narzędzie SEO od WikiZEIT."
-permalink: tools/graf-wiedzy/index.php
-canonicalPath: /tools/graf-wiedzy/
-tags:
-  - Tool
-  - SEO
-  - Knowledge Graph
-date: 2026-04-27
-icon: hub
-toolUrl: https://developers.google.com/knowledge-graph
-applicationCategory: SEO Tool
-analytics: false
----
 <?php
 $configPath = __DIR__ . '/config.json';
 $apiKey = file_exists($configPath) ? json_decode(file_get_contents($configPath)) : null;
@@ -60,16 +66,7 @@ if ($query && $apiKey) {
 ?>
 <main class="kg-tool">
     <h1>Wyszukiwarka wpisów w Grafie Wiedzy Google</h1>
-    <p class="kg-tool-desc">
-        Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis w&nbsp;<a href="https://en.wikipedia.org/wiki/Google_Knowledge_Graph" target="_blank" rel="noopener">Google Knowledge Graph</a>.
-        Dowiedz się więcej o roli Grafu Wiedzy w SEO na naszym blogu:
-        <a href="/blog/wikipedia-enterprise/">Wikimedia Enterprise i SEO</a>,
-        <a href="/blog/dane-strukturalne-schema-org/">Dane strukturalne Schema.org</a>.
-    </p>
-    <a href="https://github.com/WikiZEIT/blog/tree/master/src/tools/graf-wiedzy" target="_blank" rel="noopener" class="kg-tool-source">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><use href="#social-icon-github"></use></svg>
-        Kod źródłowy
-    </a>
+    {% include "partials/tool-meta.liquid" %}
 
     <div class="kg-search-card">
         <form class="kg-search-box" method="GET">

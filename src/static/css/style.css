@@ -2989,23 +2989,30 @@ strong {
     }
 }
 
-.kg-tool-desc {
+.tool-desc {
     color: var(--color-slate-400);
     font-size: 1rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
 }
 
-.kg-tool-desc a {
+.tool-desc a {
     color: var(--color-link);
     text-decoration: none;
 }
 
-.kg-tool-desc a:hover {
+.tool-desc a:hover {
     text-decoration: underline;
 }
 
-.kg-tool-source {
+.tool-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tool-source {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
@@ -3015,15 +3022,34 @@ strong {
     border: 1px solid rgba(180, 33, 4, 0.3);
     padding: 0.375rem 0.75rem;
     border-radius: var(--border-radius-full);
-    margin-bottom: 1.5rem;
     transition: all 0.2s;
 }
 
-.kg-tool-source:hover {
+.tool-source:hover {
     color: var(--color-slate-100);
     background-color: rgba(180, 33, 4, 0.05);
     border-color: var(--color-primary);
     text-decoration: none;
+}
+
+.tool-license {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--color-slate-400);
+    border: 1px solid rgba(180, 33, 4, 0.3);
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--border-radius-full);
+}
+
+.tool-license a {
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.tool-license a:hover {
+    text-decoration: underline;
 }
 
 .kg-search-card {
@@ -3299,22 +3325,6 @@ strong {
     .book-tool h1 {
         font-size: 2.5rem;
     }
-}
-
-.book-tool-desc {
-    color: var(--color-slate-400);
-    font-size: 1rem;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
-}
-
-.book-tool-desc a {
-    color: var(--color-link);
-    text-decoration: none;
-}
-
-.book-tool-desc a:hover {
-    text-decoration: underline;
 }
 
 .book-search-card {

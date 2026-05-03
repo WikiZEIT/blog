@@ -1,7 +1,7 @@
 FROM php:8.3-apache
 
 # Enable required Apache modules
-RUN a2enmod rewrite
+RUN a2enmod rewrite headers
 
 # Install SQLite3 PHP extension
 RUN apt-get update && apt-get install -y libsqlite3-dev \

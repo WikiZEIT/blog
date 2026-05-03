@@ -1,0 +1,9 @@
+<p class="tool-desc">{{ longDescription | markdownify }}</p>
+<div class="tool-meta">
+  {% assign srcDir = page.inputPath | replace: "./", "" | split: "/" | pop | join: "/" %}
+  <a href="https://github.com/WikiZEIT/blog/tree/master/{{ srcDir }}" target="_blank" rel="noopener" class="tool-source">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><use href="#social-icon-github"></use></svg>
+    Kod źródłowy
+  </a>
+  <span class="tool-license">Licencja: <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener">AGPL-3.0</a></span>
+</div>
