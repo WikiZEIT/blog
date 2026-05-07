@@ -29,7 +29,20 @@ layout: layouts/base.liquid
         {% for link in person.sameAs %}"{{ link }}"{% unless forloop.last %},
         {% endunless %}{% endfor %}
       ]
-    }
+    }{% if authorData.photo %},
+    {
+      "@type": "ImageObject",
+      "contentUrl": "{{ authorData.photo.src }}",
+      "license": "{{ authorData.photo.licenseUrl }}",
+      "acquireLicensePage": "{{ authorData.photo.href }}",
+      "creditText": "{{ authorData.photo.creatorName }}",
+      "creator": {
+        "@type": "Person",
+        "name": "{{ authorData.photo.creatorName }}",
+        "url": "{{ authorData.photo.creatorUrl }}"
+      },
+      "copyrightNotice": "{{ authorData.photo.creatorName }}"
+    }{% endif %}
   ]
 }
 </script>
