@@ -31,11 +31,12 @@ function generateToken() {
 // Check if mail() can actually send (sendmail binary exists)
 function isMailAvailable() {
     $sendmailPath = ini_get('sendmail_path');
-    if (empty($sendmailPath)) {
-        return false;
+    if (!empty($sendmailPath)) {
+        $binary = explode(' ', $sendmailPath)[0];
+        return file_exists($binary);
     }
-    $binary = explode(' ', $sendmailPath)[0];
-    return file_exists($binary);
+    // sendmail_path not set — test mail() directly (some hosts route internally)
+    return function_exists('mail');
 }
 
 // Mock mail: save email to api/mail/index.html for local testing
