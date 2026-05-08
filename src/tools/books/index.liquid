@@ -39,6 +39,8 @@ analytics: false
   https://www.gnu.org/licenses/.
 {% endcomment %}
 {% raw %}<?php
+require_once __DIR__ . '/../../api/lib/umami.php';
+
 if (isset($_GET['api'])) {
     while (ob_get_level()) ob_end_clean();
     header('Content-Type: application/json; charset=utf-8');
@@ -77,6 +79,7 @@ if (isset($_GET['api'])) {
     }
     exit;
 }
+umami_track('/tools/books/', 'Wyszukiwarka książek do Wikipedii', $_SERVER['HTTP_REFERER'] ?? '');
 ?>
 <main class="book-tool">
     <noscript>

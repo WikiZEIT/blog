@@ -39,6 +39,9 @@ analytics: false
   https://www.gnu.org/licenses/.
 {% endcomment %}
 <?php
+require_once __DIR__ . '/../../api/lib/umami.php';
+umami_track('/tools/graf-wiedzy/', 'Wyszukiwarka wpisów w Grafie Wiedzy Google', $_SERVER['HTTP_REFERER'] ?? '');
+
 $configPath = __DIR__ . '/config.json';
 $apiKey = file_exists($configPath) ? json_decode(file_get_contents($configPath)) : null;
 $query = isset($_GET['q']) ? $_GET['q'] : '';
