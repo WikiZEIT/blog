@@ -222,6 +222,11 @@ export default function(eleventyConfig) {
         return createHash('md5').update(content).digest('hex').slice(0, 8);
     });
 
+    eleventyConfig.addFilter("utmRss", function(url) {
+        const sep = url.includes('?') ? '&' : '?';
+        return `${url}${sep}utm_source=rss&utm_medium=feed`;
+    });
+
     // Slugify filter
     eleventyConfig.addFilter("slugify", function(str) {
         return str

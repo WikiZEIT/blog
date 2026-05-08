@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
     {%- for post in collections.post %}
     <item>
       <title>{{ post.data.title | xml_escape }}</title>
-      <link>{{ site.url }}{{ post.url }}</link>
+      <link>{{ site.url }}{{ post.url | utmRss | xml_escape }}</link>
       <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
       <pubDate>{{ post.date | date: "%a, %d %b %Y 00:00:00 +0000" }}</pubDate>
       <description>{{ post.data.description | xml_escape }}</description>
