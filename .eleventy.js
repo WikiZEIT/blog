@@ -72,6 +72,7 @@ export default function(eleventyConfig) {
 
     // Passthrough copy for static assets – contents of src/static/ are copied to output root
     eleventyConfig.addPassthroughCopy({ "src/static": "/" });
+    eleventyConfig.addPassthroughCopy({ "src/static/favicon/favicon.ico": "/favicon.ico" });
 
     // Copy PHP backend, wrapper and .htaccess into output so _site/ is fully deployable
     eleventyConfig.addPassthroughCopy({ "api": "/api" });
