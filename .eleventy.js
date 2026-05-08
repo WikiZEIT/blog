@@ -249,6 +249,7 @@ export default function(eleventyConfig) {
                     collapseWhitespace: true,
                     conservativeCollapse: true,
                     removeComments: true,
+                    ignoreCustomComments: [/^\s*form-message-placeholder\s*$/],
                     minifyCSS: true,
                     minifyJS: async (text) => {
                         const result = await minifyJS(text, { compress: false });
