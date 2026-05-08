@@ -28,15 +28,18 @@ function generateToken() {
     return bin2hex(random_bytes(32));
 }
 
-// Check if mail() can actually send (sendmail binary exists)
+// Check if mail() can actually send
 function isMailAvailable() {
-    $sendmailPath = ini_get('sendmail_path');
-    if (!empty($sendmailPath)) {
-        $binary = explode(' ', $sendmailPath)[0];
-        return file_exists($binary);
+    if (!function_exists('mail')) {
+        return false;
     }
-    // sendmail_path not set — test mail() directly (some hosts route internally)
-    return function_exists('mail');
+    $sendmailPath = ini_get('sendmail_path');
+    if (empty($sendmailPath)) {
+        return false;
+    }
+    $binary = explode(' ', $sendmailPath)[0];
+    // open_basedir may block file_exists — trust the config in that case
+    return @file_exists($binary) || ini_get('open_basedir');
 }
 
 // Mock mail: save email to api/mail/index.html for local testing
