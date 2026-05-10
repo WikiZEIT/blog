@@ -12,6 +12,12 @@
     "email": "wikizeit@jcubic.pl",
     "foundingDate": "2026-03-05",
     "lastmod": "2026-04-07",
+    "external": [
+        { "url": "/oferta/", "lastmod": "2026-05-09" },
+        { "url": "/oferta/szkolenia/", "lastmod": "2026-05-09" },
+        { "url": "/oferta/konsultacje/", "lastmod": "2026-05-09" },
+        { "url": "/oferta/edycja/", "lastmod": "2026-05-09" }
+    ],
     "sameAs": [
         "https://www.wikidata.org/wiki/Q138621958",
         "https://www.linkedin.com/company/wikizeit/",

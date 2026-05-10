@@ -12,8 +12,10 @@ eleventyExcludeFromCollections: true
   </url>
   {%- endunless %}
   {%- endfor %}
+  {%- for page in site.external %}
   <url>
-    <loc>{{ site.url }}/oferta/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <loc>{{ site.url }}{{ page.url }}</loc>
+    <lastmod>{{ page.lastmod }}</lastmod>
   </url>
+  {%- endfor %}
 </urlset>
