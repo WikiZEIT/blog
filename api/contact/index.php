@@ -34,11 +34,10 @@ if (empty($name) || !$email || empty($subject) || empty($message)) {
 
 // Build plain text email body (matching szkolenia format)
 $body = "Wiadomość ze strony " . WIKIZEIT_URL . ":\n\n";
-$body .= "From: " . $email . "\n";
-$body .= "Name: " . $name . "\n";
+$body .= "From: " . $name . " <" . $email . ">\n";
 $body .= "Message:\n" . $message;
 
-if (sendPlainEmail('jcubic@jcubic.pl', 'WikiZEIT Kontakt: ' . $subject, $body, $email)) {
+if (sendPlainEmail('jcubic@jcubic.pl', 'WikiZEIT Kontakt: ' . $subject, $body, $name . ' <' . $email . '>')) {
     recordSubmission('contact', $email);
     header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_success', null));
 } else {

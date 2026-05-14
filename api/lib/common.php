@@ -83,7 +83,7 @@ function sendEmail($to, $subject, $message) {
 
 // Send plain text email with Reply-To – for contact form
 function sendPlainEmail($to, $subject, $message, $replyTo = '') {
-    $headers = "From: jcubic@jcubic.pl\r\n";
+    $headers = "From: WikiZEIT <jcubic@jcubic.pl>\r\n";
     if (!empty($replyTo)) {
         $headers .= "Reply-To: " . $replyTo . "\r\n";
     }
