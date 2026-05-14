@@ -20,11 +20,16 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
 $configPath = __DIR__ . '/config.json';
-$config = file_exists($configPath) ? json_decode(file_get_contents($configPath), true) : null;
-
-if (!$config) {
+if (!file_exists($configPath)) {
     http_response_code(500);
-    echo '<div class="form-message form-message-error">Brak konfiguracji.</div>';
+    echo '<div class="form-message form-message-error">Brak pliku konfiguracji (config.json).</div>';
+    exit;
+}
+$configRaw = file_get_contents($configPath);
+$config = json_decode($configRaw, true);
+if (!is_array($config)) {
+    http_response_code(500);
+    echo '<div class="form-message form-message-error">Błąd składni JSON w config.json: ' . htmlspecialchars(json_last_error_msg()) . '</div>';
     exit;
 }
 
@@ -94,7 +99,7 @@ if (!$authenticated):
     <div class="form-message form-message-error"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
 
-    <div class="contact-form-card" style="max-width: 28rem;">
+    <div class="contact-form-card">
         <form class="contact-form" method="POST">
             <div class="contact-form-group email-confirmation-field" aria-hidden="true">
                 <label class="contact-form-label" for="username">Nazwa użytkownika</label>
