@@ -861,6 +861,29 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(4px);
 }
 
+.status-tool {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+}
+
+.status-output {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(180, 33, 4, 0.15);
+    border-radius: var(--border-radius-xl);
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-slate-200);
+    overflow-x: auto;
+}
+
+.status-tool-actions {
+    margin-bottom: 1.5rem;
+}
+
 /* ==========================================================================
    6. Buttons
    ========================================================================== */

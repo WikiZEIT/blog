@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../lib/common.php';
+require_once __DIR__ . '/../lib/stats.php';
 
 // Only accept POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -38,6 +39,7 @@ $body .= "Name: " . $name . "\n";
 $body .= "Message:\n" . $message;
 
 if (sendPlainEmail('jcubic@jcubic.pl', 'WikiZEIT Kontakt: ' . $subject, $body, $email)) {
+    recordSubmission('contact', $email);
     header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_success', null));
 } else {
     header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_error', null));

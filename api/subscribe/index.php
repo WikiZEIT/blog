@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../lib/common.php';
+require_once __DIR__ . '/../lib/stats.php';
 
 // Only accept POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -60,6 +61,7 @@ if ($stmt->execute()) {
     ]);
 
     if (sendEmail($email, 'Potwierdź subskrypcję WikiZEIT', $emailMessage)) {
+        recordSubmission('subscribe', $email);
         header('Location: ' . buildRedirectUrl($redirectUrl, 'subscribe_success'));
     } else {
         header('Location: ' . buildRedirectUrl($redirectUrl, 'subscribe_error'));

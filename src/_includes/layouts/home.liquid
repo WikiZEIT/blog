@@ -55,7 +55,9 @@ schemaType: home
     </div>
     <div class="tools-grid">
       {% for tool in toolsList %}
+        {% unless tool.data.unlisted %}
         {% include "partials/tool-card.liquid", tool: tool %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>

@@ -1,0 +1,194 @@
+---
+title: "Status"
+description: "Panel diagnostyczny WikiZEIT."
+permalink: tools/status/index.php
+canonicalPath: /tools/status/
+layout: layouts/tool.liquid
+tags:
+  - Tool
+date: 2026-05-14
+icon: monitoring
+unlisted: true
+analytics: false
+---
+{% raw %}<?php
+require_once __DIR__ . '/../../api/lib/umami.php';
+require_once __DIR__ . '/../../api/lib/common.php';
+require_once __DIR__ . '/../../api/lib/stats.php';
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
+$configPath = __DIR__ . '/config.json';
+$config = file_exists($configPath) ? json_decode(file_get_contents($configPath), true) : null;
+
+if (!$config) {
+    http_response_code(500);
+    echo '<div class="form-message form-message-error">Brak konfiguracji.</div>';
+    exit;
+}
+
+$jwtSecret = $config['jwt_secret'];
+$jwtTtl = $config['jwt_ttl'] ?? 10800;
+$authenticated = false;
+$error = null;
+
+// Check JWT cookie
+if (isset($_COOKIE['wz_status_token'])) {
+    try {
+        JWT::decode($_COOKIE['wz_status_token'], new Key($jwtSecret, 'HS256'));
+        $authenticated = true;
+    } catch (\Exception $e) {
+        setcookie('wz_status_token', '', time() - 1, '/tools/status/');
+    }
+}
+
+// Handle POST login
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Honeypot: if username is filled, it's a bot
+    if (!empty($_POST['username'])) {
+        logBotAttempt('status', [
+            'honeypot' => $_POST['username'],
+        ]);
+        while (ob_get_level()) ob_end_clean();
+        header('Content-Type: application/json; charset=utf-8');
+        http_response_code(422);
+        echo json_encode(['error' => 'Unprocessable Entity']);
+        exit;
+    }
+
+    $code = $_POST['access_code'] ?? '';
+    if (hash_equals($config['access_code'], $code)) {
+        $token = JWT::encode([
+            'iat' => time(),
+            'exp' => time() + $jwtTtl,
+        ], $jwtSecret, 'HS256');
+        setcookie('wz_status_token', $token, [
+            'expires' => time() + $jwtTtl,
+            'path' => '/tools/status/',
+            'httponly' => true,
+            'samesite' => 'Strict',
+        ]);
+        $authenticated = true;
+    } else {
+        $error = 'Nieprawidłowy kod dostępu.';
+    }
+}
+
+// Handle logout
+if (isset($_GET['logout'])) {
+    setcookie('wz_status_token', '', time() - 1, '/tools/status/');
+    header('Location: /tools/status/');
+    exit;
+}
+
+umami_track('/tools/status/', 'Status', $_SERVER['HTTP_REFERER'] ?? '');
+
+if (!$authenticated):
+?>
+<main class="status-tool">
+    <h1>Status</h1>
+    {% endraw %}{% include "partials/tool-meta.liquid" %}{% raw %}
+
+    <?php if ($error): ?>
+    <div class="form-message form-message-error"><?= htmlspecialchars($error) ?></div>
+    <?php endif; ?>
+
+    <div class="contact-form-card" style="max-width: 28rem;">
+        <form class="contact-form" method="POST">
+            <div class="contact-form-group email-confirmation-field" aria-hidden="true">
+                <label class="contact-form-label" for="username">Nazwa użytkownika</label>
+                <input class="contact-form-input" type="text" id="username" name="username"
+                       placeholder="admin" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="contact-form-group">
+                <label class="contact-form-label" for="access_code">Kod dostępu</label>
+                <input class="contact-form-input" type="password" id="access_code" name="access_code"
+                       required placeholder="Wprowadź kod dostępu" />
+            </div>
+            <button type="submit" class="contact-form-submit">
+                Zaloguj się
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </form>
+    </div>
+</main>
+<?php else: ?>
+<main class="status-tool">
+    <h1>Status</h1>
+    <p class="status-tool-actions">
+        <a href="?logout" class="btn-primary">Wyloguj się</a>
+    </p>
+    <pre class="status-output"><?php
+    // Mail diagnostics
+    echo "=== Mail Diagnostics ===\n\n";
+
+    $sendmailPath = ini_get('sendmail_path');
+    echo "sendmail_path: " . ($sendmailPath ?: '(empty)') . "\n";
+    if ($sendmailPath) {
+        $binary = explode(' ', $sendmailPath)[0];
+        echo "sendmail binary exists: " . (file_exists($binary) ? 'YES' : 'NO') . "\n";
+    }
+    echo "mail() available: " . (function_exists('mail') ? 'YES' : 'NO') . "\n";
+    echo "isMailAvailable(): " . (isMailAvailable() ? 'YES' : 'NO') . "\n";
+
+    // Mock mail
+    $mockFile = $_SERVER['DOCUMENT_ROOT'] . '/api/mail/index.html';
+    if (file_exists($mockFile)) {
+        echo "\n⚠ Mock mail file exists (last: " . date('Y-m-d H:i:s', filemtime($mockFile)) . ")\n";
+    }
+
+    // Subscribers
+    echo "\n=== Subscribers (DB) ===\n\n";
+    $total = $db->querySingle('SELECT COUNT(*) FROM subscribers');
+    $verified = $db->querySingle('SELECT COUNT(*) FROM subscribers WHERE verified = 1');
+    echo "Total: $total (verified: $verified)\n";
+    $res = $db->query('SELECT email, verified, created_at FROM subscribers ORDER BY created_at DESC LIMIT 5');
+    while ($row = $res->fetchArray(SQLITE3_ASSOC)) {
+        echo htmlspecialchars(sprintf("  %s | verified=%d | %s\n", $row['email'], $row['verified'], $row['created_at']));
+    }
+
+    // Form submission stats
+    echo "\n=== Form Submissions ===\n";
+    $stats = loadStats();
+    $formLabels = [
+        'subscribe' => 'Newsletter',
+        'contact' => 'Kontakt (WikiZEIT)',
+        'oferta' => 'Kontakt (Oferta)',
+    ];
+    foreach ($formLabels as $key => $label) {
+        echo "\n$label:\n";
+        if (isset($stats[$key])) {
+            $s = $stats[$key];
+            $uniqueCount = count($s['emails'] ?? []);
+            echo "  Total submissions: " . $s['total'] . "\n";
+            echo "  Unique emails:     " . $uniqueCount . "\n";
+            echo "  Last submission:   " . ($s['last'] ?? 'n/a') . "\n";
+        } else {
+            echo "  (no data)\n";
+        }
+    }
+
+    // Bot blocking stats
+    echo "\n=== Bot Blocking ===\n\n";
+    $botStats = parseBotLog();
+    echo "Total blocked: " . $botStats['total'] . "\n";
+    if ($botStats['total'] > 0) {
+        echo "Last blocked:  " . ($botStats['last'] ?? 'unknown') . "\n";
+        echo "\nBy form:\n";
+        foreach ($botStats['by_form'] as $form => $count) {
+            echo "  [$form] $count\n";
+        }
+        echo "\nLast 5 entries:\n";
+        $logFile = $_SERVER['DOCUMENT_ROOT'] . '/api/logs/bot.log';
+        $lines = file($logFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $recent = array_slice($lines, -5);
+        foreach ($recent as $line) {
+            echo htmlspecialchars("  $line") . "\n";
+        }
+    } else {
+        echo "(no bot attempts logged)\n";
+    }
+    ?></pre>
+</main>
+<?php endif; ?>{% endraw %}
