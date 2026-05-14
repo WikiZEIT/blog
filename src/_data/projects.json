@@ -8,6 +8,14 @@
         "tags": ["PHP", "Packagist"]
     },
     {
+        "name": "Parwik",
+        "description": "Prosty parser składni Wiki w JavaScript, dostępny jako pakiet npm.",
+        "url": "https://github.com/WikiZEIT/parwik",
+        "icon": "code",
+        "category": "Open Source",
+        "tags": ["JavaScript", "npm"]
+    },
+    {
         "name": "CitationHelper",
         "description": "Narzędzie do polskiej Wikipedii ułatwiające dodawanie przypisów i cytowań do artykułów.",
         "url": "https://pl.wikipedia.org/wiki/Wikipedia:Narz%C4%99dzia/CitationHelper",
