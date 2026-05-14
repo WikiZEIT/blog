@@ -9,6 +9,8 @@
         }
     ],
     "require": {
-        "mustache/mustache": "^3.0"
+        "mustache/mustache": "^3.0",
+        "wikimedia/minify": "^2.10",
+        "wikizeit/html-minifier": "^0.1.0"
     }
 }

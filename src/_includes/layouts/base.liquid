@@ -53,4 +53,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
     </script>{% endunless %}
   </body>
 </html>
-{% if page.outputPath contains ".php" %}<?= ob_get_clean() ?>{% endif %}
+{% if page.outputPath contains ".php" %}<?php
+$__minifier = new \WikiZEIT\HTMLMinifier();
+$__minifier->preserveComment('/^\s*form-message-placeholder\s*$/');
+echo $__minifier->run(ob_get_clean());
+?>{% endif %}
