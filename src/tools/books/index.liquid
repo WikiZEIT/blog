@@ -424,6 +424,9 @@ umami_track('/tools/books/', 'Wyszukiwarka książek do Wikipedii', $_SERVER['HT
                 if (r.status === 429) {
                     return Promise.reject(new Error('rate-limit'));
                 }
+                if (r.status === 503) {
+                    return Promise.reject(new Error('unavailable'));
+                }
                 if (!r.ok) {
                     return Promise.reject(new Error('api-error'));
                 }
@@ -451,9 +454,14 @@ umami_track('/tools/books/', 'Wyszukiwarka książek do Wikipedii', $_SERVER['HT
         history.replaceState(null, '', url);
         resultsEl.innerHTML = '<div class="book-loading"><div class="book-spinner"></div>Wyszukiwanie...</div>';
         searchBooks(query).then(renderResults).catch(function(err) {
-            var msg = err && err.message === 'rate-limit'
-                ? 'Zbyt wiele zapytań do Google Books API. Spróbuj ponownie za chwilę.'
-                : 'Nie udało się połączyć z Google Books API.';
+            var msg;
+            if (err && err.message === 'rate-limit') {
+                msg = 'Zbyt wiele zapytań do Google Books API. Spróbuj ponownie za chwilę.';
+            } else if (err && err.message === 'unavailable') {
+                msg = 'Serwis Google Books jest chwilowo niedostępny. Spróbuj ponownie za kilka sekund.';
+            } else {
+                msg = 'Nie udało się połączyć z Google Books API.';
+            }
             resultsEl.innerHTML = '<div class="book-no-results">' + msg + '</div>';
         });
     }
