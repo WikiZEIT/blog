@@ -1,0 +1,25 @@
+---
+title: "Projekty"
+description: "Projekty Open Source i narzędzia Wikipedii tworzone przez WikiZEIT."
+layout: layouts/base.liquid
+permalink: /projekty/
+---
+<main class="tools-main">
+  <div class="blog-header">
+    <h1 class="blog-title">{{ title }}</h1>
+    <p class="blog-description">Projekty Open Source i&nbsp;narzędzia Wikipedii tworzone przez WikiZEIT.</p>
+  </div>
+
+  {% assign categories = "Open Source,Narzędzia Wikipedii" | split: "," %}
+  {% for category in categories %}
+    {% assign items = projects | where: "category", category %}
+    {% if items.size > 0 %}
+    <h2 class="projects-category">{{ category }}</h2>
+    <div class="tools-grid">
+      {% for project in items %}
+        {% include "partials/project-card.liquid", project: project %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</main>

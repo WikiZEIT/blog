@@ -62,6 +62,26 @@ schemaType: home
 </section>
 {% endif %}
 
+<!-- Projects Section -->
+{% if projects.size > 0 %}
+<section class="section-tools">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Projekty</h2>
+      <a href="{{ '/projekty/' | url }}" class="view-all-link">
+        Zobacz wszystkie
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+    </div>
+    <div class="tools-grid">
+      {% for project in projects %}
+        {% include "partials/project-card.liquid", project: project %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 {% include "partials/subscribe.liquid" %}
 
 {{ content }}

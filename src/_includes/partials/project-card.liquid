@@ -1,0 +1,18 @@
+<a class="tool-card" href="{{ project.url }}" target="_blank" rel="noopener">
+  <span class="tool-icon material-symbols-outlined">{{ project.icon | default: "build" }}</span>
+  <div class="tool-card-body">
+    {% if project.tags %}
+    <div class="post-card-tags">
+      {% for tag in project.tags %}
+      <span class="tag-badge">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h3 class="tool-card-title">{{ project.name }}</h3>
+    <p class="tool-card-desc">{{ project.description }}</p>
+    <span class="tool-card-link">
+      Zobacz projekt
+      <span class="material-symbols-outlined">open_in_new</span>
+    </span>
+  </div>
+</a>

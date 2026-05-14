@@ -1,0 +1,18 @@
+[
+    {
+        "name": "HTMLMinifier",
+        "description": "Lekka biblioteka PHP do minifikacji HTML, wykorzystująca wikimedia/minify do kompresji inline JavaScript i CSS.",
+        "url": "https://github.com/WikiZEIT/HTMLMinifier",
+        "icon": "code",
+        "category": "Open Source",
+        "tags": ["PHP", "Packagist"]
+    },
+    {
+        "name": "CitationHelper",
+        "description": "Narzędzie do polskiej Wikipedii ułatwiające dodawanie przypisów i cytowań do artykułów.",
+        "url": "https://pl.wikipedia.org/wiki/Wikipedia:Narz%C4%99dzia/CitationHelper",
+        "icon": "edit_note",
+        "category": "Narzędzia Wikipedii",
+        "tags": ["Wikipedia", "Cytowanie"]
+    }
+]

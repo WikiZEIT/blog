@@ -782,6 +782,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 2rem;
 }
 
+.projects-category {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-slate-100);
+    margin: 2.5rem 0 1rem;
+}
+
+.projects-category:first-of-type {
+    margin-top: 0;
+}
+
 .tools-grid {
     display: grid;
     grid-template-columns: 1fr;
