@@ -5,7 +5,7 @@ Allow: /
 Disallow: /api/
 Disallow: /.well-known/apple-app-site-association
 Disallow: /apple-app-site-association
-
+Disallow: /tools/status/
 
 User-agent: GPTBot
 Allow: /
