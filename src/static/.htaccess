@@ -6,6 +6,8 @@ Header always set Link "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"desc
 
 RewriteEngine On
 
+RewriteRule ^graf-wiedzy/(.*) /tools/graf-wiedzy/$1 [R=301,L]
+
 # Content negotiation: serve markdown when Accept: text/markdown
 RewriteCond %{HTTP:Accept} text/markdown
 RewriteRule ^$ /llms.txt [L,T=text/markdown]
