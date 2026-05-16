@@ -175,6 +175,10 @@ export default function(eleventyConfig) {
         return `${day} ${month} ${year}`;
     });
 
+    eleventyConfig.addFilter("newerDate", function(a, b) {
+        return new Date(a) > new Date(b) ? a : b;
+    });
+
     // Reading time filter
     eleventyConfig.addFilter("readingTime", function(content) {
         if (!content) return "1 min";
