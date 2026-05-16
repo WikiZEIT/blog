@@ -3,6 +3,9 @@ Sitemap: https://wikizeit.jcubic.pl/sitemap.xml
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /.well-known/apple-app-site-association
+Disallow: /apple-app-site-association
+
 
 User-agent: GPTBot
 Allow: /
