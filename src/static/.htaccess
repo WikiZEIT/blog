@@ -4,6 +4,9 @@ AddType text/markdown .md
 # HTTP Link headers (RFC 8288) for agent discovery
 Header always set Link "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"describedby\"; type=\"text/plain\""
 
+# Force HTTPS
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
 RewriteEngine On
 
 RewriteRule ^graf-wiedzy/(.*) /tools/graf-wiedzy/$1 [R=301,L]
