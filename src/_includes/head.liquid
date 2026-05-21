@@ -3,7 +3,7 @@
 <title>{{ title | default: site.title }}</title>
 <meta name="description" content="{{ description | default: site.longDescription }}">
 {% if keywords %}<meta name="keywords" content="{{ keywords | join: ', ' }}">{% endif %}
-{% if unlisted %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<meta name="robots" content="{% if unlisted %}noindex, nofollow{% else %}index, follow{% endif %}" />
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ '/favicon/favicon-96x96.png' | url }}" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="{{ '/favicon/favicon.svg' | url }}" />
