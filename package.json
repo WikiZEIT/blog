@@ -4,6 +4,8 @@
   "description": "Edukacyjny projekt o Wikipedii i etycznym SEO autorstwa [Jakuba T. Jankiewicza](https://jakub.jankiewicz.org/pl/). Odkryj mechanizmy największej encyklopedii świata i jej wpływu na twoją markę.",
   "main": "index.js",
   "scripts": {
+    "postinstall": "node scripts/download-font.mjs",
+    "prebuild": "node scripts/subset-font.mjs",
     "build": "eleventy",
     "dev": "eleventy --serve",
     "watch": "eleventy --watch",
@@ -27,6 +29,7 @@
     "@eslint/markdown": "^8.0.1",
     "eleventy-plugin-svg-social-card": "^0.2.4",
     "eslint": "^10.2.1",
+    "subset-font": "^2.5.0",
     "terser": "^5.46.2"
   },
   "dependencies": {

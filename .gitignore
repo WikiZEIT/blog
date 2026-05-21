@@ -15,3 +15,5 @@ prezentacja
 scripts/.watcher.log
 src/tools/*/config.json
 scripts/.watcher.pid
+src/static/fonts/.source
+src/static/fonts/material-symbols-outlined.woff2
