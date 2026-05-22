@@ -132,7 +132,7 @@ if (!$authenticated):
     echo "sendmail_path: " . ($sendmailPath ?: '(empty)') . "\n";
     if ($sendmailPath) {
         $binary = explode(' ', $sendmailPath)[0];
-        echo "sendmail binary exists: " . (file_exists($binary) ? 'YES' : 'NO') . "\n";
+        echo "sendmail binary is accessible: " . (@file_exists($binary) ? 'YES' : 'NO') . "\n";
     }
     echo "mail() available: " . (function_exists('mail') ? 'YES' : 'NO') . "\n";
     echo "isMailAvailable(): " . (isMailAvailable() ? 'YES' : 'NO') . "\n";
