@@ -73,8 +73,8 @@ Google rekomenduje format **JSON-LD** (JavaScript Object Notation for Linked Dat
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "WikiZEIT",
-  "url": "https://wikizeit.jcubic.pl/",
-  "logo": "https://wikizeit.jcubic.pl/img/logo.svg",
+  "url": "https://wikizeit.edu.pl/",
+  "logo": "https://wikizeit.edu.pl/img/logo.svg",
   "description": "Projekt edukacyjny o Wikipedii i etycznym SEO"
 }
 ```

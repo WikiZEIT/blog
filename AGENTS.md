@@ -3,7 +3,7 @@
 ## Overview
 
 Eleventy (11ty) v3 static site generator project with a blog, served at the
-`wikizeit.jcubic.pl` subdomain. PHP backend handles email subscription/verification and contact
+`wikizeit.edu.pl` subdomain. PHP backend handles email subscription/verification and contact
 form. The `_site/` output directory is fully self-contained and deployable.
 
 ## Key Rules

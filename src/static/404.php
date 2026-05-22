@@ -17,7 +17,7 @@ if (preg_match('#application/(?:\*\+)?json|application/\*#i', $accept)) {
         'error' => 'not_found',
         'status' => 404,
         'message' => 'The requested page was not found.',
-        'homepage' => 'https://wikizeit.jcubic.pl/',
+        'homepage' => 'https://wikizeit.edu.pl/',
     ], JSON_UNESCAPED_SLASHES);
     exit;
 }

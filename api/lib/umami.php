@@ -5,7 +5,7 @@ define('UMAMI_WEBSITE_ID', 'c716ef1c-b60b-455c-8279-58996a09a8a6');
 
 function umami_track($url, $title = '', $referrer = '') {
     $payload = [
-        'hostname' => 'wikizeit.jcubic.pl',
+        'hostname' => 'wikizeit.edu.pl',
         'language' => $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? 'pl',
         'url' => $url,
         'website' => UMAMI_WEBSITE_ID,

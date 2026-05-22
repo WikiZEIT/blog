@@ -63,7 +63,7 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
       Edukacyjny WMPL. Do projektu mogą się także zapisać pojedyncze osoby niezwiązane z edukacją.
 
 3. **WikiZEIT** – prowadzi [komercyjne szkolenia z edytowania Wikipedii i projektów
-   siostrzanych](https://wikizeit.jcubic.pl/oferta/). Aktualnie jest to jedyna na rynku opcja
+   siostrzanych](https://wikizeit.edu.pl/oferta/). Aktualnie jest to jedyna na rynku opcja
    płatnych szkoleń z Wikipedii w Polsce. Szkolenia prowadzone są przez [Jakuba
    T. Jankiewicza](https://jakub.jankiewicz.org/pl/), doświadczonego redaktora, przewodnika oraz
    WikiTrenera Polskiej Wikipedii, który prowadzi także szkolenia jako wolontariusz dla
@@ -119,4 +119,4 @@ za edukacje w stowarzyszeniu jest [Wioletta
 Matusiak](https://pl.wikimedia.org/wiki/U%C5%BCytkowniczka:Wioletta_Matusiak_(WMPL)).
 
 Jeśli interesuje cię kompleksowe szkolenie z edycji Wikipedii, Wikidanych, oraz Wikimedia Commons, dla firm i instytucji
-możesz skorzystać z [oferty WikiZEIT](https://wikizeit.jcubic.pl/oferta/).
+możesz skorzystać z [oferty WikiZEIT](https://wikizeit.edu.pl/oferta/).

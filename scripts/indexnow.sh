@@ -39,7 +39,7 @@ for url in "${urls[@]}"; do
     esac
 done
 
-HOST="wikizeit.jcubic.pl"
+HOST="wikizeit.edu.pl"
 KEY_LOCATION="https://${HOST}/${INDEXNOW_KEY}.txt"
 
 url_list=""

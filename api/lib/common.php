@@ -1,6 +1,6 @@
 <?php
 
-define('WIKIZEIT_URL', 'https://wikizeit.jcubic.pl/');
+define('WIKIZEIT_URL', 'https://wikizeit.edu.pl/');
 define('WIKIZEIT_PATH', '/');
 
 // Load Composer autoloader (vendor is at site root, copied from project root by Eleventy)

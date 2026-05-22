@@ -1,4 +1,4 @@
-Sitemap: https://wikizeit.jcubic.pl/sitemap.xml
+Sitemap: https://wikizeit.edu.pl/sitemap.xml
 
 User-agent: *
 Allow: /
