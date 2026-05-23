@@ -30,7 +30,7 @@ faq:
 Z okazji 25-lecia Wikipedii powstała nowa maskotka o nazwie
 [„Baby Globe”](https://wikimediafoundation.org/wikipedia25/wikipedia-mascot/).
 
-![Wikipedia Baby Globe Animation](/img/neutral-baby-globe.gif)
+![Wikipedia Baby Globe Animation](/img/neutral-baby-globe.jpg)
 <small>Wikimedia Foundation staff and contractors; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0); źródło [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Neutral_Baby_Globe.gif)</small>
 
 ## Jak powstała nowa maskotka Wikipedii?
