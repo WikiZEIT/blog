@@ -70,6 +70,10 @@ jak darmowy. Było to problematyczne z punktu widzenia biznesu, którego główn
 
 Wprowadzenie "marki" Open Source otwarło drzwi i rozprzestrzeniło idee wolności na cały świat.
 
+Jeśli interesuje cię historia ruchu Open Source, która związana jest z Linuxem, polecam film dokumentalny:
+
+[Revolution OS](https://en.wikipedia.org/wiki/Revolution_OS), dostępny w serwisie YouTube.
+
 Dzisiaj mamy, otwartą wiedzę, otwartą naukę, otwarte dane. A wszystko to dzięki Creative Commons, które przeniosło
 idee Open Source, dotyczącą programów komputerowych, na inne kreatywne dzieła oraz inną działalność człowieka.
 
@@ -78,7 +82,7 @@ Swartz](https://pl.wikipedia.org/wiki/Aaron_Swartz).  Aktywista, który zginął
 samobójczą. Przez wielu uważany za męczennika w obronie dostępu do wiedzy.
 
 Historie Aarona można obejrzeć w filmie dokumelnym: [The Internet's Own Boy: The Story of Aaron
-Swartz](https://www.filmweb.pl/film/Aaron+Swartz%3A+Sie%C4%87+jest+nasza-2014-700414).
+Swartz](https://en.wikipedia.org/wiki/The_Internet%27s_Own_Boy).
 
 ## Licencje w Wikimedia Commons
 
