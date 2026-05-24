@@ -73,6 +73,13 @@ Wprowadzenie "marki" Open Source otwarło drzwi i rozprzestrzeniło idee wolnoś
 Dzisiaj mamy, otwartą wiedzę, otwartą naukę, otwarte dane. A wszystko to dzięki Creative Commons, które przeniosło
 idee Open Source, dotyczącą programów komputerowych, na inne kreatywne dzieła oraz inną działalność człowieka.
 
+Warto wspomnieć, że duży wpływ, na licencje Creative Commons, miał [Aaron
+Swartz](https://pl.wikipedia.org/wiki/Aaron_Swartz).  Aktywista, który zginął śmiercią
+samobójczą. Przez wielu uważany za męczennika w obronie dostępu do wiedzy.
+
+Historie Aarona można obejrzeć w filmie dokumelnym: [The Internet's Own Boy: The Story of Aaron
+Swartz](https://www.filmweb.pl/film/Aaron+Swartz%3A+Sie%C4%87+jest+nasza-2014-700414).
+
 ## Licencje w Wikimedia Commons
 
 Wróćmy do Wikipedia Commons. Jest to miejsce, gdzie można udostępnić, między innymi, swoje zdjęcia, które jednak
