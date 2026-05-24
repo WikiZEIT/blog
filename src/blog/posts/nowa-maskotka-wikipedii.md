@@ -68,3 +68,11 @@ językowe przewodnika, poniżej wersja Polska.
 Translation by [Masur](https://commons.wikimedia.org/wiki/User:Masur);
 Localization by [Otourly](https://commons.wikimedia.org/wiki/User:Otourly)<br/>
 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Licensing_tutorial_pl.svg)</small>
+
+## Personifikacja Wikipedii
+
+Oprócz maskotek warto także wpomnieć o [Wikipe-tan](https://pl.wikipedia.org/wiki/Wikipedia:Wikipe-tan).
+Jest to nieoficjalna personifikacja Wikipedii, w stylu anime, stworzona przez Japońskiego Wikipedystę o niku Kasuga.
+
+![Wikipe-tan nieoficjalna personifikacja Wikipedii](/img/wikipe-tan.jpg)
+<small>Kasuga, and Editor at Large; [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/); [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Wikipe-tan_full_length.svg)</small>
