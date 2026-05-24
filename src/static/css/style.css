@@ -1436,6 +1436,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-slate-100);
 }
 
+.article-content h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--color-slate-100);
+}
+
 .body a {
     color: var(--color-link);
     text-decoration: underline;
