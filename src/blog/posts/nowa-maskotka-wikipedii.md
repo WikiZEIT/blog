@@ -38,7 +38,7 @@ Z okazji 25-lecia Wikipedii powstała nowa maskotka o nazwie
 Autorem pomysłu ikony jest Jonathan Ferreira, w projektach Wikimedów znany jako
 [BaduFerreira](https://en.wikipedia.org/wiki/User:BaduFerreira). Pierwotnie maskotka powstała jako szkic
 wykonany w pociągu. Następnie, pomysł Jonathana, został rozwinięty przez pracowników fundacji Wikimedia. Tak powstała nowa maskotka Wikipedii.
-Szczegóły powstania maskotki można poznać w [wywiadzie z Jonathan w portalu Diff fundacji
+Szczegóły powstania maskotki można poznać w [wywiadzie z Jonathanem w portalu Diff fundacji
 Wikimedia](https://diff.wikimedia.org/2026/01/15/meet-the-wikimedian-whose-casual-sketch-inspired-wikipedias-25th-birthday-mascot/).
 
 ## Masktoka Wikipedii jako pluszak
