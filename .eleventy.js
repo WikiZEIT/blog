@@ -51,7 +51,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addFilter("markdownLinks", function(content) {
         if (!content) return "";
         return content.replace(
-            /\]\(((https:\/\/wikizeit\.jcubic\.pl)?(\/[^)]+))\)/g,
+            /\]\(((https:\/\/wikizeit\.edu\.pl)?(\/[^)]+))\)/g,
             (match, fullUrl, domain, urlPath) => {
                 const d = domain || '';
                 const blogPost = urlPath.match(/^\/blog\/([^/]+)\/$/);
