@@ -29,6 +29,7 @@
     "@eslint/markdown": "^8.0.1",
     "eleventy-plugin-svg-social-card": "^0.2.4",
     "eslint": "^10.2.1",
+    "image-size": "^2.0.2",
     "subset-font": "^2.5.0",
     "terser": "^5.46.2"
   },

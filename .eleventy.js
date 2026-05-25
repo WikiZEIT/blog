@@ -1,5 +1,5 @@
 import path from 'path';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { createHash } from 'crypto';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -8,6 +8,7 @@ import socialCard from 'eleventy-plugin-svg-social-card';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import { minify } from 'html-minifier-next';
 import { minify as minifyJS } from 'terser';
+import { imageSize } from 'image-size';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -242,6 +243,33 @@ export default function(eleventyConfig) {
             .replace(/--+/g, "-")
             .replace(/^-+/, "")
             .replace(/-+$/, "");
+    });
+
+    eleventyConfig.addTransform('img-dimensions', function(content) {
+        if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) {
+            return content;
+        }
+        return content.replace(
+            /<img\b([^>]*?)\s*\/?>/gi,
+            (match, attrs) => {
+                if (/\b(width|height)\s*=/i.test(attrs)) return match;
+                const srcMatch = attrs.match(/\bsrc\s*=\s*"([^"]+)"/i);
+                if (!srcMatch) return match;
+                const src = srcMatch[1].replace(/\?.*$/, '');
+                if (/^https?:\/\//i.test(src)) return match;
+                if (/\.svg$/i.test(src)) return match;
+                const filePath = path.join(__dirname, 'src/static', src);
+                if (!existsSync(filePath)) return match;
+                try {
+                    const buffer = readFileSync(filePath);
+                    const { width, height } = imageSize(buffer);
+                    if (width && height) {
+                        return `<img${attrs} width="${width}" height="${height}">`;
+                    }
+                } catch {}
+                return match;
+            }
+        );
     });
 
     const isProduction = process.env.ELEVENTY_RUN_MODE === 'build';
