@@ -252,22 +252,25 @@ export default function(eleventyConfig) {
         return content.replace(
             /<img\b([^>]*?)\s*\/?>/gi,
             (match, attrs) => {
-                if (/\b(width|height)\s*=/i.test(attrs)) return match;
                 const srcMatch = attrs.match(/\bsrc\s*=\s*"([^"]+)"/i);
                 if (!srcMatch) return match;
                 const src = srcMatch[1].replace(/\?.*$/, '');
                 if (/^https?:\/\//i.test(src)) return match;
                 if (/\.svg$/i.test(src)) return match;
-                const filePath = path.join(__dirname, 'src/static', src);
-                if (!existsSync(filePath)) return match;
-                try {
-                    const buffer = readFileSync(filePath);
-                    const { width, height } = imageSize(buffer);
-                    if (width && height) {
-                        return `<img${attrs} width="${width}" height="${height}">`;
+                let extra = '';
+                if (!/\b(width|height)\s*=/i.test(attrs)) {
+                    const filePath = path.join(__dirname, 'src/static', src);
+                    if (existsSync(filePath)) {
+                        try {
+                            const buffer = readFileSync(filePath);
+                            const { width, height } = imageSize(buffer);
+                            if (width && height) {
+                                extra = ` width="${width}" height="${height}"`;
+                            }
+                        } catch {}
                     }
-                } catch {}
-                return match;
+                }
+                return `<img${attrs}${extra} onload="this.style.background='none'">`;
             }
         );
     });
