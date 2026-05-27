@@ -69,19 +69,19 @@ GitHubie](https://maintainers.github.com/)). Jego zaangażowanie wykracza poza s
 
 ## Projekt WikiZEIT: Pasja do dzielenia się wiedzą
 
-WikiZEIT to projekt edukacyjny o Wikipedii oraz jej wpływu na SEO. Jest naturalną kontynuacją
-wieloletniej działalności Wikipestysty Jakuba T. Jankiewicza jako redaktora, mentora i
-trenera. Powstał z potrzeby połączenia eksperckiej wiedzy technicznej z pasją do przekazywania
-kompetencji innym.
+WikiZEIT to projekt edukacyjny o Wikipedii oraz jej wpływie na SEO. Jest naturalną kontynuacją
+wieloletniej działalności Wikipedysty Jakuba T. Jankiewicza jako redaktora, mentora i
+trenera. Projekt powstał, aby uczyć rzetelnego budowania widoczności w sieci poprzez poprawne i
+etyczne działania w ekosystemie Wikimedia.
 
-W ramach WikiZEIT prowadzi autorskie szkolenia, na których tłumaczy zawiłe zasady
+W ramach WikiZEIT Jakub prowadzi autorskie szkolenia, na których tłumaczy zawiłe zasady
 encyklopedyczności, edycję Wikipedii, Wikidanych oraz projektów siostrzanych. Jego celem jest
 edukowanie rynku, że trwała obecność w cyfrowym świecie opiera się na rzetelności i wiarygodnych
 danych, a nie na krótkotrwałych trikach.
 
-Podkreśla również, że do Wikipedii nie da się wejść „tylnymi drzwiami”. Próby ominięcia zasad
-często kończą się nie tylko skasowaniem artykułu, ale też trwałą niechęcią wikipedystów do
-wszelkich form marketingu i promocji.
+Jakub podkreśla również, że do Wikipedii nie da się wejść „tylnymi drzwiami”. Próby ominięcia zasad
+często kończą się nie tylko skasowaniem artykułu, ale też trwałą niechęcią wikipedystów do wszelkich
+form marketingu i promocji.
 
 ## Dodanie firmy lub osoby do Wikidanych
 
