@@ -67,6 +67,9 @@ GitHubie](https://maintainers.github.com/)). Jego zaangażowanie wykracza poza s
   i testuje narzędzia AI, analizując ich wpływ na proces tworzenia oprogramowania oraz na to, jak
   systemy te konsumują dane z otwartych źródeł (jak Wikipedia czy GitHub).
 
+Historię Jakuba, jako maintainera projektów Open Source, możesz przeczytać na stronie:
+[Open Source Initiative](https://opensource.org/maintainers/jcubic).
+
 ## Projekt WikiZEIT: Pasja do dzielenia się wiedzą
 
 WikiZEIT to projekt edukacyjny o Wikipedii oraz jej wpływie na SEO. Jest naturalną kontynuacją
