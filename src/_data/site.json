@@ -24,5 +24,64 @@
         "https://commons.wikimedia.org/wiki/Category:WikiZEIT",
         "https://www.youtube.com/@WikiZEIT",
         "https://github.com/WikiZEIT"
+    ],
+    "knowsAbout": [
+        {
+            "@type": "DefinedTerm",
+            "name": "Search Engine Optimization",
+            "@id": "https://www.wikidata.org/wiki/Q180711"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Search Engine Marketing",
+            "@id": "https://www.wikidata.org/wiki/Q846132"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Generative Engine Optimization"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "AI Overviews"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Wikipedia",
+            "@id": "https://www.wikidata.org/wiki/Q52"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Wikidata",
+            "@id": "https://www.wikidata.org/wiki/Q2013"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Entity SEO"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Knowledge Graph",
+            "@id": "https://www.wikidata.org/wiki/Q33002955"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Training",
+            "@id": "https://www.wikidata.org/wiki/Q918385"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Teaching",
+            "@id": "https://www.wikidata.org/wiki/Q352842"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Consulting",
+            "@id": "https://www.wikidata.org/wiki/Q63769412"
+        },
+        {
+            "@type": "DefinedTerm",
+            "name": "Open-source Software",
+            "@id": "https://www.wikidata.org/wiki/Q1130645"
+        }
     ]
 }

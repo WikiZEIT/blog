@@ -11,10 +11,7 @@
       "image": "{{ person.image }}",
       "jobTitle": "{{ person.jobTitle }}",
       "description": "{{ person.description }}",
-      "sameAs": [
-        {% for link in person.sameAs %}"{{ link }}"{% unless forloop.last %},
-        {% endunless %}{% endfor %}
-      ]
+      "sameAs": {{ person.sameAs | jsonify }}
     },
     {
       "@type": "WebPage",
@@ -39,24 +36,8 @@
         "url": "{{ site.url }}/contact/",
         "availableLanguage": "Polish"
       },
-      "knowsAbout": [
-        "Search Engine Optimization",
-        "SEO",
-        "GEO",
-        "AIO",
-        "Wikipedia",
-        "Wikidata",
-        "Entity SEO",
-        "Wikipedia",
-        "Training",
-        "Teaching",
-        "Consulting",
-        "Open Source"
-      ],
-      "sameAs": [
-        {% for link in site.sameAs %}"{{ link }}"{% unless forloop.last %},
-        {% endunless %}{% endfor %}
-      ],
+      "knowsAbout": {{ site.knowsAbout | jsonify }},
+      "sameAs": {{ site.sameAs | jsonify }},
       "mainEntityOfPage": {
         "@id": "{{ site.url }}/#webpage"
       }
