@@ -7,6 +7,10 @@
       <a class="nav-link{% if page.url == '/blog/' %} active{% endif %}" href="{{ '/blog/' | url }}">Blog</a>
       <a class="nav-link" href="/oferta/">Szkolenia i Konsultacje</a>
       <a class="nav-link{% if page.url == '/about/' %} active{% endif %}" href="{{ '/about/' | url }}">O projekcie</a>
+      {% assign translate_page_url = site.url | append: page.url | url_encode %}
+      <a class="nav-translate" href="https://translate.google.pl/translate?sl=auto&tl=en&hl=pl&u={{ translate_page_url }}&client=webapp" rel="nofollow">
+        &#127468;&#127463; Read in English
+      </a>
       <a class="nav-cta" href="{{ '/contact/' | url }}">
         Kontakt
       </a>

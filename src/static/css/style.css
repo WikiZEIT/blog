@@ -211,6 +211,19 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+.nav-translate {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-slate-400);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.nav-translate:hover {
+    color: var(--color-primary);
+}
+
 .nav-cta {
     display: flex;
     align-items: center;
