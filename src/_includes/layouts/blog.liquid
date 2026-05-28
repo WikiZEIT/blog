@@ -50,6 +50,24 @@ layout: layouts/base.liquid
       {% endfor %}
     </div>
     {% endif %}
+
+    {% assign hasProjects = false %}
+    {% for project in projects %}
+      {% if project.tags contains tag %}
+        {% assign hasProjects = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if hasProjects %}
+    <h2 class="blog-title tag-tools-heading">Projekty</h2>
+    <div class="tools-grid">
+      {% for project in projects %}
+        {% if project.tags contains tag %}
+          {% include "partials/project-card.liquid", project: project %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
   {% endif %}
 
   {% else %}
