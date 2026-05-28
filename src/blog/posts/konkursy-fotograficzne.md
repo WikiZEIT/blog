@@ -222,6 +222,8 @@ nie przyznawane są nagrody.
 Oprócz konkursów, w Commons, organizowane są wyzwania trwające cały miesiąc. Wybierane są dwa tematy, które można zgłaszać do wyzwania.
 Tak jak w przypadku Picture of the Year, za wygraną w wyzwaniu, nie są przyznawane żadne nagrody.
 
+Więcej o wyzwaniach na stronie Wikimedia Commons: [Foto wyzwanie](https://commons.wikimedia.org/wiki/Commons:Photo_challenge/pl).
+
 ## Podsumowanie
 
 Głównym celem konkursów jest wzbogacanie zasobów Commons o darmowe, wysokiej jakości pliki
