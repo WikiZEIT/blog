@@ -11,7 +11,8 @@
       "image": "{{ person.image }}",
       "jobTitle": "{{ person.jobTitle }}",
       "description": "{{ person.description }}",
-      "sameAs": {{ person.sameAs | jsonify }}
+      "sameAs": {{ person.sameAs | jsonify }},
+      "knowsAbout": {{ person.knowsAbout | jsonify }}
     },
     {
       "@type": "WebPage",
