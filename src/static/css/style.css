@@ -1359,10 +1359,14 @@ h1, h2, h3, h4, h5, h6 {
     animation: shimmer 1.5s ease-in-out infinite;
 }
 
-.article-content p:has(img) {
+.article-content p:has(img), .page-content p:has(img) {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.article-content p:has(img) a:has(img), .page-content p:has(img) a:has(img) {
+    display: inline-block;
 }
 
 .article-featured-image img {
@@ -1462,7 +1466,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.article-content h2 {
+.article-content h2,
+.page-main h2 {
     margin-top: 2.5rem;
     margin-bottom: 1.25rem;
     font-weight: 700;
@@ -1470,7 +1475,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-slate-100);
 }
 
-.article-content h3 {
+.article-content h3,
+.page-main h3 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -1478,7 +1484,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-slate-100);
 }
 
-.article-content h4 {
+.article-content h4,
+.page-main h4 {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -1965,9 +1972,17 @@ main .body ol > li::before {
 
 /* Page main content area */
 .page-main {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    max-width: none;
+    color: var(--color-slate-400);
+}
+
+.page-main p {
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+}
+
+.page-main li p {
+    margin: 0;
 }
 
 /* Page article / section blocks */
