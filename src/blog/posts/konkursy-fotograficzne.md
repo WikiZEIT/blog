@@ -132,7 +132,7 @@ Użycie znaków towarowych Wikimedia Foundation zostało opisane na stronach:
 
 Jakby ktoś pytał, użycie w artykule opisującym projekty Wikipedia jest dozwolone. Ale już np. użycie w celach komercyjnych,
 np. użycie w celach promocji płatnych edycji (które realizuje WikiZEIT) nie jest dozwolone. Dlatego na stronie
-[oferta](/oferta), gdy mam obrazek, który wyświetla się w mediach społecznościowych (po wklejeniu linka) mam grafikę wygenerowaną
+[oferta](/oferta/), gdy mam obrazek, który wyświetla się w mediach społecznościowych (po wklejeniu linka) mam grafikę wygenerowaną
 przez AI.
 
 ![Pojedynczy Puzzle z literą W z szeryfami](/img/wiki-puzzle.png)

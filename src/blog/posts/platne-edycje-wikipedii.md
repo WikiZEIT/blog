@@ -207,7 +207,7 @@ całość zajmuje mnóstwo czasu.
 
 Dla osób, które chcą pozyskać konkretną wiedzę w skondensowanej formie, idealnym rozwiązaniem jest
 udział w profesjonalnym szkoleniu. Przykładem jest kurs organizowany przez WikiZEIT o nazwie
-„[Wikipedia + SEO i nie tylko](/oferta)”, który w praktyczny sposób uczy, jak tworzyć trwałe i wartościowe
+„[Wikipedia + SEO i nie tylko](/oferta/)”, który w praktyczny sposób uczy, jak tworzyć trwałe i wartościowe
 wpisy, unikając przy tym błędów prowadzących do ich usuwania.
 
 Warto przy tym zaznaczyć istotne rozróżnienie: stowarzyszenie **Wikimedia Polska** również oferuje
