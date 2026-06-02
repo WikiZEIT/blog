@@ -28,10 +28,11 @@ modified: 2026-04-21
 ---
 
 **Jakub T. Jankiewicz** to programista z ponad 15-letnim doświadczeniem w tworzeniu oprogramowania
-open source, a zarazem aktywny redaktor Polskiej Wikipedii, przewodnik dla nowicjuszy oraz
+[open source](https://opensource.org/maintainers/jcubic), a zarazem aktywny
+[redaktor Polskiej Wikipedii](https://pl.wikipedia.org/wiki/Wikipedysta:Jcubic), przewodnik dla nowicjuszy oraz
 [oficjalny trener](https://pl.wikipedia.org/wiki/Wikipedia:WikiTrenerzy/Uczestnicy_i_uczestniczki)
 [Stowarzyszenia Wikimedia Polska](https://wikimedia.pl/). Jest głównym autorem projektu
-WikiZEIT. Zajmuje się także fotografią.
+WikiZEIT. Zajmuje się także [fotografią](https://www.flickr.com/people/jcubic/).
 
 # Wikipedia i etyczne SEO
 
