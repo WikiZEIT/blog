@@ -1,7 +1,7 @@
 <nav class="site-nav">
   <div class="nav-container">
     <div class="nav-logo">
-      <a href="{{ '/' | url }}"><img src="{{ '/img/logo.svg' | url }}" alt="WikiZEIT logo" class="logo-image" /></a>
+      <a href="{{ '/' | url }}"><img src="{{ '/img/logo.svg' | url }}" alt="WikiZEIT logo" class="logo-image" width="112" height="40" /></a>
     </div>
     <div class="nav-links">
       <a class="nav-link{% if page.url == '/blog/' %} active{% endif %}" href="{{ '/blog/' | url }}">Blog</a>
@@ -17,11 +17,11 @@
       </a>
     </div>
     <div class="theme-toggle">
-      <input name="mode" type="radio" id="mode_light" value="light" autocomplete="on"/>
+      <input name="mode" type="radio" id="mode_light" value="light" aria-label="Jasny motyw" autocomplete="on"/>
       <label for="mode_light" title="Jasny motyw">
         <span class="material-symbols-outlined">light_mode</span>
       </label>
-      <input name="mode" type="radio" id="mode_dark" value="dark" autocomplete="on"/>
+      <input name="mode" type="radio" id="mode_dark" value="dark" aria-label="Ciemny motyw" autocomplete="on"/>
       <label for="mode_dark" title="Ciemny motyw">
         <span class="material-symbols-outlined">dark_mode</span>
       </label>

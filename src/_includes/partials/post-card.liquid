@@ -1,7 +1,7 @@
 <a class="post-card" href="{{ post.url | url }}">
   {% if post.data.featuredImage %}
   <div class="post-card-image">
-    <img src="{{ post.data.featuredImage | url }}" alt="{{ post.data.title }}" />
+    <img src="{{ post.data.featuredImage | url }}" alt="{{ post.data.title }}" width="800" height="450" />
   </div>
   {% endif %}
   <div class="post-card-body">
@@ -14,7 +14,8 @@
       {% endfor %}
     </div>
     {% endif %}
-    <h3 class="post-card-title">{{ post.data.title }}</h3>
+    {% assign heading_tag = card_heading | default: "h3" %}
+    <{{ heading_tag }} class="post-card-title">{{ post.data.title }}</{{ heading_tag }}>
     <p class="post-card-excerpt">
       {% if post.data.description %}
         {{ post.data.description }}
