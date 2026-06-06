@@ -7,7 +7,7 @@ layout: layouts/base.liquid
     <nav>
       <a href="{{ '/' | url }}">Strona główna</a>
       <span class="material-symbols-outlined">chevron_right</span>
-      <a href="{{ '/projekty/' | url }}">Projekty</a>
+      <a href="{{ '/' | url }}">Projekty</a>
       <span class="material-symbols-outlined">chevron_right</span>
       <span class="current">{{ title }}</span>
     </nav>
@@ -18,7 +18,7 @@ layout: layouts/base.liquid
       {% if tags %}
       <div class="post-card-tags">
         {% for tag in tags %}
-        <span class="tag-badge">{{ tag }}</span>
+        <a class="tag-badge" href="{{ '/tags/' | url }}{{ tag | slugify }}/">{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}

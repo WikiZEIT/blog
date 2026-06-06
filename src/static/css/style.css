@@ -2597,6 +2597,10 @@ main .body ol > li::before {
     margin-bottom: 0.75rem;
 }
 
+.project-header .post-card-tags {
+    margin-bottom: 0;
+}
+
 .post-card-title {
     font-size: 1.25rem;
     font-weight: 700;
