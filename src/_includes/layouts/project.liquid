@@ -1,0 +1,36 @@
+---
+layout: layouts/base.liquid
+---
+
+<main class="project-main">
+  <div class="breadcrumbs">
+    <nav>
+      <a href="{{ '/' | url }}">Strona główna</a>
+      <span class="material-symbols-outlined">chevron_right</span>
+      <a href="{{ '/projekty/' | url }}">Projekty</a>
+      <span class="material-symbols-outlined">chevron_right</span>
+      <span class="current">{{ title }}</span>
+    </nav>
+  </div>
+  <div class="project-header">
+    <div class="project-header-top">
+      <span class="tool-icon material-symbols-outlined">{{ icon | default: "code" }}</span>
+      {% if tags %}
+      <div class="post-card-tags">
+        {% for tag in tags %}
+        <span class="tag-badge">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    <h1 class="project-title">
+      <a href="{{ projectUrl }}" target="_blank" rel="noopener">{{ title }}
+        <span class="material-symbols-outlined">open_in_new</span>
+      </a>
+    </h1>
+    <p class="project-description">{{ description }}</p>
+  </div>
+  <div class="page-main body">
+    {{ content }}
+  </div>
+</main>
