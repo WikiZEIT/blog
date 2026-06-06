@@ -50,10 +50,6 @@ schemaType: home
   <div class="section-container">
     <div class="section-header">
       <h2 class="section-title">Narzędzia Wiki &amp; SEO</h2>
-      <a href="{{ '/tools/' | url }}" class="view-all-link">
-        Zobacz wszystkie
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
     </div>
     <div class="tools-grid">
       {% for tool in toolsList %}
@@ -67,18 +63,14 @@ schemaType: home
 {% endif %}
 
 <!-- Projects Section -->
-{% if projects.size > 0 %}
+{% if collections.project.size > 0 %}
 <section class="section-tools">
   <div class="section-container">
     <div class="section-header">
       <h2 class="section-title">Projekty</h2>
-      <a href="{{ '/projekty/' | url }}" class="view-all-link">
-        Zobacz wszystkie
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
     </div>
     <div class="tools-grid">
-      {% for project in projects %}
+      {% for project in collections.project %}
         {% include "partials/project-card.liquid", project: project %}
       {% endfor %}
     </div>

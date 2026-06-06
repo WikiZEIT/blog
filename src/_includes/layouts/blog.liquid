@@ -22,7 +22,7 @@ layout: layouts/base.liquid
   {% if postsList.size > 0 %}
   <div class="posts-grid">
     {% for post in postsList %}
-      {% unless post.data.tags contains "Tool" %}
+      {% unless post.data.tags contains "Tool" or post.data.isProject %}
         {% include "partials/post-card.liquid", post: post, card_heading: "h2" %}
       {% endunless %}
     {% endfor %}
@@ -52,8 +52,8 @@ layout: layouts/base.liquid
     {% endif %}
 
     {% assign hasProjects = false %}
-    {% for project in projects %}
-      {% if project.tags contains tag %}
+    {% for project in collections.project %}
+      {% if project.data.tags contains tag %}
         {% assign hasProjects = true %}
         {% break %}
       {% endif %}
@@ -61,8 +61,8 @@ layout: layouts/base.liquid
     {% if hasProjects %}
     <h2 class="blog-title tag-tools-heading">Projekty</h2>
     <div class="tools-grid">
-      {% for project in projects %}
-        {% if project.tags contains tag %}
+      {% for project in collections.project %}
+        {% if project.data.tags contains tag %}
           {% include "partials/project-card.liquid", project: project %}
         {% endif %}
       {% endfor %}

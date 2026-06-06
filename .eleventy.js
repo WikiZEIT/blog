@@ -134,6 +134,13 @@ export default function(eleventyConfig) {
         });
     });
 
+    // Project collection sorted alphabetically
+    eleventyConfig.addCollection("project", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/projekty/*.md").sort((a, b) => {
+            return a.data.title.localeCompare(b.data.title, 'pl');
+        });
+    });
+
     // Author profile collection
     eleventyConfig.addCollection("author", function(collectionApi) {
         return collectionApi.getFilteredByGlob("src/authors/*.md");
