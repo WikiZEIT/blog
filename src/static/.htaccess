@@ -7,6 +7,25 @@ Header always set Link "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"desc
 # Force HTTPS
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
 
+# ==========================================================================
+# Cache Control
+# ==========================================================================
+
+# Versioned assets (CSS/JS/fonts with ?v= hash) — cache for 1 year
+<FilesMatch "\.(css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+# Images and favicons — cache for 30 days
+<FilesMatch "\.(png|jpg|jpeg|webp|svg|gif|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+</FilesMatch>
+
+# HTML and PHP — no cache (always fresh)
+<FilesMatch "\.(html|php)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+
 RewriteEngine On
 
 RewriteRule ^graf-wiedzy/(.*) /tools/graf-wiedzy/$1 [R=301,L]

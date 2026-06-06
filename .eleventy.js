@@ -8,6 +8,7 @@ import socialCard from 'eleventy-plugin-svg-social-card';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import { minify } from 'html-minifier-next';
 import { minify as minifyJS } from 'terser';
+import CleanCSS from 'clean-css';
 import { imageSize } from 'image-size';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -278,6 +279,16 @@ export default function(eleventyConfig) {
     const isProduction = process.env.ELEVENTY_RUN_MODE === 'build';
 
     if (isProduction) {
+        eleventyConfig.on('eleventy.after', async () => {
+            const cssPath = path.join(__dirname, '_site/css/style.css');
+            if (existsSync(cssPath)) {
+                const css = readFileSync(cssPath, 'utf-8');
+                const { writeFileSync } = await import('fs');
+                const result = new CleanCSS({ level: 2 }).minify(css);
+                writeFileSync(cssPath, result.styles);
+            }
+        });
+
         eleventyConfig.addTransform('html-minifier-next', async function(content) {
             if (this.page.outputPath && (this.page.outputPath.endsWith('.html'))) {
                 return await minify(content, {
