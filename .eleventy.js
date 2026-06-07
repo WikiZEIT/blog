@@ -298,11 +298,7 @@ export default function(eleventyConfig) {
             const searchIndex = process.env.SEARCH_INDEX;
             const shouldIndex = searchIndex === '1' || (searchIndex !== '0');
             if (shouldIndex) {
-                try {
-                    execSync('node scripts/build-search-index.mjs', { stdio: 'inherit' });
-                } catch {
-                    console.error('Search index build failed. Is better-sqlite3 installed?');
-                }
+                execSync('node scripts/build-search-index.mjs', { stdio: 'inherit' });
             }
         });
 
