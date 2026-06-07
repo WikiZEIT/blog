@@ -10,6 +10,7 @@ import { minify } from 'html-minifier-next';
 import { minify as minifyJS } from 'terser';
 import CleanCSS from 'clean-css';
 import { imageSize } from 'image-size';
+import { execSync } from 'child_process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -294,6 +295,15 @@ export default function(eleventyConfig) {
                 const result = new CleanCSS({ level: 2 }).minify(css);
                 writeFileSync(cssPath, result.styles);
             }
+            const searchIndex = process.env.SEARCH_INDEX;
+            const shouldIndex = searchIndex === '1' || (searchIndex !== '0');
+            if (shouldIndex) {
+                try {
+                    execSync('node scripts/build-search-index.mjs', { stdio: 'inherit' });
+                } catch {
+                    console.error('Search index build failed. Is better-sqlite3 installed?');
+                }
+            }
         });
 
         eleventyConfig.addTransform('html-minifier-next', async function(content) {
@@ -302,7 +312,10 @@ export default function(eleventyConfig) {
                     collapseWhitespace: true,
                     conservativeCollapse: true,
                     removeComments: true,
-                    ignoreCustomComments: [/^\s*form-message-placeholder\s*$/],
+                    ignoreCustomComments: [
+                        /^\s*form-message-placeholder\s*$/,
+                        /^\s*search-results-placeholder\s*$/,
+                    ],
                     minifyCSS: true,
                     minifyJS: async (text) => {
                         const result = await minifyJS(text, { compress: false });

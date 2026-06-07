@@ -28,6 +28,10 @@ Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains
 
 RewriteEngine On
 
+# Search: rewrite to PHP handler
+RewriteCond %{REQUEST_FILENAME}/index.php -f
+RewriteRule ^search/$ /search/index.php [L,QSA]
+
 RewriteRule ^graf-wiedzy/(.*) /tools/graf-wiedzy/$1 [R=301,L]
 
 # Content negotiation: serve markdown when Accept: text/markdown
@@ -58,6 +62,9 @@ RewriteCond %{HTTP:Accept} text/markdown
 RewriteRule ^oferta/?$ /oferta/index.php?format=md [L,T=text/markdown]
 
 RewriteRule ^oferta\.md$ /oferta/index.php?format=md [L]
+
+# Block database files
+RewriteRule \.db$ - [F,L]
 
 # Protect sensitive files
 RewriteRule ^oferta/allegro_tokens\.json$ /404.php [L]

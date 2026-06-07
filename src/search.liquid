@@ -1,0 +1,24 @@
+---
+layout: layouts/base.liquid
+title: "Szukaj"
+description: "Wyszukaj artykuły i strony na WikiZEIT."
+permalink: /search/
+eleventyExcludeFromCollections: true
+---
+
+<main class="search-main">
+  <div class="search-header">
+    <h1 class="blog-title">Szukaj</h1>
+  </div>
+  <div class="search-box">
+    <form action="/search/" method="get" class="search-form" role="search">
+      <label for="search-q" class="sr-only">Szukaj</label>
+      <div class="search-input-wrap">
+        <span class="material-symbols-outlined search-icon">search</span>
+        <input type="search" name="q" id="search-q" class="search-input" value="" placeholder="Szukaj artykułów, narzędzi, projektów…" autocomplete="off" autofocus>
+      </div>
+      <button type="submit" class="btn-primary search-btn">Szukaj</button>
+    </form>
+  </div>
+  <!-- search-results-placeholder -->
+</main>
