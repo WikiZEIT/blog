@@ -127,7 +127,7 @@ Aby nasz bot mógł się zalogować do Wikipedii należy utworzyć plik `user-co
 
 Jego zawartość powinna wyglądać tak:
 
-```
+```python
 family = 'wikipedia'
 mylang = 'pl'
 usernames['wikipedia']['pl'] = 'jcubic' # tutaj wstaw swój nick
@@ -155,8 +155,8 @@ Wchodzą na Wikipedię i zaglądając do naszych edycji na stronie
 [Specjalna:Wkład/Jcubic](https://pl.wikipedia.org/wiki/SSpecjalna:Wkład/Jcubic),
 widzimy edycje bota:
 
-![historia edycji z opisem [WikiZEIT Test] Pierwsze uruchomienie bota Hello World przez API](/img/bot-historia.webp)
-<small>historia edycji z opisem [WikiZEIT Test] Pierwsze uruchomienie bota Hello World przez API</small>
+![historia edycji z opisem "[WikiZEIT Test] Pierwsze uruchomienie bota Hello World przez API"](/img/bot-historia.webp)
+<small>historia edycji z opisem "\[WikiZEIT Test] Pierwsze uruchomienie bota Hello World przez API"</small>
 
 A wchodzą na stronę w naszej przestrzeni nazw możemy zobaczyć nasz tekst:
 
