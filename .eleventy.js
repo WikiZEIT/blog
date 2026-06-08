@@ -28,6 +28,8 @@ function formatDate(date) {
 
 export default function(eleventyConfig) {
 
+    eleventyConfig.addGlobalData('production', process.env.PRODUCTION === 'true');
+
     eleventyConfig.addFilter("mdAlternate", function(pageUrl) {
         if (pageUrl === '/') return '/llms.txt';
         const blogPost = pageUrl.match(/^\/blog\/([^/]+)\/$/);
