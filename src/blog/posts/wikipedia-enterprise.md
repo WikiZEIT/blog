@@ -22,7 +22,6 @@ keywords:
   - SEO
   - real-time API
 author: jcubic
-modified: 2026-04-21
 faq:
   - question: "Czy Wikipedia jest płatna?"
     answer: |
@@ -63,6 +62,14 @@ ogromną skalę. Firmy takie jak Google czy Microsoft nie muszą już
 * **Dedykowany strumień:** Dane w czasie rzeczywistym.
 * **Gwarancję SLA (Service Level Agreement):** Pewność dostępności systemów.
 * **Format JSON:** Dane gotowe do użycia przez maszyny.
+
+Co ciekwe w ramach Wikimedia Enterprise fundacja zapewnia także darmowy dostęp do API, które oferuje:
+
+* 50,000 zapytań na miesiąc.
+* 30 zapytań na miesiąć o kopie (zrzut) bazy (ang. Snapshot).
+
+Limity te zostały zwiększone 2 czerwca 2026. Więcej na
+[stronie projektu](https://enterprise.wikimedia.com/blog/enhanced-free-api/).
 
 ## Czy Fundacja Wikimedia zarabia na Wikipedii?
 
