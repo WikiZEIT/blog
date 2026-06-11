@@ -76,6 +76,7 @@ jobs:
         run: npm run build
         env:
           PRODUCTION: 'true'
+          SPELL_CHECK: '0'
 
       - name: Validate JSON-LD
         run: node scripts/validate-jsonld.mjs

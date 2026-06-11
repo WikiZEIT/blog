@@ -127,18 +127,22 @@ Aby nasz bot mógł się zalogować do Wikipedii należy utworzyć plik `user-co
 
 Jego zawartość powinna wyglądać tak:
 
+<!-- cSpell:disable -->
 ```python
 family = 'wikipedia'
 mylang = 'pl'
 usernames['wikipedia']['pl'] = 'jcubic' # tutaj wstaw swój nick
 password_file = 'user-password.py'
 ```
+<!-- cSpell:enable -->
 
 Plik `user-password.py` powinien zawierać krotkę, która wygląda tak:
 
+<!-- cSpell:disable -->
 ```python
 ('Jcubic', BotPassword('Hello-World', 'r4qli70elje53e48s8lqf4oddnmrjjer'))
 ```
+<!-- cSpell:enable -->
 
 Oczywiście musisz wpisać swoje własne hasło bota.
 

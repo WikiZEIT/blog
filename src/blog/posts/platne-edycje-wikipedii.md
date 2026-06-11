@@ -36,7 +36,7 @@ faq:
          użytkownika o powiązaniach z firmą.
       4. Publikacja i weryfikacja: swojego przewodnika o sprawdzenie i publikację, jeśli masz
          konto od niedawna. Jeśli jesteś w Wikipedii już od jakiegoś czasu, możesz przenieść
-         artykuł do przesterzni głównej sam(a). Prośbę o sprawdzenie można także zgłosić
+         artykuł do przestrzeni głównej sam(a). Prośbę o sprawdzenie można także zgłosić
          na stronie Wikipedia:Pytania_nowicjuszy.
   - question: "Kto zajmuje się płatną edycją Wikipedii w Polsce?"
     answer: |

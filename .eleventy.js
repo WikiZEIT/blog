@@ -286,6 +286,18 @@ export default function(eleventyConfig) {
         );
     });
 
+    const spellCheck = process.env.SPELL_CHECK;
+    const shouldSpellCheck = spellCheck === '1' || (spellCheck !== '0');
+    if (shouldSpellCheck) {
+        eleventyConfig.on('eleventy.before', async () => {
+            try {
+                execSync('npx cspell --no-progress --dot "src/**/*.md" "src/**/*.liquid" ".eleventy.js" "scripts/*.mjs" "api/**/*.php"', { stdio: 'inherit' });
+            } catch {
+                process.exit(1);
+            }
+        });
+    }
+
     const isProduction = process.env.ELEVENTY_RUN_MODE === 'build';
 
     if (isProduction) {

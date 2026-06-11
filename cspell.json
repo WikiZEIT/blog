@@ -1,0 +1,71 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "version": "0.2",
+    "language": "en",
+    "import": ["@cspell/dict-pl_pl/cspell-ext.json"],
+    "ignorePaths": [
+        "node_modules",
+        "_site",
+        "_site_test",
+        "tmp",
+        "oferta",
+        "szkolenia",
+        "vendor",
+        "package-lock.json",
+        "*.min.js",
+        "*.min.css",
+        "project-words.txt",
+        "analytics",
+        "bot",
+        "DR",
+        "WIDOCZNI",
+        "Semantic_Tool"
+    ],
+    "overrides": [
+        {
+            "filename": "src/blog/posts/*.md",
+            "language": "pl,en"
+        },
+        {
+            "filename": "src/authors/*.md",
+            "language": "pl,en"
+        },
+        {
+            "filename": "src/materialy/**/*.md",
+            "language": "pl,en"
+        },
+        {
+            "filename": "src/projekty/*.md",
+            "language": "pl,en"
+        },
+        {
+            "filename": "src/404.md",
+            "language": "pl,en"
+        },
+        {
+            "filename": "src/**/*.liquid",
+            "language": "pl,en",
+            "languageId": "html"
+        },
+        {
+            "filename": ".eleventy.js",
+            "language": "en"
+        },
+        {
+            "filename": "scripts/*.mjs",
+            "language": "en"
+        },
+        {
+            "filename": "api/**/*.php",
+            "language": "en"
+        }
+    ],
+    "dictionaryDefinitions": [
+        {
+            "name": "project-words",
+            "path": "./project-words.txt",
+            "addWords": true
+        }
+    ],
+    "dictionaries": ["project-words"]
+}

@@ -17,7 +17,7 @@ Wszystkie zdjęcia udostępnione na wolnych licencjach Creative Commons.
 
 Wikimedia Commons jest to projektem wielojęzycznym, tzn. nie ma innych wersji językowych, jak w przypadku
 Wikipedii. Jest jeden portal na stronie [commons.wikimedia.org](https://commons.wikimedia.org/),
-natomiast można zmienić język intefejsu. Opisy zdjęć można dodawać w różnych językach. Więc szukając
+natomiast można zmienić język interfejsu. Opisy zdjęć można dodawać w różnych językach. Więc szukając
 Czegoś, w zasobach Commons, trzeba pamiętać o sprawdzenie nazw polskich, jak i angielskich.
 
 ## Co to są licencje Creative Commons?
@@ -34,9 +34,9 @@ do kopiowania danego dzieła. Prawa, o których decyduje autor dzieła.
 
 Licencje te dają kilka klocków, które można łączyć kombinacje. Oto one:
 
-* Attribution - uznanie autorsta - BY
+* Attribution - uznanie autorstwa - BY
 * Non-Derivative - bez utworów zależny - ND
-* Non-Commerical - bez użytku komercyjnego - NC
+* Non-Commercial - bez użytku komercyjnego - NC
 * Share-Alike - na tych samych warunkach - SA
 
 Każda licencje (z jednym wyjątkiem, o którym za chwilę) musi mieć człon BY (czyli uznanie autorstwa)
@@ -46,7 +46,7 @@ Przykłady:
 
 * BY - najbardziej liberalna, oznacza że dzieło można używać w dowolny sposób tylko trzeba podpisać
   kto jest autorem.
-* BY-NC-SA - oznbacza że nie można użyć do celów komercyjnych a każda modyfikacja musi mieć taką samą
+* BY-NC-SA - oznacza że nie można użyć do celów komercyjnych a każda modyfikacja musi mieć taką samą
   licencje.
 * BY-SA - jest to licencja, której zazwyczaj używam, oznacza to samo co wyżej tylko można
   wykorzystywać do celów komercyjnych.
@@ -81,7 +81,7 @@ Warto wspomnieć, że duży wpływ, na licencje Creative Commons, miał [Aaron
 Swartz](https://pl.wikipedia.org/wiki/Aaron_Swartz).  Aktywista, który zginął śmiercią
 samobójczą. Przez wielu uważany za męczennika w obronie dostępu do wiedzy.
 
-Historie Aarona można obejrzeć w filmie dokumelnym: [The Internet's Own Boy: The Story of Aaron
+Historie Aarona można obejrzeć w filmie dokumentalnym: [The Internet's Own Boy: The Story of Aaron
 Swartz](https://en.wikipedia.org/wiki/The_Internet%27s_Own_Boy).
 
 ## Licencje w Wikimedia Commons

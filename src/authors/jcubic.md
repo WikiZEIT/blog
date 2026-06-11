@@ -46,7 +46,7 @@ Specjalizuje się w:
 
 - **Audytach encyklopedyczności**: ocenie, czy dany podmiot (firma, osoba, produkt) spełnia
   kryteria Wikipedii.
-- **Płatnych edycjach**: przygotowaniu i wprowadzaniu treści do Wikipedii (zgodnie z jej zasadmi).
+- **Płatnych edycjach**: przygotowaniu i wprowadzaniu treści do Wikipedii (zgodnie z jej zasadami).
 - **Szkoleniach z edytowania Wikipedii**: dedykowanych dla działów PR, marketingu i komunikacji.
 - **Doradztwie Entity SEO**: budowaniu widoczności marki w Google Knowledge Graph i systemach AI
   poprzez Wikidata i dane strukturalne.

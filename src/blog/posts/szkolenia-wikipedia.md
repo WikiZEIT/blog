@@ -30,11 +30,11 @@ faq:
         - Akademia Wikimediów
         - Współpraca z GLAM
         Są to szkolenia darmowe. WMPL na swoim kanale na YouTube umieszcza także materiały wideo.
-      - WikiZEIT organizuje komercyjne szkolenia z edycji Wikipedii i projektów siotrzanych,
+      - WikiZEIT organizuje komercyjne szkolenia z edycji Wikipedii i projektów siostrzanych,
         które prowadzi Jakub T. Jankiewicz doświadczony redaktor, przewodnik oraz WikiTrener
         w Polskiej Wikipedii. Są to jedyne płatne szkolenia z Wikipedii organizowane w Polsce.
       - NoblePro prowadzi szkolenia z MediaWiki, nie dotyczą one zasad edytowania Wikipedii,
-        tylko oprogramowania, na który stoii Wikipedia i projekty siotrzane. Dedykowane jest
+        tylko oprogramowania, na którym stoi Wikipedia i projekty siostrzane. Dedykowane jest
         osobom i formom, które chcą tworzyć własne Wiki.
 ---
 
@@ -56,7 +56,7 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
    [WikiTrenerów](https://pl.wikipedia.org/wiki/Wikipedia:WikiTrenerzy).
 
     * WMPL prowadzi szkolenia w ramach [Wiki Szkoły](https://wikiszkola.pl/szkolenia/)
-    * Jednym z większych projektów educjacyjnych jest [Wikiteka](https://wikiszkola.pl/wikiteka/),
+    * Jednym z większych projektów edukacyjnych jest [Wikiteka](https://wikiszkola.pl/wikiteka/),
       przeznaczona dla bibliotekarek/bibliotekarzy i od niedawna także nauczycieli.
     * Oferta WMPL jest skierowana głównie do osób związanych z edukacją w tym uczniów i studentów.
     * [Akademia Wikimediów](https://wikimedia.pl/akademia-wikimediow/) jest to jeszcze jeden projekt
@@ -77,11 +77,11 @@ W Polsce jest kilka miejsc, gdzie można w zorganizowany sposób nauczyć się 
    osobom i formom, które chcą tworzyć własne Wiki.
 
 ## Inne inicjatywy i kursy edukacyjne w Polsce
-Wikimedia Polska organizuje także pojedycze wydarzenia, jak np. [Kurs webinarowy: Wikipedia od A do
+Wikimedia Polska organizuje także pojedyncze wydarzenia, jak np. [Kurs webinarowy: Wikipedia od A do
 Z. Mój pierwszy artykuł w
 Wikipedii](https://etwinning.pl/aktualnosci/kurs-webinarowy-wikipedia-od-a-do-z-moj-pierwszy-artykul-w-wikipedii)
 z 2024 roku. Organizowany wspólnie z [FRSE](https://www.frse.org.pl/).
-W Paździerku 2025 odbyło się szkolenie w ramach proktu GLAM (ang. galleries, libraries, archives, and museums) „[jak skutecznie zwiększać obecność zbiorów muzealnych online](https://nim.gov.pl/aktualnosci/szkolenie-wikipedia-i-projekty-glam-wiki-jak-skutecznie-zwiekszac-obecnosc-zbiorow-muzealnych-online.html)”.
+W Październiku 2025 odbyło się szkolenie w ramach projektu GLAM (ang. galleries, libraries, archives, and museums) „[jak skutecznie zwiększać obecność zbiorów muzealnych online](https://nim.gov.pl/aktualnosci/szkolenie-wikipedia-i-projekty-glam-wiki-jak-skutecznie-zwiekszac-obecnosc-zbiorow-muzealnych-online.html)”.
 
 ## Materiały edukacyjne
 

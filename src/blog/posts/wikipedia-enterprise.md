@@ -63,10 +63,10 @@ ogromną skalę. Firmy takie jak Google czy Microsoft nie muszą już
 * **Gwarancję SLA (Service Level Agreement):** Pewność dostępności systemów.
 * **Format JSON:** Dane gotowe do użycia przez maszyny.
 
-Co ciekwe w ramach Wikimedia Enterprise fundacja zapewnia także darmowy dostęp do API, które oferuje:
+Co ciekawe w ramach Wikimedia Enterprise fundacja zapewnia także darmowy dostęp do API, które oferuje:
 
 * 50,000 zapytań na miesiąc.
-* 30 zapytań na miesiąć o kopie (zrzut) bazy (ang. Snapshot).
+* 30 zapytań na miesiąc o kopie (zrzut) bazy (ang. Snapshot).
 
 Limity te zostały zwiększone 2 czerwca 2026. Więcej na
 [stronie projektu](https://enterprise.wikimedia.com/blog/enhanced-free-api/).

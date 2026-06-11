@@ -4,7 +4,7 @@ date: 2026-04-05
 tags:
   - Wikipedia
   - Zasady
-description: "W tym artykule przedstawię, jak wyglądaja rzeczywistość zasad encyklopedyczności w polskiej Wikipedii. Czyli czy twój temat nadaje się do Wikipedii."
+description: "W tym artykule przedstawię, jak wyglądają rzeczywistość zasad encyklopedyczności w polskiej Wikipedii. Czyli czy twój temat nadaje się do Wikipedii."
 keywords:
   - encyklopedyczność
   - zasady Wikipedii
@@ -34,7 +34,7 @@ Wikipedii. Czyli czy twój temat nadaje się do Wikipedii?
 Najważniejszą strona w Wikipedii to
 [WP:WER](https://pl.wikipedia.org/wiki/Wikipedia:Encyklopedyczno%C5%9B%C4%87). Czyli zbiór zasad,
 które zostały zaakceptowane przez społeczność Wikipedystów. Jedna z nich jest np. to że doktorzy
-habilitowani są autoency, czyli wystarczy, że naukowiec posiada habilitację i już automatycznie
+habilitowani są autoencyklopedyczni, czyli wystarczy, że naukowiec posiada habilitację i już automatycznie
 nadaje się do Wikipedii.
 
 Obowiązujące kryteria można znaleźć na powyższej stronie w sekcji "Kryteria – obowiązujące".

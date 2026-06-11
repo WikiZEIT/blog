@@ -14,7 +14,7 @@ Polska](https://wikimedia.pl/) w ramach projektu
 
 [![Prezentacja z Commons i Prawa Autorskiego, wersja dla Wikiteki w Łodzi w 2024](/img/prezentacja-commons-prawa-autorskie.jpg)](https://commons.wikimedia.org/wiki/File:Prezentacja_z_Commons_i_Prawa_Autorskiego.pdf)
 
-Wiersja prezentacji, która powstała dla [Wikiteki](https://pl.wikipedia.org/wiki/Wikipedia:Wikiteka), szkolenia dla bibliotekarzy(ek) i nauczycieli(ek).
+Wersja prezentacji, która powstała dla [Wikiteki](https://pl.wikipedia.org/wiki/Wikipedia:Wikiteka), szkolenia dla bibliotekarzy(ek) i nauczycieli(ek).
 
 W prezentacji omawiane są:
 * Prawo autorskie.
@@ -47,4 +47,4 @@ Prezentacja omawiająca zasady tworzenia artykuł w Wikipedii.
 
 [![Skrócona prezentacja WikiZEIT - Prawo autorskie i Wikimedia Commons. Część szkolenia "Wikipedia+SEO i nie tylko"](/img/prezentacja-prawo-autorskie-short.jpg)](https://commons.wikimedia.org/wiki/File:Prezentacja_-_Prawo_autorskie_-_skr%C3%B3cona.pdf)
 
-Jest to skrócona wersja przentacji o Prawie autorskim i Commons. Część informacji została pominięta część znalazła się w pierwszej przentacji.
+Jest to skrócona wersja prezentacji o Prawie autorskim i Commons. Część informacji została pominięta część znalazła się w pierwszej prezentacji.

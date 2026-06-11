@@ -152,7 +152,7 @@ jest niezależna od użytych słów kluczowych.
 Warto sprawdzić swoje dane przed wdrożeniem na produkcję.
 
 Pierwszą rzeczą jest sprawdzenie, czy mamy poprawny format JSON. Można do tego użyć narzędzia [JSON
-Lint](https://duckduckgo.com/?q=json+lint) (kopujemy całego JSONa i sprawdzamy czy nie ma błędów
+Lint](https://duckduckgo.com/?q=json+lint) (kopiujemy całego JSONa i sprawdzamy czy nie ma błędów
 składni). Gdy mamy poprawny JSON, powinniśmy sprawdzić poprawność Schema.org, poprzez narzędzie
 [Walidatora Schema](https://validator.schema.org/).
 
