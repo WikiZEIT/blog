@@ -1,0 +1,25 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Variable \$db might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: api/subscribe/index.php
+
+		-
+			message: '#^Variable \$mustache might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: api/subscribe/index.php
+
+		-
+			message: '#^Variable \$db might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: api/verify/index.php
+
+		-
+			message: '#^Variable \$mustache might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: api/verify/index.php
