@@ -118,6 +118,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
+    scroll-margin-top: calc(72px + 1rem);
 }
 
 /* ==========================================================================
@@ -1715,6 +1716,10 @@ main .body ol > li::before {
     gap: 3rem;
 }
 
+.sidebar-card + .sidebar-card {
+    margin-top: 1rem;
+}
+
 .sidebar-card {
     padding: 1.5rem;
     border-radius: var(--border-radius-2xl);
@@ -1740,7 +1745,51 @@ main .body ol > li::before {
 .sidebar-toc {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-block: 1rem;
     gap: 1rem;
+}
+
+.sidebar-toc .toc > ol {
+    margin: 0;
+}
+
+.sidebar-toc h3 {
+    margin: 0;
+}
+
+.sidebar-toc ol {
+    counter-reset: item;
+}
+
+.sidebar-toc li {
+    counter-increment: item;
+}
+
+.sidebar-toc ol ol {
+    counter-reset: item-a;
+    padding-left: 2rem;
+}
+
+.sidebar-toc li li {
+    counter-increment: item-a;
+}
+
+.sidebar-toc ol ol ol {
+    counter-reset: item-a-a;
+    padding-left: 3rem;
+}
+
+.sidebar-toc li li li {
+    counter-increment: item-a-a;
+}
+
+.sidebar-toc li li::marker {
+    content: counter(item) "." counter(item-a) ". ";
+}
+
+.sidebar-toc li li li::marker {
+    content: counter(item) "." counter(item-a) "." counter(item-a-a) ". ";
 }
 
 .sidebar-toc a {

@@ -11,6 +11,8 @@ import { minify as minifyJS } from 'terser';
 import CleanCSS from 'clean-css';
 import { imageSize } from 'image-size';
 import { execSync } from 'child_process';
+import markdownItAnchor from 'markdown-it-anchor';
+import pluginTOC from 'eleventy-plugin-toc';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -41,6 +43,17 @@ export default function(eleventyConfig) {
         }
         return null;
     });
+
+    eleventyConfig.setLibrary(
+        'md',
+        markdownIt().use(markdownItAnchor)
+    );
+
+    eleventyConfig.addPlugin(pluginTOC, {
+        tags: ['h2', 'h3', 'h4'],
+        wrapper: 'div'
+    });
+
 
     eleventyConfig.addFilter("rawMarkdown", function(inputPath) {
         const content = readFileSync(path.resolve(inputPath), 'utf-8');
