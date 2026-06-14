@@ -1,0 +1,13 @@
+parameters:
+    level: 5
+    paths:
+        - api
+        - src/static
+    excludePaths:
+        - src/static/css
+        - src/static/js
+        - src/static/img
+        - src/static/fonts
+        - src/static/favicon
+includes:
+    - phpstan-baseline.neon

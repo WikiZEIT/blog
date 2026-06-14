@@ -139,7 +139,7 @@ function renderResults(array $results, string $query): string {
     $noun = 'wyników';
     if ($count === 1) {
         $noun = 'wynik';
-    } elseif ($count >= 2 && $count <= 4) {
+    } elseif ($count <= 4) {
         $noun = 'wyniki';
     }
 

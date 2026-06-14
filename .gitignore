@@ -17,3 +17,5 @@ src/tools/*/config.json
 scripts/.watcher.pid
 src/static/fonts/.source
 src/static/fonts/material-symbols-outlined.woff2
+agent-*
+src/blog/posts/img

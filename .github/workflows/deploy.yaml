@@ -59,8 +59,26 @@ jobs:
       - name: Spell check
         run: npm run spell
 
+  phpstan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Install PHP dependencies
+        run: composer install --optimize-autoloader
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse
+
   deploy:
-    needs: [lint, spellcheck]
+    needs: [lint, spellcheck, phpstan]
     runs-on: ubuntu-latest
 
     steps:
