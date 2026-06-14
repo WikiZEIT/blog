@@ -44,10 +44,9 @@ export default function(eleventyConfig) {
         return null;
     });
 
-    eleventyConfig.setLibrary(
-        'md',
-        markdownIt().use(markdownItAnchor)
-    );
+    const md = markdownIt({ html: true, linkify: true }).use(markdownItAnchor);
+
+    eleventyConfig.setLibrary('md', md);
 
     eleventyConfig.addPlugin(pluginTOC, {
         tags: ['h2', 'h3', 'h4'],
@@ -60,7 +59,6 @@ export default function(eleventyConfig) {
         return content.replace(/^---[\s\S]*?---\n*/, '');
     });
 
-    const md = markdownIt({ html: true, linkify: true });
     eleventyConfig.addFilter("markdownify", function(content) {
         if (!content) return "";
         return md.renderInline(content);
