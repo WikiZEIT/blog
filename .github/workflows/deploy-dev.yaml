@@ -16,7 +16,7 @@ on:
       - '.github/workflows/deploy-dev.yaml'
       - 'cspell.json'
       - 'project-words.txt'
-      - 'phpstan-baseline.neon'
+      - '*.neon'
   workflow_dispatch:
 
 concurrency:

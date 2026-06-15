@@ -5,7 +5,7 @@ parameters:
         - src/static
     excludePaths:
         - src/static/css
-        - src/static/js
+        - src/static/js (?)
         - src/static/img
         - src/static/fonts
         - src/static/favicon
