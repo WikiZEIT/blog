@@ -13,7 +13,7 @@ W pierwszej połowie czerwca 2026 wykonałem sesję fotograficzną, dokumentują
 Dawnej Wsi „Domek Tkaczki”](https://www.domektkaczki.pl/).
 
 ![Jakub T. Jankiewicz podczas sesji fotograficznej w Domku Tkaczki](/img/jakub-jankiewicz-domek-tkaczki.webp)
-<small>Fot. [Urszula Wolska](https://wolska.jcubic.pl), Wszystkie prawa zastrzeżone</small>
+<small>Jakub T. Jankiewicz wykonujący zdjęcie, fot. [Urszula Wolska](https://wolska.jcubic.pl), Wszystkie prawa zastrzeżone</small>
 
 ## Zdjęcia eksponatów z Domku Tkaczki
 
