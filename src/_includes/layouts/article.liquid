@@ -78,8 +78,13 @@ schemaType: article
           <p class="bio">{{ authorData.bio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
         </div>
         <div class="sidebar-toc">
-          <h3>Spis Treści</h3>
-          {{ content | toc }}
+          <details>
+            <summary>
+              <h3>Spis Treści</h3>
+            </summary>
+            {{ content | toc }}
+          </details>
+        </div>
       </div>
 
       <!-- Tags -->
