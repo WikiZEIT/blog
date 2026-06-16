@@ -50,7 +50,11 @@ Yuval
 BLUF
 Minifikacja
 minifikacji
+minifikuj
 Packagist
+Sanityzator
+sanityzator
+sanityzacji
 maintainera
 maintainerem
 SERP
@@ -108,6 +112,7 @@ markdownify
 
 # Code identifiers (from .eleventy.js, PHP, scripts)
 aboutfeeds
+ctype
 apos
 AUTOINCREMENT
 filemtime

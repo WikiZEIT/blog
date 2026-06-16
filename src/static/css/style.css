@@ -109,7 +109,7 @@ a {
     --max-width: 80rem;
     --max-width-narrow: 56rem;
     --max-width-content: 64rem;
-    --checkbox-size: 1.4;
+    --checkbox-size: 1.6;
 }
 
 /* ==========================================================================
@@ -3622,6 +3622,8 @@ strong {
 
 .book-odn-toggle {
     border-left: 1px solid rgba(180, 33, 4, 0.2);
+    margin-left: calc(var(--__checkbox-size) * 0.75rem);
+    padding-left: calc(var(--__checkbox-size) * 0.75rem);
 }
 
 .checkbox {
@@ -3630,14 +3632,12 @@ strong {
     font-size: 0.85rem;
     grid-template-columns: 1em auto;
     align-items: center;
-    gap: calc(var(--__checkbox-size) * 0.5em);
-    margin-left: calc(var(--__checkbox-size) * 0.75rem);
-    padding-left: calc(var(--__checkbox-size) * 0.75rem);
+    gap: calc(var(--__checkbox-size) * 0.7em);
     color: var(--color-slate-400);
     cursor: pointer;
 }
 
-.book-odn-toggle input[type="checkbox"] {
+.checkbox input[type="checkbox"] {
     appearance: none;
     background-color: transparent;
     margin: 0;
@@ -3653,7 +3653,7 @@ strong {
     --__checkbox-size: var(--checkbox-size, 1);
 }
 
-.book-odn-toggle input[type="checkbox"]::before {
+.checkbox input[type="checkbox"]::before {
     content: "";
     width: calc(var(--__checkbox-size) * 0.55em);
     height: calc(var(--__checkbox-size) * 0.55em);
@@ -3662,7 +3662,7 @@ strong {
     box-shadow: inset 1em 1em var(--color-primary);
 }
 
-.book-odn-toggle input[type="checkbox"]:checked::before {
+.checkbox input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
 
@@ -4125,4 +4125,214 @@ label[for="mode_dark"] { display: flex; }
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+.css-tool {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+}
+
+.css-tool h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-slate-100);
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .css-tool h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.css-tool-card {
+    background-color: rgba(180, 33, 4, 0.05);
+    border: 1px solid rgba(180, 33, 4, 0.15);
+    border-radius: var(--border-radius-2xl);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.css-tool-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .css-tool-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.css-tool-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.css-tool-label {
+    color: var(--color-slate-300);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.css-tool-textarea {
+    min-height: 18rem;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid rgba(180, 33, 4, 0.2);
+    border-radius: var(--border-radius-xl);
+    background-color: rgba(var(--bg-rgb), 0.6);
+    color: var(--color-slate-100);
+    font-size: 0.9rem;
+    font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+    line-height: 1.5;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.css-tool-textarea::placeholder {
+    color: var(--color-slate-500);
+}
+
+.css-tool-textarea:focus {
+    border-color: var(--color-primary);
+}
+
+.css-tool-textarea[readonly] {
+    background-color: rgba(var(--bg-rgb), 0.4);
+    color: var(--color-slate-200);
+}
+
+.css-tool-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.css-tool-minify {
+    margin-right: auto;
+}
+
+.css-tool-submit,
+.css-tool-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: var(--font-display);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.css-tool-submit {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+}
+
+.css-tool-submit:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(180, 33, 4, 0.2);
+}
+
+.css-tool-copy {
+    background-color: transparent;
+    color: var(--color-slate-200);
+    border: 1px solid rgba(180, 33, 4, 0.3);
+}
+
+.css-tool-copy:hover {
+    border-color: var(--color-primary);
+    color: var(--color-slate-100);
+}
+
+.css-tool-submit .material-symbols-outlined,
+.css-tool-copy .material-symbols-outlined {
+    font-size: 1.125rem;
+}
+
+.css-tool-message {
+    margin-top: 1.25rem;
+    padding: 0.875rem 1rem;
+    border-radius: var(--border-radius-xl);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.css-tool-message--success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: var(--color-slate-100);
+}
+
+.css-tool-message--warning {
+    background-color: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    color: var(--color-slate-100);
+}
+
+.css-tool-message--error {
+    background-color: rgba(180, 33, 4, 0.15);
+    border: 1px solid rgba(180, 33, 4, 0.4);
+    color: var(--color-slate-100);
+}
+
+.css-tool-errors {
+    margin-top: 0.75rem;
+    padding: 0.875rem 1rem;
+    background-color: rgba(var(--bg-rgb), 0.4);
+    border: 1px solid rgba(180, 33, 4, 0.15);
+    border-radius: var(--border-radius-xl);
+    color: var(--color-slate-300);
+    font-size: 0.9rem;
+}
+
+.css-tool-errors summary {
+    cursor: pointer;
+    color: var(--color-slate-200);
+    font-weight: 600;
+}
+
+.css-tool-errors ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+.css-tool-errors li + li {
+    margin-top: 0.25rem;
+}
+
+.css-tool-error-code {
+    background-color: rgba(180, 33, 4, 0.15);
+    color: var(--color-slate-100);
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+}
+
+.css-tool-errors-help {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--color-slate-400);
+}
+
+.css-tool-errors-help a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.css-tool-errors-help a:hover {
+    text-decoration: underline;
 }

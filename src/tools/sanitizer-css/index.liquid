@@ -1,0 +1,377 @@
+---
+title: "Sanityzator CSS dla Wikipedii"
+description: "Wyczyść CSS do TemplateStyles na Wikipedii i MediaWiki. Narzędzie wykorzystuje oficjalną bibliotekę wikimedia/css-sanitizer."
+longDescription: >
+  Wyczyść kod CSS, aby był zgodny z wymaganiami
+  [Extension:TemplateStyles](https://www.mediawiki.org/wiki/Extension:TemplateStyles)
+  na Wikipedii i innych projektach MediaWiki. Narzędzie korzysta z oficjalnej
+  biblioteki [wikimedia/css-sanitizer](https://www.mediawiki.org/wiki/Css-sanitizer),
+  która usuwa zewnętrzne odwołania, niedozwolone właściwości i niepoprawną
+  składnię. Wyczyszczony CSS możesz wkleić bezpośrednio do strony
+  `Szablon:.../styles.css` na Wikipedii.
+permalink: tools/sanitizer-css/index.php
+canonicalPath: /tools/sanitizer-css/
+tags:
+  - Tool
+  - Wikipedia
+  - CSS
+  - TemplateStyles
+date: 2026-06-16
+icon: cleaning_services
+toolUrl: https://www.mediawiki.org/wiki/Css-sanitizer
+applicationCategory: Wikipedia Tool
+analytics: false
+---
+{% comment %}
+  Copyright (C) 2026 Jakub T. Jankiewicz
+
+  This file is part of WikiZEIT.
+
+  WikiZEIT is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  WikiZEIT is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public
+  License along with WikiZEIT. If not, see
+  https://www.gnu.org/licenses/.
+{% endcomment %}
+{% raw %}<?php
+require_once __DIR__ . '/../../api/lib/umami.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+use Wikimedia\CSS\Parser\Parser;
+use Wikimedia\CSS\Sanitizer\StylesheetSanitizer;
+use Wikimedia\CSS\Util;
+
+const SANITIZER_MAX_INPUT = 200000;
+
+function sanitizer_prettify_css($css) {
+    $len = strlen($css);
+    $out = '';
+    $indent = 0;
+    $paren = 0;
+    $i = 0;
+
+    $isDeclarationColon = function ($pos) use ($css, $len) {
+        for ($j = $pos + 1; $j < $len; $j++) {
+            $ch = $css[$j];
+            if ($ch === '"' || $ch === "'") {
+                $q = $ch;
+                $j++;
+                while ($j < $len) {
+                    if ($css[$j] === '\\' && $j + 1 < $len) {
+                        $j += 2;
+                        continue;
+                    }
+                    if ($css[$j] === $q) break;
+                    $j++;
+                }
+                continue;
+            }
+            if ($ch === '(' || $ch === '[') {
+                $depth = 1;
+                $j++;
+                while ($j < $len && $depth > 0) {
+                    if ($css[$j] === '(' || $css[$j] === '[') $depth++;
+                    elseif ($css[$j] === ')' || $css[$j] === ']') $depth--;
+                    $j++;
+                }
+                $j--;
+                continue;
+            }
+            if ($ch === '{') return false;
+            if ($ch === ';' || $ch === '}') return true;
+        }
+        return true;
+    };
+
+    $appendIndent = function () use (&$out, &$indent) {
+        $out .= str_repeat('    ', $indent);
+    };
+
+    $rtrimInline = function () use (&$out) {
+        $out = rtrim($out, " \t");
+    };
+
+    while ($i < $len) {
+        $c = $css[$i];
+
+        if ($c === '"' || $c === "'") {
+            $q = $c;
+            $out .= $c;
+            $i++;
+            while ($i < $len) {
+                $cc = $css[$i];
+                $out .= $cc;
+                if ($cc === '\\' && $i + 1 < $len) {
+                    $out .= $css[$i + 1];
+                    $i += 2;
+                    continue;
+                }
+                $i++;
+                if ($cc === $q) break;
+            }
+            continue;
+        }
+
+        if ($c === '/' && $i + 1 < $len && $css[$i + 1] === '*') {
+            $end = strpos($css, '*/', $i + 2);
+            if ($end === false) $end = $len - 2;
+            $out .= substr($css, $i, $end - $i + 2);
+            $i = $end + 2;
+            continue;
+        }
+
+        if ($paren > 0) {
+            if ($c === '(') $paren++;
+            elseif ($c === ')') $paren--;
+            $out .= $c;
+            $i++;
+            continue;
+        }
+
+        if ($c === '(') {
+            $paren++;
+            $out .= $c;
+            $i++;
+            continue;
+        }
+
+        if ($c === '{') {
+            $rtrimInline();
+            $out .= ' {';
+            $indent++;
+            $out .= "\n";
+            $i++;
+            while ($i < $len && ctype_space($css[$i])) $i++;
+            $appendIndent();
+            continue;
+        }
+
+        if ($c === '}') {
+            $rtrimInline();
+            $out = rtrim($out, "\n");
+            $indent = max(0, $indent - 1);
+            $out .= "\n";
+            $appendIndent();
+            $out .= '}';
+            $i++;
+            while ($i < $len && ctype_space($css[$i])) $i++;
+            if ($indent === 0) {
+                $out .= "\n\n";
+            } else {
+                $out .= "\n";
+                $appendIndent();
+            }
+            continue;
+        }
+
+        if ($c === ';') {
+            $rtrimInline();
+            $out .= ';';
+            $i++;
+            while ($i < $len && ctype_space($css[$i])) $i++;
+            if ($i < $len && $css[$i] !== '}') {
+                $out .= "\n";
+                $appendIndent();
+            }
+            continue;
+        }
+
+        if ($c === ':' && $indent > 0 && $isDeclarationColon($i)) {
+            $rtrimInline();
+            $out .= ': ';
+            $i++;
+            while ($i < $len && ctype_space($css[$i])) $i++;
+            continue;
+        }
+
+        if (ctype_space($c)) {
+            if ($out !== '' && substr($out, -1) !== ' ' && substr($out, -1) !== "\n") {
+                $out .= ' ';
+            }
+            $i++;
+            while ($i < $len && ctype_space($css[$i])) $i++;
+            continue;
+        }
+
+        $out .= $c;
+        $i++;
+    }
+
+    return trim($out) . "\n";
+}
+
+function sanitizer_run($css, $minify = false) {
+    $parser = Parser::newFromString($css);
+    $stylesheet = $parser->parseStylesheet();
+
+    $errors = [];
+    foreach ($parser->getParseErrors() as $err) {
+        $errors[] = [
+            'stage' => 'parse',
+            'code' => $err[0],
+            'line' => $err[1],
+            'char' => $err[2],
+        ];
+    }
+
+    $sanitizer = StylesheetSanitizer::newDefault();
+    $newStylesheet = $sanitizer->sanitize($stylesheet);
+
+    foreach ($sanitizer->getSanitizationErrors() as $err) {
+        $errors[] = [
+            'stage' => 'sanitize',
+            'code' => $err[0],
+            'line' => $err[1],
+            'char' => $err[2],
+        ];
+    }
+
+    $output = $minify
+        ? Util::stringify($newStylesheet, ['minify' => true])
+        : sanitizer_prettify_css((string)$newStylesheet);
+
+    return ['output' => $output, 'errors' => $errors];
+}
+
+$isApi = isset($_GET['api']);
+$input = '';
+$output = '';
+$errors = [];
+$minify = false;
+$tooLong = false;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input = $_POST['css'] ?? '';
+    $minify = !empty($_POST['minify']);
+    if (strlen($input) > SANITIZER_MAX_INPUT) {
+        $tooLong = true;
+    } elseif ($input !== '') {
+        $result = sanitizer_run($input, $minify);
+        $output = $result['output'];
+        $errors = $result['errors'];
+    }
+}
+
+if ($isApi) {
+    while (ob_get_level()) ob_end_clean();
+    header('Content-Type: application/json; charset=utf-8');
+    if ($tooLong) {
+        http_response_code(413);
+        echo json_encode(['error' => 'too-long', 'limit' => SANITIZER_MAX_INPUT]);
+        exit;
+    }
+    echo json_encode(['output' => $output, 'errors' => $errors]);
+    exit;
+}
+
+umami_track('/tools/sanitizer-css/', 'Sanityzator CSS dla Wikipedii', $_SERVER['HTTP_REFERER'] ?? '');
+?>
+<main class="css-tool">
+    <h1>Sanityzator CSS dla Wikipedii</h1>
+    {% endraw %}{% include "partials/tool-meta.liquid" %}{% raw %}
+
+    <div class="css-tool-card">
+        <form class="css-tool-form" method="POST" action="">
+            <div class="css-tool-grid">
+                <div class="css-tool-pane">
+                    <label class="css-tool-label" for="css-input">CSS wejściowy</label>
+                    <textarea id="css-input" name="css" class="css-tool-textarea" spellcheck="false"
+                              placeholder="Wklej tutaj kod CSS, który chcesz wyczyścić..."
+                              autocomplete="off"><?php echo htmlspecialchars($input); ?></textarea>
+                </div>
+                <div class="css-tool-pane">
+                    <label class="css-tool-label" for="css-output">CSS wyjściowy</label>
+                    <textarea id="css-output" class="css-tool-textarea" spellcheck="false" readonly
+                              placeholder="Tutaj pojawi się wyczyszczony CSS..."><?php echo htmlspecialchars($output); ?></textarea>
+                </div>
+            </div>
+            <div class="css-tool-actions">
+                <label class="checkbox css-tool-minify">
+                    <input type="checkbox" name="minify" value="1"<?php echo $minify ? ' checked' : ''; ?>>
+                    minifikuj
+                </label>
+                <button type="button" class="css-tool-copy" id="css-tool-copy" data-default="Kopiuj" data-copied="Skopiowano!">
+                    <span class="material-symbols-outlined">content_copy</span>
+                    <span class="css-tool-copy-label">Kopiuj</span>
+                </button>
+                <button type="submit" class="css-tool-submit">
+                    <span class="material-symbols-outlined">cleaning_services</span>
+                    Wyczyść
+                </button>
+            </div>
+        </form>
+
+        <?php if ($tooLong): ?>
+            <div class="css-tool-message css-tool-message--error">
+                Wejściowy CSS jest zbyt długi (limit:
+                <?php echo number_format(SANITIZER_MAX_INPUT, 0, ',', ' '); ?> znaków).
+            </div>
+        <?php elseif (!empty($errors)): ?>
+            <div class="css-tool-message css-tool-message--warning">
+                <strong>Znaleziono <?php echo count($errors); ?> ostrzeżeń podczas czyszczenia.</strong>
+                Fragmenty niezgodne ze standardem zostały usunięte z wynikowego CSS.
+            </div>
+            <details class="css-tool-errors" open>
+                <summary>Szczegóły ostrzeżeń</summary>
+                <ul>
+                    <?php foreach ($errors as $err): ?>
+                        <li>
+                            <code class="css-tool-error-code"><?php echo htmlspecialchars($err['code']); ?></code>
+                            – <?php echo $err['stage'] === 'parse' ? 'parser' : 'sanityzator'; ?>,
+                            linia <?php echo (int)$err['line']; ?>,
+                            znak <?php echo (int)$err['char']; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <p class="css-tool-errors-help">
+                    Kody błędów opisane są w
+                    <a href="https://gerrit.wikimedia.org/g/mediawiki/libs/css-sanitizer/+/master/errors.md"
+                       target="_blank" rel="noopener">dokumentacji css-sanitizer</a>.
+                </p>
+            </details>
+        <?php elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && $input !== ''): ?>
+            <div class="css-tool-message css-tool-message--success">
+                CSS został przetworzony bez ostrzeżeń.
+            </div>
+        <?php endif; ?>
+    </div>
+</main>
+<script>
+(function() {
+    var copyBtn = document.getElementById('css-tool-copy');
+    var outputEl = document.getElementById('css-output');
+    if (!copyBtn || !outputEl) return;
+
+    var labelEl = copyBtn.querySelector('.css-tool-copy-label');
+    var iconEl = copyBtn.querySelector('.material-symbols-outlined');
+    var resetTimer = null;
+
+    function setState(label, icon) {
+        if (labelEl) labelEl.textContent = label;
+        if (iconEl) iconEl.textContent = icon;
+    }
+
+    copyBtn.addEventListener('click', function() {
+        var text = outputEl.value;
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(function() {
+            setState(copyBtn.getAttribute('data-copied'), 'check');
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(function() {
+                setState(copyBtn.getAttribute('data-default'), 'content_copy');
+            }, 1500);
+        }).catch(function() {
+            outputEl.select();
+            try { document.execCommand('copy'); } catch (e) {}
+        });
+    });
+})();
+</script>{% endraw %}

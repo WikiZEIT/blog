@@ -12,7 +12,8 @@
         "mustache/mustache": "^3.0",
         "wikimedia/minify": "^2.10",
         "wikizeit/html-minifier": "^0.1.0",
-        "firebase/php-jwt": "^7.0"
+        "firebase/php-jwt": "^7.0",
+        "wikimedia/css-sanitizer": "^6.2"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.2"
