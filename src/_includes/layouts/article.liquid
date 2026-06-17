@@ -55,6 +55,17 @@ schemaType: article
   </div>
   {% endif %}
 
+  <div class="table-of-contents">
+    <details>
+      <summary>
+        <h3>Spis Treści</h3>
+      </summary>
+      <nav aria-label="Spis treści">
+        {{ content | toc }}
+      </nav>
+    </details>
+  </div>
+
   <!-- Article Grid -->
   <div class="article-grid">
     <!-- Article Content -->
@@ -76,14 +87,6 @@ schemaType: article
           </div>
           <h4><a href="{{ '/autor/' | append: authorKey | append: '/' | url }}">{{ authorData.fullname | default: authorKey }}</a></h4>
           <p class="bio">{{ authorData.bio | default: "Ekspert w dziedzinie Wikipedii, etycznego SEO i otwartej wiedzy." }}</p>
-        </div>
-        <div class="sidebar-toc">
-          <details>
-            <summary>
-              <h3>Spis Treści</h3>
-            </summary>
-            {{ content | toc }}
-          </details>
         </div>
       </div>
 
