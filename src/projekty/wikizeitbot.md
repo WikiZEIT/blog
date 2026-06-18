@@ -20,23 +20,36 @@ Bot działa analogicznie do szablonu
 [{% raw %}{{Wikidane lista}}{% endraw %}](https://pl.wikipedia.org/wiki/Szablon:Wikidane_lista),
 z tą różnicą, że zamiast SPARQL wykorzystuje SQL do repliki bazy danych Wikipedii.
 
-## Planowane zadania
+## Jak działa
 
-1. **Listy podopiecznych przewodników** — automatyczne pobieranie listy podopiecznych
-   z bazy danych Growth i generowanie szablonów monitorujących dla każdego przewodnika
-2. **Predefiniowane zapytania SQL** — wykonywanie zaszytych w kodzie zapytań SQL
-   do repliki bazy danych i aktualizacja odpowiednich stron na Wikipedii
+Bot uruchamiany jest cyklicznie na [Toolforge](https://wikitech.wikimedia.org/wiki/Portal:Toolforge)
+i skanuje strony należące do kategorii
+[Kategoria:Strony monitorowane przez bota WikiZEIT](https://pl.wikipedia.org/wiki/Kategoria:Strony_monitorowane_przez_bota_WikiZEIT).
+Na każdej takiej stronie szuka znanego wywołania szablonu, a wynik renderowania zapisuje
+z powrotem na stronę (dzieląc go w razie potrzeby na podstrony).
+
+## Obsługiwane szablony
+
+- [{% raw %}{{Podopieczni}}{% endraw %}](https://pl.wikipedia.org/wiki/Szablon:Podopieczni) —
+  generuje listę podopiecznych danego przewodnika z bazy danych Growth, z filtrowaniem
+  zablokowanych użytkowników oraz członków grup `editor` i `sysop`. Lista jest sortowana
+  według daty ostatniej edycji i dzielona na podstrony.
+
+Kolejne szablony będą dodawane w miarę rozwoju projektu.
 
 ## Technologia
 
 - **Język:** Python
 - **Framework:** [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot)
-- **Infrastruktura:** docelowo [Toolforge](https://wikitech.wikimedia.org/wiki/Portal:Toolforge)
-- **Sterowanie:** ręczne, docelowo automatyczne (cron)
+- **Infrastruktura:** [Toolforge](https://wikitech.wikimedia.org/wiki/Portal:Toolforge)
+  (narzędzie `wikizeit-bot`)
+- **Sterowanie:** uruchomienia cykliczne (co godzinę aktualizacja przyrostowa, raz na dobę
+  pełna aktualizacja z mailowym podsumowaniem zmian)
 
 ## Status
 
-Projekt w trakcie rozwoju. Zgłoszenie o flagę bota złożone 4 czerwca 2026 na stronie
+Bot działa w środowisku produkcyjnym na Toolforge. Zgłoszenie o flagę bota złożone
+4 czerwca 2026 na stronie
 [Wikipedia:Boty/Zgłoszenia](https://pl.wikipedia.org/wiki/Wikipedia:Boty/Zg%C5%82oszenia).
 
 Profil bota:
