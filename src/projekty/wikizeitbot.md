@@ -34,6 +34,10 @@ z powrotem na stronę (dzieląc go w razie potrzeby na podstrony).
   generuje listę podopiecznych danego przewodnika z bazy danych Growth, z filtrowaniem
   zablokowanych użytkowników oraz członków grup `editor` i `sysop`. Lista jest sortowana
   według daty ostatniej edycji i dzielona na podstrony.
+- [{% raw %}{{Fotografia}}{% endraw %}](https://pl.wikipedia.org/wiki/Szablon:Fotografia) —
+  galeria najnowszych plików wgranych na Wikimedia Commons przez fotografów z listy
+  [Wikiprojekt:Fotografia/Uczestnicy](https://pl.wikipedia.org/wiki/Wikiprojekt:Fotografia/Uczestnicy).
+  Dane pobierane są z repliki SQL Commons.
 
 Kolejne szablony będą dodawane w miarę rozwoju projektu.
 
