@@ -167,3 +167,10 @@ września
 października
 listopada
 grudnia
+
+# Auto-added words
+Bouamraoui
+Karabo
+Moletsane
+Wikitrenerem
+Wikitrenerką

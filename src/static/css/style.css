@@ -1551,8 +1551,12 @@ h1, h2, h3, h4, h5, h6 {
     text-underline-offset: 2px;
 }
 
-.article-content a:hover {
+.article-content a:hover:not(:has(img)) {
     opacity: 0.8;
+}
+
+.article-content a:hover img {
+    outline: 2px solid var(--color-slate-100);
 }
 
 main .body ul,
