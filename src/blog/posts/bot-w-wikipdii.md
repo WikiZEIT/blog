@@ -189,7 +189,7 @@ Najważniejsze jest dodanie szablonu
 
 {% raw %}
 ```text
-{{Szablon:Bot|Jcubic|status=w testach}}
+{{Szablon:Bot|Jcubic}}
 ```
 {% endraw %}
 
@@ -246,3 +246,4 @@ swoim brudnopisie.
 ![Stan Lee - Excelsior!](/img/excelsior.webp)
 <small>Figurka: Stan Lee - Excelsior!</small>
 
+Informacje na temat mojego bota można znaleźć na [tej stronie](/projekty/wikizeitbot/).
