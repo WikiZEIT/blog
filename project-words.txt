@@ -178,3 +178,7 @@ cmap
 subsetter
 subtable
 Subtables
+GSUB
+pyftsubset
+rclt
+rlig

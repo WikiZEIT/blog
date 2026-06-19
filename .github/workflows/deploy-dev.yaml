@@ -91,6 +91,9 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Install fontTools (for Material Symbols subsetting)
+        run: pip install --user fonttools brotli
+
       - name: Install dependencies
         run: npm ci
 
