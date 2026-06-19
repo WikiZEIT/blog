@@ -1,0 +1,55 @@
+# Zawsze dołączane znaki do subsetu fontu Inter.
+#
+# Każdy znak (lub zakres) z tego pliku trafia do `inter-subset.woff2` niezależnie
+# od tego, czy pojawia się w plikach źródłowych projektu. To zabezpieczenie
+# przed brakującymi glifami w treści dynamicznej (PHP, wyniki wyszukiwania,
+# komunikaty walidacyjne) oraz w przyszłej treści, której jeszcze nie ma.
+#
+# Edytuj ten plik, by:
+#   - usunąć znak, którego nigdy nie używasz (mniejszy plik fontu),
+#   - dodać znak, który ma być zawsze dostępny.
+#
+# Format:
+#   - Linie zaczynające się od `#` są ignorowane.
+#   - Pojedynczy znak:                   X
+#   - Pojedynczy kodepunkt:              U+00A0
+#   - Zakres kodepunktów:                U+0020-007E
+#   - Można podać kilka pozycji oddzielonych spacjami w jednej linii.
+#
+# Po edycji uruchom `npm run build`, by zregenerować font.
+
+# Drukowalne ASCII (spacja, cyfry, łacińskie litery, znaki przestankowe)
+U+0020-007E
+
+# Polskie litery diakrytyczne
+ąćęłńóśźżĄĆĘŁŃÓŚŹŻ
+
+# Spacja niełamiąca (NBSP)
+U+00A0
+
+# Twardy łącznik (soft hyphen — używany w typografii do podpowiedzi przeniesień)
+U+00AD
+
+# Polskie i typograficzne cudzysłowy: „ " ‚ ' « »
+„ " ‚ ' « »
+
+# Apostrof (typograficzny ' i prosty ')
+’ '
+
+# Typograficzne znaki przestankowe: en-dash (–), em-dash (—), wielokropek (…)
+– — …
+
+# Symbole praw autorskich, znaków towarowych: © ® ™
+# © ® ™
+
+# Strzałki nawigacyjne (UI): → ← ↑ ↓
+#→ ← ↑ ↓
+
+# Symbole matematyczne i porównań: × ÷ ± ≈ ≤ ≥ − (minus typograficzny)
+# × ÷ ± ≈ ≤ ≥ −
+
+# Waluty: € £ ¥
+$ € £
+
+# Inne symbole typograficzne: § ¶ † ‡ •
+#§ ¶ † ‡ •

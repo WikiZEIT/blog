@@ -174,3 +174,7 @@ Karabo
 Moletsane
 Wikitrenerem
 Wikitrenerką
+cmap
+subsetter
+subtable
+Subtables

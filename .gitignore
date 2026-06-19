@@ -17,5 +17,7 @@ src/tools/*/config.json
 scripts/.watcher.pid
 src/static/fonts/.source
 src/static/fonts/material-symbols-outlined.woff2
+src/static/fonts/inter-subset.woff2
+src/_data/interFont.json
 agent-*
 src/blog/posts/img

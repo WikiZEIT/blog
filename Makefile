@@ -1,4 +1,4 @@
-.PHONY: build dev watch lint spellcheck spellcheck-ignore install index validate-jsonld validate-svg
+.PHONY: build dev watch lint spellcheck spellcheck-ignore install index validate-jsonld validate-svg subset-fonts
 
 build:
 	npm run build
@@ -30,3 +30,7 @@ validate-jsonld:
 
 validate-svg:
 	node scripts/validate-social-card.mjs
+
+subset-fonts:
+	node scripts/subset-font.mjs
+	VERBOSE=1 node scripts/subset-inter.mjs
