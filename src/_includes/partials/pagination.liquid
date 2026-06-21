@@ -10,9 +10,10 @@
     </span>
   {% endif %}
 
+  {% assign currentPage = pagination.pageNumber | plus: 1 %}
   {% for pageEntry in pagination.pages %}
     {% assign pageNumber = forloop.index %}
-    {% if pageNumber == pagination.pageNumber | plus: 1 %}
+    {% if pageNumber == currentPage %}
       <span class="current" aria-current="page">{{ pageNumber }}</span>
     {% else %}
       <a href="{{ pagination.hrefs[forloop.index0] | url }}">{{ pageNumber }}</a>

@@ -2723,9 +2723,8 @@ main .body ol > li::before {
 }
 
 .pagination .current {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: 1px solid var(--color-primary);
+    color: var(--color-primary-text);
+    font-weight: 700;
 }
 
 .pagination .disabled {
