@@ -35,8 +35,9 @@ Istnieje kilka kluczowych powodów, dla których Wikipedia ma znaczenie w kontek
    internecie. Linki z Wikipedii, choć oznaczone jako `nofollow`, wciąż niosą ze sobą wartość w
    postaci ruchu referralowego.
 
-2. **Knowledge Graph Google** – Google wykorzystuje dane z Wikipedii i Wikidanych do budowy paneli
-   wiedzy (Knowledge Panels), które pojawiają się w wynikach wyszukiwania.
+2. [**Knowledge Graph Google**](/tools/graf-wiedzy/) – Google wykorzystuje dane z Wikipedii i
+   Wikidanych do budowy paneli wiedzy (Knowledge Panels), które pojawiają się w wynikach
+   wyszukiwania.
 
 3. **Entity SEO** – wyszukiwarki coraz częściej operują na encjach (bytach), a nie na słowach
    kluczowych. Wikipedia i Wikidata są podstawowym źródłem encji.
