@@ -34,7 +34,7 @@ modified: 2026-04-21
 [Stowarzyszenia Wikimedia Polska](https://wikimedia.pl/). Jest głównym autorem projektu
 WikiZEIT. Zajmuje się także [fotografią](https://www.flickr.com/people/jcubic/).
 
-# Wikipedia i etyczne SEO
+## Wikipedia i etyczne SEO
 
 Od lat łączy pasję do nauczania z wiedzą techniczną, edukując o ekosystemie Wikimedia, programowaniu
 oraz filozofii Open Source. Postanowił połączyć te – tylko pozornie odległe – dziedziny w ramach
