@@ -39,7 +39,7 @@ if ($row && $row['verified'] == 0) {
             'email' => htmlspecialchars($email),
             'verificationDate' => date('d.m.Y H:i:s')
         ]);
-        sendEmail('jcubic@jcubic.pl', 'Nowy subskrybent WikiZEIT', $notifyMessage);
+        sendEmail('jakub@wikizeit.edu.pl', 'Nowy subskrybent WikiZEIT', $notifyMessage);
 
         header('Location: ' . buildRedirectUrl(WIKIZEIT_PATH, 'verify_success'));
     }

@@ -74,7 +74,7 @@ function mockMail($to, $subject, $message, $extraHeaders = '') {
 function sendEmail($to, $subject, $message) {
     $headers = "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html; charset=utf-8\r\n";
-    $headers .= "From: WikiZEIT <wikizeit@jcubic.pl>\r\n";
+    $headers .= "From: WikiZEIT <jakub@wikizeit.edu.pl>\r\n";
     if (!isMailAvailable()) {
         return mockMail($to, $subject, $message, $headers);
     }
@@ -83,7 +83,7 @@ function sendEmail($to, $subject, $message) {
 
 // Send plain text email with Reply-To – for contact form
 function sendPlainEmail($to, $subject, $message, $replyTo = '') {
-    $headers = "From: WikiZEIT <jcubic@jcubic.pl>\r\n";
+    $headers = "From: WikiZEIT <jakub@wikizeit.edu.pl>\r\n";
     if (!empty($replyTo)) {
         $headers .= "Reply-To: " . $replyTo . "\r\n";
     }

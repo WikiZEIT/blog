@@ -37,7 +37,7 @@ $body = "Wiadomość ze strony " . WIKIZEIT_URL . ":\n\n";
 $body .= "From: " . $name . " <" . $email . ">\n";
 $body .= "Message:\n" . $message;
 
-if (sendPlainEmail('jcubic@jcubic.pl', 'WikiZEIT Kontakt: ' . $subject, $body, $name . ' <' . $email . '>')) {
+if (sendPlainEmail('jakub@wikizeit.edu.pl', 'WikiZEIT Kontakt: ' . $subject, $body, $name . ' <' . $email . '>')) {
     recordSubmission('contact', $email);
     header('Location: ' . buildRedirectUrl($redirectUrl, 'contact_success', null));
 } else {
