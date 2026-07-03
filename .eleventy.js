@@ -206,7 +206,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addFilter("readingTime", function(content) {
         if (!content) return "1 min";
         const words = content.split(/\s+/).length;
-        const minutes = Math.ceil(words / 200);
+        const minutes = Math.ceil(words / 150);
         return `${minutes} min`;
     });
 
