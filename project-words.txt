@@ -48,6 +48,7 @@ Yuval
 
 # Technical terms
 BLUF
+infobox
 Minifikacja
 minifikacji
 minifikuj
@@ -94,11 +95,16 @@ Puzzly
 Naruto
 Neolŭ
 Siri
+Kierul
+Kierula
 Prinston
 FRSE
 Linuxem
 Umami
 umami
+InTechHosue
+Lubimyczytać
+Instagramie
 
 # Typography terms
 endash
