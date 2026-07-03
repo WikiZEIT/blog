@@ -11,6 +11,19 @@ description: "Budowanie marki wymaga walki na dwa fronty, jedne to Google i AI, 
 author: jcubic
 ---
 
+Czy Google i AI wie kim jesteś. Gdy wpisujesz swoje imie i nazwisko w Google to czy jesteś
+zadowolony z tego co widzisz? Jednak w erze [sztucznej
+inteligencji](https://pl.wikipedia.org/wiki/Sztuczna_inteligencja) i [dużych modeli
+językowych](https://pl.wikipedia.org/wiki/Duży_model_językowy) (LLM), ludzie zmienili sposób w jaki
+szukają informacji. Google to już nie dominujące miejsce wyszukiwania tego czego potrzebują.
+
+Sposób zapytań także się zmienia, ze słów kluczowych na pełne zdania zazwyczaj w formie pytań.
+
+Tradycyjne [SEO](https://pl.wikipedia.org/wiki/Optymalizacja_dla_wyszukiwarek_internetowych) (Search
+Engine Optimization) przeradza się w GEO (Generative Engine Optimization).Dobra wiadomość jest taka,
+że możesz przejąć kontrolę nad tym, co sztuczna inteligencja wie na Twój temat. W tym artykule
+dowiesz się, jak budować markę osobistą która będzie widoczna tak robotom jak i ludziom.
+
 ## Budowanie marki eksperta
 
 Pierwszym krokiem, od którego musisz zacząć, jest zbudowanie autorytetu w sieci. Google oraz
