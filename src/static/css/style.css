@@ -1551,6 +1551,12 @@ h1, h2, h3, h4, h5, h6 {
     text-underline-offset: 2px;
 }
 
+.body blockquote {
+    border-left: 5px solid var(--color-primary-text);
+    padding-left: 1em;
+    margin-left: 0;
+}
+
 .article-content a:hover:not(:has(img)) {
     opacity: 0.8;
 }

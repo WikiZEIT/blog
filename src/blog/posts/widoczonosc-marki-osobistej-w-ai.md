@@ -268,14 +268,15 @@ i sprawdź siłe swojej marki osobistej w popularnych modelach.
 
 Budowanie marki osobistej to praca na kilku frontach:
 
-* Praca nad ekspertyzą i rozpoznawalnością (jest to często to o czym piszą książki o marce osobistej)
+* Praca nad ekspertyzą i rozpoznawalnością (jest to często to, o czym piszą książki o marce osobistej)
 * Pozycja w Google (klasyczne SEO)
 * Aspekt techniczny (wikidane, dane strukturalne)
 
 **Wszystkie aspekty muszą ze sobą współpracować.** Dopiero połączenie realnego autorytetu (książek i
 publikacji) z tradycyjnym SEO i technicznym językiem maszyn (Wikidane, Schema) tworzy pełny obraz
-dla sztucznej inteligencji. AI nie ocenia Cię po jednym elemencie – analizuje wszystko co może
+dla sztucznej inteligencji. AI nie ocenia Cię po jednym elemencie – analizuje wszystko, co może
 znaleźć na twój temat i poleci Cię użytkownikom tylko wtedy, gdy te trzy obszary będą się wzajemnie
 uzupełniać.
 
-
+> jeśli potrzebujesz dodać wpis do Wikipedii lub Wikidanych możesz skorzystać z mojej
+> [oferty](/oferta/), gdzie możesz umówić 15-minutową darmową konsultację.
