@@ -103,11 +103,11 @@ To prosta metoda wsparcia, która nie kosztuje Cię ani grosza, a realnie buduje
 
 Dla specjalistów SEO Enterprise to jasny sygnał:
 
-1. **Knowledge Graph:** Google jeszcze szybciej integruje dane w wynikach wyszukiwania.
+1. **[Knowledge Graph:](/tools/graf-wiedzy/)** Google jeszcze szybciej integruje dane w wynikach wyszukiwania.
 2. **Paliwo dla AI:** Modele LLM (jak GPT-4) karmią się tymi danymi. Jakość treści na Wiki wpływa na
    to, co AI mówi o Twojej marce.
 3. **Szybkość:** Zmiany w artykułach trafiają do wyszukiwarek niemal natychmiast (real-time).
-4. **Autorytet (E-E-A-T):** Wikipedia to główny punkt weryfikacji powiązań między bytami w sieci.
+4. **[Autorytet (E-E-A-T):](/blog/widoczonosc-marki-osobistej-w-ai/#co-to-jest-e-e-a-t%3F)** Wikipedia to główny punkt weryfikacji powiązań między bytami w sieci.
 
 ## Szybkość, która zaskakuje: Google vs EK
 
@@ -126,7 +126,7 @@ bezgranicznie.
 Wikimedia Enterprise to nie tylko teksty z Wikipedii.  Usługa agreguje dane z całego ekosystemu, co
 ma kluczowe znaczenie dla nowoczesnego internetu:
 
-* **Wikidane (Wikidata):** To serce usługi. Dostarcza ponad 120 mln ustrukturyzowanych obiektów. To
+* **[Wikidane (Wikidata)](/blog/czym-jest-wikidata/):** To serce usługi. Dostarcza ponad 120 mln ustrukturyzowanych obiektów. To
   stąd Google czerpie fakty (daty, liczby, powiązania) do paneli wiedzy (Knowledge Panels).
 * **Wikimedia Commons:** API dostarcza bezpośrednie linki do mediów oraz precyzyjne dane o
   licencjach.  Dzięki temu giganci mogą legalnie wyświetlać zdjęcia przy zachowaniu praw autorskich
