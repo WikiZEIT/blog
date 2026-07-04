@@ -105,6 +105,7 @@ umami
 InTechHosue
 Lubimyczytać
 Instagramie
+intheweights
 
 # Typography terms
 endash

@@ -242,6 +242,12 @@ mieć widocznego panelu. Mogą być różne powody.
 Jeśli chcesz sprawdzić, czy twoja osoba znajduje się w grafie wiedzy. Możesz użyć
 mojego [narzędzia do wyszukiwania encji w grafie wiedzy](/tools/graf-wiedzy/).
 
+## Widoczność w modelach LLM
+
+Jeśli chcesz sprawdzić, czy modele LLM mają Cię w swoich danych. Możesz użyć narzędzia
+na stronie: [intheweights.com](https://www.intheweights.com/). Wpisz swoje imie i nazwisko
+i sprawdź siłe swojej marki osobistej w popularnych modelach.
+
 ## Wnioski
 
 Budowanie marki osobistej to praca na kilku frontach:
