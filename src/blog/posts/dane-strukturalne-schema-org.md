@@ -36,6 +36,8 @@ Dane strukturalne (structured data) to sposób na opisanie treści strony intern
 zrozumiałym dla wyszukiwarek. Schema.org to najczęściej używany słownik do tworzenia danych
 strukturalnych, wspierany przez Google, Microsoft, Yahoo i Yandex.
 
+<!-- ToC -->
+
 ## Czym są dane strukturalne?
 
 Dane strukturalne to dodatkowe informacje umieszczone w kodzie HTML strony, które pomagają

@@ -61,11 +61,12 @@ faq:
         serwisie na zawsze, ponieważ ostateczna decyzja należy do społeczności administratorów.
 ---
 
-## Wstęp: Wikipedia jako cyfrowe świadectwo wiarygodności
 W dzisiejszym świecie Wikipedia to coś więcej niż encyklopedia – to cyfrowy fundament zaufania. Dla
 firmy lub osoby publicznej obecność w tym serwisie jest ostatecznym potwierdzeniem statusu i
 autorytetu. Należy jednak pamiętać, że granica między rzetelną informacją a zakazaną promocją jest
 niezwykle cienka, a jej przekroczenie kończy się natychmiastowym usunięciem treści.
+
+<!-- ToC -->
 
 ## Czy płatna edycja Wikipedii jest zgodna z zasadami?
 Wiele osób zastanawia się, czy płacenie za edycję nie łamie zasad Wikipedii. Krótka odpowiedź brzmi:

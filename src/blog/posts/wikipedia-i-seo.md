@@ -27,6 +27,8 @@ regularnie pojawiają się na pierwszych pozycjach w wynikach wyszukiwania Googl
 wyszukiwarek. Dla specjalistów SEO oznacza to jedno: obecność w Wikipedii może znacząco wpłynąć na
 widoczność marki.
 
+<!-- ToC -->
+
 ## Dlaczego Wikipedia jest ważna dla SEO?
 
 Istnieje kilka kluczowych powodów, dla których Wikipedia ma znaczenie w kontekście pozycjonowania:

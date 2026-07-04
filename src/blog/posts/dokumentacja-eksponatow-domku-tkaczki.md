@@ -15,6 +15,8 @@ Dawnej Wsi „Domek Tkaczki”](https://www.domektkaczki.pl/).
 ![Jakub T. Jankiewicz podczas sesji fotograficznej w Domku Tkaczki](/img/jakub-jankiewicz-domek-tkaczki.webp)
 <small>Jakub T. Jankiewicz wykonujący zdjęcie, fot. [Urszula Wolska](https://wolska.jcubic.pl), Wszystkie prawa zastrzeżone</small>
 
+<!-- ToC -->
+
 ## Zdjęcia eksponatów z Domku Tkaczki
 
 Przykładowe zdjęcia wykonane aparatem Fuji X-Pro 3.

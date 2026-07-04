@@ -188,3 +188,6 @@ GSUB
 pyftsubset
 rclt
 rlig
+
+# Liquid tags
+endcapture

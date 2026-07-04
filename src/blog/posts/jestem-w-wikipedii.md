@@ -15,6 +15,8 @@ projekt koszulki (T-shirta) dla Wikipedystów. Nazwałem projekt „Jestem w Wik
 [Ilustracja](https://commons.wikimedia.org/wiki/File:WP20Symbols_puzzleglobe2.svg), która została użyta na koszulce jest autorstwa Jasmina El Bouamraoui oraz Karabo Poppy Moletsane.
  Dostępna na licencji CC0. Na takiej samej licencji są poniższe projekty koszulek.
 
+<!-- ToC -->
+
 ## Przykład wydruku koszulki
 
 Poniżej efekt finalny, czyli zdjęcie, na którym jestem w koszulce WikiTrenerskiej. Jest to koszulka typu bejsbolówka wydrukowana w [IdeaShirt](https://ideashirt.pl/?utm_source=WikiZEIT&utm_medium=article&utm_campaign=jcubic).

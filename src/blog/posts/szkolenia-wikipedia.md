@@ -38,13 +38,15 @@ faq:
         osobom i formom, które chcą tworzyć własne Wiki.
 ---
 
-Każdy może edytować Wikipedię. Nie trzeba być nawet zalogowanym. Ale dodawanie treści, które spełnia
+Każdy może edytować Wikipedię. Nie trzeba być nawet zalogowanym, ale dodawanie treści, które spełnia
 wymogi Wikipedii, wypracowane przez jej społeczność, jest wyzwaniem, szczególnie gdy zaczyna się
 edycje. Dodanie pojedynczego artykułu można zlecić innym, jednak gdy chce się dodawać treści
 sukcesywnie, warto skorzystać z dedykowanych szkoleń z Wikipedii.
 
 W poniższym artykule przedstawiam rzetelny przegląd dostępnych możliwości nauki – od darmowych
 warsztatów społecznościowych, po profesjonalne szkolenia komercyjne dla firm.
+
+<!-- ToC -->
 
 ## Kto prowadzi szkolenia z edytowania Wikipedii w Polsce?
 

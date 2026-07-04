@@ -55,6 +55,7 @@ schemaType: article
   </div>
   {% endif %}
 
+  {% capture tocBlock %}
   <div class="table-of-contents">
     <details>
       <summary>
@@ -65,12 +66,18 @@ schemaType: article
       </nav>
     </details>
   </div>
+  {% endcapture %}
+
+  {% comment %} No marker: show the ToC above the article. With a marker it is injected inline below. {% endcomment %}
+  {% if content not contains "<!-- ToC -->" %}
+  {{ tocBlock }}
+  {% endif %}
 
   <!-- Article Grid -->
   <div class="article-grid">
     <!-- Article Content -->
     <article class="article-content body">
-      {{ content }}
+      {{ content | replace: "<!-- ToC -->", tocBlock }}
     </article>
 
     <!-- Sidebar -->

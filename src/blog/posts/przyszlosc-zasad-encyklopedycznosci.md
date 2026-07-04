@@ -26,14 +26,16 @@ Polska Wikipedia ma wiele zasad wypracowanych przez lata przez społeczność Wi
 jednak porozrzucane w historii tzw. DNU, czyli poczekalni, gdzie toczą się dyskusje nad
 encyklopedycznością konkretnych artykułów.
 
-W tym artykule przedstawię jak wyglądają rzeczywistość zasad encyklopedyczności w polskiej
+W tym artykule przedstawię, jak wygląda rzeczywistość zasad encyklopedyczności w polskiej
 Wikipedii. Czyli czy twój temat nadaje się do Wikipedii?
+
+<!-- ToC -->
 
 ## Kryteria encyklopedyczności
 
 Najważniejszą strona w Wikipedii to
 [WP:WER](https://pl.wikipedia.org/wiki/Wikipedia:Encyklopedyczno%C5%9B%C4%87). Czyli zbiór zasad,
-które zostały zaakceptowane przez społeczność Wikipedystów. Jedna z nich jest np. to że doktorzy
+które zostały zaakceptowane przez społeczność Wikipedystów. Jedna z nich jest np. to, że doktorzy
 habilitowani są autoencyklopedyczni, czyli wystarczy, że naukowiec posiada habilitację i już automatycznie
 nadaje się do Wikipedii.
 

@@ -1749,8 +1749,17 @@ main .body ol > li::before {
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-block: 1rem;
+    margin-top: 1rem;
     gap: 1rem;
+}
+
+.article-content .table-of-contents + h2,
+.table-of-contents + .article-grid h2:first-child {
+  margin-top: 1.5rem;
+}
+
+.article-hero + .table-of-contents {
+   margin-block: 0;
 }
 
 .table-of-contents .toc > ol {
@@ -1771,29 +1780,44 @@ main .body ol > li::before {
 }
 
 .table-of-contents ol ol {
-    counter-reset: item-a;
     padding-left: 2rem;
 }
 
-.table-of-contents li li {
-    counter-increment: item-a;
-}
-
 .table-of-contents ol ol ol {
-    counter-reset: item-a-a;
     padding-left: 3rem;
 }
 
-.table-of-contents li li li {
-    counter-increment: item-a-a;
+.table-of-contents li::marker {
+    content: counters(item, ".") ". ";
 }
 
-.table-of-contents li li::marker {
-    content: counter(item) "." counter(item-a) ". ";
+/* When injected inline via <!-- ToC -->, the ToC lives inside .article-content.body,
+   so the article's ordered-list styling (numbered badges, item padding) leaks in and
+   overrides the ToC counters. Disable it here and keep only the ToC's own numbering. */
+.body .table-of-contents ol {
+    list-style: none;
+    margin: 0;
+    padding-left: 1.75rem;
+    counter-reset: item;
 }
 
-.table-of-contents li li li::marker {
-    content: counter(item) "." counter(item-a) "." counter(item-a-a) ". ";
+.body .table-of-contents ol ol {
+    padding-left: 2rem;
+}
+
+.body .table-of-contents ol ol ol {
+    padding-left: 3rem;
+}
+
+.body .table-of-contents li {
+    position: static;
+    margin-bottom: 0;
+    padding-left: 0;
+    counter-increment: item;
+}
+
+.body .table-of-contents li::before {
+    content: none;
 }
 
 .table-of-contents a {

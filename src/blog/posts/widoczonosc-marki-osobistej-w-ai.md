@@ -14,15 +14,17 @@ author: jcubic
 Czy Google i AI wie kim jesteś. Gdy wpisujesz swoje imie i nazwisko w Google to czy jesteś
 zadowolony z tego co widzisz? Jednak w erze [sztucznej
 inteligencji](https://pl.wikipedia.org/wiki/Sztuczna_inteligencja) i [dużych modeli
-językowych](https://pl.wikipedia.org/wiki/Duży_model_językowy) (LLM), ludzie zmienili sposób w jaki
-szukają informacji. Google to już nie dominujące miejsce wyszukiwania tego czego potrzebują.
+językowych](https://pl.wikipedia.org/wiki/Duży_model_językowy) (LLM), ludzie zmienili sposób, w jaki
+szukają informacji. Google to już niedominujące miejsce wyszukiwania tego, czego potrzebują.
 
 Sposób zapytań także się zmienia, ze słów kluczowych na pełne zdania zazwyczaj w formie pytań.
 
 Tradycyjne [SEO](https://pl.wikipedia.org/wiki/Optymalizacja_dla_wyszukiwarek_internetowych) (Search
-Engine Optimization) przeradza się w GEO (Generative Engine Optimization).Dobra wiadomość jest taka,
+Engine Optimization) przeradza się w GEO (Generative Engine Optimization). Dobra wiadomość jest taka,
 że możesz przejąć kontrolę nad tym, co sztuczna inteligencja wie na Twój temat. W tym artykule
-dowiesz się, jak budować markę osobistą która będzie widoczna tak robotom jak i ludziom.
+dowiesz się, jak budować markę osobistą, która będzie widoczna tak robotom, jak i ludziom.
+
+<!-- ToC -->
 
 ## Budowanie marki eksperta
 
@@ -163,9 +165,10 @@ odróżnić.
 
 Nawet jeśli publikujesz w prestiżowych mediach, wydajesz książki i prowadzisz aktywne profile w
 social mediach, algorytmy AI nadal muszą wykonać ogromną pracę, aby połączyć te kropki i przypisać
-je do jednej, właściwej osoby. Tutaj do gry wkraczają dane strukturalne Schema.org. Są to specjalne
-meta dane, które dodaje się do strony w formacie JSON. Dzięki nim można „podyktować” robotom
-wyszukiwarek i dużym modelom językowym (jak ChatGPT, czy Gemini) strukturę Twojej marki osobistej.
+je do jednej, właściwej osoby. Tutaj do gry wkraczają [dane strukturalne
+Schema.org](/blog/dane-strukturalne-schema-org). Są to specjalne meta dane, które dodaje się do
+strony w formacie JSON. Dzięki nim można „podyktować” robotom wyszukiwarek i dużym modelom językowym
+(jak ChatGPT, czy Gemini) strukturę Twojej marki osobistej.
 
 W kontekście budowania marki osobistej kluczowe jest wdrożenie znacznika typu `Schema Person`
 (Osoba), w którym definiujesz swoje cyfrowe uniwersum:

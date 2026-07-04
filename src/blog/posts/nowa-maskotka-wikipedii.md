@@ -33,6 +33,8 @@ Z okazji 25-lecia Wikipedii powstała nowa maskotka o nazwie
 ![Wikipedia Baby Globe Animation](/img/neutral-baby-globe.jpg)
 <small>Wikimedia Foundation staff and contractors; [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0); źródło [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Neutral_Baby_Globe.gif)</small>
 
+<!-- ToC -->
+
 ## Jak powstała nowa maskotka Wikipedii?
 
 Autorem pomysłu ikony jest Jonathan Ferreira, w projektach Wikimedów znany jako
