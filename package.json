@@ -32,7 +32,7 @@
     "better-sqlite3": "^12.10.0",
     "clean-css": "^5.3.3",
     "cspell": "^10.0.1",
-    "eleventy-plugin-svg-social-card": "^0.2.4",
+    "eleventy-plugin-svg-social-card": "^0.3.0",
     "eslint": "^10.2.1",
     "image-size": "^2.0.2",
     "subset-font": "^2.5.0",
