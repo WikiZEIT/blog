@@ -166,7 +166,7 @@ odróżnić.
 Nawet jeśli publikujesz w prestiżowych mediach, wydajesz książki i prowadzisz aktywne profile w
 social mediach, algorytmy AI nadal muszą wykonać ogromną pracę, aby połączyć te kropki i przypisać
 je do jednej, właściwej osoby. Tutaj do gry wkraczają [dane strukturalne
-Schema.org](/blog/dane-strukturalne-schema-org). Są to specjalne meta dane, które dodaje się do
+Schema.org](/blog/dane-strukturalne-schema-org/). Są to specjalne meta dane, które dodaje się do
 strony w formacie JSON. Dzięki nim można „podyktować” robotom wyszukiwarek i dużym modelom językowym
 (jak ChatGPT, czy Gemini) strukturę Twojej marki osobistej.
 
