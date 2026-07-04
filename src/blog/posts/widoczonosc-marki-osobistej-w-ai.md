@@ -131,7 +131,7 @@ samej nagrody można także dodać kategorię wszystkich osób mających tę nag
 
 ## Wikidane
 
-Dodanie wpisu w [wikidanych](/blog/czym-jest-wikidata/) to chyba jedna z najważniejszych rzeczy, jaką
+Dodanie wpisu w [wikidanych](/blog/czym-sa-wikidane/) to chyba jedna z najważniejszych rzeczy, jaką
 możesz zrobić, aby poprawić swoja widoczność w AI.
 
 Wikidane to baza danych w formie [grafu wiedzy](https://pl.wikipedia.org/wiki/Graf_wiedzy).  W bazie
