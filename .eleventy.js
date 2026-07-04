@@ -304,7 +304,10 @@ export default function(eleventyConfig) {
             try {
                 execSync('npx cspell --no-progress --dot "src/**/*.md" "src/**/*.liquid" ".eleventy.js" "scripts/*.mjs" "api/**/*.php"', { stdio: 'inherit' });
             } catch {
-                process.exit(1);
+                // Abort this build so a misspelling is never emitted. Let Eleventy handle
+                // it like any other build error: a one-shot `build` exits non-zero, while
+                // `--watch`/`--serve` shows the error and keeps watching (does not exit).
+                throw new Error('Spell check failed — see cspell output above.');
             }
         });
     }
