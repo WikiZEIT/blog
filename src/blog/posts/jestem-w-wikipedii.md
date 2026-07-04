@@ -6,6 +6,16 @@ tags:
   - design
 description: "Artykuł opisujący projekt nadruki na koszulkę dla Wikipedystów oraz WikiTrenerów"
 keywords:
+  - koszulka Wikipedysty
+  - Jestem w Wikipedii
+  - WikiTrener
+  - Wikipedysta
+  - projekt koszulki
+  - Wikimedia Commons
+  - CC0
+  - IdeaShirt
+  - nadruk na koszulkę
+  - design
 author: jcubic
 ---
 

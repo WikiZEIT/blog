@@ -8,6 +8,22 @@ tags:
   - SEO
   - GEO
 description: "Budowanie marki wymaga walki na dwa fronty, jedne to Google i AI, drugi to widoczność offline"
+keywords:
+  - marka osobista
+  - widoczność w AI
+  - GEO
+  - Generative Engine Optimization
+  - SEO
+  - E-E-A-T
+  - Wikidane
+  - Wikipedia
+  - Graf wiedzy Google
+  - dane strukturalne
+  - Schema.org
+  - LLM
+  - panel wiedzy
+  - Knowledge Graph
+  - encyklopedyczność
 author: jcubic
 ---
 

@@ -5,6 +5,20 @@ tags:
   - Programowanie
   - Wikipedia
 description: "Jak napisać bota działającego w Polskiej Wikipedii, w języku programowania Python"
+keywords:
+  - bot Wikipedii
+  - pywikibot
+  - Python
+  - API MediaWiki
+  - automatyzacja Wikipedii
+  - hasło bota
+  - BotPassword
+  - User-Agent
+  - rate limit
+  - Wikimedia Toolforge
+  - konto bota
+  - flaga bota
+  - WikiZEITBot
 author: jcubic
 ---
 

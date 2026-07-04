@@ -6,6 +6,16 @@ tags:
   - Fotografia
 description: "Artykuł opisujący sesje fotograficzną w Muzeum Dawnej Wsi 'Domek Tkaczki'"
 keywords:
+  - Domek Tkaczki
+  - Muzeum Dawnej Wsi
+  - Wikimedia Commons
+  - fotografia eksponatów
+  - sesja fotograficzna
+  - Fuji X-Pro 3
+  - CC-BY-SA
+  - dziedzictwo kulturowe
+  - dokumentacja muzealna
+  - Jakub T. Jankiewicz
 author: jcubic
 ---
 

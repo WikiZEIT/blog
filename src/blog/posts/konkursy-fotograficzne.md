@@ -5,6 +5,22 @@ tags:
   - Fotografia
   - Wikimedia Commons
 description: "Konkursy fotograficzne w Wikimedia Commons. Poznaj zasady licencji CC oraz konkursy organizowane przez społeczność i organizację stojącą za Wikipedią."
+keywords:
+  - Wikimedia Commons
+  - konkursy fotograficzne
+  - Creative Commons
+  - licencje CC
+  - CC-BY-SA
+  - CC0
+  - domena publiczna
+  - Wiki Lubi Zabytki
+  - Wiki Loves Monuments
+  - Wiki Science Competition
+  - Wiki Loves Earth
+  - Wiki Loves Folklore
+  - Wikimedia Polska
+  - ochrona wizerunku
+  - znak towarowy
 author: jcubic
 ---
 
