@@ -1724,8 +1724,6 @@ main .body ol > li::before {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    position: sticky;
-    top: 6rem;
     align-self: start;
 }
 
