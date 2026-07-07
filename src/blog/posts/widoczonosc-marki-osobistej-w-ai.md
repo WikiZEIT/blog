@@ -25,6 +25,44 @@ keywords:
   - Knowledge Graph
   - encyklopedyczność
 author: jcubic
+faq:
+  - question: "Jak poprawić widoczność marki osobistej w AI?"
+    answer: |
+      Widoczność w AI budujesz na trzech współpracujących ze sobą frontach:
+      - **Realny autorytet (E-E-A-T):** dziel się wiedzą publicznie – prowadź blog, pisz publikacje
+        gościnne i eksperckie, występuj na konferencjach, w podcastach i wydawaj książki. Działania
+        offline generują niemożliwy do sfałszowania ślad cyfrowy, który AI uznaje za wiarygodny.
+      - **Pozycja w Google (SEO):** klasyczne pozycjonowanie i naturalne wzmianki (Earned Media)
+        nadal się liczą, ale nie mogą być jedynym działaniem.
+      - **Techniczny język maszyn:** wpis w Wikidanych, ewentualnie biogram w Wikipedii oraz dane
+        strukturalne Schema.org (typ `Person` z właściwością `sameAs`) pozwalają AI jednoznacznie
+        połączyć wszystkie informacje z jedną osobą.
+
+      Dopiero połączenie tych trzech obszarów tworzy pełny obraz Twojej marki dla sztucznej
+      inteligencji.
+  - question: "Czym jest GEO (Generative Engine Optimization)?"
+    answer: |
+      GEO to ewolucja klasycznego SEO w erze sztucznej inteligencji. Zamiast optymalizować treści
+      wyłącznie pod wyszukiwarki i słowa kluczowe, GEO skupia się na tym, aby duże modele językowe
+      (jak ChatGPT, Gemini czy Perplexity) rozumiały, kim jesteś, i polecały Cię użytkownikom. Zmienia
+      się też sposób zapytań – z pojedynczych słów kluczowych na pełne zdania w formie pytań.
+  - question: "Co to jest E-E-A-T?"
+    answer: |
+      E-E-A-T to cztery kryteria, którymi Google i AI oceniają wiarygodność źródła:
+      - **Experience (Doświadczenie):** praktyczna, życiowa styczność z tematem.
+      - **Expertise (Ekspertyza):** formalna wiedza, kwalifikacje i wykształcenie.
+      - **Authoritativeness (Autorytet):** rozpoznawalność i cytowania przez innych ekspertów i media.
+      - **Trustworthiness (Zaufanie):** transparentność, uczciwość i sprawdzone informacje.
+
+      Budowanie E-E-A-T to proces długofalowy, dlatego warto zacząć jak najwcześniej.
+  - question: "Dlaczego wpis w Wikidanych jest ważniejszy od Wikipedii?"
+    answer: |
+      Wikidane to jedno z najważniejszych rzeczy, jakie możesz zrobić dla widoczności w AI, bo mają
+      niższy „próg wejścia” niż Wikipedia – wystarczy, że jesteś opisany(a) w niezależnych,
+      wiarygodnych źródłach. Wikidane to graf wiedzy stworzony z myślą o maszynach i stanowią dla
+      Google oraz LLM ostateczną instancję weryfikującą fakty. Własny biogram w Wikipedii to
+      najsilniejszy sygnał zaufania, ale wymaga spełnienia rygorystycznych kryteriów
+      encyklopedyczności i neutralności.
 ---
 
 Czy Google i AI wie kim jesteś. Gdy wpisujesz swoje imie i nazwisko w Google to czy jesteś
