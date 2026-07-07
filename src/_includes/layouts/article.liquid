@@ -114,6 +114,21 @@ schemaType: article
       </div>
       {% endif %}
 
+      <div class="sidebar-card">
+        <div class="fb-page"
+             data-href="https://www.facebook.com/wikizeit/"
+             data-width="340"
+             data-height="500"
+             data-lazy="true"
+             data-small-header="false"
+             data-adapt-container-width="true"
+             data-hide-cover="false"
+             data-show-facepile="true">
+        </div>
+      </div>
+      <script async defer crossorigin="anonymous"
+              src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.5"></script>
+
       <!-- Related Articles -->
       {% assign relatedPosts = collections.post | reverse | limit: 3 %}
       {% if relatedPosts.size > 0 %}

@@ -66,6 +66,7 @@ emaila
 scrapować
 webinarowy
 referralowego
+facepile
 
 # Polish words missing from dictionary
 Inicjalizacja
