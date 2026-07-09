@@ -7,6 +7,12 @@ Header always set Link "</sitemap.xml>; rel=\"sitemap\", </llms.txt>; rel=\"desc
 # Force HTTPS
 Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
 
+# Stop MIME-type sniffing
+Header always set X-Content-Type-Options "nosniff"
+
+# Clickjacking protection – only this origin may frame the site
+Header always set X-Frame-Options "SAMEORIGIN"
+
 # ==========================================================================
 # Cache Control
 # ==========================================================================

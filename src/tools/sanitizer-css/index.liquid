@@ -274,7 +274,7 @@ if ($isApi) {
 
 umami_track('/tools/sanitizer-css/', 'Sanityzator CSS dla Wikipedii', $_SERVER['HTTP_REFERER'] ?? '');
 ?>
-<main class="css-tool">
+<main id="main-content" class="css-tool">
     <h1>Sanityzator CSS dla Wikipedii</h1>
     {% endraw %}{% include "partials/tool-meta.liquid" %}{% raw %}
 

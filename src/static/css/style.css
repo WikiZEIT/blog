@@ -4363,3 +4363,60 @@ label[for="mode_dark"] { display: flex; }
 .css-tool-errors-help a:hover {
     text-decoration: underline;
 }
+
+/* ==========================================================================
+   Accessibility – skip link, keyboard focus, reduced motion
+   ========================================================================== */
+
+/* Skip to main content – off-screen until it receives keyboard focus */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 var(--border-radius) 0;
+    transform: translateY(-120%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* Prominent keyboard focus indicator (only for keyboard/AT, not mouse) */
+:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Restore the keyboard outline on controls that suppress the default outline
+   for pointer focus. Placed at the end of the file so it wins specificity ties. */
+.email-input:focus-visible,
+.contact-form-input:focus-visible,
+.contact-form-textarea:focus-visible,
+.kg-search-box input[type="text"]:focus-visible,
+.book-search-box input[type="text"]:focus-visible,
+.search-input:focus-visible,
+.css-tool-textarea:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

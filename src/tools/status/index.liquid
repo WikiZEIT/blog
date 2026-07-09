@@ -91,7 +91,7 @@ umami_track('/tools/status/', 'Status', $_SERVER['HTTP_REFERER'] ?? '');
 
 if (!$authenticated):
 ?>
-<main class="status-tool">
+<main id="main-content" class="status-tool">
     <h1>Status</h1>
     {% endraw %}{% include "partials/tool-meta.liquid" %}{% raw %}
 
@@ -119,7 +119,7 @@ if (!$authenticated):
     </div>
 </main>
 <?php else: ?>
-<main class="status-tool">
+<main id="main-content" class="status-tool">
     <h1>Status</h1>
     <p class="status-tool-actions">
         <a href="?logout" class="btn-primary">Wyloguj się</a>
