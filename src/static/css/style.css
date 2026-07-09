@@ -4389,10 +4389,28 @@ label[for="mode_dark"] { display: flex; }
     transform: translateY(0);
 }
 
-/* Prominent keyboard focus indicator (only for keyboard/AT, not mouse) */
+/* Keyboard focus indicator with a fallback for browsers without :focus-visible.
+   Old browsers understand only the :focus rule, so they show an outline on any
+   focus. Browsers that support :focus-visible also apply the two rules below,
+   which hide the outline for pointer focus and show a stronger ring for keyboard
+   focus. A selector containing :focus-visible is dropped whole by old browsers,
+   so they never see those two rules. */
+
+/* Fallback — outline on any focus */
+:focus {
+    outline: 2px solid var(--color-link);
+    outline-offset: 2px;
+}
+
+/* Modern browsers: no outline when focus came from a pointer */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Modern browsers: prominent ring for keyboard focus */
 :focus-visible {
     outline: 3px solid var(--color-link);
-    outline-offset: 2px;
+    outline-offset: 3px;
     border-radius: 2px;
 }
 
@@ -4406,7 +4424,7 @@ label[for="mode_dark"] { display: flex; }
 .search-input:focus-visible,
 .css-tool-textarea:focus-visible {
     outline: 3px solid var(--color-link);
-    outline-offset: 2px;
+    outline-offset: 3px;
 }
 
 /* Respect users who prefer reduced motion */
