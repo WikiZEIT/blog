@@ -13,6 +13,12 @@ Header always set X-Content-Type-Options "nosniff"
 # Clickjacking protection – only this origin may frame the site
 Header always set X-Frame-Options "SAMEORIGIN"
 
+# Limit how much URL info leaks in the Referer header
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Disable powerful browser features the site does not use
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
 # ==========================================================================
 # Cache Control
 # ==========================================================================

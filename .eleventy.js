@@ -271,6 +271,10 @@ export default function(eleventyConfig) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) {
             return content;
         }
+        // The first large raster image on a page is the likely LCP element and
+        // stays eager (the browser default); every other local raster image is
+        // lazy-loaded. Images that already declare `loading=` are left untouched.
+        let firstLargeSeen = false;
         return content.replace(
             /<img\b([^>]*?)\s*\/?>/gi,
             (match, attrs) => {
@@ -280,16 +284,28 @@ export default function(eleventyConfig) {
                 if (/^https?:\/\//i.test(src)) return match;
                 if (/\.svg$/i.test(src)) return match;
                 let extra = '';
+                let width;
+                const widthMatch = attrs.match(/\bwidth\s*=\s*"?(\d+)/i);
+                if (widthMatch) width = parseInt(widthMatch[1], 10);
                 if (!/\b(width|height)\s*=/i.test(attrs)) {
                     const filePath = path.join(__dirname, 'src/static', src);
                     if (existsSync(filePath)) {
                         try {
                             const buffer = readFileSync(filePath);
-                            const { width, height } = imageSize(buffer);
-                            if (width && height) {
-                                extra = ` width="${width}" height="${height}"`;
+                            const dim = imageSize(buffer);
+                            if (dim.width && dim.height) {
+                                extra = ` width="${dim.width}" height="${dim.height}"`;
+                                width = dim.width;
                             }
                         } catch {}
+                    }
+                }
+                if (!/\bloading\s*=/i.test(attrs)) {
+                    if ((width || 0) >= 400 && !firstLargeSeen) {
+                        firstLargeSeen = true;
+                        extra += ' decoding="async"';
+                    } else {
+                        extra += ' loading="lazy" decoding="async"';
                     }
                 }
                 return `<img${attrs}${extra} onload="this.style.background='none'">`;
