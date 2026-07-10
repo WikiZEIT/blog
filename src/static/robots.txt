@@ -6,7 +6,6 @@ Disallow: /api/
 Disallow: /.well-known/apple-app-site-association
 Disallow: /apple-app-site-association
 Disallow: /tools/status/
-Disallow: /autor/jcubic/[object*
 
 User-agent: GPTBot
 Allow: /
