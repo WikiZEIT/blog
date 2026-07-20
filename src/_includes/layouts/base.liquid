@@ -51,6 +51,33 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
           umami.track(event, data);
         }
       }
+    </script>
+    <script src="https://browser.sentry-cdn.com/10.59.0/bundle.tracing.replay.feedback.logs.metrics.min.js"
+            crossorigin="anonymous">
+    </script>
+    <script>
+     Sentry.onLoad(function() {
+         Sentry.init({
+             colorScheme: 'dark',
+             dsn: 'https://f071d3f39895bacc046c4e1c65b907a7@o4508899181723648.ingest.de.sentry.io/4511770116096080',
+             integrations: [
+                 Sentry.feedbackIntegration({
+                     showBranding: false,
+                     formTitle: "Zgłoś błąd lub opinię",
+                     submitButtonLabel: "Wyślij",
+                     cancelButtonLabel: "Anuluj",
+                     nameLabel: "Imię i nazwisko",
+                     namePlaceholder: "Jan Kowalski",
+                     emailLabel: "Adres e-mail",
+                     emailPlaceholder: "twoj.email@domena.pl",
+                     messageLabel: "Opis problemu",
+                     messagePlaceholder: "Co poszło nie tak? Jak możemy to powtórzyć?",
+                     successMessage: "Dziękujemy! Twoje zgłoszenie zostało wysłane.",
+                     triggerLabel: "Zgłoś problem",
+                 })
+             ]
+         });
+     });
     </script>{% endunless %}
   </body>
 </html>
