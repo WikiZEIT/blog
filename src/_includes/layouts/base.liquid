@@ -56,7 +56,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
             crossorigin="anonymous">
     </script>
     <script>
-     Sentry.onLoad(function() {
+     typeof Sentry !== 'undefined' && Sentry.onLoad(function() {
          Sentry.init({
              colorScheme: 'dark',
              dsn: 'https://f071d3f39895bacc046c4e1c65b907a7@o4508899181723648.ingest.de.sentry.io/4511770116096080',
