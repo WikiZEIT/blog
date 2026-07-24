@@ -2,7 +2,7 @@
 
 [![CI/CD](https://github.com/WikiZEIT/blog/actions/workflows/deploy.yaml/badge.svg)](https://github.com/WikiZEIT/blog/actions/workflows/deploy.yaml)
 [![Offical website](https://img.shields.io/badge/offical-website-yellow)](https://wikizeit.edu.pl)
-[![WikiZEIT blog GitHub repo](https://img.shields.io/badge/github-repo-orange?logo=github)](https://github.com/WikiZEIT/blog)\
+[![WikiZEIT blog GitHub repo](https://img.shields.io/badge/github-repo-orange?logo=github)](https://github.com/WikiZEIT/blog)
 [![LICENSE CC-BY-SA 4.0](https://img.shields.io/badge/license-CC--BY--SA%204.0-blue.svg)](https://github.com/WikiZEIT/blog/blob/master/LICENSE)
 
 Edukacyjny projekt o Wikipedii i etycznym SEO autorstwa
