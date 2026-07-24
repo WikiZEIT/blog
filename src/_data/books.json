@@ -1,0 +1,133 @@
+{
+  "default": "pl",
+  "fallback": "en",
+  "mock": [
+    {
+      "volumeInfo": {
+        "title": "Sapiens. Od zwierząt do bogów",
+        "authors": ["Yuval Noah Harari"],
+        "publisher": "Dom Wydawniczy PWN",
+        "publishedDate": "2018",
+        "language": "pl",
+        "industryIdentifiers": [{ "type": "ISBN_10", "identifier": "8380790316" }]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Homo Deus. Krótka historia jutra",
+        "authors": ["Yuval Noah Harari"],
+        "publisher": "Wydawnictwo Literackie",
+        "publishedDate": "2018",
+        "language": "pl",
+        "industryIdentifiers": [{ "type": "ISBN_10", "identifier": "8308064965" }]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krótka historia prawie wszystkiego",
+        "authors": ["Bill Bryson"],
+        "publisher": "Zysk i S-ka",
+        "publishedDate": "2005",
+        "language": "pl",
+        "industryIdentifiers": [{ "type": "ISBN_10", "identifier": "8375060291" }]
+      }
+    }
+  ],
+  "languages": {
+    "pl": {
+      "path": "/tools/books/",
+      "name": "polski",
+      "wiki": "pl.wikipedia.org",
+      "bookSources": "Specjalna:Książki",
+      "odn": { "field": "odn", "value": "tak" },
+      "seo": {
+        "title": "Wyszukiwarka książek do Wikipedii",
+        "description": "Znajdź książkę i wygeneruj gotowy szablon cytowania Cytuj lub Cytuj książkę do polskiej Wikipedii. Narzędzie od WikiZEIT."
+      },
+      "ui": {
+        "title": "Wyszukiwarka książek do Wikipedii",
+        "description": "Znajdź książkę za pomocą Google Books i wygeneruj gotowy szablon cytowania <a href=\"https://pl.wikipedia.org/wiki/Szablon:Cytuj_ksi%C4%85%C5%BCk%C4%99\">{{Cytuj książkę}}</a> lub <a href=\"https://pl.wikipedia.org/wiki/Szablon:Cytuj\">{{Cytuj}}</a> do polskiej Wikipedii. Narzędzie automatycznie sprawdza, czy autorzy mają artykuły na Wikipedii i tworzy odpowiednie linki.",
+        "noscript": "To narzędzie wymaga włączonego JavaScriptu.",
+        "placeholder": "Wpisz tytuł książki, autora lub ISBN...",
+        "search": "Szukaj",
+        "loading": "Wyszukiwanie...",
+        "noResults": "Brak wyników",
+        "source": "Kod źródłowy",
+        "license": "Licencja",
+        "odnLabel": "odn",
+        "errors": {
+          "rateLimit": "Zbyt wiele zapytań do Google Books API. Spróbuj ponownie za chwilę.",
+          "unavailable": "Serwis Google Books jest chwilowo niedostępny. Spróbuj ponownie za kilka sekund.",
+          "generic": "Nie udało się połączyć z Google Books API."
+        }
+      },
+      "templates": {
+        "cytuj_ksiazke": {
+          "name": "Cytuj książkę",
+          "author": { "style": "split", "first": "imię", "last": "nazwisko", "link": "autor link" },
+          "title": "tytuł",
+          "year": "rok",
+          "publisher": "wydawca",
+          "isbn": "isbn",
+          "language": "język"
+        },
+        "cytuj": {
+          "name": "Cytuj",
+          "author": { "style": "single", "field": "autor", "wikilink": true },
+          "title": "tytuł",
+          "year": "data",
+          "publisher": "wydawca",
+          "isbn": "isbn",
+          "language": "język"
+        }
+      }
+    },
+    "en": {
+      "path": "/en/tools/books/",
+      "name": "English",
+      "wiki": "en.wikipedia.org",
+      "bookSources": "Special:BookSources",
+      "seo": {
+        "title": "Wikipedia Book Search",
+        "description": "Find a book and generate a ready-made Cite book or Citation template for the English Wikipedia. A free tool by WikiZEIT."
+      },
+      "ui": {
+        "title": "Wikipedia Book Search",
+        "description": "Find a book with Google Books and generate a ready-made <a href=\"https://en.wikipedia.org/wiki/Template:Cite_book\">{{Cite book}}</a> or <a href=\"https://en.wikipedia.org/wiki/Template:Citation\">{{Citation}}</a> citation template for the English Wikipedia. The tool automatically checks whether the authors have Wikipedia articles and creates the appropriate links.",
+        "noscript": "This tool requires JavaScript to be enabled.",
+        "placeholder": "Enter a book title, author or ISBN...",
+        "search": "Search",
+        "loading": "Searching...",
+        "noResults": "No results",
+        "source": "Source code",
+        "license": "License",
+        "odnLabel": "",
+        "errors": {
+          "rateLimit": "Too many requests to the Google Books API. Please try again in a moment.",
+          "unavailable": "The Google Books service is temporarily unavailable. Please try again in a few seconds.",
+          "generic": "Could not connect to the Google Books API."
+        }
+      },
+      "templates": {
+        "cytuj_ksiazke": {
+          "name": "Cite book",
+          "author": { "style": "split", "first": "first", "last": "last", "link": "author-link" },
+          "title": "title",
+          "year": "year",
+          "publisher": "publisher",
+          "isbn": "isbn",
+          "language": "language"
+        },
+        "cytuj": {
+          "name": "Citation",
+          "author": { "style": "single", "field": "author", "wikilink": true },
+          "title": "title",
+          "year": "date",
+          "publisher": "publisher",
+          "isbn": "isbn",
+          "language": "language"
+        }
+      }
+    }
+  }
+}

@@ -95,7 +95,14 @@ Interaktywne narzędzia w katalogu `src/tools/`, generowane przez Eleventy jako
 pliki PHP (layout `tool.liquid`). Każde narzędzie wymaga `config.json` z kluczem
 API (gitignored).
 
-- **`/tools/books/`** — generator cytowań do Wikipedii (Google Books API)
+- **`/tools/books/`** (pl) i **`/en/tools/books/`** (en) — generator cytowań do Wikipedii
+  (Google Books API), dwujęzyczny. Wspólny rdzeń to partial `partials/books-tool.liquid` i skrypt
+  `/js/books.js`; każda wersja językowa to cienki wrapper (`index.liquid`, `en.liquid`) różniący się
+  tylko front matterem. Tłumaczenia, mapowania pól szablonów (`Cytuj książkę`→`Cite book`,
+  `Cytuj`→`Citation`), host wiki i teksty siedzą w `src/_data/books.json`. Osobne strony dają własny
+  `<title>`, meta i `hreflang`. Nowy gość bez wybranego języka jest wg nagłówka `Accept-Language`
+  przekierowywany ze strony domyślnej (pl) na swój język (brak dopasowania → angielski); dowolny
+  query string (np. `?lang=pl`) wyłącza przekierowanie, więc każdy może zobaczyć dowolny język.
 - **`/tools/graf-wiedzy/`** — wyszukiwarka wpisów w Grafie Wiedzy Google
   (Knowledge Graph API)
 - **`/tools/status/`** — panel diagnostyczny chroniony JWT (unlisted, wymaga

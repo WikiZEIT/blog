@@ -39,6 +39,10 @@
             "language": "pl,en"
         },
         {
+            "filename": "src/tools/**/*.md",
+            "language": "pl,en"
+        },
+        {
             "filename": "src/404.md",
             "language": "pl,en"
         },

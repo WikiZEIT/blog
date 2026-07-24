@@ -141,11 +141,15 @@ export default function(eleventyConfig) {
         });
     });
 
-    // Tool collection sorted by date descending
+    // Tool collection sorted by date descending. Translated variants (e.g.
+    // /en/tools/books/) are excluded so a tool is listed only once; they still
+    // appear in collections.all for the sitemap.
     eleventyConfig.addCollection("tool", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/tools/**/*.liquid").sort((a, b) => {
-            return b.date - a.date;
-        });
+        return collectionApi.getFilteredByGlob("src/tools/**/*.liquid")
+            .filter(item => !item.data.translation)
+            .sort((a, b) => {
+                return b.date - a.date;
+            });
     });
 
     // Project collection sorted alphabetically

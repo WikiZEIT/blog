@@ -3,7 +3,7 @@ ob_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 ?>{% endif %}
 <!DOCTYPE html>
-<html lang="{{ site.language }}">
+<html lang="{{ htmlLang | default: site.language }}">
   <head>
     {% include "head.liquid" %}
     <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;})()</script>

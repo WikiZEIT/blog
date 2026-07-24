@@ -3580,6 +3580,30 @@ strong {
     }
 }
 
+.book-lang-switcher {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.book-lang-switcher a {
+    color: var(--color-slate-400);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.book-lang-switcher a:hover {
+    color: var(--color-slate-200);
+}
+
+.book-lang-switcher a.active {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
 .book-search-card {
     background-color: rgba(180, 33, 4, 0.05);
     border: 1px solid rgba(180, 33, 4, 0.15);

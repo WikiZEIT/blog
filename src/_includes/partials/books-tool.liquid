@@ -1,0 +1,153 @@
+{%- comment %}
+  Shared body for the Wikipedia book-search tool. Both the Polish (`index.liquid`)
+  and English (`en.liquid`) pages include this; they differ only in front matter.
+  The active language is taken from the `lang` variable in scope and looked up in
+  the global `books` data (src/_data/books.json).
+{% endcomment -%}
+{%- assign t = books.languages[lang] -%}
+<?php
+// --- Values baked in from books.json at build time ---
+$BOOKS_LANG_CODE   = {{ lang | jsonify }};
+$BOOKS_DEFAULT     = {{ books.default | jsonify }};
+$BOOKS_FALLBACK    = {{ books.fallback | jsonify }};
+$BOOKS_PATHS       = [{% for l in books.languages %}{{ l[0] | jsonify }} => {{ l[1].path | jsonify }}, {% endfor %}];
+$BOOKS_TRACK_TITLE = {{ t.seo.title | jsonify }};
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/api/lib/umami.php';
+
+/**
+ * Pick the best matching language from an Accept-Language header.
+ * Returns a code present in $available, or $fallback when none matches.
+ */
+function books_detect_language($header, $available, $fallback) {
+    $header = strtolower(trim($header));
+    if ($header === '') {
+        return $fallback;
+    }
+    $candidates = [];
+    foreach (explode(',', $header) as $part) {
+        $part = trim($part);
+        if ($part === '') continue;
+        $q = 1.0;
+        $tag = $part;
+        if (strpos($part, ';') !== false) {
+            list($tag, $rest) = explode(';', $part, 2);
+            if (preg_match('/q=([0-9.]+)/', $rest, $m)) {
+                $q = (float)$m[1];
+            }
+        }
+        $primary = explode('-', trim($tag))[0];
+        $candidates[] = ['lang' => $primary, 'q' => $q];
+    }
+    usort($candidates, function($a, $b) { return $b['q'] <=> $a['q']; });
+    foreach ($candidates as $c) {
+        if (in_array($c['lang'], $available, true)) {
+            return $c['lang'];
+        }
+    }
+    return $fallback;
+}
+
+// Google Books proxy (shared by every language page; the API key lives once at
+// the canonical /tools/books/config.json, resolved via the document root).
+if (isset($_GET['api'])) {
+    while (ob_get_level()) ob_end_clean();
+    header('Content-Type: application/json; charset=utf-8');
+    $configPath = $_SERVER['DOCUMENT_ROOT'] . '/tools/books/config.json';
+    $apiKey = file_exists($configPath) ? json_decode(file_get_contents($configPath)) : null;
+    if (!$apiKey) {
+        http_response_code(500);
+        echo json_encode(['error' => 'API key not configured']);
+        exit;
+    }
+    $query = isset($_GET['q']) ? trim($_GET['q']) : '';
+    if (!$query) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Missing query parameter']);
+        exit;
+    }
+    $params = [
+        'q' => $query,
+        'key' => $apiKey,
+    ];
+    if (!empty($_GET['quotaUser'])) {
+        $params['quotaUser'] = $_GET['quotaUser'];
+    }
+    $url = 'https://www.googleapis.com/books/v1/volumes?' . http_build_query($params);
+    $ctx = stream_context_create(['http' => ['ignore_errors' => true]]);
+    $response = @file_get_contents($url, false, $ctx);
+    $status = 0;
+    if (isset($http_response_header[0]) && preg_match('/\s(\d{3})\s/', $http_response_header[0], $m)) {
+        $status = (int)$m[1];
+    }
+    if ($status >= 200 && $status < 300 && $response) {
+        echo $response;
+    } else {
+        http_response_code($status ?: 502);
+        echo $response ?: json_encode(['error' => 'API request failed']);
+    }
+    exit;
+}
+
+// Geo-redirect (helper only): only the default-language page, and only on a bare
+// URL with no query string, sends a visitor to the language matching their
+// browser. A matching visitor stays put; an explicit link carrying a query
+// string (e.g. ?lang=pl) is never redirected, so anyone can view any language.
+if ($BOOKS_LANG_CODE === $BOOKS_DEFAULT && empty($_GET)) {
+    $preferred = books_detect_language(
+        $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '',
+        array_keys($BOOKS_PATHS),
+        $BOOKS_FALLBACK
+    );
+    if ($preferred !== $BOOKS_DEFAULT && isset($BOOKS_PATHS[$preferred])) {
+        while (ob_get_level()) ob_end_clean();
+        header('Location: ' . $BOOKS_PATHS[$preferred], true, 302);
+        exit;
+    }
+}
+
+umami_track($BOOKS_PATHS[$BOOKS_LANG_CODE], $BOOKS_TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
+?>
+<main id="main-content" class="book-tool">
+    <noscript>
+        <div class="noscript-warning">{{ t.ui.noscript }}</div>
+    </noscript>
+    <nav class="book-lang-switcher" aria-label="Language">
+        {%- for l in books.languages -%}
+          {%- assign code = l[0] -%}{%- assign conf = l[1] -%}
+          {%- if code == lang -%}
+            <a href="{{ conf.path }}" class="active" aria-current="true">{{ conf.name }}</a>
+          {%- elsif code == books.default -%}
+            <a href="{{ conf.path }}?lang={{ code }}">{{ conf.name }}</a>
+          {%- else -%}
+            <a href="{{ conf.path }}">{{ conf.name }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+    </nav>
+    <h1>{{ t.ui.title }}</h1>
+    <p class="tool-desc">{{ t.ui.description }}</p>
+    {%- assign toolSourceLabel = t.ui.source -%}
+    {%- assign toolLicenseLabel = t.ui.license -%}
+    {% include "partials/tool-meta.liquid" %}
+
+    <div class="book-search-card">
+        <form class="book-search-box">
+            <input type="text" name="q" placeholder="{{ t.ui.placeholder }}">
+            <button type="submit">{{ t.ui.search }}</button>
+        </form>
+        <div class="book-format-toggle">
+            <a href="#" class="book-format-link active" data-format="cytuj_ksiazke">{{ t.templates.cytuj_ksiazke.name }}</a>
+            <a href="#" class="book-format-link" data-format="cytuj">{{ t.templates.cytuj.name }}</a>
+            {%- if t.odn %}
+            <label class="book-odn-toggle checkbox"><input type="checkbox" id="book-odn" checked> {{ t.ui.odnLabel }}</label>
+            {%- endif %}
+        </div>
+    </div>
+
+    <div id="book-results"></div>
+</main>
+<script>window.BOOKS_CFG = {{ t | jsonify }};</script>
+<?php if (isset($_GET['_debug'])): ?>
+<script>window.BOOKS_MOCK = {{ books.mock | jsonify }};</script>
+<?php endif; ?>
+{% assign booksJsHash = "/js/books.js" | contentHash %}<script src="/js/books.js?v={{ booksJsHash }}"></script>

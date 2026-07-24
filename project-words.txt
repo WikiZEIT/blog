@@ -193,3 +193,14 @@ rlig
 
 # Liquid tags
 endcapture
+
+# PHP builtins used in .liquid pages (treated as HTML, so no PHP dict)
+strtolower
+strtok
+usort
+
+# Domain terms
+wikilink
+
+# German Wikipedia namespace (book-tool docs example)
+Spezial
