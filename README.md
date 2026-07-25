@@ -100,10 +100,10 @@ API (gitignored).
   (Google Books API), dwujęzyczny. Wspólny rdzeń to partial `partials/books-tool.liquid` i skrypt
   `/js/books.js`; każda wersja językowa to cienki wrapper (`index.liquid`, `en.liquid`) różniący się
   tylko front matterem. Tłumaczenia, mapowania pól szablonów (`Cytuj książkę`→`Cite book`,
-  `Cytuj`→`Citation`), host wiki i teksty siedzą w `src/_data/books.json`. Osobne strony dają własny
-  `<title>`, meta i `hreflang`. Nowy gość bez wybranego języka jest wg nagłówka `Accept-Language`
-  przekierowywany ze strony domyślnej (pl) na swój język (brak dopasowania → angielski); dowolny
-  query string (np. `?lang=pl`) wyłącza przekierowanie, więc każdy może zobaczyć dowolny język.
+  `Cytuj`→`Citation`), host wiki i teksty siedzą w `src/_data/books.json`. Każda wersja to
+  samodzielna strona 200 z własnym `<title>`, meta, kanonikiem i `hreflang` (+ `x-default`). Nie ma
+  przekierowania językowego — wybór języka odbywa się przełącznikiem, dzięki czemu kanoniczne URL-e
+  nie przekierowują botów ani nie trafiają jako redirecty do sitemapy.
 - **`/tools/graf-wiedzy/`** — wyszukiwarka wpisów w Grafie Wiedzy Google
   (Knowledge Graph API)
 - **`/tools/status/`** — panel diagnostyczny chroniony JWT (unlisted, wymaga

@@ -33,8 +33,8 @@ back to Polish for every other tool.
 
 ```jsonc
 {
-  "default": "pl",            // language served at the bare /tools/books/ URL
-  "fallback": "en",           // used when a visitor's language has no translation
+  "default": "pl",            // default language (the /tools/books/ page); informational
+  "fallback": "en",           // reserved for a future client-side language hint; not a redirect
   "mock": [ /* Google Books-shaped sample volumes for ?_debug */ ],
   "languages": {
     "pl": {
@@ -84,18 +84,17 @@ Example: adding German (`de`). No changes to `books.js` or `books-tool.liquid` a
 4. **Rebuild** with `npm run build`. The language switcher, sitemap entry, and social card are
    generated automatically.
 
-The switcher and the redirect target map are both derived from `books.json`, so no other file needs
-editing.
+The language switcher is derived from `books.json`, so no other file needs editing.
 
-## Redirect & SEO behavior
+## SEO & language selection
 
-- Each language is its own static page, so `<title>`, meta description, `og:locale`, canonical URL,
-  and `hreflang` are correct per language (all set from front matter + `books.json`).
-- A first-time visitor on the bare default page (`/tools/books/`, no query string) is redirected by
-  `Accept-Language` to the matching language; no match → `fallback` (English). A visitor whose
-  language is the default stays. Any query string (e.g. `?lang=pl`) disables the redirect, so anyone
-  can view any language — the switcher's link to the default language carries `?lang=<code>` for
-  exactly this reason. Translated pages (non-default) never redirect.
+- Each language is its own static page returning **200**, self-canonical, and cross-linked with
+  `hreflang` (+ `x-default` → the Polish page). `<title>`, meta description and `og:locale` are set
+  per language from front matter + `books.json`, so search engines serve the right language.
+- **No server-side language/geo redirect.** Auto-redirecting the canonical URL by `Accept-Language`
+  makes it look like a redirect to crawlers (they send no `Accept-Language`) and redirects bots —
+  both are flagged by SEO audits (e.g. "redirect found in sitemap", "canonical points to redirect").
+  Instead, the language switcher at the top of the tool lets the user choose; nothing redirects.
 
 ## Local testing
 

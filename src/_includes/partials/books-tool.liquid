@@ -6,47 +6,18 @@
 {% endcomment -%}
 {%- assign t = books.languages[lang] -%}
 <?php
-// --- Values baked in from books.json at build time ---
-$BOOKS_LANG_CODE   = {{ lang | jsonify }};
-$BOOKS_DEFAULT     = {{ books.default | jsonify }};
-$BOOKS_FALLBACK    = {{ books.fallback | jsonify }};
-$BOOKS_PATHS       = [{% for l in books.languages %}{{ l[0] | jsonify }} => {{ l[1].path | jsonify }}, {% endfor %}];
-$BOOKS_TRACK_TITLE = {{ t.seo.title | jsonify }};
+// Values baked in from books.json at build time. The `| default:` fallbacks keep
+// this valid PHP even if the data ever goes missing (otherwise an empty value
+// would bake `$var = ;` and fatal-error the page).
+$BOOKS_PATH        = {{ t.path | default: page.url | jsonify }};
+$BOOKS_TRACK_TITLE = {{ t.seo.title | default: title | jsonify }};
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/api/lib/umami.php';
 
-/**
- * Pick the best matching language from an Accept-Language header.
- * Returns a code present in $available, or $fallback when none matches.
- */
-function books_detect_language($header, $available, $fallback) {
-    $header = strtolower(trim($header));
-    if ($header === '') {
-        return $fallback;
-    }
-    $candidates = [];
-    foreach (explode(',', $header) as $part) {
-        $part = trim($part);
-        if ($part === '') continue;
-        $q = 1.0;
-        $tag = $part;
-        if (strpos($part, ';') !== false) {
-            list($tag, $rest) = explode(';', $part, 2);
-            if (preg_match('/q=([0-9.]+)/', $rest, $m)) {
-                $q = (float)$m[1];
-            }
-        }
-        $primary = explode('-', trim($tag))[0];
-        $candidates[] = ['lang' => $primary, 'q' => $q];
-    }
-    usort($candidates, function($a, $b) { return $b['q'] <=> $a['q']; });
-    foreach ($candidates as $c) {
-        if (in_array($c['lang'], $available, true)) {
-            return $c['lang'];
-        }
-    }
-    return $fallback;
-}
+// NOTE: no language/geo redirect. Each language is a stable, self-canonical 200
+// page cross-linked with hreflang; auto-redirecting the canonical URL would make
+// it look like a redirect to crawlers (and would redirect bots). Language choice
+// is offered via the switcher below. See src/tools/books/README.md.
 
 // Google Books proxy (shared by every language page; the API key lives once at
 // the canonical /tools/books/config.json, resolved via the document root).
@@ -89,24 +60,7 @@ if (isset($_GET['api'])) {
     exit;
 }
 
-// Geo-redirect (helper only): only the default-language page, and only on a bare
-// URL with no query string, sends a visitor to the language matching their
-// browser. A matching visitor stays put; an explicit link carrying a query
-// string (e.g. ?lang=pl) is never redirected, so anyone can view any language.
-if ($BOOKS_LANG_CODE === $BOOKS_DEFAULT && empty($_GET)) {
-    $preferred = books_detect_language(
-        $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '',
-        array_keys($BOOKS_PATHS),
-        $BOOKS_FALLBACK
-    );
-    if ($preferred !== $BOOKS_DEFAULT && isset($BOOKS_PATHS[$preferred])) {
-        while (ob_get_level()) ob_end_clean();
-        header('Location: ' . $BOOKS_PATHS[$preferred], true, 302);
-        exit;
-    }
-}
-
-umami_track($BOOKS_PATHS[$BOOKS_LANG_CODE], $BOOKS_TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
+umami_track($BOOKS_PATH, $BOOKS_TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
 ?>
 <main id="main-content" class="book-tool">
     <noscript>
@@ -116,11 +70,9 @@ umami_track($BOOKS_PATHS[$BOOKS_LANG_CODE], $BOOKS_TRACK_TITLE, $_SERVER['HTTP_R
         {%- for l in books.languages -%}
           {%- assign code = l[0] -%}{%- assign conf = l[1] -%}
           {%- if code == lang -%}
-            <a href="{{ conf.path }}" class="active" aria-current="true">{{ conf.name }}</a>
-          {%- elsif code == books.default -%}
-            <a href="{{ conf.path }}?lang={{ code }}">{{ conf.name }}</a>
+            <a href="{{ conf.path }}" hreflang="{{ code }}" class="active" aria-current="true">{{ conf.name }}</a>
           {%- else -%}
-            <a href="{{ conf.path }}">{{ conf.name }}</a>
+            <a href="{{ conf.path }}" hreflang="{{ code }}">{{ conf.name }}</a>
           {%- endif -%}
         {%- endfor -%}
     </nav>
