@@ -66,7 +66,7 @@ umami_track($BOOKS_PATH, $BOOKS_TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
     <noscript>
         <div class="noscript-warning">{{ t.ui.noscript }}</div>
     </noscript>
-    <nav class="book-lang-switcher" aria-label="Language">
+    <nav class="tool-lang-switcher" aria-label="Language">
         {%- for l in books.languages -%}
           {%- assign code = l[0] -%}{%- assign conf = l[1] -%}
           {%- if code == lang -%}

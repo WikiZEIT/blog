@@ -1,0 +1,67 @@
+{
+  "default": "pl",
+  "languages": {
+    "pl": {
+      "path": "/tools/graf-wiedzy/",
+      "name": "polski",
+      "apiLanguage": "pl",
+      "seo": {
+        "title": "Wyszukiwarka wpisów w Grafie Wiedzy Google",
+        "description": "Sprawdź, czy dana osoba, firma lub pojęcie ma wpis w Google Knowledge Graph. Narzędzie SEO od WikiZEIT."
+      },
+      "ui": {
+        "title": "Wyszukiwarka wpisów w Grafie Wiedzy Google",
+        "description": "Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis w <a href=\"https://en.wikipedia.org/wiki/Google_Knowledge_Graph\">Google Knowledge Graph</a>. Dowiedz się więcej o roli Grafu Wiedzy w SEO na naszym blogu: <a href=\"/blog/wikipedia-enterprise/\">Wikimedia Enterprise i SEO</a>, <a href=\"/blog/dane-strukturalne-schema-org/\">Dane strukturalne Schema.org</a>.<br/><br/>Nie ma cię w Grafie Wiedzy? Sprawdź <a href=\"https://wikizeit.edu.pl/oferta/konsultacje/\">darmową 15-minutową konsultację</a>.",
+        "placeholder": "Wpisz nazwę osoby, firmy lub pojęcia...",
+        "search": "Szukaj",
+        "source": "Kod źródłowy",
+        "license": "Licencja",
+        "noApiKey": "Brak klucza API. Skontaktuj się z administratorem.",
+        "found": "Znaleziono:",
+        "resultsWord": "wyników.",
+        "scoreInfo": "<strong>Score</strong> &ndash; współczynnik trafności. Im wyższy, tym lepsze dopasowanie do zapytania. Wartość jest relatywna &ndash; porównuj wyniki w obrębie jednego wyszukiwania.",
+        "scoreLabel": "Score",
+        "scoreTitle": "Współczynnik trafności – im wyższa wartość, tym lepsze dopasowanie do zapytania",
+        "noName": "Brak nazwy",
+        "entityType": "Encja",
+        "openGoogle": "Otwórz w Google",
+        "wikipedia": "Wikipedia",
+        "wikidata": "Wikidata",
+        "graphId": "Graph ID:",
+        "copyTitle": "Kopiuj ID do schowka",
+        "officialSite": "Strona oficjalna"
+      }
+    },
+    "en": {
+      "path": "/en/tools/graf-wiedzy/",
+      "name": "English",
+      "apiLanguage": "en",
+      "seo": {
+        "title": "Google Knowledge Graph Search",
+        "description": "Check whether a person, company or concept has an entry in the Google Knowledge Graph. A free SEO tool by WikiZEIT."
+      },
+      "ui": {
+        "title": "Google Knowledge Graph Search",
+        "description": "Check whether a person, company or concept has an entry in <a href=\"https://en.wikipedia.org/wiki/Google_Knowledge_Graph\">Google Knowledge Graph</a>. Learn more about the role of the Knowledge Graph in SEO on our blog: <a href=\"/blog/wikipedia-enterprise/\">Wikimedia Enterprise and SEO</a>.<br/><br/>Not in the Knowledge Graph? Book a <a href=\"https://wikizeit.edu.pl/oferta/konsultacje/\">free 15-minute consultation</a>.",
+        "placeholder": "Enter a person, company or concept name...",
+        "search": "Search",
+        "source": "Source code",
+        "license": "License",
+        "noApiKey": "API key missing. Please contact the administrator.",
+        "found": "Found:",
+        "resultsWord": "results.",
+        "scoreInfo": "<strong>Score</strong> &ndash; the relevance score. The higher it is, the better the match to your query. The value is relative &ndash; compare results within a single search.",
+        "scoreLabel": "Score",
+        "scoreTitle": "Relevance score – the higher the value, the better the match to your query",
+        "noName": "No name",
+        "entityType": "Entity",
+        "openGoogle": "Open in Google",
+        "wikipedia": "Wikipedia",
+        "wikidata": "Wikidata",
+        "graphId": "Graph ID:",
+        "copyTitle": "Copy ID to clipboard",
+        "officialSite": "Official site"
+      }
+    }
+  }
+}

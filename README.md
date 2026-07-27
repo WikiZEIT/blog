@@ -104,8 +104,11 @@ API (gitignored).
   samodzielna strona 200 z własnym `<title>`, meta, kanonikiem i `hreflang` (+ `x-default`). Nie ma
   przekierowania językowego — wybór języka odbywa się przełącznikiem, dzięki czemu kanoniczne URL-e
   nie przekierowują botów ani nie trafiają jako redirecty do sitemapy.
-- **`/tools/graf-wiedzy/`** — wyszukiwarka wpisów w Grafie Wiedzy Google
-  (Knowledge Graph API)
+- **`/tools/graf-wiedzy/`** (pl) i **`/en/tools/graf-wiedzy/`** (en) — wyszukiwarka wpisów w Grafie
+  Wiedzy Google (Knowledge Graph API), dwujęzyczna. Ta sama architektura co wyszukiwarka książek:
+  wspólny partial `partials/graf-tool.liquid`, wrappery i tłumaczenia w `src/_data/graf.json`.
+  Język wyników (`apiLanguage`) jest ustawiany per strona, więc wersja EN zwraca angielskie opisy
+  encji (parametr `languages` w Knowledge Graph API + `language`/`uselang` w Wikidata)
 - **`/tools/status/`** — panel diagnostyczny chroniony JWT (unlisted, wymaga
   `jwt_secret` w config.json)
 

@@ -3580,7 +3580,7 @@ strong {
     }
 }
 
-.book-lang-switcher {
+.tool-lang-switcher {
     display: flex;
     gap: 0.75rem;
     justify-content: flex-end;
@@ -3589,17 +3589,17 @@ strong {
     font-size: 0.9rem;
 }
 
-.book-lang-switcher a {
+.tool-lang-switcher a {
     color: var(--color-slate-400);
     text-decoration: none;
     transition: color 0.2s;
 }
 
-.book-lang-switcher a:hover {
+.tool-lang-switcher a:hover {
     color: var(--color-slate-200);
 }
 
-.book-lang-switcher a.active {
+.tool-lang-switcher a.active {
     color: var(--color-primary);
     font-weight: 700;
 }

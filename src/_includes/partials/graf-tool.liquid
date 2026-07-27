@@ -1,0 +1,254 @@
+{%- comment %}
+  Shared body for the Google Knowledge Graph tool. Both the Polish
+  (`index.liquid`) and English (`graf-wiedzy-en.liquid`) pages include this; they
+  differ only in front matter. The active language comes from the `lang` variable
+  in scope, looked up in the global `graf` data (src/_data/graf.json). The result
+  language is driven by `apiLanguage`, so English pages return English entities.
+{% endcomment -%}
+{%- assign t = graf.languages[lang] -%}
+<?php
+// Values baked in from graf.json at build time (| default: keeps this valid PHP
+// even if the data ever goes missing).
+$LANG_API    = {{ t.apiLanguage | default: "pl" | jsonify }};
+$TRACK_PATH  = {{ t.path | default: page.url | jsonify }};
+$TRACK_TITLE = {{ t.seo.title | default: title | jsonify }};
+$UI = [
+    'noApiKey'     => {{ t.ui.noApiKey | jsonify }},
+    'found'        => {{ t.ui.found | jsonify }},
+    'resultsWord'  => {{ t.ui.resultsWord | jsonify }},
+    'scoreInfo'    => {{ t.ui.scoreInfo | jsonify }},
+    'scoreLabel'   => {{ t.ui.scoreLabel | jsonify }},
+    'scoreTitle'   => {{ t.ui.scoreTitle | jsonify }},
+    'noName'       => {{ t.ui.noName | jsonify }},
+    'entityType'   => {{ t.ui.entityType | jsonify }},
+    'openGoogle'   => {{ t.ui.openGoogle | jsonify }},
+    'wikipedia'    => {{ t.ui.wikipedia | jsonify }},
+    'wikidata'     => {{ t.ui.wikidata | jsonify }},
+    'graphId'      => {{ t.ui.graphId | jsonify }},
+    'copyTitle'    => {{ t.ui.copyTitle | jsonify }},
+    'officialSite' => {{ t.ui.officialSite | jsonify }},
+];
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/api/lib/umami.php';
+umami_track($TRACK_PATH, $TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
+
+// API key lives once at the canonical /tools/graf-wiedzy/config.json, resolved
+// via the document root so every language page reads the same file.
+$configPath = $_SERVER['DOCUMENT_ROOT'] . '/tools/graf-wiedzy/config.json';
+$apiKey = file_exists($configPath) ? json_decode(file_get_contents($configPath)) : null;
+$query = isset($_GET['q']) ? $_GET['q'] : '';
+$results = null;
+$error = null;
+
+if ($query && $apiKey) {
+    $params = [
+        'query' => $query,
+        'key'   => $apiKey,
+        'limit' => 20,
+        'indent' => 'True',
+        'languages' => $LANG_API
+    ];
+
+    $url = "https://kgsearch.googleapis.com/v1/entities:search?" . http_build_query($params);
+
+    $response = @file_get_contents($url);
+    if ($response) {
+        $results = json_decode($response, true);
+    }
+} elseif ($query && !$apiKey) {
+    $error = $UI['noApiKey'];
+}
+
+$wikidataIds = [];
+if ($results && isset($results['itemListElement'])) {
+    $freebaseIds = [];
+    $googleIds = [];
+    foreach ($results['itemListElement'] as $idx => $item) {
+        $kgId = str_replace('kg:', '', $item['result']['@id']);
+        if (strpos($kgId, '/m/') === 0) {
+            $freebaseIds[$kgId] = $idx;
+        } elseif (strpos($kgId, '/g/') === 0) {
+            $googleIds[$kgId] = $idx;
+        }
+    }
+
+    $unions = [];
+    $idToIdx = [];
+    if (!empty($freebaseIds)) {
+        $values = implode(' ', array_map(fn($id) => '"' . $id . '"', array_keys($freebaseIds)));
+        $unions[] = '{ VALUES ?id { ' . $values . ' } ?item wdt:P646 ?id . }';
+        $idToIdx += $freebaseIds;
+    }
+    if (!empty($googleIds)) {
+        $values = implode(' ', array_map(fn($id) => '"' . $id . '"', array_keys($googleIds)));
+        $unions[] = '{ VALUES ?id { ' . $values . ' } ?item wdt:P2671 ?id . }';
+        $idToIdx += $googleIds;
+    }
+
+    if (!empty($unions)) {
+        $sparql = 'SELECT ?item ?id WHERE { ' . implode(' UNION ', $unions) . ' }';
+        $sparqlUrl = 'https://query.wikidata.org/sparql?' . http_build_query([
+            'query' => $sparql,
+            'format' => 'json',
+        ]);
+        $ctx = stream_context_create([
+            'http' => [
+                'header' => "User-Agent: WikiZEIT/1.0 (https://wikizeit.edu.pl)\r\n"
+                          . "Accept: application/sparql-results+json\r\n",
+                'timeout' => 5,
+                'ignore_errors' => true,
+            ],
+        ]);
+        $resp = @file_get_contents($sparqlUrl, false, $ctx);
+        if ($resp) {
+            $data = json_decode($resp, true);
+            if (isset($data['results']['bindings'])) {
+                foreach ($data['results']['bindings'] as $binding) {
+                    $id = $binding['id']['value'];
+                    $qid = basename($binding['item']['value']);
+                    if (isset($idToIdx[$id])) {
+                        $wikidataIds[$idToIdx[$id]] = $qid;
+                    }
+                }
+            }
+        }
+    }
+
+    $wdCtx = stream_context_create([
+        'http' => [
+            'header' => "User-Agent: WikiZEIT/1.0 (https://wikizeit.edu.pl)\r\n",
+            'timeout' => 3,
+            'ignore_errors' => true,
+        ],
+    ]);
+    foreach ($results['itemListElement'] as $idx => $item) {
+        if (isset($wikidataIds[$idx])) continue;
+        $name = $item['result']['name'] ?? '';
+        if (!$name) continue;
+        $searchUrl = 'https://www.wikidata.org/w/api.php?' . http_build_query([
+            'action' => 'wbsearchentities',
+            'search' => $name,
+            'language' => $LANG_API,
+            'uselang' => $LANG_API,
+            'type' => 'item',
+            'limit' => 1,
+            'format' => 'json',
+        ]);
+        $resp = @file_get_contents($searchUrl, false, $wdCtx);
+        if (!$resp) continue;
+        $data = json_decode($resp, true);
+        if (!empty($data['search'][0]['id'])) {
+            $wikidataIds[$idx] = $data['search'][0]['id'];
+        }
+    }
+}
+?>
+<main id="main-content" class="kg-tool">
+    <nav class="tool-lang-switcher" aria-label="Language">
+        {%- for l in graf.languages -%}
+          {%- assign code = l[0] -%}{%- assign conf = l[1] -%}
+          {%- if code == lang -%}
+            <a href="{{ conf.path }}" hreflang="{{ code }}" class="active" aria-current="true">{{ conf.name }}</a>
+          {%- else -%}
+            <a href="{{ conf.path }}" hreflang="{{ code }}">{{ conf.name }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+    </nav>
+    <h1>{{ t.ui.title }}</h1>
+    <p class="tool-desc">{{ t.ui.description }}</p>
+    {%- assign toolSourceLabel = t.ui.source -%}
+    {%- assign toolLicenseLabel = t.ui.license -%}
+    {% include "partials/tool-meta.liquid" %}
+
+    <div class="kg-search-card">
+        <form class="kg-search-box" method="GET">
+            <input type="text" name="q" placeholder="{{ t.ui.placeholder }}" value="<?php echo htmlspecialchars($query); ?>">
+            <button type="submit">{{ t.ui.search }}</button>
+        </form>
+    </div>
+
+    <?php if ($error): ?>
+        <div class="kg-error"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
+
+    <?php if ($results && isset($results['itemListElement'])): ?>
+        <div class="kg-stats">
+            <?php echo htmlspecialchars($UI['found']); ?> <?php echo count($results['itemListElement']); ?> <?php echo htmlspecialchars($UI['resultsWord']); ?>
+            <?php echo $UI['scoreInfo']; ?>
+        </div>
+
+        <?php foreach ($results['itemListElement'] as $idx => $item):
+            $entity = $item['result'];
+            $score = $item['resultScore'] ?? 0;
+            $name = $entity['name'] ?? $UI['noName'];
+            $types = isset($entity['@type']) ? implode(', ', $entity['@type']) : $UI['entityType'];
+            $shortDesc = $entity['description'] ?? '';
+            $detailedDesc = $entity['detailedDescription']['articleBody'] ?? '';
+            $descriptionUrl = $entity['detailedDescription']['url'] ?? null;
+            $entityHome = $entity['url'] ?? null;
+            $imageUrl = $entity['image']['contentUrl'] ?? null;
+            $kgId = str_replace('kg:', '', $entity['@id']);
+            $googleSearchUrl = "https://www.google.com/search?kgmid=" . urlencode($kgId);
+        ?>
+            <div class="kg-result">
+                <?php if ($imageUrl): ?>
+                    <img src="<?php echo htmlspecialchars($imageUrl); ?>" class="kg-result-image" alt="<?php echo htmlspecialchars($name); ?>">
+                <?php else: ?>
+                    <div class="kg-result-image-placeholder">
+                        <span class="material-symbols-outlined">image</span>
+                    </div>
+                <?php endif; ?>
+
+                <div class="kg-result-content">
+                    <div class="kg-result-header">
+                        <div class="kg-result-type"><?php echo htmlspecialchars($types); ?></div>
+                        <div class="kg-score" title="<?php echo htmlspecialchars($UI['scoreTitle']); ?>"><?php echo htmlspecialchars($UI['scoreLabel']); ?>: <?php echo number_format($score, 1); ?></div>
+                    </div>
+                    <h2 class="kg-result-name"><?php echo htmlspecialchars($name); ?></h2>
+                    <p class="kg-result-desc">
+                        <?php if ($shortDesc): ?><strong><?php echo htmlspecialchars($shortDesc); ?></strong>. <?php endif; ?>
+                        <?php echo htmlspecialchars($detailedDesc); ?>
+                    </p>
+                    <div class="kg-result-links">
+                        <a href="<?php echo htmlspecialchars($googleSearchUrl); ?>" target="_blank" rel="noopener" class="kg-result-link">
+                            <?php echo htmlspecialchars($UI['openGoogle']); ?>
+                        </a>
+                        <?php if ($descriptionUrl): ?>
+                            <a href="<?php echo htmlspecialchars($descriptionUrl); ?>" target="_blank" rel="noopener" class="kg-result-link kg-result-link--wiki">
+                                <?php echo htmlspecialchars($UI['wikipedia']); ?>
+                            </a>
+                        <?php endif; ?>
+                        <?php if (isset($wikidataIds[$idx])): ?>
+                            <a href="https://www.wikidata.org/wiki/<?php echo htmlspecialchars($wikidataIds[$idx]); ?>" target="_blank" rel="noopener" class="kg-result-link kg-result-link--wikidata">
+                                <?php echo htmlspecialchars($UI['wikidata']); ?>
+                            </a>
+                        <?php endif; ?>
+                        <span class="kg-result-id">
+                            <?php echo htmlspecialchars($UI['graphId']); ?> <code><?php echo htmlspecialchars($kgId); ?></code>
+                            <button type="button" class="kg-copy-btn" data-kg-id="<?php echo htmlspecialchars($kgId); ?>" title="<?php echo htmlspecialchars($UI['copyTitle']); ?>">
+                                <span class="material-symbols-outlined">content_copy</span>
+                            </button>
+                        </span>
+                        <?php if ($entityHome): ?>
+                            <a href="<?php echo htmlspecialchars($entityHome); ?>" target="_blank" rel="noopener" class="kg-result-link kg-result-link--home">
+                                <?php echo htmlspecialchars($UI['officialSite']); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</main>
+<script>
+document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.kg-copy-btn');
+    if (!btn) return;
+    var id = btn.getAttribute('data-kg-id');
+    navigator.clipboard.writeText(id).then(function() {
+        var icon = btn.querySelector('.material-symbols-outlined');
+        icon.textContent = 'check';
+        setTimeout(function() { icon.textContent = 'content_copy'; }, 1500);
+    });
+});
+</script>
