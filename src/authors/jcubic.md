@@ -27,14 +27,17 @@ keywords:
 modified: 2026-04-21
 ---
 
-**Jakub T. Jankiewicz** to programista stron i aplikacji internetowych z wieloletnim doświadczeniem, założyciel projektu WikiZEIT oraz aktywny Wikipedysta. Tworzy oprogramowanie [open source](https://opensource.org/maintainers/jcubic), jest [redaktorem Polskiej Wikipedii](https://pl.wikipedia.org/wiki/Wikipedysta:Jcubic), przewodnikiem dla nowicjuszy oraz [oficjalnym trenerem](https://pl.wikipedia.org/wiki/Wikipedia:WikiTrenerzy/Uczestnicy_i_uczestniczki) [Stowarzyszenia Wikimedia Polska](https://wikimedia.pl/). Zajmuje się także [fotografią](https://www.flickr.com/people/jcubic/).
+**Jakub T. Jankiewicz** to założyciel i główny autor projektu edukacyjnego WikiZEIT.  Jako doświadczony
+programista aplikacji internetowych i wieloletni członek społeczności Wikimedia, stworzył tę
+platformę z myślą o popularyzacji wiedzy na temat mechanizmów Wikipedii oraz optymalizacji
+technicznej SEO.
 
 ## Wikipedia i etyczne SEO
 
 Od lat łączy pasję do nauczania z wiedzą techniczną, edukując o ekosystemie Wikimedia, programowaniu
 oraz filozofii Open Source. Postanowił połączyć te – tylko pozornie odległe – dziedziny w ramach
-swoich działań doradczych. Prowadzi komercyjne szkolenia, konsultacje oraz płatne edycje dla firm
-oraz osób, które chcą zadbać o swoją obecność w Wikipedii. Ale chcą to zrobić sposób transparentny i
+swoich działań doradczych. Prowadzi komercyjne szkolenia, konsultacje oraz płatne edycje dla firm,
+oraz osób, które chcą zadbać o swoją obecność w Wikipedii, ale chcą to zrobić sposób transparentny i
 zgodny z jej zasadami – tzw. **White Hat approach**.
 
 Specjalizuje się w:
