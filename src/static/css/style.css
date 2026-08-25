@@ -2469,6 +2469,53 @@ main .body ol > li::before {
     fill: currentColor;
 }
 
+/* Booking CTA (cal.com) */
+.contact-booking {
+    padding: 1.5rem;
+    border-radius: var(--border-radius-xl);
+    background-color: rgba(180, 33, 4, 0.05);
+    border: 1px solid rgba(180, 33, 4, 0.1);
+}
+
+.contact-booking h3 {
+    font-weight: 700;
+    color: var(--color-slate-100);
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-booking p {
+    color: var(--color-slate-400);
+    margin: 0 0 1.25rem 0;
+    font-size: 0.95rem;
+}
+
+.contact-booking-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    border-radius: var(--border-radius-lg);
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.contact-booking-btn:hover {
+    box-shadow: 0 0 20px rgba(180, 33, 4, 0.4);
+    color: var(--color-white);
+}
+
+.contact-booking-btn:active {
+    transform: scale(0.98);
+}
+
 /* Contact form column */
 .contact-form-card {
     background-color: rgba(180, 33, 4, 0.05);

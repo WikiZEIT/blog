@@ -23,6 +23,19 @@ layout: layouts/base.liquid
         </div>
       </div>
 
+      <div class="contact-booking">
+        <h3>Wolisz porozmawiać?</h3>
+        <p>Umów bezpłatną, wstępną konsultację online w dogodnym terminie.</p>
+        <a class="contact-booking-btn"
+           href="https://app.cal.eu/jcubic/darmowa-konsultacja"
+           data-cal-link="jcubic/darmowa-konsultacja"
+           data-cal-namespace="darmowa-konsultacja"
+           data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+          <span class="material-symbols-outlined">calendar_month</span>
+          <span>Zarezerwuj darmową rozmowę</span>
+        </a>
+      </div>
+
       <div class="contact-social">
         <h3>Social Media</h3>
         <div class="contact-social-links">
@@ -45,3 +58,23 @@ layout: layouts/base.liquid
     </div>
   </div>
 </main>
+
+<!-- Cal.com element-click embed – opens the booking popup as progressive enhancement.
+     Without JS the button is a plain link to the booking page. -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.eu/embed/embed.js", "init");
+  Cal("init", "darmowa-konsultacja", {origin:"https://app.cal.eu"});
+  Cal.ns["darmowa-konsultacja"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  (function() {
+    var calLink = document.querySelector('[data-cal-link]');
+    if (calLink) {
+      calLink.addEventListener('click', function(e) {
+        // With JS the cal.com popup opens, so block the href fallback navigation.
+        e.preventDefault();
+        if (typeof track === 'function') {
+          track('CTA', { action: 'darmowa-rozmowa' });
+        }
+      });
+    }
+  })();
+</script>
