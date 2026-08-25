@@ -2489,33 +2489,6 @@ main .body ol > li::before {
     font-size: 0.95rem;
 }
 
-.contact-booking-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.875rem 1rem;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-weight: 700;
-    border-radius: var(--border-radius-lg);
-    text-decoration: none;
-    cursor: pointer;
-    font-family: var(--font-display);
-    font-size: 1rem;
-    transition: all 0.2s;
-}
-
-.contact-booking-btn:hover {
-    box-shadow: 0 0 20px rgba(180, 33, 4, 0.4);
-    color: var(--color-white);
-}
-
-.contact-booking-btn:active {
-    transform: scale(0.98);
-}
-
 /* Contact form column */
 .contact-form-card {
     background-color: rgba(180, 33, 4, 0.05);
@@ -2588,7 +2561,8 @@ main .body ol > li::before {
     resize: vertical;
 }
 
-.contact-form-submit {
+/* Shared full-width call-to-action button (form submit, cal.com booking, …) */
+.btn-cta {
     width: 100%;
     padding: 1rem;
     background-color: var(--color-primary);
@@ -2597,6 +2571,7 @@ main .body ol > li::before {
     border-radius: var(--border-radius-lg);
     border: none;
     cursor: pointer;
+    text-decoration: none;
     font-family: var(--font-display);
     font-size: 1rem;
     transition: all 0.2s;
@@ -2606,11 +2581,12 @@ main .body ol > li::before {
     gap: 0.5rem;
 }
 
-.contact-form-submit:hover {
+.btn-cta:hover {
     box-shadow: 0 0 20px rgba(180, 33, 4, 0.4);
+    color: var(--color-white);
 }
 
-.contact-form-submit:active {
+.btn-cta:active {
     transform: scale(0.98);
 }
 
