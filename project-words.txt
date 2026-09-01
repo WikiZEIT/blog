@@ -86,6 +86,8 @@ hostowana
 hostowanego
 subskrybent
 subskrypcję
+paywallem
+paywallami
 
 # Places
 Jaszczórówka
@@ -107,6 +109,7 @@ InTechHosue
 Lubimyczytać
 Instagramie
 intheweights
+Elsevier
 
 # Typography terms
 endash
@@ -204,3 +207,4 @@ wikilink
 
 # German Wikipedia namespace (book-tool docs example)
 Spezial
+
