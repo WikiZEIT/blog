@@ -88,6 +88,10 @@ subskrybent
 subskrypcję
 paywallem
 paywallami
+cyberbezpieczeństwie
+cyberbezpieczeństwa
+cyberbezpieczeństwem
+
 
 # Places
 Jaszczórówka
@@ -110,6 +114,8 @@ Lubimyczytać
 Instagramie
 intheweights
 Elsevier
+Niebezpiecznik
+Niebezpiecznika
 
 # Typography terms
 endash

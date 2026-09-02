@@ -1756,6 +1756,9 @@ main .body ol > li::before {
     margin-top: 1rem;
     gap: 1rem;
 }
+.table-of-contents:not(:has(ul)) {
+    display: none;
+}
 
 .article-content .table-of-contents + h2,
 .table-of-contents + .article-grid h2:first-child {
