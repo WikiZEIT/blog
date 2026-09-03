@@ -44,7 +44,7 @@ export default function(eleventyConfig) {
         return null;
     });
 
-    const md = markdownIt({ html: true, linkify: true }).use(markdownItAnchor);
+    const md = markdownIt({ html: true, linkify: false }).use(markdownItAnchor);
 
     eleventyConfig.setLibrary('md', md);
 
