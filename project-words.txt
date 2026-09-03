@@ -91,7 +91,7 @@ paywallami
 cyberbezpieczeństwie
 cyberbezpieczeństwa
 cyberbezpieczeństwem
-
+checkingowy
 
 # Places
 Jaszczórówka
@@ -116,6 +116,7 @@ intheweights
 Elsevier
 Niebezpiecznik
 Niebezpiecznika
+Wikipediocracy
 
 # Typography terms
 endash
