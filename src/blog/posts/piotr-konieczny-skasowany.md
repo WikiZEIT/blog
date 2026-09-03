@@ -4,6 +4,7 @@ date: 2026-09-02
 tags:
   - Wikipedia
   - Historia
+  - Artykuły
 description: "Historia artykułu w Wikipedii o Piotrze Koniecznym z Niebezpiecznika"
 keywords:
 author: jcubic
