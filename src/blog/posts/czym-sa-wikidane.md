@@ -1,5 +1,5 @@
 ---
-title: "Czym są Wikidane i dlaczego ma znaczenie dla SEO?"
+title: "Czym są Wikidane i dlaczego mają znaczenie dla SEO?"
 date: 2026-03-07
 tags:
   - Wikidata
