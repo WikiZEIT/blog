@@ -2639,6 +2639,31 @@ main .body ol > li::before {
     margin: 0;
 }
 
+/* Per-tag RSS subscription link */
+.feed-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: var(--border-radius-full);
+    border: 1px solid rgba(180, 33, 4, 0.15);
+    background-color: rgba(180, 33, 4, 0.1);
+    color: var(--color-primary-text);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.feed-link:hover {
+    background-color: rgba(180, 33, 4, 0.2);
+}
+
+.feed-link-icon {
+    flex-shrink: 0;
+}
+
 /* Post cards grid */
 .posts-grid {
     display: grid;

@@ -45,7 +45,8 @@
 {% endif %}{% if pagination.href.next %}<link rel="next" href="{{ pagination.href.next | url }}" />
 {% endif %}
 <!-- RSS -->
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }} Blog" href="{{ site.url }}/feed.xml" />
+{% if tag and collections.postTags contains tag %}<link rel="alternate" type="application/rss+xml" title="{{ site.title }}: {{ tag }}" href="{{ site.url }}/tags/{{ tag | slugify }}/feed.xml" />
+{% endif %}<link rel="alternate" type="application/rss+xml" title="{{ site.title }} Blog" href="{{ site.url }}/feed.xml" />
 {% assign mdHref = page.url | mdAlternate %}{% if mdHref %}<!-- Markdown alternate -->
 <link rel="alternate" type="text/markdown" title="Markdown version" href="{{ mdHref }}" />{% endif %}
 <!-- Fonts & CSS -->

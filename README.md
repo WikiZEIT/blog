@@ -90,6 +90,16 @@ Czcionka Material Symbols Outlined (~10 MB) jest automatycznie subsettowana do
 - Autorzy zdefiniowani w `src/_data/users.json` (klucz: nick, np. `jcubic`)
 - Social cards generowane automatycznie z szablonu SVG (wymaga fontu Lovelo w CI)
 
+### Kanały RSS
+
+- `/feed.xml` (`src/feed.liquid`) — wszystkie artykuły
+- `/tags/{tag}/feed.xml` (`src/tags/tag-feed.liquid`) — artykuły z danego tagu
+
+Kanały tagów powstają z kolekcji `postTags` (tagi mające przynajmniej jeden artykuł), więc tagi
+używane wyłącznie przez narzędzia lub projekty nie generują pustych kanałów. Na stronie tagu link
+do kanału jest widoczny pod opisem oraz w `<head>` jako `rel="alternate"` — przed kanałem
+głównym, żeby czytniki RSS wykryły najpierw kanał tagu.
+
 ## Narzędzia SEO
 
 Interaktywne narzędzia w katalogu `src/tools/`, generowane przez Eleventy jako

@@ -16,6 +16,18 @@ import pluginTOC from 'eleventy-plugin-toc';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+function slugify(str) {
+    return str
+        .toString()
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w-]+/g, "")
+        .replace(/--+/g, "-")
+        .replace(/^-+/, "")
+        .replace(/-+$/, "");
+}
+
 function formatDate(date) {
     const d = new Date(date);
     const months = [
@@ -179,6 +191,21 @@ export default function(eleventyConfig) {
         return [...tagsSet].sort();
     });
 
+    // Tags that have at least one blog post. Per-tag RSS feeds are generated
+    // from this list, so tags used only by tools or projects (which are not
+    // time-ordered publications) do not produce empty feeds.
+    eleventyConfig.addCollection("postTags", function(collectionApi) {
+        const tagsSet = new Set();
+        collectionApi.getFilteredByGlob("src/blog/posts/*.md").forEach(item => {
+            (item.data.tags || []).forEach(tag => {
+                if (tag !== "post" && tag !== "all") {
+                    tagsSet.add(tag);
+                }
+            });
+        });
+        return [...tagsSet].sort();
+    });
+
     // Date formatting filter (Polish locale)
     eleventyConfig.addFilter("dateFormat", function(date, format) {
         const d = new Date(date);
@@ -258,18 +285,14 @@ export default function(eleventyConfig) {
         return `${url}${sep}utm_source=rss&utm_medium=feed`;
     });
 
-    // Slugify filter
-    eleventyConfig.addFilter("slugify", function(str) {
-        return str
-            .toString()
-            .toLowerCase()
-            .trim()
-            .replace(/\s+/g, "-")
-            .replace(/[^\w-]+/g, "")
-            .replace(/--+/g, "-")
-            .replace(/^-+/, "")
-            .replace(/-+$/, "");
+    // RFC-822 date for RSS <pubDate>. Liquid's `date` filter formats %a/%b
+    // with the Polish locale, which RSS readers cannot parse.
+    eleventyConfig.addFilter("rfc822", function(date) {
+        return new Date(date).toUTCString();
     });
+
+    // Slugify filter
+    eleventyConfig.addFilter("slugify", slugify);
 
     eleventyConfig.addTransform('img-dimensions', function(content) {
         if (!this.page.outputPath || !this.page.outputPath.endsWith('.html')) {

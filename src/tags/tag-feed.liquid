@@ -1,26 +1,32 @@
 ---
-permalink: /feed.xml
+layout: null
+pagination:
+  data: collections.postTags
+  size: 1
+  alias: tag
+permalink: "tags/{{ tag | slugify }}/feed.xml"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="{{ 'pretty-feed.xsl' | url }}" type="text/xsl"?>
+<?xml-stylesheet href="{{ '/pretty-feed.xsl' | url }}" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title }} Blog</title>
-    <link>{{ site.url }}/blog/</link>
-    <description>{{ site.description }}</description>
+    <title>{{ site.title }}: {{ tag | xml_escape }}</title>
+    <link>{{ site.url }}/tags/{{ tag | slugify }}/</link>
+    <description>Artykuły oznaczone tagiem "{{ tag | xml_escape }}" na blogu {{ site.title }}.</description>
     <language>{{ site.language }}</language>
-    <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="{{ site.url }}/tags/{{ tag | slugify }}/feed.xml" rel="self" type="application/rss+xml" />
     {%- for post in collections.post %}
+    {%- if post.data.tags contains tag %}
     <item>
       <title>{{ post.data.title | xml_escape }}</title>
       <link>{{ site.url }}{{ post.url | utmRss | xml_escape }}</link>
       <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
       <pubDate>{{ post.date | rfc822 }}</pubDate>
       <description>{{ post.data.description | xml_escape }}</description>
-      {%- for tag in post.data.tags %}
-      {%- unless tag == "post" %}
-      <category>{{ tag | xml_escape }}</category>
+      {%- for postTag in post.data.tags %}
+      {%- unless postTag == "post" %}
+      <category>{{ postTag | xml_escape }}</category>
       {%- endunless %}
       {%- endfor %}
       {%- if post.data.author %}
@@ -28,6 +34,7 @@ eleventyExcludeFromCollections: true
       <author>{{ site.email }} ({{ postAuthor.fullname | xml_escape }})</author>
       {%- endif %}
     </item>
+    {%- endif %}
     {%- endfor %}
   </channel>
 </rss>
