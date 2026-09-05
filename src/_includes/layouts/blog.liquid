@@ -14,7 +14,8 @@ layout: layouts/base.liquid
   </div>
 
   {% if tag %}
-    {% assign postsList = collections[tag] | reverse %}
+    {% comment %} Tag pages are Polish-only, so skip translated variants (e.g. /en/tools/books/) {% endcomment %}
+    {% assign postsList = collections[tag] | reject: "data.translation" | reverse %}
   {% else %}
     {% assign postsList = posts %}
   {% endif %}
