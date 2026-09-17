@@ -46,6 +46,11 @@ RewriteRule ^search/$ /search/index.php [L,QSA]
 
 RewriteRule ^graf-wiedzy/(.*) /tools/graf-wiedzy/$1 [R=301,L]
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(/(?:[^/]+/)*)[^/]+/?$
+RewriteRule ^(.*)$ %1 [R=301,L]
+
 # Content negotiation: serve markdown when Accept: text/markdown
 RewriteCond %{HTTP:Accept} text/markdown
 RewriteRule ^$ /llms.txt [L,T=text/markdown]
