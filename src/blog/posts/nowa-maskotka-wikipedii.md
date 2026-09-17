@@ -63,7 +63,7 @@ projektów siostrzanych) o nazwie [„Puzzly”](https://commons.wikimedia.org/w
 Maskotka jest głównie używana w materiałach i przewodnikach po prawie autorskim oraz [licencjach
 Creative Commons](https://pl.wikipedia.org/wiki/Licencje_Creative_Commons) dostępnych na Wikimedia
 Commons. Przykładem może być infografika dostępna przy dodawaniu zdjęć oraz innych multimediów. Istnieją różne wersje
-językowe przewodnika, poniżej wersja Polska.
+językowe przewodnika, poniżej wersja polska.
 
 ![Wskazówki Publikacji materiałów w Wikimedia Commons](/img/licencje-wikimedia-commons.png)
 <small>Wersja Angielska Wikimedia Foundation;
