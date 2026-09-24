@@ -75,6 +75,9 @@ edycja była oznaczona deklaracją **Konfliktu Interesów
 ([WP:KI](https://pl.wikipedia.org/wiki/WP:KI))**. Społeczność Polskiej Wikipedii nie ma
 wypracowanych własnych zasad dotyczących płatnej edycji, więc funkcjonują zasady ogólne.
 
+Zobacz: [Paid Editing Disclosure](https://wikimediafoundation.org/story/paid-editing-disclosure/)
+oraz [Terms of Use](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use/pl).
+
 Warto jednak wiedzieć, że większość najbardziej aktywnych i zaangażowanych redaktorów polskiej
 Wikipedii podchodzi do płatnych zleceń z dużą niechęcią i rzadko podejmuje się takiej współpracy,
 preferując wolontariat i dbanie o czystość merytoryczną haseł.
