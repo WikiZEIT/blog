@@ -1727,6 +1727,13 @@ main .body ol > li::before {
     align-self: start;
 }
 
+/* facebook widget */
+.sidebar-card iframe {
+    background: white;
+    padding: 1px;
+    color: white;
+}
+
 .sidebar-card {
     padding: 1.5rem;
     border-radius: var(--border-radius-2xl);
