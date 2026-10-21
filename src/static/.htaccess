@@ -106,3 +106,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ /404.php [L]
 
+AddType application/x-httpd-php84 .php
