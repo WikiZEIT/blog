@@ -117,6 +117,7 @@ Elsevier
 Niebezpiecznik
 Niebezpiecznika
 Wikipediocracy
+UseMe
 
 # Typography terms
 endash

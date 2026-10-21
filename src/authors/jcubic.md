@@ -38,7 +38,8 @@ Od lat łączy pasję do nauczania z wiedzą techniczną, edukując o ekosystemi
 oraz filozofii Open Source. Postanowił połączyć te – tylko pozornie odległe – dziedziny w ramach
 swoich działań doradczych. Prowadzi komercyjne szkolenia, konsultacje oraz płatne edycje dla firm,
 oraz osób, które chcą zadbać o swoją obecność w Wikipedii, ale chcą to zrobić sposób transparentny i
-zgodny z jej zasadami – tzw. **White Hat approach**.
+zgodny z jej zasadami – tzw. **White Hat approach**. (zlecenia realizuje m.in. przez profil
+[UseMe](https://useme.com/pl/roles/contractor/jakub-t-jankiewicz,187663/)).
 
 Specjalizuje się w:
 
