@@ -3307,6 +3307,15 @@ strong {
     line-height: 1.6;
 }
 
+/* The tool pages render this block from markdown, so it holds paragraphs. */
+.tool-desc p {
+    margin: 0 0 0.75rem;
+}
+
+.tool-desc p:last-child {
+    margin-bottom: 0;
+}
+
 .tool-desc a {
     color: var(--color-link);
     text-decoration: none;

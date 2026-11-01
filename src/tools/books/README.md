@@ -14,8 +14,10 @@ Served at two URLs, one static page per language:
 The **core is shared**; each language is a thin wrapper plus a block of data. You rarely need to
 touch the core to add or change a translation.
 
-- `src/_data/books.json` — **all translations**: UI strings, template field mappings, wiki host, and
-  shared mock data. Edit this to add/change a language or the copy.
+- `src/tools/books/text/<lang>.md` — the **heading and the intro text** of the page, one markdown
+  file per language. Edit these to change the copy a reader sees first. See "Page text" below.
+- `src/_data/books.json` — **all other translations**: short UI strings (button and error labels),
+  template field mappings, wiki host, and shared mock data.
 - `src/tools/books/index.liquid` — Polish page. Front matter only; includes the shared body.
 - `src/tools/books/en.liquid` — English page. Front matter only; includes the shared body.
 - `src/_includes/partials/books-tool.liquid` — shared body: PHP Google Books proxy, geo-redirect,
@@ -43,8 +45,7 @@ back to Polish for every other tool.
       "wiki": "pl.wikipedia.org",       // wiki queried for authors + linked in output
       "bookSources": "Specjalna:Książki",
       "odn": { "field": "odn", "value": "tak" },  // OMIT to hide the odn toggle
-      "seo":  { "title": "…", "description": "…" }, // <title> + meta description
-      "ui":   { "title": "…", "description": "<html>", "search": "…", "errors": { … } },
+      "ui":   { "search": "…", "noscript": "…", "errors": { … } },
       "templates": {
         "cytuj_ksiazke": { "name": "Cytuj książkę", "author": { "style": "split",  … }, … },
         "cytuj":         { "name": "Cytuj",         "author": { "style": "single", … }, … }
@@ -56,7 +57,8 @@ back to Polish for every other tool.
 
 Notes:
 
-- `ui.description` is **HTML** (it contains links), rendered as-is. Everything else is plain text.
+- Every `ui.*` string is plain text. The heading, the meta description and the intro text are not
+  here — they live in `text/<lang>.md`.
 - `odn` is a Polish-Wikipedia-only parameter. If a language object has no `odn` key, the `odn`
   checkbox is hidden and the field is omitted from the generated template.
 - **Template field mapping** — the two templates are serialized generically from config:
@@ -67,21 +69,54 @@ Notes:
   - The remaining keys (`title`, `year`, `publisher`, `isbn`, `language`) map the shared book fields
     to that template's parameter names.
 
+## Page text
+
+The heading and the intro text of each language page are plain markdown, one file per language:
+
+```text
+src/tools/books/text/pl.md
+src/tools/books/text/en.md
+```
+
+```markdown
+---
+title: Wikipedia Book Search
+description: >-
+  Find a book and generate a ready-made Cite book or Citation template for the English Wikipedia.
+  A free tool by WikiZEIT.
+---
+
+Find a book with Google Books and generate a ready-made
+[{{Cite book}}](https://en.wikipedia.org/wiki/Template:Cite_book) … citation template.
+```
+
+- `title` is the `<h1>` **and** the `<title>`.
+- `description` is the meta description (plain text, no markup). The `>-` folds the following
+  indented lines into one line, which keeps the file inside the 100-character wrap.
+- The body is the intro text under the heading. Write links as markdown; raw HTML also works.
+  Blank lines separate paragraphs, so there is no need for `<br>`.
+- Both keys are required. A missing one fails the build with the file name.
+
+`src/_data/toolText.js` reads these files for every tool and exposes them to the templates as
+`toolText["books"]["<lang>"]`. The files are listed in `.eleventyignore`, so Eleventy treats them as
+data and does not build them as pages.
+
 ## Adding a language
 
 Example: adding German (`de`). No changes to `books.js` or `books-tool.liquid` are needed.
 
 1. **Add the data.** In `src/_data/books.json`, add a `"de"` entry under `languages`, mirroring the
    shape of `en`: `path` (`/de/tools/books/`), `name` (`Deutsch`), `wiki` (`de.wikipedia.org`),
-   `bookSources` (`Spezial:ISBN-Suche`), `seo`, `ui`, and `templates`. Add an `odn` key only if that
-   wiki actually uses it.
-2. **Add the page.** Copy `src/tools/books/en.liquid` to `de.liquid` and change the front matter:
+   `bookSources` (`Spezial:ISBN-Suche`), `ui`, and `templates`. Add an `odn` key only if that wiki
+   actually uses it.
+2. **Add the text.** Copy `text/en.md` to `text/de.md` and translate the front matter and the body.
+3. **Add the page.** Copy `src/tools/books/en.liquid` to `de.liquid` and change the front matter:
    `lang: de`, `permalink: de/tools/books/index.php`, `canonicalPath: /de/tools/books/`,
    `htmlLang: de`, `ogLocale: de_DE`. Keep `translation: true`.
-3. **Wire up hreflang.** Add `{ hreflang: de, url: /de/tools/books/ }` to the `alternates` list in
+4. **Wire up hreflang.** Add `{ hreflang: de, url: /de/tools/books/ }` to the `alternates` list in
    **every** page (`index.liquid`, `en.liquid`, `de.liquid`) so all pages cross-link. Keep the three
    lists identical.
-4. **Rebuild** with `npm run build`. The language switcher, sitemap entry, and social card are
+5. **Rebuild** with `npm run build`. The language switcher, sitemap entry, and social card are
    generated automatically.
 
 The language switcher is derived from `books.json`, so no other file needs editing.
@@ -90,7 +125,7 @@ The language switcher is derived from `books.json`, so no other file needs editi
 
 - Each language is its own static page returning **200**, self-canonical, and cross-linked with
   `hreflang` (+ `x-default` → the Polish page). `<title>`, meta description and `og:locale` are set
-  per language from front matter + `books.json`, so search engines serve the right language.
+  per language from front matter + `text/<lang>.md`, so search engines serve the right language.
 - **No server-side language/geo redirect.** Auto-redirecting the canonical URL by `Accept-Language`
   makes it look like a redirect to crawlers (they send no `Accept-Language`) and redirects bots —
   both are flagged by SEO audits (e.g. "redirect found in sitemap", "canonical points to redirect").

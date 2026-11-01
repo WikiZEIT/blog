@@ -2,15 +2,17 @@
   Shared body for the Wikipedia book-search tool. Both the Polish (`index.liquid`)
   and English (`en.liquid`) pages include this; they differ only in front matter.
   The active language is taken from the `lang` variable in scope and looked up in
-  the global `books` data (src/_data/books.json).
+  the global `books` data (src/_data/books.json) for the UI labels, and in
+  `toolText` (src/tools/books/text/<lang>.md) for the heading and the intro text.
 {% endcomment -%}
 {%- assign t = books.languages[lang] -%}
+{%- assign text = toolText["books"][lang] -%}
 <?php
 // Values baked in from books.json at build time. The `| default:` fallbacks keep
 // this valid PHP even if the data ever goes missing (otherwise an empty value
 // would bake `$var = ;` and fatal-error the page).
 $BOOKS_PATH        = {{ t.path | default: page.url | jsonify }};
-$BOOKS_TRACK_TITLE = {{ t.seo.title | default: title | jsonify }};
+$BOOKS_TRACK_TITLE = {{ text.title | default: title | jsonify }};
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/api/lib/umami.php';
 
@@ -76,8 +78,8 @@ umami_track($BOOKS_PATH, $BOOKS_TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
           {%- endif -%}
         {%- endfor -%}
     </nav>
-    <h1>{{ t.ui.title }}</h1>
-    <p class="tool-desc">{{ t.ui.description }}</p>
+    <h1>{{ text.title }}</h1>
+    <div class="tool-desc">{{ text.html }}</div>
     {%- assign toolSourceLabel = t.ui.source -%}
     {%- assign toolLicenseLabel = t.ui.license -%}
     {% include "partials/tool-meta.liquid" %}

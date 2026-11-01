@@ -31,6 +31,9 @@ form. The `_site/` output directory is fully self-contained and deployable.
 - **Authors** are defined in `src/_data/users.json` keyed by nick (e.g. `jcubic`). Blog posts set
   `author: jcubic` in front matter
 - **Person JSON-LD** data comes from `src/_data/person.json`
+- **Tool page text** (heading, meta description, intro text) lives in markdown, one file per
+  language: `src/tools/<tool>/text/<lang>.md`. `src/_data/toolText.js` loads them as
+  `toolText["<tool>"]["<lang>"]`. The tool JSON data files keep only the short UI labels
 
 ## Build & Test
 

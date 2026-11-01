@@ -134,6 +134,7 @@ aboutfeeds
 ctype
 apos
 AUTOINCREMENT
+eleventyignore
 filemtime
 htmlspecialchars
 isset

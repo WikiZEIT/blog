@@ -111,6 +111,10 @@ export default function(eleventyConfig) {
     // Copy tool config files (API keys) to output
     eleventyConfig.addPassthroughCopy("src/tools/**/config.json");
 
+    // Tool page prose, read by src/_data/toolText.js. The files are in
+    // .eleventyignore (they are data, not pages), so watch them explicitly.
+    eleventyConfig.addWatchTarget("src/tools/**/text/*.md");
+
     eleventyConfig.addPlugin(syntaxHighlight);
 
     eleventyConfig.addPlugin(socialCard, {
