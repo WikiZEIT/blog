@@ -11,7 +11,10 @@ description: >-
 Check whether a person, company or concept has an entry in
 [Google Knowledge Graph](https://en.wikipedia.org/wiki/Google_Knowledge_Graph).
 
-## What is the Google Knowledge Graph?
+<details>
+<summary>
+<h2>What is the Google Knowledge Graph?</h2>
+</summary>
 
 The **Google Knowledge Graph** is a semantic database, a so-called [knowledge
 graph](https://en.wikipedia.org/wiki/Knowledge_graph), that gathers, organizes, and connects
@@ -28,6 +31,8 @@ Knowledge Graph is crucial for building brand authority (E-E-A-T), increasing on
 optimizing for voice search. For Google to include a brand or creator in its database, it is
 necessary to implement structured data (Schema.org) on the website, maintain a consistent Google
 Business Profile, and secure entries in trusted external data sources such as Wikidata or Wikipedia.
+
+</details>
 
 Not in the Knowledge Graph? Book a
 [free 15-minute consultation](https://wikizeit.edu.pl/oferta/konsultacje/).

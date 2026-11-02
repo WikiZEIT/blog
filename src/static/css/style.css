@@ -3294,6 +3294,17 @@ strong {
     margin-bottom: 0.5rem;
 }
 
+.kg-tool summary h2 {
+    display: inline-block;
+    margin-left: 0.2em;
+    position: relative;
+    top: 0.1em;
+}
+
+.kg-tool details[open] {
+    margin-bottom: 1em;
+}
+
 @media (min-width: 768px) {
     .kg-tool h1 {
         font-size: 2.5rem;

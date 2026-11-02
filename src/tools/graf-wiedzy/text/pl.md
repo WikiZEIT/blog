@@ -11,9 +11,12 @@ description: >-
 Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis w
 [Google Knowledge Graph](https://pl.wikipedia.org/wiki/Graf_Wiedzy_Google).
 
-## Co to jest Graf Wiedzy Google?
+<details>
+<summary>
+<h2>Co to jest Graf Wiedzy Google?</h2>
+</summary>
 
-Graf Wiedzy Google (Google Knowledge Graph) to semantyczna baza danych tzw. [graf
+**Graf Wiedzy Google** (Google Knowledge Graph) to semantyczna baza danych tzw. [graf
 wiedzy](https://pl.wikipedia.org/wiki/Graf_wiedzy), który gromadzi, porządkuje i łączy informacje o
 świecie w logiczną sieć powiązań. Zamiast analizować wpisywane słowa kluczowe jako pojedyncze ciągi
 znaków, Google interpretuje je jako realne obiekty – tzw. encje (ludzi, miejsca, firmy, wydarzenia
@@ -28,6 +31,8 @@ sieci oraz optymalizacji pod kątem wyszukiwania głosowego. Aby Google uwzględ
 swojej bazie, należy wdrożyć na stronie dane strukturalne (Schema.org), dbać o spójną wizytówkę
 Google Business Profile oraz pozyskiwać wpisy w zaufanych, zewnętrznych źródłach danych takich jak
 Wikidata czy Wikipedia.
+
+</details>
 
 Nie ma cię w Grafie Wiedzy? Sprawdź
 [darmową 15-minutową konsultację](https://wikizeit.edu.pl/oferta/konsultacje/).
