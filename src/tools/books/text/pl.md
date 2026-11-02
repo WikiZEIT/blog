@@ -1,4 +1,7 @@
 ---
+permalink: false
+layout: null
+templateEngineOverride: md
 title: Wyszukiwarka książek do Wikipedii
 description: >-
   Znajdź książkę i wygeneruj gotowy szablon cytowania Cytuj lub Cytuj książkę do polskiej

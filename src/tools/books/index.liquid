@@ -5,8 +5,8 @@ canonicalPath: /tools/books/
 htmlLang: pl
 ogLocale: pl_PL
 eleventyComputed:
-  title: "{{ toolText['books'][lang].title }}"
-  description: "{{ toolText['books'][lang].description }}"
+  title: "{{ collections.toolText['books'][lang].data.title }}"
+  description: "{{ collections.toolText['books'][lang].data.description }}"
 alternates:
   - { hreflang: pl, url: /tools/books/ }
   - { hreflang: en, url: /en/tools/books/ }

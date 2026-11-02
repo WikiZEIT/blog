@@ -1,4 +1,7 @@
 ---
+permalink: false
+layout: null
+templateEngineOverride: md
 title: Google Knowledge Graph Search
 description: >-
   Check whether a person, company or concept has an entry in the Google Knowledge Graph.

@@ -1,4 +1,7 @@
 ---
+permalink: false
+layout: null
+templateEngineOverride: md
 title: Wikipedia Book Search
 description: >-
   Find a book and generate a ready-made Cite book or Citation template for the English Wikipedia.

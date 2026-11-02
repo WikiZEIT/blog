@@ -76,6 +76,9 @@ src/tools/graf-wiedzy/text/en.md
 
 ```markdown
 ---
+permalink: false
+layout: null
+templateEngineOverride: md
 title: Google Knowledge Graph Search
 description: >-
   Check whether a person, company or concept has an entry in the Google Knowledge Graph.
@@ -94,11 +97,19 @@ Not in the Knowledge Graph? Book a
   indented lines into one line, which keeps the file inside the 100-character wrap.
 - The body is the intro text under the heading. Write links as markdown; raw HTML also works.
   Blank lines separate paragraphs, so there is no need for `<br>`.
-- Both keys are required. A missing one fails the build with the file name.
 
-`src/_data/toolText.js` reads these files for every tool and exposes them to the templates as
-`toolText["graf-wiedzy"]["<lang>"]`. The files are listed in `.eleventyignore`, so Eleventy treats
-them as data and does not build them as pages.
+The three keys above the text are Eleventy plumbing — copy them into every new file:
+
+- `permalink: false` — the file is content for another page, so it writes no page of its own.
+- `layout: null` — files under `src/tools/` inherit `tools.json`, which applies the tool layout and
+  builds a social card. Without this, Eleventy tries to make the text file a tool page.
+- `templateEngineOverride: md` — render markdown only, no Liquid. This keeps `{{…}}` as literal
+  text; without it Liquid reads it as a variable and prints nothing.
+
+The `toolText` collection in `.eleventy.js` keys these files by tool and language, taken from
+their path, so templates read `collections.toolText["graf-wiedzy"]["<lang>"]` — `.data.title`,
+`.data.description` and `.templateContent`. A new collection also needs its name in the `filter`
+list of `src/tags/tags.liquid`, or Eleventy publishes a `/tags/<name>/` page for it.
 
 ## Adding a language
 

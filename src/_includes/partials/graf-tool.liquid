@@ -8,13 +8,13 @@
   pages return English entities.
 {% endcomment -%}
 {%- assign t = graf.languages[lang] -%}
-{%- assign text = toolText["graf-wiedzy"][lang] -%}
+{%- assign text = collections.toolText["graf-wiedzy"][lang] -%}
 <?php
 // Values baked in from graf.json at build time (| default: keeps this valid PHP
 // even if the data ever goes missing).
 $LANG_API    = {{ t.apiLanguage | default: "pl" | jsonify }};
 $TRACK_PATH  = {{ t.path | default: page.url | jsonify }};
-$TRACK_TITLE = {{ text.title | default: title | jsonify }};
+$TRACK_TITLE = {{ text.data.title | default: title | jsonify }};
 $UI = [
     'noApiKey'     => {{ t.ui.noApiKey | jsonify }},
     'found'        => {{ t.ui.found | jsonify }},
@@ -157,8 +157,8 @@ if ($results && isset($results['itemListElement'])) {
           {%- endif -%}
         {%- endfor -%}
     </nav>
-    <h1>{{ text.title }}</h1>
-    <div class="tool-desc">{{ text.html }}</div>
+    <h1>{{ text.data.title }}</h1>
+    <div class="tool-desc">{{ text.templateContent }}</div>
     {%- assign toolSourceLabel = t.ui.source -%}
     {%- assign toolLicenseLabel = t.ui.license -%}
     {% include "partials/tool-meta.liquid" %}

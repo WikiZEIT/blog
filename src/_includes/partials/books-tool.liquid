@@ -6,13 +6,13 @@
   `toolText` (src/tools/books/text/<lang>.md) for the heading and the intro text.
 {% endcomment -%}
 {%- assign t = books.languages[lang] -%}
-{%- assign text = toolText["books"][lang] -%}
+{%- assign text = collections.toolText["books"][lang] -%}
 <?php
 // Values baked in from books.json at build time. The `| default:` fallbacks keep
 // this valid PHP even if the data ever goes missing (otherwise an empty value
 // would bake `$var = ;` and fatal-error the page).
 $BOOKS_PATH        = {{ t.path | default: page.url | jsonify }};
-$BOOKS_TRACK_TITLE = {{ text.title | default: title | jsonify }};
+$BOOKS_TRACK_TITLE = {{ text.data.title | default: title | jsonify }};
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/api/lib/umami.php';
 
@@ -78,8 +78,8 @@ umami_track($BOOKS_PATH, $BOOKS_TRACK_TITLE, $_SERVER['HTTP_REFERER'] ?? '');
           {%- endif -%}
         {%- endfor -%}
     </nav>
-    <h1>{{ text.title }}</h1>
-    <div class="tool-desc">{{ text.html }}</div>
+    <h1>{{ text.data.title }}</h1>
+    <div class="tool-desc">{{ text.templateContent }}</div>
     {%- assign toolSourceLabel = t.ui.source -%}
     {%- assign toolLicenseLabel = t.ui.license -%}
     {% include "partials/tool-meta.liquid" %}

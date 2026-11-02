@@ -111,9 +111,16 @@ export default function(eleventyConfig) {
     // Copy tool config files (API keys) to output
     eleventyConfig.addPassthroughCopy("src/tools/**/config.json");
 
-    // Tool page prose, read by src/_data/toolText.js. The files are in
-    // .eleventyignore (they are data, not pages), so watch them explicitly.
-    eleventyConfig.addWatchTarget("src/tools/**/text/*.md");
+    // Tool page prose: src/tools/<tool>/text/<lang>.md, keyed by tool and
+    // language so templates can look up toolText[<tool>][<lang>].
+    eleventyConfig.addCollection("toolText", (api) => {
+        const tools = {};
+        for (const item of api.getFilteredByGlob("src/tools/*/text/*.md")) {
+            const [, tool, lang] = item.inputPath.match(/tools\/([^/]+)\/text\/([^/]+)\.md$/);
+            (tools[tool] ||= {})[lang] = item;
+        }
+        return tools;
+    });
 
     eleventyConfig.addPlugin(syntaxHighlight);
 

@@ -1,4 +1,7 @@
 ---
+permalink: false
+layout: null
+templateEngineOverride: md
 title: Wyszukiwarka wpisów w Grafie Wiedzy Google
 description: >-
   Sprawdź, czy dana osoba, firma lub pojęcie ma wpis w Google Knowledge Graph.
