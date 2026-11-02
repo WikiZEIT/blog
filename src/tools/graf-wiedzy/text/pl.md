@@ -9,9 +9,25 @@ description: >-
 ---
 
 Sprawdź, czy dana osoba, firma lub pojęcie posiada wpis w
-[Google Knowledge Graph](https://en.wikipedia.org/wiki/Google_Knowledge_Graph). Dowiedz się więcej o
-roli Grafu Wiedzy w SEO na naszym blogu: [Wikimedia Enterprise i SEO](/blog/wikipedia-enterprise/),
-[Dane strukturalne Schema.org](/blog/dane-strukturalne-schema-org/).
+[Google Knowledge Graph](https://pl.wikipedia.org/wiki/Graf_Wiedzy_Google).
+
+## Co to jest Graf Wiedzy Google?
+
+Graf Wiedzy Google (Google Knowledge Graph) to semantyczna baza danych tzw. [graf
+wiedzy](https://pl.wikipedia.org/wiki/Graf_wiedzy), który gromadzi, porządkuje i łączy informacje o
+świecie w logiczną sieć powiązań. Zamiast analizować wpisywane słowa kluczowe jako pojedyncze ciągi
+znaków, Google interpretuje je jako realne obiekty – tzw. encje (ludzi, miejsca, firmy, wydarzenia
+czy przedmioty). Dzięki temu wyszukiwarka rozumie relacje zachodzące między nimi, co pozwala na
+dostarczanie użytkownikom bezpośrednich i niezwykle precyzyjnych odpowiedzi na zadawane pytania.
+
+W praktyce Graf Wiedzy odpowiada za wyświetlanie tzw. Panelu Wiedzy (Knowledge Panel) w wynikach
+wyszukiwania – charakterystycznego boksu po prawej stronie lub na górze ekranu, który zawiera
+najważniejsze fakty, zdjęcia i dane podsumowujące szukane hasło. Z punktu widzenia SEO, obecność w
+Grafie Wiedzy jest kluczowa dla budowania autorytetu marki (E-E-A-T), zwiększania widoczności w
+sieci oraz optymalizacji pod kątem wyszukiwania głosowego. Aby Google uwzględniło markę lub twórcę w
+swojej bazie, należy wdrożyć na stronie dane strukturalne (Schema.org), dbać o spójną wizytówkę
+Google Business Profile oraz pozyskiwać wpisy w zaufanych, zewnętrznych źródłach danych takich jak
+Wikidata czy Wikipedia.
 
 Nie ma cię w Grafie Wiedzy? Sprawdź
 [darmową 15-minutową konsultację](https://wikizeit.edu.pl/oferta/konsultacje/).
