@@ -42,17 +42,22 @@ faq:
     answer: |
       Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
       * WikiZEIT (Jakub T. Jankiewicz): Specjalistyczne podejście, gdzie nacisk kładzie się na
-        kompletność wpisu i transparentność.
+        kompletność wpisu i transparentność. Wszystko zgodnie z zasadami Wikipedii. 15-letnie
+        doświadczenie w edycji oraz status Redaktora w polskiej Wikipedii daje unikalną perspektywę.
       * Soluma Interactive: Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie
         haseł.
-      * Green-fields: Firma zajmująca się wizerunkiem, która w ofercie ma również Wikipedię.
+      * Green-fields: Firma zajmująca się wizerunkiem, która w ofercie ma również edycje Wikipedii.
+      * Jakub Borowiec: Specjalista SEO/GEO, który analizuje encyklopedyczność pod kątem widoczności
+        marki w AI. Działa w modelu doradczym – ocenia źródła, przygotowuje neutralny tekst oraz dane do
+        Wikidata, natomiast samą publikacją (z ujawnieniem konfliktu interesów) zajmuje się już sam
+        klient.
       * Freelancerzy (UseMe/LinkedIn): Można tam znaleźć osoby deklarujące pomoc, jednak ich
         doświadczenie i znajomość aktualnych zasad bywają bardzo zróżnicowane.
   - question: "Ile kosztuje wpis w Wikipedii?"
     answer: |
       Koszty zależą od skomplikowania tematu i renomy wykonawcy:
       * Modele godzinowe: Przykładowo w WikiZEIT wstępna analiza jest darmowa, a koszt edycji to
-        obecnie do 300 zł za godzinę. Średni czas przygotowania solidnego artykułu to około dwie
+        obecnie do 350 zł za godzinę. Średni czas przygotowania solidnego artykułu to około dwie
         godziny pracy redaktora.
       * Modele pakietowe: W Soluma Interactive sam audyt to koszt rzędu 440 zł. Napisanie
         artykułu kosztuje około 1000 zł, przy czym dodatkowe elementy, jak zdjęcia czy infoboxy,
@@ -233,18 +238,23 @@ Doświadczony redaktor (lub przeszkolony pracownik):
 ## Kto zajmuje się płatną edycją Wikipedii w Polsce?
 Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
 * **WikiZEIT (Jakub T. Jankiewicz):** Specjalistyczne podejście, gdzie nacisk kładzie się na
-    kompletność wpisu i transparentność.
+    kompletność wpisu i transparentność. Wszystko zgodnie z zasadami Wikipedii. 15-letnie
+    doświadczenie w edycji oraz status Redaktora w polskiej Wikipedii daje unikalną perspektywę.
 * **Soluma Interactive:** Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie
     haseł.
 * **Green-fields:** Firma zajmująca się wizerunkiem, która w ofercie ma również Wikipedię.
+* **Jakub Borowiec:** Specjalista SEO/GEO, który analizuje encyklopedyczność pod kątem widoczności
+    marki w AI. Działa w modelu doradczym – ocenia źródła, przygotowuje neutralny tekst oraz dane do
+    Wikidata, natomiast samą publikacją (z ujawnieniem konfliktu interesów) zajmuje się już sam
+    klient.
 * **Freelancerzy (UseMe/LinkedIn):** Można tam znaleźć osoby deklarujące pomoc, jednak ich
     doświadczenie i znajomość aktualnych zasad bywają bardzo zróżnicowane.
 
 ## Ile kosztuje wpis w Wikipedii? Cennik i modele rozliczeń
 Koszty zależą od skomplikowania tematu i renomy wykonawcy:
 * **Modele godzinowe:** Przykładowo w **WikiZEIT** wstępna analiza jest darmowa, a koszt edycji to
-    obecnie do **300 zł za godzinę**. Średni czas przygotowania solidnego artykułu to około dwie
-    godziny pracy redaktora.
+    obecnie **350 zł za godzinę**. Średni czas przygotowania solidnego artykułu to około
+    dwie godziny pracy redaktora, w zależności od długości czas może się wydłużyć.
 * **Modele pakietowe:** W **Soluma Interactive** sam audyt to koszt rzędu **440 zł**. Napisanie
     artykułu kosztuje około **1000 zł**, przy czym dodatkowe elementy, jak zdjęcia czy infoboxy,
     często są wyceniane jako osobne pozycje.
