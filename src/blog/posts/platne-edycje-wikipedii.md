@@ -44,13 +44,23 @@ faq:
       * WikiZEIT (Jakub T. Jankiewicz): Specjalistyczne podejście, gdzie nacisk kładzie się na
         kompletność wpisu i transparentność. Wszystko zgodnie z zasadami Wikipedii. 15-letnie
         doświadczenie w edycji oraz status Redaktora w polskiej Wikipedii daje unikalną perspektywę.
-      * Soluma Interactive: Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie
+        Każdy pisany artykuł dodaje do obserwowanych, więc cały czas monitoruje, co się z nim dzieje.
         haseł.
+      * Soluma Interactive: Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie haseł.
       * Green-fields: Firma zajmująca się wizerunkiem, która w ofercie ma również edycje Wikipedii.
       * Jakub Borowiec: Specjalista SEO/GEO, który analizuje encyklopedyczność pod kątem widoczności
         marki w AI. Działa w modelu doradczym – ocenia źródła, przygotowuje neutralny tekst oraz dane do
         Wikidata, natomiast samą publikacją (z ujawnieniem konfliktu interesów) zajmuje się już sam
         klient.
+      * WordFactory: Międzynarodowa agencja copywriterska i studio contentowe o ukraińskich korzeniach,
+        działające na rynku od 2009 roku. W swojej ofercie posiadają dedykowaną usługę pisania i publikacji
+        artykułów w Wikipedii. Ich model opiera się na pracy całego zespołu autorów (głównie filologów i marketerów),
+        którzy przygotowują treści zgodnie z wymogami encyklopedycznymi pod kątem wizerunku i SEO. Firma deklaruje
+        wysoką skuteczność w przechodzeniu przez weryfikację społeczności, stawiając na masową i terminową produkcję treści B2B.
+      * iWizerunek: Agencja marketingu i zarządzania wizerunkiem (ORM) z Warszawy, która traktuje Wikipedię jako element budowania
+        reputacji cyfrowej, SEO oraz optymalizacji pod silniki AI (GEO). Świadczą kompleksowe usługi: od bezpłatnego audytu
+        encyklopedyczności, przez pisanie haseł i biogramów liderów, po bieżący monitoring poemisyjny i ochronę wpisów przed wandalizmem.
+        W swojej ofercie stawiają na efektywne łączenie merytorycznych wymogów Wikipedii z celami wizerunkowymi i biznesowymi klienta.
       * Freelancerzy (UseMe/LinkedIn): Można tam znaleźć osoby deklarujące pomoc, jednak ich
         doświadczenie i znajomość aktualnych zasad bywają bardzo zróżnicowane.
   - question: "Ile kosztuje wpis w Wikipedii?"
