@@ -151,7 +151,7 @@ powinno być jedynym autorem artykułu. Płatna edycja oparta wyłącznie na "co
 najkrótsza droga do usunięcia wpisu.
 
 ## Jak dodać firmę do Wikipedii? – proces krok po kroku
-1.  **Analiza źródeł:** Sprawdź, czy o firmie pisały niezależne media (nie lokalne, nie branżowe).
+1.  **Analiza źródeł:** Sprawdź, czy o firmie pisały niezależne media, książki, artykuły naukowe.
 2.  **Przygotowanie szkicu:** Stwórz tekst w brudnopisie, dbając o encyklopedyczny styl.
 3.  **Deklaracja [WP:KI](https://pl.wikipedia.org/wiki/WP:KI):** Poinformuj na swojej stronie
     użytkownika o powiązaniach z firmą.
@@ -161,12 +161,12 @@ najkrótsza droga do usunięcia wpisu.
     sam(a). Prośbę o sprawdzenie można także zgłosić na stronie
     [Wikipedia:Pytania_nowicjuszy](https://pl.wikipedia.org/wiki/Wikipedia:Pytania_nowicjuszy).
 
-## Jak stworzyć biografię osoby (np. CEO lub eksperta)?
-Wymagania dla biografii osób żyjących (BIO) są jeszcze surowsze. Należy wykazać, że osoba ta wywarła
+## Jak stworzyć biografię osoby w Wikipedii?
+Wymagania dla biografii osób żyjących są jeszcze surowsze. Należy wykazać, że osoba ta wywarła
 istotny, trwały wpływ na swoją dziedzinę. Same występy w śniadaniówkach czy posiadanie dużej firmy
 to za mało – liczą się nagrody, publikacje i szerokie uznanie środowiska.
 
-## Najczęstsze błędy i "pocałunek śmierci" dla artykułu
+## Najczęstsze błędy podczas dodawania artykułu do Wikipedii
 Unikaj tych błędów, jeśli nie chcesz, by Twój wpis zniknął w kilka minut:
 * **Język marketingowy:** [Zwroty zwodnicze](https://pl.wikipedia.org/wiki/WP:WZ), typu "lider
     branży", "najlepszy produkt", "eksperci uważają".
@@ -178,10 +178,21 @@ Unikaj tych błędów, jeśli nie chcesz, by Twój wpis zniknął w kilka minut:
 * **Linki w treści** Linki mogą się znajdować tylko w sekcji linki zewnętrzne, jako przypisu oraz w
     infoboksie.
 
+## Jak oznaczać płatne edycje w polskiej Wikipedii
+W Polskiej Wikipedii nie ma dokładnych wytycznych dotyczących płatnych edycji, dlatego mają
+zastosowanie reguły fundacji Wikimedia. Płatne edycje można oznaczać, dodając taką informację,
+na swojej stronie domowej, na stronie dyskusji lub w opisie zmian.
+
+Istnieje w Wikipedii kategoria:
+[Kategoria:Wikipedyści wykonujący płatne edycje](https://pl.wikipedia.org/wiki/Kategoria:Wikipedyści_wykonujący_płatne_edycje)
+
+oraz [Szablon:Płatne_edycje](https://pl.wikipedia.org/wiki/Szablon:Płatne_edycje), którego można użyć do oznaczania
+płatnych edycji. Szablon jest tłumaczeniem wersji z angielskiej Wikipedii. Jego użycie nie jest obowiązkowe.
+
 ## Reklama w Wikipedii – dlaczego to podejście jest ryzykowne?
 Wielu przedsiębiorców błędnie zakłada, że skoro Wikipedia jest popularna, to stanowi idealne miejsce
-na darmową promocję.  Encyklopedia ta to nie jest platforma marketingowa, czy panorama firm. Dlatego
-pod żadnym pozorem nie może służyć jako tablica ogłoszeniowa czy nośnik reklamowy.  Próba uprawiania
+na darmową promocję. Encyklopedia ta to nie jest platforma marketingowa, czy panorama firm. Dlatego
+pod żadnym pozorem nie może służyć jako tablica ogłoszeniowa czy nośnik reklamowy. Próba uprawiania
 działań typu **marketing w Wikipedii** spotyka się z natychmiastową i bardzo ostrą reakcją
 społeczności.
 
@@ -237,33 +248,69 @@ Doświadczony redaktor (lub przeszkolony pracownik):
 
 ## Kto zajmuje się płatną edycją Wikipedii w Polsce?
 Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
-* **WikiZEIT (Jakub T. Jankiewicz):** Specjalistyczne podejście, gdzie nacisk kładzie się na
+<ul>
+<li>
+    <strong><a href="https://wikizeit.edu.pl/oferta/edycja/">WikiZEIT (Jakub T. Jankiewicz)</a>:</strong>
+    Specjalistyczne podejście, gdzie nacisk kładzie się na
     kompletność wpisu i transparentność. Wszystko zgodnie z zasadami Wikipedii. 15-letnie
     doświadczenie w edycji oraz status Redaktora w polskiej Wikipedii daje unikalną perspektywę.
-* **Soluma Interactive:** Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie
-    haseł.
-* **Green-fields:** Firma zajmująca się wizerunkiem, która w ofercie ma również Wikipedię.
-* **Jakub Borowiec:** Specjalista SEO/GEO, który analizuje encyklopedyczność pod kątem widoczności
+    Każdy pisany artykuł dodaje do obserwowanych, więc cały czas monitoruje, co się z nim dzieje.
+</li>
+<li>
+    <strong><a href="https://soluma.pl/cenniki/marketing-reklama/reklama-w-wikipedii" rel="nofollow" target="_blank">Soluma Interactive</a>:</strong>
+    Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie haseł.
+</li>
+<li>
+    <string><a href="https://green-fields.pl/oferta/profesjonalne-dodanie-artykulu-do-wikipedii/" rel="nofollow" target="_blank">Green-Fields</a>:</strong>
+    Firma zajmująca się wizerunkiem, która w ofercie ma również Wikipedię.
+</li>
+<li>
+    <string><A href="https://jakubborowiec.pl/dodanie-firmy-do-wikipedii/" rel="nofollow" target="_blank">Jakub Borowiec</a>:</strong>
+    Specjalista SEO/GEO, który analizuje encyklopedyczność pod kątem widoczności
     marki w AI. Działa w modelu doradczym – ocenia źródła, przygotowuje neutralny tekst oraz dane do
     Wikidata, natomiast samą publikacją (z ujawnieniem konfliktu interesów) zajmuje się już sam
     klient.
-* **Freelancerzy (UseMe/LinkedIn):** Można tam znaleźć osoby deklarujące pomoc, jednak ich
-    doświadczenie i znajomość aktualnych zasad bywają bardzo zróżnicowane.
+</li>
+<li>
+    <strong><a href="https://wordfactory.pl/wikipedia-publishing-services/" rel="nofollow" target="_blank">WordFactory</a>:</strong>
+    Międzynarodowa agencja copywriterska i studio contentowe o ukraińskich korzeniach, działające na rynku od 2009 roku.
+    W swojej ofercie posiadają dedykowaną usługę pisania i publikacji artykułów w Wikipedii. Ich model opiera się na
+    pracy całego zespołu autorów (głównie filologów i marketerów), którzy przygotowują treści zgodnie z wymogami encyklopedycznymi
+    pod kątem wizerunku i SEO. Firma deklaruje wysoką skuteczność w przechodzeniu przez weryfikację społeczności, stawiając na
+    masową i terminową produkcję treści B2B.
+</li>
+<li>
+    <strong><a href="https://iwizerunek.pl/artykuly-wikipedia/" rel="nofollow" target="_blank">iWizerunek</a>:</strong>
+    Agencja marketingu i zarządzania wizerunkiem (ORM) z Warszawy, która traktuje Wikipedię jako element budowania
+    reputacji cyfrowej, SEO oraz optymalizacji pod silniki AI (GEO). Świadczą kompleksowe usługi: od bezpłatnego audytu
+    encyklopedyczności, przez pisanie haseł i biogramów liderów, po bieżący monitoring poemisyjny i ochronę wpisów przed wandalizmem.
+    W swojej ofercie stawiają na efektywne łączenie merytorycznych wymogów Wikipedii z celami wizerunkowymi i biznesowymi klienta.
+</li>
+<li>
+    <strong>Freelancerzy (platformy typu <a href="https://useme.com/pl/roles/contractor/jakub-t-jankiewicz,187663/" rel="nofollow" target="_blank">UseMe</a> / <a href="https://linkedin.com" rel="nofollow" target="_blank">LinkedIn</a>):</strong>
+    Ścieżka polegająca na zlecaniu zadań niezależnym copywriterom lub edytorom. Oferty bywają tańsze, ale niosą ryzyko
+    – brak znajomości zasad Wikipedii często kończy się usunięciem wpisu.
+    <strong>twórca projektu WikiZEIT prowadzi oficjalny profil na UseMe jako Jakub T. Jankiewicz</strong>,
+    co pozwala na w pełni transparentne i bezpieczne rozliczenie audytu oraz edycji z gwarancją transakcji dla firm.
+</li>
+</ul>
 
 ## Ile kosztuje wpis w Wikipedii? Cennik i modele rozliczeń
 Koszty zależą od skomplikowania tematu i renomy wykonawcy:
 * **Modele godzinowe:** Przykładowo w **WikiZEIT** wstępna analiza jest darmowa, a koszt edycji to
-    obecnie **350 zł za godzinę**. Średni czas przygotowania solidnego artykułu to około
-    dwie godziny pracy redaktora, w zależności od długości czas może się wydłużyć.
+    obecnie **350 zł za godzinę**. Średni czas przygotowania solidnego artykułu to około dwie
+    godziny pracy redaktora, w zależności od długości czas może się wydłużyć.
 * **Modele pakietowe:** W **Soluma Interactive** sam audyt to koszt rzędu **440 zł**. Napisanie
     artykułu kosztuje około **1000 zł**, przy czym dodatkowe elementy, jak zdjęcia czy infoboxy,
     często są wyceniane jako osobne pozycje.
-* **Ważne:** Żaden rzetelny redaktor nie zagwarantuje 100% pewności, że wpis pozostanie w
-    serwisie na zawsze, ponieważ ostateczna decyzja należy do społeczności administratorów.
+* **Brak danych**: pozostałe firmy nie ujawniają cennika usług edycji Wikipedii, wycene otrzymuje
+    się indywidualnie.
+* **Ważne:** Żaden rzetelny redaktor nie zagwarantuje 100% pewności, że wpis pozostanie w serwisie
+    na zawsze, ponieważ ostateczna decyzja należy do społeczności administratorów.
 
 ## Jeśli nie Wikipedia to co?
-Dla podmiotów, które nie spełniają surowych norm encyklopedyczności, idealnym rozwiązaniem są
-projekty siostrzane:
+Dla podmiotów, które nie spełniają surowych norm encyklopedyczności, idealnym rozwiązaniem
+zwiększenia widoczności swojej marki w AI są projekty siostrzane:
 * **Wikimedia Commons:** Tu możesz dodać zdjęcia firmowe, logo czy portrety CEO. Wymagana jest
     zgoda fotografa i wolna licencja.
 * **Wikidane:** To baza danych łącząca wszystkie projekty. Jest kluczowa dla Google i AI.
@@ -271,7 +318,33 @@ projekty siostrzane:
 * **Synergia:** WikiZEIT oferuje łączenie tych usług – dodanie zdjęcia do Commons, wpisu do
     Wikidanych i połączenie ich z Wikipedią buduje spójny „cyfrowy ślad” marki.
 
-## Podsumowanie: Wikipedia to maraton, nie sprint
+## Alternatywa: Samodzielna edycja, czyli szkolenia z Wikipedii dla firm
+Jeśli Twoja firma posiada wewnętrzny dział PR lub marketingu i chce samodzielnie zarządzać swoją obecnością w encyklopedii,
+zlecanie pełnego wykonawstwa agencjom nie zawsze jest konieczne. Największym ryzykiem w takim modelu jest jednak brak
+znajomości dynamicznie zmieniających się zasad społeczności, co niemal zawsze kończy się usunięciem hasła.
+
+Rozwiązaniem tego problemu są [profesjonalne szkolenia z edycji Wikipedii prowadzone przez WikiZEIT](/oferta/szkolenia/).
+Jako redaktor z 15-letnim stażem, uczę zespoły marketingowe oraz niezależnych freelancerów, jak poprawnie wdrożyć procedurę
+transparentnego ujawniania płatnego wkładu (Paid Contribution Disclosure), jak weryfikować encyklopedyczność źródeł
+oraz jak pisać w restrykcyjnym standardzie NPOV (neutralnego punktu widzenia). To idealna ścieżka dla podmiotów,
+które chcą samodzielnie i bezpiecznie prowadzić płatne edycje wewnątrz organizacji.
+
+## Podsumowanie
 Obecność w Wikipedii to nie jednorazowa usługa marketingowa, ale proces dokumentowania realnych
 osiągnięć. Skuteczna płatna edycja wymaga cierpliwości, doskonałych źródeł i pokory wobec zasad
 społeczności. To prestiż, który stanowi ukoronowanie osiągnięć, a nie drogę do ich zdobycia.
+
+Niezależnie od tego, czy wybierzesz współpracę z agencją PR, zewnętrznym doradcą, czy zdecydujesz się na działanie
+w modelu freelancerskim, kluczem do trwałości wpisu jest bezwzględna transparentność (deklaracja
+konfliktu interesów) i neutralny punkt widzenia.
+
+**Jak możesz podejść do tego tematu z projektem WikiZEIT?**
+* **Zlecenie pełnego wykonawstwa:** Jeśli chcesz powierzyć proces audytu encyklopedyczności,
+  researchu bibliograficznego i redakcji technicznej ekspertowi z 15-letnim stażem, możesz
+  skorzystać z mojej bezpośredniej pomocy (również poprzez bezpieczne rozliczenie na platformie
+  UseMe).
+* **Szkolenia dla zespołów i freelancerów:** Jeśli wolisz, aby Twoja firma lub Ty sam wykonywał
+  płatne edycje samodzielnie i bez ryzyka blokady – zapraszam na dedykowane szkolenia z edycji
+  Wikipedii, które w praktyce uczą standardów społeczności Wikimedia.
+
+Zamów [darmową konsultację](https://app.cal.eu/jcubic/darmowa-konsultacja).
