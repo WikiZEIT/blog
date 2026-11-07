@@ -305,6 +305,48 @@ Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
 </li>
 </ul>
 
+## Kto może pomóc dodać artykuł do Wikipedii?
+Wikipedia to przede wszystkim projekt wolontariacki. Przy edycji Wikipedii mogą pomóc bardziej
+doświadczeni redaktorzy oraz dedykowani przewodnicy. Zakładając konto, automatycznie przydzielana
+zostaje Ci jest osoba, której możesz zadać pytania przez swoją [stronę
+domową](https://pl.wikipedia.org/w/index.php?title=Specjalna:Strona_domowa&source=personaltoolslink&namespace=4). Możesz
+także zadać pytanie w
+[Kawiarence](https://pl.wikipedia.org/wiki/Wikipedia:Kawiarenka_pod_Weso%C5%82ym_Encyklopedyst%C4%85)
+lub na stronie [pytania nowicjuszy](https://pl.wikipedia.org/wiki/Wikipedia:Pytania_nowicjuszy), na
+[Discordzie](https://pl.wikipedia.org/wiki/Wikipedia:Discord). Wikipedia ma także grupę na facebooku
+[pl.Wikipedia](https://www.facebook.com/groups/165267100158576).
+
+Jeśli chcesz, aby ktoś sprawdził twój brudnopis, lepiej jest to zrobić poprzez **przewodnika** lub
+poprzez stronę **pytania nowicjuszy**.
+
+### Pisanie artykułów przez sztuczną inteligencję (AI)
+Powierzenie przygotowania artykułu systemom typu ChatGPT czy Claude może być kuszące, jednak niesie
+ogromne ryzyko. Modele językowe (LLM) często generują tzw. halucynacje – potrafią zmyślić fakty, a
+co gorsza, stworzyć całkowicie fałszywe, nieistniejące przypisy bibliograficzne. Choć AI radzi sobie
+z generowaniem kodu formatowania (WikiKodu), w strukturze linków i szablonów niemal zawsze pojawiają
+się błędy techniczne.
+
+Warto wiedzieć, że społeczność Wikipedii reaguje na to zjawisko bezkompromisowo. W angielskiej
+Wikipedii obowiązuje oficjalna i rygorystyczna polityka [całkowitego zakazu generowania lub
+przeredagowywania haseł przez AI](https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models). Dopuszczalne są wyłącznie marginalne wyjątki, takie jak podstawowa
+autokorekta gramatyczna własnego tekstu czy asysta przy tłumaczeniach międzyjęzykowych – i to
+wyłącznie pod ścisłym nadzorem człowieka. Wpisy stworzone przez sztuczną inteligencję są tam
+natychmiastowo i bezdyskusyjnie usuwane przez administratorów w ramach specjalnych procedur
+oczyszczania kodu (AI Cleanup).
+
+Aktualnie w polskiej Wikipedii, toczy się dyskusja nad tym, [czy powinno się w ogóle pozwolić na
+użycie AI w Wikipedii oraz w jakim stopniu](https://pl.wikipedia.org/wiki/Wikipedia:Kawiarenka/Zasady#c-Sssine21-20261028222600-Sztuczna_inteligencja).
+
+### Bezpłatna pomoc vs. wsparcie komercyjne
+Choć darmowe narzędzia społeczności są doskonałym punktem wyjścia, wymagają one od autora
+poświęcenia wielu godzin na naukę zasad formatowania, weryfikowalności źródeł oraz standardu NPOV
+(neutralnego punktu widzenia). W przypadku braku doświadczenia, proces ten często kończy się
+usunięciem hasła.
+
+Dlatego firmy, instytucje oraz osoby publiczne, które nie mają czasu na samodzielną naukę
+rygorystycznych zasad społeczności, szukają wsparcia zewnętrznego. Na polskim rynku istnieje kilka
+profesjonalnych podmiotów i ścieżek komercyjnych: np. WikiZEIT, Jakub Borowiec, czy Greenfields.
+
 ## Ile kosztuje wpis w Wikipedii? Cennik i modele rozliczeń
 Koszty zależą od skomplikowania tematu i renomy wykonawcy:
 * **Modele godzinowe:** Przykładowo w **WikiZEIT** wstępna analiza jest darmowa, a koszt edycji to
