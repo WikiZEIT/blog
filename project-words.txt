@@ -98,6 +98,7 @@ cyberbezpieczeństwie
 cyberbezpieczeństwa
 cyberbezpieczeństwem
 checkingowy
+międzyjęzykowych
 
 # Places
 Jaszczórówka
@@ -124,6 +125,8 @@ Niebezpiecznik
 Niebezpiecznika
 Wikipediocracy
 UseMe
+Greenfields
+Discordzie
 
 # Typography terms
 endash
