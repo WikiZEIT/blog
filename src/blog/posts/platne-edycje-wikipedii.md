@@ -367,7 +367,7 @@ Koszty zależą od skomplikowania tematu i renomy wykonawcy:
 * **Brak danych**: pozostałe firmy nie ujawniają cennika usług edycji Wikipedii, wycene otrzymuje
     się indywidualnie.
 * **Ważne:** Żaden rzetelny redaktor nie zagwarantuje 100% pewności, że wpis pozostanie w serwisie
-    na zawsze, ponieważ ostateczna decyzja należy do społeczności administratorów.
+    na zawsze, ponieważ ostateczna decyzja należy do społeczności Wikipedystów.
 
 ## Jeśli nie Wikipedia to co?
 Dla podmiotów, które nie spełniają surowych norm encyklopedyczności, idealnym rozwiązaniem
