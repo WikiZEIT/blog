@@ -45,7 +45,7 @@ faq:
         kompletność wpisu i transparentność. Wszystko zgodnie z zasadami Wikipedii. 15-letnie
         doświadczenie w edycji oraz status Redaktora w polskiej Wikipedii daje unikalną perspektywę.
         Każdy pisany artykuł dodaje do obserwowanych, więc cały czas monitoruje, co się z nim dzieje.
-        haseł.
+        haseł. WikiZEIT prowadzi darmowe 15min konsultacje.
       * Soluma Interactive: Agencja marketingowa oferująca pakiety edycyjne, w tym audyt i pisanie haseł.
       * Green-fields: Firma zajmująca się wizerunkiem, która w ofercie ma również edycje Wikipedii.
       * Jakub Borowiec: Specjalista SEO/GEO, który analizuje encyklopedyczność pod kątem widoczności
@@ -265,6 +265,7 @@ Na polskim rynku istnieje kilka głównych podmiotów i ścieżek:
     kompletność wpisu i transparentność. Wszystko zgodnie z zasadami Wikipedii. 15-letnie
     doświadczenie w edycji oraz status Redaktora w polskiej Wikipedii daje unikalną perspektywę.
     Każdy pisany artykuł dodaje do obserwowanych, więc cały czas monitoruje, co się z nim dzieje.
+    WikiZEIT prowadzi <a href="https://app.cal.eu/jcubic/darmowa-konsultacja">darmowe 15 min konsultacje</a>.
 </li>
 <li>
     <strong><a href="https://soluma.pl/cenniki/marketing-reklama/reklama-w-wikipedii" rel="nofollow" target="_blank">Soluma Interactive</a>:</strong>
