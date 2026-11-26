@@ -45,6 +45,7 @@ Masur
 Otourly
 Soluma
 Yuval
+Sssine
 
 # Technical terms
 BLUF
