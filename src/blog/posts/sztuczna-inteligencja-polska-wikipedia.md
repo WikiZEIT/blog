@@ -1,5 +1,5 @@
 ---
-title: "Czy można używać AI w Polskiej Wikipedii"
+title: "Czy można używać AI w Polskiej Wikipedii?"
 date: 2026-11-27
 tags:
   - Wikipedia
