@@ -15,20 +15,24 @@ Kawiarence](https://pl.wikipedia.org/wiki/Wikipedia:Kawiarenka/Zasady#c-Sssine21
 funkcjonowaniem i edytowaniem encyklopedii).
 
 Impulsem była pilna potrzeba uregulowania zasad korzystania ze sztucznej inteligencji podczas
-pisania haseł w polskiej Wikipedii. W wersji anglojęzycznej [generowanie i przeredagowywanie treści
-artykułów przez AI zostało zabronione w marcu 2026
+pisania haseł w polskiej Wikipedii.
+
+## Zasady korzystania z AI w Angielskiej Wikipedii
+
+W wersji anglojęzycznej [generowanie i przeredagowywanie treści artykułów przez AI zostało
+zabronione w marcu 2026
 roku](https://en.wikipedia.org/wiki/Wikipedia:Writing_articles_with_large_language_models), o czym
 pisał m.in. magazyn [IEEE
 Spectrum](https://spectrum.ieee.org/wikipedia-wikiproject-ai-writing-cleanup) w październiku tego
 samego roku. Choć formalny zakaz w EN Wiki przegłosowano dopiero w 2026 roku, sam problem narastał
-znacznie wcześniej. Już w grudniu 2023 roku — rok po premierze ChatGPT — powstał tam [WikiProject AI
+znacznie wcześniej. Już w grudniu 2023 roku, rok po premierze ChatGPT, powstał tam [WikiProject AI
 Cleanup](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_AI_Cleanup), którego celem jest
 wyszukiwanie i usuwanie treści wygenerowanych przez AI. Początkowo takie edycje były łatwe do
 wychwycenia i weryfikacji, jednak wraz z rozwojem modeli językowych stawało się to coraz
 trudniejsze. Głównym wyzwaniem nie okazała się bowiem sama obecność tekstu z AI, lecz trudne do
 wykrycia błędy merytoryczne, halucynacje oraz zmyślone lub nieadekwatne przypisy.
 
-### Głosowanie
+## Głosowanie
 
 Po burzliwej dyskusji, 14 listopada 2026 roku Sssine21 opublikował projekt strony
 głosowania. Ostatecznie wystartowało ono **25 listopada o godz. 12:00** na stronie
