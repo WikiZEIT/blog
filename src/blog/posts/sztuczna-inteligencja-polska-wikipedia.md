@@ -14,7 +14,7 @@ Kawiarence](https://pl.wikipedia.org/wiki/Wikipedia:Kawiarenka/Zasady#c-Sssine21
 (Kawiarenka to wewnętrzne forum dyskusyjne, na którym wikipedyści omawiają kwestie związane z
 funkcjonowaniem i edytowaniem encyklopedii).
 
-Impulsem była pilna potrzeba uregulowania zasad korzystania ze sztucznej inteligencji podczas
+Impulsem była pilna potrzeba uregulowania zasad korzystania ze sztucznej inteligencji (SI) podczas
 pisania haseł w polskiej Wikipedii.
 
 ## Zasady korzystania z AI w Angielskiej Wikipedii
@@ -59,3 +59,14 @@ człowieka) oraz do tworzenia kodu technicznego (np. szablonów czy skryptów).
 
 Formuła głosowania pozwala wskazać wariant preferowany przy jednoczesnej akceptacji drugiego,
 poprzeć wyłącznie jeden konkretny wariant, odrzucić oba lub wstrzymać się od głosu.
+
+## Wcześniejsze próby regulacji
+
+Warto zaznaczyć, że nie jest to pierwsza próba uregulowania użycia Sztucznej Inteligencji. Już w
+2023 roku powstała strona [Wikipedia:Zalecenia zastosowania narzędzi SI w polskiej
+Wikipedii](https://pl.wikipedia.org/wiki/Wikipedia:Zalecenia_zastosowania_narzędzi_SI_w_polskiej_Wikipedii)
+(`WP:LLM`), stworzona jako luźne tłumaczenie i adaptacja wczesnych wytycznych z EN Wiki. Nigdy nie
+wyszła ona jednak poza status roboczej propozycji. Zawierała jedynie wstępne punkty do dyskusji
+(zakazujące m.in. wklejania gotowych tekstów z AI do artykułów, ale dopuszczające pomoc przy
+konspektach, parafrazowaniu czy kodzie) i nie miała mocy obowiązującej zasady. Dopiero narastająca w
+2026 roku fala masowo generowanych artykułów zmusiła społeczność do wypracowania wiążących zasad.
